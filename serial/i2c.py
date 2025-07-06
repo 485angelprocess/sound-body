@@ -167,34 +167,7 @@ class I2CSend(wiring.Component):
             self.write_ready.eq(wbuffer.w_rdy)
         ]
         
-        ##############################
-        ## Read buffer ###############
-        ##############################
-        rbuffer = m.submodules.rbuffer = fifo.SyncFIFO(width = 9, depth = self.buffer_size)
-                
-        m.d.comb += self.rlen.eq(rbuffer.level)
-                
-        read_counter = Signal(range(9), init = 8)
-        read_register = Signal(9)
         
-        m.d.comb += rbuffer.w_data.eq(read_register)
-        
-        with m.If(self.i2c_read_en):
-            m.d.sync += read_register.bit_select(read_counter, 1).eq(self.i2c_read_data)
-            
-            with m.If(read_counter == 0):
-                m.d.comb += rbuffer.w_en.eq(1)
-                m.d.sync += read_counter.eq(8)
-                m.d.sync += read_register.eq(0)
-            with m.Else():
-                m.d.sync += read_counter.eq(read_counter - 1)
-            
-        m.d.comb += [
-            self.ack.eq(rbuffer.r_data[0]),
-            self.read_data.eq(rbuffer.r_data[1:9]),
-            self.read_valid.eq(rbuffer.r_rdy),
-            rbuffer.r_en.eq(self.read_ready)
-        ]
         
         #################################
         ## controller ###################
@@ -206,8 +179,10 @@ class I2CSend(wiring.Component):
         
         m.d.comb += self.period.eq(self.ctl_period)
         
+        read_counter = Signal(range(9), init = 8)
+        
         # Run i2c
-        with m.FSM():
+        with m.FSM() as fsm:
             with m.State("Idle"):
                 with m.If(wbuffer.r_rdy & self.enable):
                     m.d.sync += read_counter.eq(8)
@@ -220,8 +195,16 @@ class I2CSend(wiring.Component):
                 # Write start condition
                 m.d.comb += self.dat_en.eq(1)
                 m.d.comb += self.clk_en.eq(0)
-                m.d.comb += self.data.eq(0) # Start condition
+                m.d.comb += self.data.eq(1) # Start condition
+                m.d.comb += self.valid.eq(1)
                 # May make this shorter
+                with m.If(self.ready):
+                    m.next = "StartB"
+            with m.State("StartB"):
+                m.d.comb += self.dat_en.eq(1)
+                m.d.comb += self.clk_en.eq(0)
+                m.d.comb += self.data.eq(0)
+                m.d.comb += self.valid.eq(1)
                 with m.If(self.ready):
                     m.d.sync += write_counter.eq(7)
                     m.next = "Data"
@@ -248,8 +231,52 @@ class I2CSend(wiring.Component):
             with m.State("GetAck"):
                 with m.If(self.i2c_read_en):
                     m.d.comb += wbuffer.r_en.eq(1)
-                    m.next = "Idle"
+                    with m.If(wbuffer.level > 1):
+                        m.next = "Idle"
+                    with m.Else():
+                        m.d.sync += write_counter.eq(1)
+                        m.next = "Stop"
+            with m.State("Stop"):
+                m.d.comb += self.dat_en.eq(1)
+                m.d.comb += self.clk_en.eq(0)
+                m.d.comb += self.valid.eq(1)
+                with m.If(write_counter == 1):
+                    m.d.comb += self.data.eq(0)
+                    with m.If(self.ready):
+                        m.next = "Idle"
+                with m.Else():
+                    m.d.comb += self.data.eq(1)
+                    with m.If(self.ready):
+                        m.d.sync += write_counter.eq(0)
                 
+        ##############################
+        ## Read buffer ###############
+        ##############################
+        rbuffer = m.submodules.rbuffer = fifo.SyncFIFO(width = 9, depth = self.buffer_size)
+                
+        m.d.comb += self.rlen.eq(rbuffer.level)
+                
+        
+        read_register = Signal(9)
+        
+        m.d.comb += rbuffer.w_data.eq(read_register)
+        
+        with m.If(self.i2c_read_en & (fsm.ongoing("Data") | fsm.ongoing("Ack"))):
+            m.d.sync += read_register.bit_select(read_counter, 1).eq(self.i2c_read_data)
+            
+            with m.If(read_counter == 0):
+                m.d.comb += rbuffer.w_en.eq(1)
+                m.d.sync += read_counter.eq(8)
+                m.d.sync += read_register.eq(0)
+            with m.Else():
+                m.d.sync += read_counter.eq(read_counter - 1)
+            
+        m.d.comb += [
+            self.ack.eq(rbuffer.r_data[0]),
+            self.read_data.eq(rbuffer.r_data[1:9]),
+            self.read_valid.eq(rbuffer.r_rdy),
+            rbuffer.r_en.eq(self.read_ready)
+        ]
         
         return m
 
@@ -298,11 +325,14 @@ class I2COut(wiring.Component):
         m.d.comb += self.read_valid.eq(counter == half_period - 2)
         m.d.comb += self.read_data.eq(self.sda_in)
             
+        data = Signal()
+            
         # send data out
         with m.If(dat_en):
-            m.d.comb += self.sda_en.eq(1)
+            m.d.comb += self.sda_en.eq(data == 0)
+            m.d.comb += self.sda.eq(data)
         with m.Else():
-            m.d.sync += self.sda.eq(1)
+            m.d.comb += self.sda.eq(1)
             m.d.comb += self.sda_en.eq(0)
         
         with m.FSM():
@@ -315,7 +345,7 @@ class I2COut(wiring.Component):
                     
                     m.d.sync += counter.eq(self.period)
                     m.d.sync += half_period.eq(self.period >> 1)
-                    m.d.sync += self.sda.eq(self.data) # get data
+                    m.d.sync += data.eq(self.data) # get data
                     m.next = "Send"
                 with m.Else():
                     # Disable clock and data if no signal immediately available
