@@ -118,8 +118,15 @@ for d in DefinitionTable:
 class Line(object):
     def __init__(self, line):
         self.line = line
+        self.label = self.parse_label()
         self._op = self.op()
         self._args = self.args()
+        
+    def parse_label(self):
+        if ":" in self.line:
+            return self.line.split(":")[0]
+        else:
+            return None
         
     def op(self):
         return self.line.split(" ")[0]
@@ -150,7 +157,8 @@ class Line(object):
             for a in table[self._op].args:
                 data = data << a.width()
                 data += a.value(self._args)
-        return data
+            return data
+        return None
 
 class ListAssemble(object):
     def __init__(self, reset, get, next):
