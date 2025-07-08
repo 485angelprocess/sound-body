@@ -70,7 +70,7 @@ class Monitor(object):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog = "Serial tests")
     
-    parser.add_args("port", help = "COMPORT")
+    parser.add_argument("port", help = "COMPORT")
 
     args = parser.parse_args()
 
