@@ -12,13 +12,17 @@ class SerialCommand(object):
     WRITE_LONG = 'W'
     READ_SHORT = 'r'
     READ_LONG  = 'R'
+    ECHO = 'e'
+    ID = 'I'
+    RESET = 'x'
 
 class SerialToWishbone(wiring.Component):
     def __init__(self):
         super().__init__({
             "command": In(Stream(8)), # Serial stream
             "reply": Out(Stream(8)),
-            "produce": Out(Bus(32, 32))
+            "produce": Out(Bus(4, 32)),
+            "soft_reset": Out(1)
         })
         
     def elaborate(self, platform):
@@ -29,6 +33,10 @@ class SerialToWishbone(wiring.Component):
         
         prefix = Signal(8)
         arg = Signal(32)
+        
+        ext_reset = Signal(reset = 1)
+        
+        m.d.comb += self.soft_reset.eq(ext_reset)
         
         with m.FSM():
             with m.State("Idle"):
@@ -57,11 +65,21 @@ class SerialToWishbone(wiring.Component):
                             m.d.sync += size.eq(3)
                             m.d.sync += counter.eq(3)
                             m.next = "Address"
+                        with m.Case(ord(SerialCommand.ID)):
+                            m.d.sync += prefix.eq(ord("I"))
+                            m.d.sync += arg.eq(ord("D"))
+                            m.d.sync += counter.eq(0)
+                            m.next = "Print"
+                        with m.Case(ord(SerialCommand.ECHO)):
+                            m.next = "Echo"
                         with m.Case(ord('\n')):
                             m.next = "EOL"
+                        with m.Case(ord(SerialCommand.RESET)):
+                            m.d.sync += ext_reset.eq(0)
                         with m.Default():
                             m.d.sync += prefix.eq(ord('%'))
                             m.d.sync += arg.eq(self.command.tdata)
+                            m.d.sync += counter.eq(0)
                             m.next = "Print"
             ################################
             ### Write/read to bus ##########
@@ -93,10 +111,12 @@ class SerialToWishbone(wiring.Component):
                 m.d.comb += self.produce.cyc.eq(1)
                 with m.If(self.produce.ack):
                     with m.If(self.produce.w_en):
+                        m.d.sync += counter.eq(size)
                         m.d.sync += prefix.eq(ord('W'))
-                        m.d.sync += arg.eq(1)
+                        m.d.sync += arg.eq(self.produce.addr)
                     with m.Else():
                         m.d.sync += prefix.eq(ord('R'))
+                        m.d.sync += counter.eq(size)
                         m.d.sync += arg.eq(self.produce.r_data)
                     m.next = "Print"
             
@@ -107,16 +127,14 @@ class SerialToWishbone(wiring.Component):
                 m.d.comb += self.reply.tvalid.eq(1)
                 m.d.comb += self.reply.tdata.eq(prefix)
                 with m.If(self.reply.tready):
-                    m.d.sync += counter.eq(3)
                     m.next = "PrintArg"
             with m.State("PrintArg"):
                 m.d.comb += self.reply.tvalid.eq(1)
-                m.d.comb += self.reply.tdata.eq(arg[24:32]) # Print MSB first
+                m.d.comb += self.reply.tdata.eq(arg.word_select(counter, 8)) # Print MSB first
                 
                 with m.If(self.reply.tready):
-                    m.d.sync += arg.eq(arg << 8) # Shift up prefix
                     with m.If(counter == 0):
-                        m.next = "EOL"
+                        m.next = "Idle"
                     with m.Else():
                         m.d.sync += counter.eq(counter - 1)
             ######################################
@@ -126,6 +144,15 @@ class SerialToWishbone(wiring.Component):
                 m.d.comb += self.reply.tvalid.eq(1)
                 m.d.comb += self.reply.tdata.eq(ord('\n'))
                 with m.If(self.reply.tready):
+                    m.next = "Idle"
+                    
+            with m.State("Echo"):
+                # Echo one byte
+                m.d.comb += self.reply.tvalid.eq(self.command.tvalid)
+                m.d.comb += self.reply.tdata.eq(self.command.tdata)
+                m.d.comb += self.command.tready.eq(self.reply.tready)
+                
+                with m.If(self.reply.tvalid & self.reply.tready):
                     m.next = "Idle"
             
         

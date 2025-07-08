@@ -2,9 +2,9 @@ import unittest
 
 from amaranth.sim import *
 
-from serial.i2c import I2CTop
-from serial.serial_to_wishbone import SerialToWishbone
-from serial.uart import UartTx, UartRx
+from ser.i2c import I2CTop
+from ser.serial_to_wishbone import SerialToWishbone
+from ser.uart import UartTx, UartRx
 from signature import Bus, MockBusDevice, Stream
 
 class I2CWord(object):
@@ -30,32 +30,38 @@ class I2CResponse(object):
         self.words = list(words)
         self.counter = 0
         
-        self.last_scl = 0
-        self.last_sda = 0
+        self.last_scl = 1
+        self.last_sda = 1
         
         self.en = 0
         
+        self.stopped = False
+        
     def next(self):
         b, en = self.words[self.counter].next()
+        self.words[self.counter].counter += 1
         if self.words[self.counter].last():
             self.counter += 1
         return b, en
     
     def last(self):
-        return self.counter == len(self.words)
+        return self.counter == len(self.words) or self.stopped
         
     def init(self, ctx, sda):
         ctx.set(sda, 1)
         
-    def get(self, ctx, sda, scl, sda_in):
+    def get(self, ctx, sda, sda_en, scl, sda_in):
         if self.last_scl == 1 and scl == 0:
             # Falling edge
             b, en = self.next()
             self.en = en
-            if en:
+            
+            if sda_en:
+                ctx.set(sda_in, sda)
+            elif en:
                 ctx.set(sda_in, b)
             else:
-                ctx.set(sda_in, sda)
+                ctx.set(sda_in, 1)
         else:
             if self.en == 0:
                 ctx.set(sda_in, sda)
@@ -63,11 +69,10 @@ class I2CResponse(object):
         if self.last_scl == 1 and scl == 1:
             if sda == 0 and self.last_sda == 1:
                 # Stop
-                print("Stop")
                 ctx.set(sda_in, 1)
-            if sda == 1 and self.last_sda == 0:
+            #if sda == 1 and self.last_sda == 0:
                 # Start
-                print("Start")
+                #print("Start")
                 
         self.last_scl = scl
         self.last_sda = sda
@@ -113,7 +118,48 @@ class TestSerial(unittest.TestCase):
             while not response.last():
                 sda = ctx.get(dut.sda)
                 scl = ctx.get(dut.scl)
-                response.get(ctx, sda, scl, dut.sda_in)
+                sda_en = ctx.get(dut.sda_en)
+                response.get(ctx, sda, sda_en, scl, dut.sda_in)
+                await ctx.tick()
+                
+        sim = Simulator(dut)
+        sim.add_clock(1e-8)
+        sim.add_testbench(bus_process)
+        sim.add_testbench(i2c_process)
+        
+        with sim.write_vcd("bench/serial_test.vcd"):
+            sim.run_until(1000 * 1e-8)
+            
+    def test_nack(self):
+        dut = I2CTop()
+        
+        response = I2CResponse(
+            I2CWord(0, ack = 1),
+        )
+        
+        async def bus_process(ctx):
+            await Bus.sim_write(ctx, dut.bus, 8, 10) # Period
+            await Bus.sim_write(ctx, dut.bus, 3, 1) # Write
+            await Bus.sim_write(ctx, dut.bus, 2, 1) # Start flag
+            await Bus.sim_write(ctx, dut.bus, 1, 10) # Write data
+            assert await Bus.sim_read(ctx, dut.bus, 4) == 1
+            await Bus.sim_write(ctx, dut.bus, 0, 1) # Enable
+            
+            # Wait for buffer to fill
+            while await Bus.sim_read(ctx, dut.bus, 6) < 1:
+                await ctx.tick()
+            await Bus.sim_write(ctx, dut.bus, 0, 0) #Disable
+                
+            # Received 4 responses
+            assert await Bus.sim_read(ctx, dut.bus, 7) == 1 # ACK
+            assert await Bus.sim_read(ctx, dut.bus, 5) == 10
+            
+        async def i2c_process(ctx):
+            while not response.last():
+                sda = ctx.get(dut.sda)
+                scl = ctx.get(dut.scl)
+                sda_en = ctx.get(dut.sda_en)
+                response.get(ctx, sda, sda_en, scl, dut.sda_in)
                 await ctx.tick()
                 
         sim = Simulator(dut)
@@ -135,22 +181,14 @@ class TestSerialBusBridge(unittest.TestCase):
             
             # Write reply
             assert await Stream.sim_get(ctx, dut.reply) == ord('W')
-            assert await Stream.sim_get(ctx, dut.reply) == 0
-            assert await Stream.sim_get(ctx, dut.reply) == 0
-            assert await Stream.sim_get(ctx, dut.reply) == 0
             assert await Stream.sim_get(ctx, dut.reply) == 1
-            assert await Stream.sim_get(ctx, dut.reply) == 10 # EOL
             
             await Stream.sim_write(ctx, dut.command, ord('r'))
             await Stream.sim_write(ctx, dut.command, 1)
             
             # Read reply
             assert await Stream.sim_get(ctx, dut.reply) == ord('R')
-            assert await Stream.sim_get(ctx, dut.reply) == 0
-            assert await Stream.sim_get(ctx, dut.reply) == 0
-            assert await Stream.sim_get(ctx, dut.reply) == 0
             assert await Stream.sim_get(ctx, dut.reply) == 11
-            assert await Stream.sim_get(ctx, dut.reply) == 10 # EOL
             
         async def bus_process(ctx):
             device = MockBusDevice()
@@ -191,8 +229,8 @@ class TestUart(unittest.TestCase):
             
         async def uart_process(ctx):
             
-            await uart_get(ctx, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1)
-            await uart_get(ctx, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1)
+            await uart_get(ctx, 1, 0, 0, 1, 0, 1, 0, 1,   0, 1, 1)
+            await uart_get(ctx, 1, 0, 0, 0, 1, 1, 0, 0,   1, 1, 1)
             
         sim = Simulator(dut)
         sim.add_clock(1e-8)
@@ -214,8 +252,8 @@ class TestUart(unittest.TestCase):
         async def uart_process(ctx):
             data = [
                 1, 1, 1, 1, #idle
-                0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, # Word 1 with start, parity, stop
-                0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, # Word 2 with start, parity, stop
+                0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, # Word 1 with start, parity, stop
+                0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, # Word 2 with start, parity, stop
                 1, 1, 1, 1 # Idle
             ]
             for d in data:

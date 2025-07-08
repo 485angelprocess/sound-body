@@ -107,6 +107,8 @@ class I2CController(wiring.Component):
                 m.d.comb += self.bus.r_data.eq(self.rlen)
             with m.Case(I2CRegister.DATA_EN):
                 m.d.comb += self.bus.r_data.eq(self.dat_en)
+            with m.Case(I2CRegister.PERIOD):
+                m.d.comb += self.bus.r_data.eq(period)
         
         return m
 
@@ -167,8 +169,6 @@ class I2CSend(wiring.Component):
             self.write_ready.eq(wbuffer.w_rdy)
         ]
         
-        
-        
         #################################
         ## controller ###################
         #################################
@@ -223,6 +223,7 @@ class I2CSend(wiring.Component):
                     with m.Else():
                         m.d.sync += write_counter.eq(write_counter - 1)
             with m.State("Ack"):
+                # Get ack bit
                 m.d.comb += self.dat_en.eq(0)
                 m.d.comb += self.clk_en.eq(1)
                 m.d.comb += self.valid.eq(1)
@@ -258,16 +259,21 @@ class I2CSend(wiring.Component):
                 
         
         read_register = Signal(9)
+        read_flag = Signal()
         
         m.d.comb += rbuffer.w_data.eq(read_register)
         
-        with m.If(self.i2c_read_en & (fsm.ongoing("Data") | fsm.ongoing("Ack"))):
+        with m.If(read_flag):
+            m.d.sync += read_flag.eq(0)
+            m.d.comb += rbuffer.w_en.eq(1)
+            m.d.sync += read_register.eq(0)
+            m.d.sync += read_counter.eq(8)
+        
+        with m.If(self.i2c_read_en):
             m.d.sync += read_register.bit_select(read_counter, 1).eq(self.i2c_read_data)
             
             with m.If(read_counter == 0):
-                m.d.comb += rbuffer.w_en.eq(1)
-                m.d.sync += read_counter.eq(8)
-                m.d.sync += read_register.eq(0)
+                m.d.sync += read_flag.eq(1)
             with m.Else():
                 m.d.sync += read_counter.eq(read_counter - 1)
             
@@ -322,7 +328,7 @@ class I2COut(wiring.Component):
             m.d.comb += self.scl.eq(1)
             
         # Read data from line
-        m.d.comb += self.read_valid.eq(counter == half_period - 2)
+        m.d.comb += self.read_valid.eq((clk_en) & (counter == half_period - 2))
         m.d.comb += self.read_data.eq(self.sda_in)
             
         data = Signal()

@@ -55,10 +55,10 @@ class UartTx(wiring.Component):
                     m.d.sync += counter.eq(counter - 1)
             with m.State("Data"):
                 # Shift out data
-                m.d.comb += self.tx.eq(data_register[-1])
+                m.d.comb += self.tx.eq(data_register[0])
                 with m.If(counter == 0):
-                    m.d.sync += parity.eq(parity + data_register[-1])
-                    m.d.sync += data_register.eq(data_register << 1)
+                    m.d.sync += parity.eq(parity + data_register[0])
+                    m.d.sync += data_register.eq(data_register >> 1)
                     m.d.sync += counter.eq(self.period - 1)
                     with m.If(byte_counter == 0):
                         if self.parity:
@@ -141,7 +141,7 @@ class UartRx(wiring.Component):
                         m.next = "Data"
             with m.State("Data"):
                 with m.If(counter == 0):
-                    m.d.sync += data_register.eq((data_register << 1) + self.rx)
+                    m.d.sync += data_register.eq((data_register >> 1) + (self.rx << 7))
                     m.d.sync += counter.eq(self.period - 1)
                     with m.If(bit_counter == 0):
                         if self.parity:
