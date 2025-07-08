@@ -1,4 +1,5 @@
 import serial
+import argparse
 
 class Monitor(object):
     def __init__(self, port = "COM15", baud = 9600):
@@ -67,7 +68,13 @@ class Monitor(object):
         self.rw([ord('r'), 6])
         
 if __name__ == "__main__":
-    m = Monitor()
+    parser = argparse.ArgumentParser(prog = "Serial tests")
+    
+    parser.add_args("port", help = "COMPORT")
+
+    args = parser.parse_args()
+
+    m = Monitor(port = args.port)
     
     m.i2c_scan(0x11)
     
