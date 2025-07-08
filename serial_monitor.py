@@ -71,12 +71,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog = "Serial tests")
     
     parser.add_argument("port", help = "COMPORT")
+    parser.add_argument("--address", "-a", type = int, default = 0b0111011, help = "I2C address")
 
     args = parser.parse_args()
 
     m = Monitor(port = args.port)
     
-    m.i2c_scan(0x11)
+    m.i2c_scan(args.address)
     
     # Interactive
     #while True:
