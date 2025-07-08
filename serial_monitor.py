@@ -8,7 +8,7 @@ class Monitor(object):
         self.s = serial.Serial(port, 9600, timeout = 0.1)
         
     def write(self, msg):
-        print("Sending {}".format(msg))
+        #print("Sending {}".format(msg))
         self.s.write(msg)
         
     def read(self):
@@ -25,7 +25,7 @@ class Monitor(object):
             else:
                 print(response)
                 return response
-        print(response)
+        #print(response)
         return response
         
     def prompt(self):
@@ -41,31 +41,27 @@ class Monitor(object):
         
         print("")
         
-    def i2c_scan(self, address):
+    def i2c_scan(self, address_start, address_stop):
         self.rw([ord('x')]) # reset
         self.rw('I'.encode('ascii'))
         self.rw([ord('W'), 0, 0, 0, 8, 0xFF, 0xFF, 0xFF, 0xFF])
         
-        self.rw([ord('w'), 3, 1]) # Write
-        self.rw([ord('w'), 2, 1]) # start flag
-        self.rw([ord('w'), 1, address]) # Write data
-        
-        print("> Number of writes")
-        self.rw([ord('r'), 4]) # Get number of writes
-        
-        print("> Write")
-        self.rw([ord('w'), 0, 1]) # Enable
-        self.rw([ord('r'), 6]) # number of reads
-        
-        self.rw([ord('w'), 0, 0]) # Disable
-        
-        # Get response
-        print("> ACK:")
-        self.rw([ord('r'), 7]) # ACK
-        print("> DATA:")
-        self.rw([ord('r'), 5]) # date
-        print("> Remaining reads")
-        self.rw([ord('r'), 6])
+        for a in range(address_start, address_stop):
+            self.rw([ord('w'), 3, 1]) # Write
+            self.rw([ord('w'), 2, 1]) # start flag
+            self.rw([ord('w'), 1, a]) # Write data
+            
+            self.rw([ord('r'), 4]) # Get number of writes
+            
+            self.rw([ord('w'), 0, 1]) # Enable
+            assert self.rw([ord('r'), 6])[1][0] == 0x01 # number of reads
+            
+            self.rw([ord('w'), 0, 0]) # Disable
+            
+            # Get response
+            if self.rw([ord('r'), 7])[1][0] == 0: # ACK
+                print("Found device at address {}", a)
+            self.rw([ord('r'), 5]) # data
         
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog = "Serial tests")
