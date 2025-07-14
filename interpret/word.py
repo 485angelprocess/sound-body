@@ -23,7 +23,15 @@ class R(object):
 
     @classmethod
     def sp(cls, offset = None):
-        return cls(5, offset = offset)
+        return cls(1, offset = offset)
+        
+    @classmethod
+    def push(cls, offset = None):
+        return cls(2, offset = offset)
+        
+    @classmethod
+    def pull(cls, offset = None):
+        return cls(3, offset = offset)
         
     @classmethod
     def tag(cls, offset = None):
@@ -35,7 +43,7 @@ class R(object):
         
     @classmethod
     def zero(cls, offset = None):
-        return cls(8, offset = offset)
+        return cls(0, offset = offset)
         
     @classmethod
     def ret(cls, offset = None):
@@ -106,13 +114,33 @@ class Line(object):
         if len(self.program) > 1:
             msg += ", ".join([str(self.program[i]) for i in range(1, len(self.program))])
         return msg
+    
+    def call(self, ctx):
+        return self
+        
+class Word(object):
+    def __init__(self, w):
+        self.w = w
+        
+    def call(self, ctx):
+        return ctx.read(self.w)
         
 class Translation(object):
-    def __init__(self, *program, result = R(0), desc = ""):
-        self.program = program
+    def __init__(self, *program, result = R(0), desc = None):
+        self.program = list(program)
         self.desc = desc
         self.args = None
         self.result = result
+        
+    def clear(self):
+        self.program = list()
+        
+    def copy(self):
+        return Translation(
+            *[p for p in self.program],
+            result = self.result,
+            desc = self.desc
+        )
         
     def assign(self, *args):
         self.args = args
@@ -124,8 +152,22 @@ class Translation(object):
         """
         raise Exception("Add not implemented")
         
+    def push(self, l):
+        self.program.append(l)
+        
+    def set_callback(self, fn):
+        self.call = fn
+        return self
+        
+    def call(self, ctx):
+        if self.program is not [None]:
+            self.program = [p.call(ctx) for p in self.program if hasattr(p, "call")]
+        
     def __str__(self):
         msg = ""
         if self.desc is not None:
-            msg += "\t# {}: {}\n".format(self.desc, self.args)
+            if self.args is not None:
+                msg += "\t# {}: {}\n".format(self.desc, self.args)
+            else:
+                msg += "\t# {}\n".format(self.desc)
         return msg + "\n".join([str(l) for l in self.program]) + "\n"

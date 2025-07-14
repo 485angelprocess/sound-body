@@ -3,10 +3,7 @@ Forth like interpretation
 Attempt to match SAPF as well as possible
 """
 from word import *
-
-class Prim(object):
-    def __init__(self, v):
-        self.v = v
+from env import *
 
 class Interpreter(object):
 
@@ -17,6 +14,10 @@ class Interpreter(object):
         self.d = dict()
         
         self.tokens = list()
+        
+        self.defining = False
+        self.def_word = None
+        self.definition = Translation()
         
     def insert_word(self, word, program):
         self.d[word] = program
@@ -44,39 +45,63 @@ class Interpreter(object):
         for p in Interpreter.push():
             yield str(p)
             
+    def start_definition(self):
+        print("Starting definition")
+        self.defining = DEFINE_NAME
+            
+    def end_definition(self):
+        print("Ending definition")
+        self.insert_word(self.def_word, self.definition.copy())
+        #self.definition.clear()
+        self.defining = DEFINE_IDLE
+            
     def read(self, token):
-        if token in self.d:
-            t = self.d[token]
+        if self.defining == DEFINE_BODY:
+            if token == ";":
+                self.end_definition()
+                return None
+            else:
+                self.definition.push(Word(token))
+                return None
+        elif self.defining == DEFINE_NAME:
+            if token in self.d:
+                print("Warning {} already in dictionary", token)
+            self.def_word = token
+            self.defining = DEFINE_BODY
+            return None
         else:
-            try:
-                a = int(token)
-                t = self.d[Interpreter.PUSH_INT] # push constant
-                t.assign(a)
-            except Exception as e:
-                raise e
-        
-        return t
+            print(token)
+            if token in self.d:
+                t = self.d[token]
+            else:
+                try:
+                    a = int(token)
+                    t = self.d[Interpreter.PUSH_INT] # push constant
+                    t.assign(a)
+                except Exception as e:
+                    raise e
+            
+            t.call(self)
+            return t
+            
+    def read_line(self, line):
+        result = [self.read(t) for t in line.split(" ")]
+        return [r for r in result if r is not None]
 
 if __name__ == "__main__":
     interpret = Interpreter()
     
-    # Push a constant integer onto the stack
-    interpret.insert_word(Interpreter.PUSH_INT, Translation(
-            Line("addi", R.value(), R.zero(), Arg(0)),
-            Line("addi", R.tag(), R.zero(), Arg(1, default = 0)),
-            Line("jalr", R.ret(), "s7", 0),
-            desc = "Push onto stack")
-    )
+    setup_env(interpret)
     
-    interpret.insert_word("+", Translation(
-        Line("jalr", R.ret(), "s8", 0),
-        Line("addi", R.work(1), R.value(), C(0)), # Copy data to register
-        Line("jalr", R.ret(), "s8", 0),
-        Line("add", R.value(), R.work(1), R.value()),
-        Line("addi", R.tag(), R.zero(), C(0)),
-        Line("jalr", R.ret(), "s7", 0)
-        , desc = "Add two registers"))
-                            
+    print(interpret.d)
+    
+    lines = list()
+    
+    lines += interpret.read_line(": SQUARE DUP * ;")
+    print(interpret.d)
+    print(interpret.d["SQUARE"])
+    lines += interpret.read_line("5 SQUARE .")
+
                             
     with open("add.s", "w") as f:
         # Start point
@@ -89,11 +114,7 @@ if __name__ == "__main__":
         ])
         
         # Interpreted program
-        f.writelines([
-                str(interpret.read("5")),
-                str(interpret.read("4")),
-                str(interpret.read("+")),
-        ])
+        f.writelines([str(l) for l in lines])
         
         # End of program
         f.writelines([
