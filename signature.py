@@ -60,12 +60,12 @@ class MockBusDevice(object):
     
     
 class Stream(wiring.Signature):
-    def __init__(self, data_shape = 8):
+    def __init__(self, data_shape = 8, **kwargs):
         super().__init__({
             "tdata": Out(data_shape),
             "tvalid": Out(1),
             "tready": In(1)
-        })
+        } | kwargs)
         
     @staticmethod
     async def sim_write(ctx, port, data):
@@ -82,3 +82,23 @@ class Stream(wiring.Signature):
         #print("Got data {}", data)
         ctx.set(port.tready, 0)
         return data
+        
+class AxiLite(wiring.Signature):
+    def __init__(self, address_shape = 32, data_shape = 32):
+        super().__init__({
+            "awvalid": Out(1),
+            "awready": In(1),
+            "awaddr": Out(address_shape),
+            "wdata": Out(data_shape),
+            "wvalid": Out(1),
+            "wready": In(1),
+            "arvalid": Out(1),
+            "arready": In(1),
+            "araddr": Out(address_shape),
+            "rdata": In(data_shape),
+            "rvalid": In(1),
+            "rready": Out(1),
+            "bresp": In(2),
+            "bready": Out(1),
+            "bvalid": In(1)
+        })

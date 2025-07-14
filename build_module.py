@@ -9,6 +9,10 @@ from ser.uart import UartTx, UartRx
 from ser.serial_to_wishbone import SerialToWishbone
 from ser.i2c import I2CTop
 
+from axi.script import AxiScript, AxiCommand
+
+from audio.square import SquareGenerator
+
 def build(m, name, dir = "build", ext = "v", ports = None):
     with open("{}/{}.{}".format(dir, name, ext), 'w') as f:
         if ports is None:
@@ -24,6 +28,7 @@ if __name__ == "__main__":
     parser.add_argument("-p", "--uart_period", type = int, default = 10417, help = "Uart period")
     parser.add_argument("-s", "--serial", action = "store_true", help = "Build serial modules")
     parser.add_argument("--serial_demo", action = "store_true", help = "Build serial demo")
+    parser.add_argument("--i2s", action = "store_true", help = "Build i2s stuff")
     parser.add_argument("-a", "--all", action = "store_true", help = "Build all modules")
     
     args = parser.parse_args()
@@ -34,6 +39,15 @@ if __name__ == "__main__":
     if args.serial or args.all:
         build(SerialToWishbone(), "serial_to_wishbone")
         build(I2CTop(max_period = 1024), "i2c")
+        
+    if args.i2s:
+        build(AxiScript(
+            AxiCommand(0x20, 4), # Set divider
+            AxiCommand(0x08, 0x01),
+            AxiCommand(0x30, 0x01) # Set channel output
+        ), "i2s_startup")
+        
+        build(SquareGenerator(period = 10), "square_generator")
         
     if args.serial_demo:
         ########################

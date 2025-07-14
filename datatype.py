@@ -9,9 +9,9 @@ class Float(data.Struct):
         return self.exponent == 0
         
     @staticmethod
-    def mul_exponent(m, a, b):
+    def mul_exponent(a, b):
         return a.exponent + b.exponent - 0x7F
         
     @staticmethod
-    def mul_sign(m, a, b):
+    def mul_sign(a, b):
         return a.sign != b.sign

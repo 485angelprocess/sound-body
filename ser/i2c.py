@@ -335,7 +335,7 @@ class I2COut(wiring.Component):
             
         # send data out
         with m.If(dat_en):
-            m.d.comb += self.sda_en.eq(data == 0)
+            m.d.comb += self.sda_en.eq(1)
             m.d.comb += self.sda.eq(data)
         with m.Else():
             m.d.comb += self.sda.eq(1)

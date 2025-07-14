@@ -65,16 +65,16 @@ module serial_demo(sda_in, clk, rst, tx, soft_reset, sda, sda_en, scl, rx);
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\uart.py:105" *)
   input rx;
   wire rx;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:373" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:377" *)
   output scl;
   wire scl;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:370" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:374" *)
   output sda;
   wire sda;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:371" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:375" *)
   output sda_en;
   wire sda_en;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:372" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:376" *)
   input sda_in;
   wire sda_in;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\serial_to_wishbone.py:25" *)
@@ -738,7 +738,7 @@ module \serial_demo.bridge (rst, reply_tready, command_tvalid, command_tdata, co
   assign ext_reset = soft_reset;
 endmodule
 
-(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:377" *)
+(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:381" *)
 (* generator = "Amaranth" *)
 module \serial_demo.i2c (clk, rst, bus_stb, bus_cyc, bus_addr, bus_w_data, bus_w_en, scl, sda_en, sda, bus_ack, bus_r_data, sda_in);
   wire [8:0] \$1 ;
@@ -783,7 +783,7 @@ module \serial_demo.i2c (clk, rst, bus_stb, bus_cyc, bus_addr, bus_w_data, bus_w
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input clk;
   wire clk;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:294" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:298" *)
   wire clk_en;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:142" *)
   wire \clk_en$11 ;
@@ -791,13 +791,13 @@ module \serial_demo.i2c (clk, rst, bus_stb, bus_cyc, bus_addr, bus_w_data, bus_w
   wire [9:0] ctl_period;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:30" *)
   wire [31:0] \ctl_period$39 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:295" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:299" *)
   wire dat_en;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:143" *)
   wire \dat_en$13 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:38" *)
   wire \dat_en$51 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:296" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:300" *)
   wire data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:144" *)
   wire \data$15 ;
@@ -809,13 +809,13 @@ module \serial_demo.i2c (clk, rst, bus_stb, bus_cyc, bus_addr, bus_w_data, bus_w
   wire i2c_read_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:150" *)
   wire i2c_read_en;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:299" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:303" *)
   wire [9:0] period;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:147" *)
   wire [9:0] \period$9 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:43" *)
   wire read_ack;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:301" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:305" *)
   wire read_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:42" *)
   wire [7:0] \read_data$56 ;
@@ -825,7 +825,7 @@ module \serial_demo.i2c (clk, rst, bus_stb, bus_cyc, bus_addr, bus_w_data, bus_w
   wire read_ready;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:45" *)
   wire \read_ready$63 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:302" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:306" *)
   wire read_valid;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:44" *)
   wire \read_valid$60 ;
@@ -833,7 +833,7 @@ module \serial_demo.i2c (clk, rst, bus_stb, bus_cyc, bus_addr, bus_w_data, bus_w
   wire \read_valid$61 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:145" *)
   wire ready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:297" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:301" *)
   wire \ready$17 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:32" *)
   wire [31:0] rlen;
@@ -842,31 +842,31 @@ module \serial_demo.i2c (clk, rst, bus_stb, bus_cyc, bus_addr, bus_w_data, bus_w
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input rst;
   wire rst;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:307" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:311" *)
   output scl;
   wire scl;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:307" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:311" *)
   wire \scl$7 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:304" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:308" *)
   output sda;
   wire sda;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:304" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:308" *)
   wire \sda$1 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:305" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:309" *)
   output sda_en;
   wire sda_en;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:305" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:309" *)
   wire \sda_en$3 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:301" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:305" *)
   input sda_in;
   wire sda_in;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:372" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:376" *)
   wire \sda_in$5 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:129" *)
   wire start;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:37" *)
   wire \start$49 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:298" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:302" *)
   wire valid;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:146" *)
   wire \valid$19 ;
@@ -888,7 +888,7 @@ module \serial_demo.i2c (clk, rst, bus_stb, bus_cyc, bus_addr, bus_w_data, bus_w
   wire write_valid;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:39" *)
   wire \write_valid$53 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:409" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:413" *)
   \serial_demo.i2c.controller  controller (
     .bus_ack(bus_ack),
     .bus_addr(bus_addr),
@@ -901,9 +901,9 @@ module \serial_demo.i2c (clk, rst, bus_stb, bus_cyc, bus_addr, bus_w_data, bus_w
     .dat_en(write_data_en),
     .enable(enable),
     .period(\$2 ),
-    .\port$361$0 (\$1 ),
-    .\port$503$0 (\wlen$41 ),
-    .\port$511$0 (\rlen$43 ),
+    .\port$354$0 (\$1 ),
+    .\port$498$0 (\wlen$41 ),
+    .\port$506$0 (\rlen$43 ),
     .read_ready(read_ready),
     .read_valid(\read_valid$60 ),
     .rst(rst),
@@ -911,7 +911,7 @@ module \serial_demo.i2c (clk, rst, bus_stb, bus_cyc, bus_addr, bus_w_data, bus_w
     .write_data(write_data),
     .write_valid(write_valid)
   );
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:380" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:384" *)
   \serial_demo.i2c.out  out (
     .clk(clk),
     .\clk_en$16 (clk_en),
@@ -927,7 +927,7 @@ module \serial_demo.i2c (clk, rst, bus_stb, bus_cyc, bus_addr, bus_w_data, bus_w
     .sda_en(sda_en),
     .valid(valid)
   );
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:391" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:395" *)
   \serial_demo.i2c.send  send (
     .clk(clk),
     .clk_en(clk_en),
@@ -992,7 +992,7 @@ endmodule
 
 (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:49" *)
 (* generator = "Amaranth" *)
-module \serial_demo.i2c.controller (rst, read_valid, \port$361$0 , bus_stb, bus_cyc, bus_addr, bus_w_data, bus_w_en, \port$503$0 , \port$511$0 , write_valid, bus_ack, write_data, read_ready, bus_r_data, enable, start, period, dat_en, clk);
+module \serial_demo.i2c.controller (rst, read_valid, \port$354$0 , bus_stb, bus_cyc, bus_addr, bus_w_data, bus_w_en, \port$498$0 , \port$506$0 , write_valid, bus_ack, write_data, read_ready, bus_r_data, enable, start, period, dat_en, clk);
   reg \$auto$verilog_backend.cc:2352:dump_module$2  = 0;
   wire \$1 ;
   wire \$2 ;
@@ -1037,12 +1037,12 @@ module \serial_demo.i2c.controller (rst, read_valid, \port$361$0 , bus_stb, bus_
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:51" *)
   output [11:0] period;
   reg [11:0] period = 12'h064;
-  input [8:0] \port$361$0 ;
-  wire [8:0] \port$361$0 ;
-  input [3:0] \port$503$0 ;
-  wire [3:0] \port$503$0 ;
-  input [3:0] \port$511$0 ;
-  wire [3:0] \port$511$0 ;
+  input [8:0] \port$354$0 ;
+  wire [8:0] \port$354$0 ;
+  input [3:0] \port$498$0 ;
+  wire [3:0] \port$498$0 ;
+  input [3:0] \port$506$0 ;
+  wire [3:0] \port$506$0 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:43" *)
   wire read_ack;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:42" *)
@@ -1156,13 +1156,13 @@ module \serial_demo.i2c.controller (rst, read_valid, \port$361$0 , bus_stb, bus_
       4'h2:
           bus_r_data = { 31'h00000000, start };
       4'h4:
-          bus_r_data = { 28'h0000000, \port$503$0  };
+          bus_r_data = { 28'h0000000, \port$498$0  };
       4'h5:
-          bus_r_data = { 24'h000000, \port$361$0 [8:1] };
+          bus_r_data = { 24'h000000, \port$354$0 [8:1] };
       4'h7:
-          bus_r_data = { 31'h00000000, \port$361$0 [0] };
+          bus_r_data = { 31'h00000000, \port$354$0 [0] };
       4'h6:
-          bus_r_data = { 28'h0000000, \port$511$0  };
+          bus_r_data = { 28'h0000000, \port$506$0  };
       4'h3:
           bus_r_data = { 31'h00000000, dat_en };
       4'h8:
@@ -1248,13 +1248,13 @@ module \serial_demo.i2c.controller (rst, read_valid, \port$361$0 , bus_stb, bus_
     end
   end
   assign ctl_period = { 20'h00000, period };
-  assign wlen = { 28'h0000000, \port$503$0  };
-  assign read_data = \port$361$0 [8:1];
-  assign read_ack = \port$361$0 [0];
-  assign rlen = { 28'h0000000, \port$511$0  };
+  assign wlen = { 28'h0000000, \port$498$0  };
+  assign read_data = \port$354$0 [8:1];
+  assign read_ack = \port$354$0 [0];
+  assign rlen = { 28'h0000000, \port$506$0  };
 endmodule
 
-(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:311" *)
+(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:315" *)
 (* generator = "Amaranth" *)
 module \serial_demo.i2c.out (clk, rst, read_valid, scl, sda_en, sda, ready, \dat_en$17 , \clk_en$16 , \data$19 , valid, period, read_data);
   reg \$auto$verilog_backend.cc:2352:dump_module$3  = 0;
@@ -1275,76 +1275,76 @@ module \serial_demo.i2c.out (clk, rst, read_valid, scl, sda_en, sda, ready, \dat
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input clk;
   wire clk;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:316" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:320" *)
   reg clk_en = 1'h0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:294" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:298" *)
   input \clk_en$16 ;
   wire \clk_en$16 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:313" *)
-  reg [9:0] counter = 10'h000;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:317" *)
+  reg [9:0] counter = 10'h000;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:321" *)
   reg dat_en = 1'h0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:295" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:299" *)
   input \dat_en$17 ;
   wire \dat_en$17 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:330" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:334" *)
   reg data = 1'h0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:296" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:300" *)
   input \data$19 ;
   wire \data$19 ;
   (* src = "C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64_qbz5n2kfra8p0\\Lib\\contextlib.py:144" *)
   reg fsm_state = 1'h0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:314" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:318" *)
   reg [9:0] half_period = 10'h000;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:299" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:303" *)
   input [9:0] period;
   wire [9:0] period;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:306" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:310" *)
   input read_data;
   wire read_data;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:302" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:306" *)
   output read_valid;
   wire read_valid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:297" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:301" *)
   output ready;
   reg ready;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input rst;
   wire rst;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:307" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:311" *)
   output scl;
   reg scl;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:304" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:308" *)
   output sda;
   reg sda;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:305" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:309" *)
   output sda_en;
   reg sda_en;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:306" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:310" *)
   wire sda_in;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:298" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:302" *)
   input valid;
   wire valid;
-  assign \$1  = counter < (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:321" *) half_period;
-  assign \$2  = half_period - (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:327" *) 2'h2;
-  assign read_valid = counter == (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:327" *) \$2 ;
-  assign \$3  = ! (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:334" *) data;
+  assign \$1  = counter < (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:325" *) half_period;
+  assign \$2  = half_period - (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:331" *) 2'h2;
+  assign \$3  = counter == (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:331" *) \$2 ;
+  assign read_valid = clk_en & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:331" *) \$3 ;
   assign \$4  = ! (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) fsm_state;
-  assign \$7  = counter - (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:357" *) 1'h1;
-  assign \$8  = counter == (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:358" *) 1'h1;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:316" *)
+  assign \$7  = counter - (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:361" *) 1'h1;
+  assign \$8  = counter == (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:362" *) 1'h1;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:320" *)
   always @(posedge clk)
     clk_en <= \$9 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:317" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:321" *)
   always @(posedge clk)
     dat_en <= \$10 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:313" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:317" *)
   always @(posedge clk)
     counter <= \$11 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:314" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:318" *)
   always @(posedge clk)
     half_period <= \$12 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:330" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:334" *)
   always @(posedge clk)
     data <= \$13 ;
   (* src = "C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64_qbz5n2kfra8p0\\Lib\\contextlib.py:144" *)
@@ -1363,7 +1363,7 @@ module \serial_demo.i2c.out (clk, rst, read_valid, scl, sda_en, sda, ready, \dat
     if (\$auto$verilog_backend.cc:2352:dump_module$3 ) begin end
     (* full_case = 32'd1 *)
     if (dat_en) begin
-      sda_en = \$3 ;
+      sda_en = 1'h1;
     end else begin
       sda_en = 1'h0;
     end
@@ -1490,21 +1490,17 @@ module \serial_demo.i2c.send (clk, rst, i2c_read_en, write_ready, read_valid, \r
   wire \$1 ;
   wire \$10 ;
   wire \$11 ;
-  wire \$12 ;
+  wire [3:0] \$12 ;
   wire \$13 ;
   wire \$14 ;
-  wire [3:0] \$15 ;
-  wire \$16 ;
-  wire \$17 ;
-  wire \$18 ;
-  wire \$19 ;
+  wire \$15 ;
+  wire [4:0] \$16 ;
+  reg [3:0] \$17 ;
+  reg [2:0] \$18 ;
+  reg [2:0] \$19 ;
   wire \$2 ;
-  wire \$20 ;
-  wire [4:0] \$21 ;
-  reg [3:0] \$22 ;
-  reg [2:0] \$23 ;
-  reg [2:0] \$24 ;
-  reg [8:0] \$25 ;
+  reg \$20 ;
+  reg [8:0] \$21 ;
   wire \$3 ;
   wire \$4 ;
   wire \$5 ;
@@ -1560,14 +1556,16 @@ module \serial_demo.i2c.send (clk, rst, i2c_read_en, write_ready, read_valid, \r
   wire r_rdy;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\lib\\fifo.py:93" *)
   wire \r_rdy$37 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:184" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:182" *)
   reg [3:0] read_counter = 4'h8;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:134" *)
   wire [7:0] read_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:262" *)
+  reg read_flag = 1'h0;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:136" *)
   wire read_ready;
   (* init = 9'h000 *)
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:262" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:261" *)
   wire [8:0] read_register;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\lib\\fifo.py:93" *)
   output read_valid;
@@ -1584,7 +1582,7 @@ module \serial_demo.i2c.send (clk, rst, i2c_read_en, write_ready, read_valid, \r
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:129" *)
   input start;
   wire start;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:177" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:175" *)
   wire \start$10 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:146" *)
   output valid;
@@ -1603,7 +1601,7 @@ module \serial_demo.i2c.send (clk, rst, i2c_read_en, write_ready, read_valid, \r
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:139" *)
   output [3:0] wlen;
   wire [3:0] wlen;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:178" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:176" *)
   reg [2:0] write_counter = 3'h0;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:128" *)
   input [7:0] write_data;
@@ -1617,39 +1615,37 @@ module \serial_demo.i2c.send (clk, rst, i2c_read_en, write_ready, read_valid, \r
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:131" *)
   wire write_valid;
   assign \$1  = r_data >> write_counter;
-  assign \$2  = write_counter == (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:245" *) 1'h1;
-  assign \$3  = \$8  | (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:266" *) \$10 ;
-  assign \$4  = i2c_read_en & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:266" *) \$3 ;
-  assign \$5  = ! (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:269" *) read_counter;
-  assign \$6  = ! (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) fsm_state;
-  assign \$7  = fsm_state == (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) 1'h1;
-  assign \$8  = fsm_state == (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) 2'h2;
-  assign \$9  = fsm_state == (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) 2'h3;
-  assign \$10  = fsm_state == (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) 3'h4;
-  assign \$11  = fsm_state == (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) 3'h5;
-  assign \$12  = fsm_state == (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) 3'h6;
-  assign \$13  = \r_rdy$37  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:189" *) enable;
-  assign \$14  = ! (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:220" *) write_counter;
-  assign \$15  = write_counter - (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:226" *) 1'h1;
-  assign \$16  = level > (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:236" *) 1'h1;
-  assign \$17  = write_counter == (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:245" *) 1'h1;
-  assign \$18  = \$8  | (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:266" *) \$10 ;
-  assign \$19  = i2c_read_en & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:266" *) \$18 ;
-  assign \$20  = ! (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:269" *) read_counter;
-  assign \$21  = read_counter - (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:274" *) 1'h1;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:184" *)
+  assign \$2  = write_counter == (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:244" *) 1'h1;
+  assign \$3  = ! (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) fsm_state;
+  assign \$4  = fsm_state == (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) 1'h1;
+  assign \$5  = fsm_state == (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) 2'h2;
+  assign \$6  = fsm_state == (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) 2'h3;
+  assign \$7  = fsm_state == (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) 3'h4;
+  assign \$8  = fsm_state == (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) 3'h5;
+  assign \$9  = fsm_state == (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) 3'h6;
+  assign \$10  = \r_rdy$37  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:187" *) enable;
+  assign \$11  = ! (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:218" *) write_counter;
+  assign \$12  = write_counter - (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:224" *) 1'h1;
+  assign \$13  = level > (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:235" *) 1'h1;
+  assign \$14  = write_counter == (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:244" *) 1'h1;
+  assign \$15  = ! (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:275" *) read_counter;
+  assign \$16  = read_counter - (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:278" *) 1'h1;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:182" *)
   always @(posedge clk)
-    read_counter <= \$22 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:178" *)
+    read_counter <= \$17 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:176" *)
   always @(posedge clk)
-    write_counter <= \$23 ;
+    write_counter <= \$18 ;
   (* src = "C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64_qbz5n2kfra8p0\\Lib\\contextlib.py:144" *)
   always @(posedge clk)
-    fsm_state <= \$24 ;
+    fsm_state <= \$19 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:262" *)
   always @(posedge clk)
-    \w_data$24  <= \$25 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:257" *)
+    read_flag <= \$20 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:261" *)
+  always @(posedge clk)
+    \w_data$24  <= \$21 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\i2c.py:256" *)
   \serial_demo.i2c.send.rbuffer  rbuffer (
     .clk(clk),
     .level(\level$23 ),
@@ -1780,54 +1776,54 @@ module \serial_demo.i2c.send (clk, rst, i2c_read_en, write_ready, read_valid, \r
   always @* begin
     if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
     \w_en$27  = 1'h0;
-    if (\$4 ) begin
-      if (\$5 ) begin
-        \w_en$27  = 1'h1;
-      end
+    if (read_flag) begin
+      \w_en$27  = 1'h1;
     end
   end
   always @* begin
     if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
-    \$22  = read_counter;
+    \$17  = read_counter;
     casez (fsm_state)
       3'h0:
-          if (\$13 ) begin
-            \$22  = 4'h8;
+          if (\$10 ) begin
+            \$17  = 4'h8;
           end
     endcase
-    if (\$19 ) begin
+    if (read_flag) begin
+      \$17  = 4'h8;
+    end
+    if (i2c_read_en) begin
       (* full_case = 32'd1 *)
-      if (\$20 ) begin
-        \$22  = 4'h8;
+      if (\$15 ) begin
       end else begin
-        \$22  = \$21 [3:0];
+        \$17  = \$16 [3:0];
       end
     end
     if (rst) begin
-      \$22  = 4'h8;
+      \$17  = 4'h8;
     end
   end
   always @* begin
     if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
-    \$23  = write_counter;
+    \$18  = write_counter;
     casez (fsm_state)
       3'h0:
-          if (\$13 ) begin
-            \$23  = 3'h7;
+          if (\$10 ) begin
+            \$18  = 3'h7;
           end
       3'h1:
           /* empty */;
       3'h3:
           if (ready) begin
-            \$23  = 3'h7;
+            \$18  = 3'h7;
           end
       3'h2:
           if (ready) begin
             (* full_case = 32'd1 *)
-            if (\$14 ) begin
-              \$23  = 3'h7;
+            if (\$11 ) begin
+              \$18  = 3'h7;
             end else begin
-              \$23  = \$15 [2:0];
+              \$18  = \$12 [2:0];
             end
           end
       3'h4:
@@ -1835,105 +1831,120 @@ module \serial_demo.i2c.send (clk, rst, i2c_read_en, write_ready, read_valid, \r
       3'h5:
           if (i2c_read_en) begin
             (* full_case = 32'd1 *)
-            if (\$16 ) begin
+            if (\$13 ) begin
             end else begin
-              \$23  = 3'h1;
+              \$18  = 3'h1;
             end
           end
       3'h6:
           (* full_case = 32'd1 *)
-          if (\$17 ) begin
+          if (\$14 ) begin
           end else begin
             if (ready) begin
-              \$23  = 3'h0;
+              \$18  = 3'h0;
             end
           end
     endcase
     if (rst) begin
-      \$23  = 3'h0;
+      \$18  = 3'h0;
     end
   end
   always @* begin
     if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
-    \$24  = fsm_state;
+    \$19  = fsm_state;
     casez (fsm_state)
       3'h0:
-          if (\$13 ) begin
+          if (\$10 ) begin
             (* full_case = 32'd1 *)
             if (r_data[9]) begin
-              \$24  = 3'h1;
+              \$19  = 3'h1;
             end else begin
-              \$24  = 3'h2;
+              \$19  = 3'h2;
             end
           end
       3'h1:
           if (ready) begin
-            \$24  = 3'h3;
+            \$19  = 3'h3;
           end
       3'h3:
           if (ready) begin
-            \$24  = 3'h2;
+            \$19  = 3'h2;
           end
       3'h2:
           if (ready) begin
-            if (\$14 ) begin
-              \$24  = 3'h4;
+            if (\$11 ) begin
+              \$19  = 3'h4;
             end
           end
       3'h4:
           if (ready) begin
-            \$24  = 3'h5;
+            \$19  = 3'h5;
           end
       3'h5:
           if (i2c_read_en) begin
             (* full_case = 32'd1 *)
-            if (\$16 ) begin
-              \$24  = 3'h0;
+            if (\$13 ) begin
+              \$19  = 3'h0;
             end else begin
-              \$24  = 3'h6;
+              \$19  = 3'h6;
             end
           end
       3'h6:
-          if (\$17 ) begin
+          if (\$14 ) begin
             if (ready) begin
-              \$24  = 3'h0;
+              \$19  = 3'h0;
             end
           end
     endcase
     if (rst) begin
-      \$24  = 3'h0;
+      \$19  = 3'h0;
     end
   end
   always @* begin
     if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
-    \$25  = \w_data$24 ;
-    if (\$19 ) begin
-      casez (read_counter)
-        4'h0:
-            \$25 [0] = i2c_read_data;
-        4'h1:
-            \$25 [1] = i2c_read_data;
-        4'h2:
-            \$25 [2] = i2c_read_data;
-        4'h3:
-            \$25 [3] = i2c_read_data;
-        4'h4:
-            \$25 [4] = i2c_read_data;
-        4'h5:
-            \$25 [5] = i2c_read_data;
-        4'h6:
-            \$25 [6] = i2c_read_data;
-        4'h7:
-            \$25 [7] = i2c_read_data;
-        4'h8:
-            \$25 [8] = i2c_read_data;
-      endcase
-      if (\$20 ) begin
-        \$25  = 9'h000;
+    \$20  = read_flag;
+    if (read_flag) begin
+      \$20  = 1'h0;
+    end
+    if (i2c_read_en) begin
+      if (\$15 ) begin
+        \$20  = 1'h1;
       end
     end
     if (rst) begin
-      \$25  = 9'h000;
+      \$20  = 1'h0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    \$21  = \w_data$24 ;
+    if (read_flag) begin
+      \$21  = 9'h000;
+    end
+    if (i2c_read_en) begin
+      casez (read_counter)
+        4'h0:
+            \$21 [0] = i2c_read_data;
+        4'h1:
+            \$21 [1] = i2c_read_data;
+        4'h2:
+            \$21 [2] = i2c_read_data;
+        4'h3:
+            \$21 [3] = i2c_read_data;
+        4'h4:
+            \$21 [4] = i2c_read_data;
+        4'h5:
+            \$21 [5] = i2c_read_data;
+        4'h6:
+            \$21 [6] = i2c_read_data;
+        4'h7:
+            \$21 [7] = i2c_read_data;
+        4'h8:
+            \$21 [8] = i2c_read_data;
+      endcase
+    end
+    if (rst) begin
+      \$21  = 9'h000;
     end
   end
   assign write_valid = w_en;

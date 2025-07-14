@@ -1,5 +1,5 @@
 """
-UART driver
+UART drivcer
 """
 from amaranth import *
 from amaranth.lib import wiring, fifo

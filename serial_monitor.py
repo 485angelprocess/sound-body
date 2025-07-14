@@ -1,5 +1,10 @@
 import serial
 import argparse
+import time
+
+class UartException(Exception):
+    def __init__(self, msg):
+        super().__init__(msg)
 
 class Monitor(object):
     def __init__(self, port = "COM15", baud = 9600):
@@ -23,7 +28,10 @@ class Monitor(object):
             if len(r) > 0:
                 response.append(r)
             else:
-                print(response)
+                if len(response) > 0:
+                    if response[0][0] == ord('%'):
+                        raise UartException("Parsing error")
+                #print(response)
                 return response
         #print(response)
         return response
@@ -41,39 +49,61 @@ class Monitor(object):
         
         print("")
         
-    def i2c_scan(self, address_start, address_stop):
+    def get_ack(self, address):
+        self.rw([ord('w'), 2, 1]) # start flag
+        self.rw([ord('w'), 1, address]) # Write data
+        
+        print("Num writes: {}".format(self.rw([ord('r'), 4])[1][0])) # Get number of writes
+        
+        self.rw([ord('w'), 0, 1]) # Enable
+        time.sleep(0.2)
+        n_reads = self.rw([ord('r'), 6])[1][0]
+        print("Num reads available: {}".format(n_reads))
+        assert  n_reads == 0x01 # number of reads
+        
+        self.rw([ord('w'), 0, 0]) # Disable
+        
+        # Get response
+        if self.rw([ord('r'), 7])[1][0] == 0: # ACK
+            print("Found device at address {}", address)
+        print("Data response: {}".format(self.rw([ord('r'), 5]))) # data
+        
+    def reset_i2c(self, period = [0, 0, 0, 250]):
         self.rw([ord('x')]) # reset
         self.rw('I'.encode('ascii'))
-        self.rw([ord('W'), 0, 0, 0, 8, 0xFF, 0xFF, 0xFF, 0xFF])
+        self.rw([ord('W'), 0, 0, 0, 8] + period)
         
-        for a in range(address_start, address_stop):
-            self.rw([ord('w'), 3, 1]) # Write
-            self.rw([ord('w'), 2, 1]) # start flag
-            self.rw([ord('w'), 1, a]) # Write data
+        self.rw([ord('w'), 3, 1]) # Write
+        
+    def i2c_scan(self, address_start, address_stop):
+        self.reset_i2c()
+        
+        a = address_start
+        while True:
+            print(a)
             
-            self.rw([ord('r'), 4]) # Get number of writes
-            
-            self.rw([ord('w'), 0, 1]) # Enable
-            assert self.rw([ord('r'), 6])[1][0] == 0x01 # number of reads
-            
-            self.rw([ord('w'), 0, 0]) # Disable
-            
-            # Get response
-            if self.rw([ord('r'), 7])[1][0] == 0: # ACK
-                print("Found device at address {}", a)
-            self.rw([ord('r'), 5]) # data
+            try:
+                self.get_ack(a)
+                a += 1
+            except UartException as e:
+                # Reset
+                print("Resetting")
+                self.reset_i2c()
+                
+            if a >= address_stop:
+                return
         
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog = "Serial tests")
     
     parser.add_argument("port", help = "COMPORT")
-    parser.add_argument("--address", "-a", type = int, default = 0b0111011, help = "I2C address")
+    parser.add_argument("--address", "-a", type = int, default = 0b01110110, help = "I2C address")
 
     args = parser.parse_args()
 
     m = Monitor(port = args.port)
     
-    m.i2c_scan(args.address)
+    m.i2c_scan(110, 120)
     
     # Interactive
     #while True:
