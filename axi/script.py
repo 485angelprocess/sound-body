@@ -5,7 +5,7 @@ from amaranth import *
 from amaranth.lib import wiring
 from amaranth.lib.wiring import In, Out
 
-from signature import AxiLite
+from infra.signature import AxiLite
 
 class AxiCommand(object):
     def __init__(self, address, data):

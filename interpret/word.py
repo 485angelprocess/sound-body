@@ -23,6 +23,9 @@ class R(object):
 
     @classmethod
     def sp(cls, offset = None):
+        """
+        Stack pointer
+        """
         return cls(1, offset = offset)
         
     @classmethod
@@ -35,22 +38,37 @@ class R(object):
         
     @classmethod
     def tag(cls, offset = None):
+        """
+        Data tag
+        """
         return cls(6, offset = offset)
         
     @classmethod
     def value(cls, offset = None):
+        """
+        Value for stack
+        """
         return cls(7, offset = offset)
         
     @classmethod
     def zero(cls, offset = None):
+        """
+        Constant 0 register
+        """
         return cls(0, offset = offset)
         
     @classmethod
     def ret(cls, offset = None):
+        """
+        Return address register
+        """
         return cls(9, offset = offset)
         
     @classmethod
     def work(cls, n = 0, offset = None):
+        """
+        Working registers
+        """
         return cls(10 + n, offset = offset)
 
 class C(object):
@@ -61,7 +79,7 @@ class C(object):
         self.c = c
         
     def assign(self, *args):
-        pass        
+        pass
         
     def __str__(self):
         return "{}".format(self.c)

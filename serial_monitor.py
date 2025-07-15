@@ -37,7 +37,7 @@ class Monitor(object):
         return response
         
     def prompt(self):
-        msg = input(">").encode('ascii')
+        msg = input(">")
         
         if len(msg) > 0:
             self.write(msg)
@@ -103,8 +103,8 @@ if __name__ == "__main__":
 
     m = Monitor(port = args.port)
     
-    m.i2c_scan(110, 120)
+    #m.i2c_scan(110, 120)
     
     # Interactive
-    #while True:
-    #    m.prompt()
+    while True:
+        m.prompt()

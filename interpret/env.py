@@ -5,7 +5,9 @@ DEFINE_NAME = 1
 DEFINE_BODY = 2
 
 def setup_env(interpret):
-
+    """
+    Initialize basic words
+    """
     # Builtins
     interpret.insert_word(".PUSH", Translation(
         Line("addi", R.value(), R.zero(), Arg(0)),
@@ -15,7 +17,7 @@ def setup_env(interpret):
     ))
     
     interpret.insert_word(".POP", Translation(
-        Line("jal", R.ret(), C("POP")),
+        Line("jal", R.ret(), C("POP"+)),
         desc = "POP"
     ))
     

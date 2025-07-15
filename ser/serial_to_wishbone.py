@@ -5,7 +5,7 @@ from amaranth import *
 from amaranth.lib import wiring, enum
 from amaranth.lib.wiring import In, Out
 
-from signature import Bus, Stream
+from infra.signature import Bus, Stream
 
 class SerialCommand(object):
     WRITE_SHORT = 'w'
@@ -15,13 +15,17 @@ class SerialCommand(object):
     ECHO = 'e'
     ID = 'I'
     RESET = 'x'
+    
+class UartRegister(object):
+    TX = 0
 
 class SerialToWishbone(wiring.Component):
     def __init__(self):
         super().__init__({
             "command": In(Stream(8)), # Serial stream
             "reply": Out(Stream(8)),
-            "produce": Out(Bus(4, 32)),
+            "produce": Out(Bus(32, 32)),
+            "bus": In(Bus(32, 8)),
             "soft_reset": Out(1)
         })
         
@@ -38,7 +42,8 @@ class SerialToWishbone(wiring.Component):
         
         m.d.comb += self.soft_reset.eq(ext_reset)
         
-        with m.FSM():
+        with m.FSM() as fsm:
+            # From external computer
             with m.State("Idle"):
                 m.d.comb += self.command.tready.eq(1)
                 m.d.sync += self.produce.addr.eq(0)
@@ -154,6 +159,12 @@ class SerialToWishbone(wiring.Component):
                 
                 with m.If(self.reply.tvalid & self.reply.tready):
                     m.next = "Idle"
+
+        with m.If(fsm.ongoing("Idle") & (~self.command.tvalid)):
+            # Control from CPU
+            with m.If(self.bus.stb & self.bus.cyc & self.bus.w_en):
+                m.d.comb += self.reply.tvalid.eq(1) # Send reply
+                m.d.comb += self.bus.ack.eq(self.reply.tready)
+                m.d.comb += self.reply.tdata.eq(self.bus.w_data)
             
-        
         return m

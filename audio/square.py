@@ -5,7 +5,7 @@ from amaranth import *
 from amaranth.lib import wiring
 from amaranth.lib.wiring import In, Out
 
-from signature import Stream
+from infra.signature import Stream
 
 class SquareGenerator(wiring.Component):
     def __init__(self, period = 100, amplitude = 500):

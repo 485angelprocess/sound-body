@@ -5,7 +5,7 @@ from amaranth import *
 from amaranth.lib import wiring, fifo
 from amaranth.lib.wiring import In, Out
 
-from signature import Bus, Stream
+from infra.signature import Bus, Stream
 
 class UartTx(wiring.Component):
     def __init__(self, period = 10417, parity = False, stop = 2):

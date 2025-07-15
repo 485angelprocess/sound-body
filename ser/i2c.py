@@ -1,7 +1,7 @@
 """
 I2c driver
 """
-from signature import *
+from infra.signature import *
 
 from amaranth import *
 from amaranth.lib import wiring, fifo, enum

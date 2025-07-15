@@ -6,7 +6,9 @@ from word import *
 from env import *
 
 class Interpreter(object):
-
+    """
+    Forth-like interpreter direct to RISC-V assembly
+    """
     # Primitives
     PUSH_INT = ".PUSH" # Can't be an int directly
 
@@ -30,7 +32,7 @@ class Interpreter(object):
         yield Line("addi", R.sp(), R.sp(), 8) # increase stack pointer
         yield Line("jalr", R.ret(), R.ret(), 0) # return value
         # TAG greater than N can do arbitary code exploit
-        
+
     @staticmethod
     def push():
         yield Line("sw", R.value(), R.sp(0), label = "PUSH") # Store data
@@ -56,6 +58,9 @@ class Interpreter(object):
         self.defining = DEFINE_IDLE
             
     def read(self, token):
+        """
+        Read token in
+        """
         if self.defining == DEFINE_BODY:
             if token == ";":
                 self.end_definition()
@@ -85,7 +90,10 @@ class Interpreter(object):
             return t
             
     def read_line(self, line):
-        result = [self.read(t) for t in line.split(" ")]
+        """
+        Read in line
+        """
+        result = [self.read(t) for t in line.split(" ")] # tokenize
         return [r for r in result if r is not None]
 
 if __name__ == "__main__":

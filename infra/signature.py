@@ -82,7 +82,7 @@ class Stream(wiring.Signature):
         #print("Got data {}", data)
         ctx.set(port.tready, 0)
         return data
-        
+
 class AxiLite(wiring.Signature):
     def __init__(self, address_shape = 32, data_shape = 32):
         super().__init__({
@@ -101,4 +101,31 @@ class AxiLite(wiring.Signature):
             "bresp": In(2),
             "bready": Out(1),
             "bvalid": In(1)
+        })
+        
+class Axi(wiring.Signature):
+    def __init__(self, address_shape = 32, data_shape = 32):
+        super().__init__({
+            "awvalid": Out(1),
+            "awready": In(1),
+            "awaddr": Out(address_shape),
+            "awlen": Out(8),
+            "awsize": Out(2),
+            "awburst": Out(2),
+            "wdata": Out(data_shape),
+            "wvalid": Out(1),
+            "wready": In(1),
+            "wlast": Out(1),
+            "bresp": In(2),
+            "bvalid": In(1),
+            "bready": Out(1),
+            "arvalid": Out(1),
+            "arready": In(1),
+            "araddr": Out(address_shape),
+            "arlen": Out(8),
+            "arsize": Out(2),
+            "rdata": In(data_shape),
+            "rvalid": In(1),
+            "rready": Out(1),
+            "rlast": In(1)
         })
