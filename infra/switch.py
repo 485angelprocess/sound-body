@@ -2,7 +2,7 @@ from amaranth import *
 from amaranth.lib import wiring, memory, enum
 from amaranth.lib.wiring import In, Out
 
-from signature import Bus
+from infra.signature import Bus
 
 class SwitchPortDef(object):
     def __init__(self, addr, data):
@@ -73,13 +73,17 @@ class DestToAddress(wiring.Component):
         return m
         
 class BusDebug(object):
-    def __init__(self, size = 2):
+    def __init__(self, size=2):
         self.cyc = [None for _ in range(size)]
         self.w_en = [None for _ in range(size)]
         self.select = None
 
 class BusSwitch(wiring.Component):
-    def __init__(self, ports, dest_shape, addr = 16, data = 32, num_inputs = 2):
+    """
+    Switch based on dest
+    """
+
+    def __init__(self, ports, dest_shape, addr=16, data=32, num_inputs=2):
         self.n = len(ports)
         
         self.num_inputs = num_inputs
@@ -138,25 +142,50 @@ class BusSwitch(wiring.Component):
         return m
         
 class AddressSwitch(wiring.Component):
-    def __init__(self, split = 256):
-        self.split = split
+    """
+    Splits incoming bus based on address
+    """
+
+    def __init__(self, split=256):
+        """
+        :arg split: address to split at
+        """
+        self.split = [split]
         
         super().__init__({
             "consume": In(Bus(32, 32)),
+            # Lower address
             "a": Out(Bus(32, 32)),
-            "b": Out(Bus(32, 32))
+            # Upper address
+            "b": Out(Bus(32, 32)),
+            # TODO dynamically create ports
         })
+        
+    def get_port(self, i):
+        if i == 0:
+            return self.a
+        else:
+            return self.b
         
     def elaborate(self, platform):
         m = Module()
         
-        anb = Signal()
+        # A not B
+        select = Signal(range(len(self.split)+1))
         
-        m.d.comb += anb.eq(self.consume.addr < self.split)
-        
-        b_address = Signal(32)
-        
-        m.d.comb += b_address.eq(self.consume.addr - self.split)
+        with m.If(self.consume.addr < self.split[0]):
+            m.d.comb += select.eq(0)
+        for i in range(1, len(self.split)-1):
+            with m.Elif(self.consume.addr < self.split[i]):
+                m.d.comb += select.eq(i)
+        with m.Else():
+            m.d.comb += select.eq(len(self.split))
+
+        address = Array([
+                        Signal(32, name="{}_address".format(i)) for i in range(len(self.split))
+                    ])
+        for i in range(len(self.split)):
+            m.d.comb += address[i].eq(self.consume.addr - self.split[i])
         
         m.d.comb += [
             self.a.addr.eq(self.consume.addr),
@@ -164,26 +193,24 @@ class AddressSwitch(wiring.Component):
             self.a.w_data.eq(self.consume.w_data)
         ]
         
-        m.d.comb += [
-            self.b.addr.eq(b_address),
-            self.b.w_en.eq(self.consume.w_en),
-            self.b.w_data.eq(self.consume.w_data)
-        ]
+        for i in range(len(self.split)):
+            p = self.get_port(i+1)
+            m.d.comb += [
+                p.addr.eq(address[i]),
+                p.w_en.eq(self.consume.w_en),
+                p.w_data.eq(self.consume.w_data)
+            ]
         
         # Direct to a or b
-        with m.If(anb):
-            m.d.comb += [
-                self.a.stb.eq(self.consume.stb),
-                self.a.cyc.eq(self.consume.cyc),
-                self.consume.ack.eq(self.a.ack),
-                self.consume.r_data.eq(self.a.r_data)
-            ]
-        with m.Else():
-            m.d.comb += [
-                self.b.stb.eq(self.consume.stb),
-                self.b.cyc.eq(self.consume.cyc),
-                self.consume.ack.eq(self.b.ack),
-                self.consume.r_data.eq(self.b.r_data)
-            ]
+        with m.Switch(select):
+            for i in range(len(self.split)+1):
+                with m.Case(i):
+                    p = self.get_port(i)
+                    m.d.comb += [
+                        p.stb.eq(self.consume.stb),
+                        p.cyc.eq(self.consume.cyc),
+                        self.consume.ack.eq(p.ack),
+                        self.consume.r_data.eq(p.r_data)
+                    ]
         
         return m

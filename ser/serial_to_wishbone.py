@@ -33,14 +33,18 @@ class SerialToWishbone(wiring.Component):
         m = Module()
         
         size = Signal(2)
-        counter = Signal(2)
+        counter = Signal(3)
         
         prefix = Signal(8)
-        arg = Signal(32)
+        arg = Signal(64)
         
         ext_reset = Signal(reset = 1)
         
         m.d.comb += self.soft_reset.eq(ext_reset)
+        
+        timer = Signal(32)
+        
+        timeout = 100_000_000
         
         with m.FSM() as fsm:
             # From external computer
@@ -49,7 +53,7 @@ class SerialToWishbone(wiring.Component):
                 m.d.sync += self.produce.addr.eq(0)
                 m.d.sync += self.produce.w_data.eq(0)
                 m.d.sync += self.produce.w_en.eq(0)
-                
+                m.d.sync += timer.eq(0)
                 with m.If(self.command.tvalid):
                     with m.Switch(self.command.tdata):
                         with m.Case(ord(SerialCommand.WRITE_SHORT)):
@@ -111,18 +115,29 @@ class SerialToWishbone(wiring.Component):
                         m.d.sync += counter.eq(counter - 1)
                         
             with m.State("Bus"):
+                with m.If(timer == timeout):
+                    m.d.sync += prefix.eq(ord('T'))
+                    m.d.sync += arg.eq(self.produce.addr)
+                    m.d.sync += counter.eq(3)
+                    m.next = "Print"
+                with m.Else():
+                    m.d.sync += timer.eq(timer + 1)
+            
                 # Write to bus
                 m.d.comb += self.produce.stb.eq(1)
                 m.d.comb += self.produce.cyc.eq(1)
                 with m.If(self.produce.ack):
                     with m.If(self.produce.w_en):
-                        m.d.sync += counter.eq(size)
+                        m.d.sync += self.produce.w_en.eq(0)
+                        m.d.sync += counter.eq(7)
                         m.d.sync += prefix.eq(ord('W'))
-                        m.d.sync += arg.eq(self.produce.addr)
+                        m.d.sync += arg[0:32].eq(self.produce.w_data)
+                        m.d.sync += arg[32:64].eq(self.produce.addr)
                     with m.Else():
                         m.d.sync += prefix.eq(ord('R'))
-                        m.d.sync += counter.eq(size)
-                        m.d.sync += arg.eq(self.produce.r_data)
+                        m.d.sync += counter.eq(7)
+                        m.d.sync += arg[0:32].eq(self.produce.r_data)
+                        m.d.sync += arg[32:64].eq(self.produce.addr)
                     m.next = "Print"
             
             ################################

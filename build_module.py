@@ -13,7 +13,7 @@ from axi.script import AxiScript, AxiCommand
 
 from audio.square import SquareGenerator
 
-def build(m, name, dir = "build", ext = "v", ports = None):
+def build(m, name, dir="build", ext="v", ports=None):
     with open("{}/{}.{}".format(dir, name, ext), 'w') as f:
         if ports is None:
             f.write(verilog.convert(m, name).replace("__", "_"))
@@ -22,23 +22,23 @@ def build(m, name, dir = "build", ext = "v", ports = None):
     print("Write {}/{}.{}".format(dir, name, ext))
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog = "Build verilog modules")
+    parser = argparse.ArgumentParser(prog="Build verilog modules")
     
-    parser.add_argument("-u", "--uart", action = "store_true", help = "Build uart modules")
-    parser.add_argument("-p", "--uart_period", type = int, default = 10417, help = "Uart period")
-    parser.add_argument("-s", "--serial", action = "store_true", help = "Build serial modules")
-    parser.add_argument("--serial_demo", action = "store_true", help = "Build serial demo")
-    parser.add_argument("--i2s", action = "store_true", help = "Build i2s stuff")
-    parser.add_argument("-a", "--all", action = "store_true", help = "Build all modules")
+    parser.add_argument("-u", "--uart", action="store_true", help="Build uart modules")
+    parser.add_argument("-p", "--uart_period", type=int, default=10417, help="Uart period")
+    parser.add_argument("-s", "--serial", action="store_true", help="Build serial modules")
+    parser.add_argument("--serial_demo", action="store_true", help="Build serial demo")
+    parser.add_argument("--i2s", action="store_true", help="Build i2s stuff")
+    parser.add_argument("-a", "--all", action="store_true", help="Build all modules")
     
     args = parser.parse_args()
     
     if args.uart or args.serial or args.all:
-        build(UartTx(period = args.uart_period, parity = False), "uart_tx")
-        build(UartRx(period = args.uart_period, parity = False), "uart_rx")
+        build(UartTx(period=args.uart_period, parity=False), "uart_tx")
+        build(UartRx(period=args.uart_period, parity=False), "uart_rx")
     if args.serial or args.all:
         build(SerialToWishbone(), "serial_to_wishbone")
-        build(I2CTop(max_period = 1024), "i2c")
+        build(I2CTop(max_period=1024), "i2c")
         
     if args.i2s:
         build(AxiScript(

@@ -21,6 +21,13 @@ class WishboneToAxi(wiring.Component):
         
         address_written = Signal()
         
+        m.d.comb += self.axi.awaddr.eq(self.wish.addr)
+        m.d.comb += self.axi.araddr.eq(self.wish.addr)
+        
+        m.d.comb += self.axi.wdata.eq(self.wish.w_data)
+        
+        m.d.comb += self.wish.r_data.eq(self.axi.rdata)
+        
         # Write
         m.d.comb += self.axi.awvalid.eq(self.wish.w_en & self.wish.stb & self.wish.cyc & (~address_written))
         m.d.comb += self.axi.wvalid.eq(self.wish.w_en & self.wish.stb & self.wish.cyc & (address_written))

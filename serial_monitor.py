@@ -5,6 +5,17 @@ import time
 class UartException(Exception):
     def __init__(self, msg):
         super().__init__(msg)
+        
+def to_word(m, size = 4):
+    """
+    Go from string to bytes
+    """
+    d = int(m)
+    
+    result = list()
+    for i in range(size):
+        result.append((d >> ( 8*(size - i - 1) )) & 0xFF)
+    return bytes(result)
 
 class Monitor(object):
     def __init__(self, port = "COM15", baud = 9600):
@@ -13,7 +24,7 @@ class Monitor(object):
         self.s = serial.Serial(port, 9600, timeout = 0.1)
         
     def write(self, msg):
-        #print("Sending {}".format(msg))
+        print("Sending {}".format(msg))
         self.s.write(msg)
         
     def read(self):
@@ -40,7 +51,37 @@ class Monitor(object):
         msg = input(">")
         
         if len(msg) > 0:
-            self.write(msg)
+            if msg.startswith("I"):
+                self.write("I".encode("ascii"))
+            elif msg.startswith("W"):
+                msg = msg.split(" ")
+                print(msg)
+                code = "W".encode("ascii")
+                self.write(code)
+                self.write(to_word(msg[1]))
+                self.write(to_word(msg[2]))
+            elif msg.startswith("w"):
+                msg = msg.split(" ")
+                code = "w".encode("ascii")
+                addr = to_word(msg[1], size=1)
+                data = to_word(msg[2], size=1)
+                self.write(code)
+                self.write(addr)
+                self.write(data)
+            elif msg.startswith("R"):
+                msg = msg.split(" ")
+                code = "R".encode("ascii")
+                addr = to_word(msg[1])
+                self.write(code)
+                self.write(addr)
+            elif msg.startswith("r"):
+                msg = msg.split(" ")
+                code = "r".encode("ascii")
+                addr = to_word(msg[1], size=1)
+                self.write(code)
+                self.write(addr)
+            else:
+                self.write(msg.encode("ascii"))
             
         for _ in range(10):
             r = self.read()

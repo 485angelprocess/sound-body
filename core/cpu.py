@@ -4,9 +4,9 @@ Implementation of RV32I instructions
 from amaranth import *
 from amaranth.lib import wiring, enum, data
 from amaranth.lib.wiring import In, Out
-from signature import Bus
+from infra.signature import Bus
 
-from mul import MulSignature, MulUnit
+from core.mul import MulSignature, MulUnit
 
 class Instruction(enum.Enum):
     # These are the op codes for the base instruction set
@@ -86,7 +86,12 @@ class CoreDebug(object):
         self.pc = None
     
 class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
-    def __init__(self, n_regs = 32, has_mul = True):
+    """
+    RISCV implementation
+    32I - without mul
+    32M - with mul
+    """
+    def __init__(self, n_regs=32, has_mul=True):
         self.n_regs = 32
         self.has_mul = has_mul # Multiplication unit
         
@@ -95,7 +100,8 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
             "prog": Out(Bus(32, 32)),
             "mpu": In(MulSignature()),
             "fpu": Out(Bus(8, 32)), # For FPU unit
-            "int": In(Bus(32, 8))
+            "int": In(Bus(32, 8)),
+            "debug": In(Bus(32, 32)) # Debugger access
         })
         
     def describe_branch(self, m, reg, instruction_cache):
@@ -163,7 +169,8 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                         reg[instruction_cache.r.rs2]
                     )
                 with m.Else():
-                    m.d.sync += Assert(0, "Function not implemented")
+                    pass
+                    #m.d.sync += Assert(0, "Function not implemented")
             with m.Case(0b001):
                 with m.If(instruction_cache.r.f_upper == 0b0000000):
                     # Shift left
@@ -178,7 +185,8 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                             reg[instruction_cache.r.rs2].as_unsigned()[0:3]
                         )
                 with m.Else():
-                    m.d.sync += Assert(0, "Function not implemented")
+                    pass
+                    #m.d.sync += Assert(0, "Function not implemented")
             with m.Case(0b010):
                 with m.If(instruction_cache.r.f_upper == 0b0000000):
                     # Less than
@@ -245,6 +253,26 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         
         instruction_cache = Signal(risc_instruction_layout)
         instruction_fetch = Signal(risc_instruction_layout)
+        
+        # Debugger
+        with m.If(self.debug.cyc & self.debug.stb):
+            with m.If(self.debug.w_en):
+                # TODO: consider direct read/write
+                # TODO: add step or similiar type modes
+                m.d.comb += self.debug.ack.eq(1)
+            with m.Else():
+                # Read
+                m.d.comb += self.debug.ack.eq(1)
+                with m.If(self.debug.addr == 0):
+                    m.d.comb += self.debug.r_data.eq(ord('C'))
+                with m.Elif(self.debug.addr < 32):
+                    m.d.comb += self.debug.r_data.eq(reg[self.debug.addr])
+                with m.If(self.debug.addr == 33):
+                    m.d.comb += self.debug.r_data.eq(program_counter)
+                with m.If(self.debug.addr == 34):
+                    m.d.comb += self.debug.r_data.eq(instruction_fetch)
+                with m.If(self.debug.addr == 35):
+                    m.d.comb += self.debug.r_data.eq(instruction_cache)
         
         mem_counter = Signal(range(4))
         mem_register = Signal(32)
@@ -332,7 +360,8 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                                     # Load word
                                     pass
                                 with m.Default():
-                                    m.d.sync += Assert(0, "Unimplemented load command")
+                                    pass
+                                    #m.d.sync += Assert(0, "Unimplemented load command")
                             m.d.sync += memorystage.eq(MemoryStage.RUN)
                         with m.Case(MemoryStage.RUN):
                             # Run n bus transactions to load data
@@ -360,7 +389,8 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                                     # Store word
                                     m.d.sync += mem_register.eq(reg[instruction_cache.s.rs2][0:32])
                                 with m.Default():
-                                    m.d.sync += Assert(0, "Unimplemented store command")
+                                    pass
+                                    #m.d.sync += Assert(0, "Unimplemented store command")
                             m.d.sync += memorystage.eq(MemoryStage.RUN)
                         with m.Case(MemoryStage.RUN):
                             # Shift out bytes of data
@@ -449,9 +479,11 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                                     reg[instruction_cache.i.rs][-1]
                                 )
                             with m.Else():
-                                m.d.sync += Assert(0, "Shift function not implemented")
+                                pass
+                                #m.d.sync += Assert(0, "Shift function not implemented")
                         with m.Default():
-                            m.d.sync += Assert(0, "Function not implemented")
+                            pass
+                            #m.d.sync += Assert(0, "Function not implemented")
                 with m.Case(Instruction.LUI):
                     # Load upper immediate
                     m.d.sync += active.eq(0)
@@ -489,7 +521,8 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                         & ~1
                     )
                 with m.Default():
-                    m.d.sync += Assert(0, "Unimplemented Instruction")
+                    pass
+                    #m.d.sync += Assert(0, "Unimplemented Instruction")
         
         ####################
         ## Fetch ###########
