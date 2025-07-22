@@ -7,10 +7,8 @@ from amaranth.lib import wiring
 from amaranth.sim import *
 from amaranth import *
 
-from cpu import RiscCore
-from cache import InstructionCache
-from ram import WishboneMemory
-from mul import MulUnit
+from core.cpu import RiscCore
+from infra.ram import WishboneMemory
 
 from assemble import ListAssemble
 
@@ -21,26 +19,20 @@ def core_with_program(program):
     for i in range(len(program)):
         print("\t{:02X}: {:02X}".format(i, program[i]))
     
-    dut.submodules.cpu = cpu = RiscCore()
-    dut.submodules.cache = cache = InstructionCache()
-    dut.submodules.ram = ram = WishboneMemory(8, 256, init = program)
+    dut.submodules.cpu = cpu = RiscCore(has_mul=True)
+    dut.submodules.ram = ram = WishboneMemory(32, 256, init=program, granularity=2)
     
-    dut.submodules.mpu = mpu = MulUnit()
-    
-    wiring.connect(dut, cpu.prog, cache.proc)
-    wiring.connect(dut, cache.mem, ram.bus)
-    wiring.connect(dut, cpu.mpu, mpu.bus)
+    wiring.connect(dut, cpu.prog, ram.bus)
     
     return dut, cpu.bus
     
-async def get_gen(ctx, port, addr_expect = 0, timeout = 10):
-    
+async def get_gen(ctx, port, addr_expect=0, timeout=10):
+
     ctx.set(port.ack, 1)
     stb, addr, w_data = await ctx.tick().sample(port.stb, port.addr, port.w_data).until(port.cyc)
     assert addr == addr_expect
     return w_data
     ctx.set(port.ack, 0)
-    
 
 class TestList(unittest.TestCase):
     def test_natural_numbers(self):

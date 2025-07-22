@@ -18,13 +18,38 @@ def to_word(m, size = 4):
     return bytes(result)
 
 class Monitor(object):
-    def __init__(self, port = "COM15", baud = 9600):
+    def __init__(self, port="COM15", baud=115200):
         self.port = port
         
-        self.s = serial.Serial(port, 9600, timeout = 0.1)
+        self.s = serial.Serial(port, baud, timeout = 0.1)
+        
+    def write_long(self, addr, data):
+        self.write('W'.encode('ascii'))
+        self.write(to_word(addr))
+        self.write(to_word(data))
+        for i in range(9):
+            self.read()
+        
+    def wait_response(self, expect):
+        for i in range(10):
+            if self.read()[0] == expect:
+                return
+        raise UartException("Could not get expected response")
+        
+    def read_long(self, addr):
+        self.write('R'.encode('ascii'))
+        self.write(to_word(addr))
+        self.wait_response(ord('R'))
+        addr = 0
+        for i in (24, 16, 8, 0):
+            addr += int(self.read()[0]) << i
+        data = 0
+        for i in (24, 16, 8, 0):
+            data += int(self.read()[0]) << i
+        return addr, data
         
     def write(self, msg):
-        print("Sending {}".format(msg))
+        #print("Sending {}".format(msg))
         self.s.write(msg)
         
     def read(self):

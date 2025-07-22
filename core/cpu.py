@@ -8,6 +8,8 @@ from infra.signature import Bus
 
 from core.mul import MulSignature, MulUnit
 
+from core.alu import Alu, AluInputSignature, AluOutputSignature
+
 class Instruction(enum.Enum):
     # These are the op codes for the base instruction set
     LUI         = 0b0110111 # Load upper immediate
@@ -21,6 +23,12 @@ class Instruction(enum.Enum):
     ARITH       = 0b0110011
     FENCE       = 0b0001111
     E           = 0b1110011
+    
+class RunMode(enum.Enum):
+    STOP = 0
+    STEP = 1
+    RUN = 2
+    ERROR = 3
     
 class MemoryStage(enum.Enum):
     SETUP = 0
@@ -85,19 +93,24 @@ class CoreDebug(object):
         self.reg = None
         self.pc = None
     
-class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
+class InternalCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
     """
     RISCV implementation
     32I - without mul
     32M - with mul
+    
+    Internal connections to modules
     """
-    def __init__(self, n_regs=32, has_mul=True):
+    def __init__(self, n_regs=32, has_mul=True, normally_on=True):
         self.n_regs = 32
         self.has_mul = has_mul # Multiplication unit
+        self.normally_on = normally_on
         
         super().__init__({
             "bus": Out(Bus(32, 32)),
             "prog": Out(Bus(32, 32)),
+            "aluin": In(AluInputSignature()),
+            "aluout": In(AluOutputSignature()),
             "mpu": In(MulSignature()),
             "fpu": Out(Bus(8, 32)), # For FPU unit
             "int": In(Bus(32, 8)),
@@ -130,7 +143,10 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                     reg[instruction_cache.b.rs1].as_unsigned() >=
                     reg[instruction_cache.b.rs2].as_unsigned()
                 )
-                
+            with m.Default():
+                m.d.sync += self.run_mode.eq(RunMode.ERROR)
+                m.d.sync += self.enable.eq(0)
+
     def describe_mul(self, m, reg, inst, fetch, active, stage):
         # Some of these should be moved out of conditionals probably?
         with m.If(stage == 0):
@@ -151,97 +167,13 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                 m.d.sync += active.eq(0)
                 # Get result
                 m.d.sync += reg[inst.m.rd].eq(self.mpu.result)
-            
-    def describe_arith(self, m, reg, instruction_cache, fetch, active):
-        m.d.sync += active.eq(0)
-        with m.Switch(instruction_cache.r.f_lower):
-            with m.Case(0b000):
-                with m.If(instruction_cache.r.f_upper == 0b0000000):
-                    # Add
-                    m.d.sync += reg[instruction_cache.r.rd].eq(
-                        reg[instruction_cache.r.rs1] +
-                        reg[instruction_cache.r.rs2]
-                    )
-                with m.Elif(instruction_cache.r.f_upper == 0b0100000):
-                    # Subtract
-                    m.d.sync += reg[instruction_cache.r.rd].eq(
-                        reg[instruction_cache.r.rs1] -
-                        reg[instruction_cache.r.rs2]
-                    )
-                with m.Else():
-                    pass
-                    #m.d.sync += Assert(0, "Function not implemented")
-            with m.Case(0b001):
-                with m.If(instruction_cache.r.f_upper == 0b0000000):
-                    # Shift left
-                    # TODO not quite right,
-                    # if rs2 is above a value, it's 0,
-                    # otherwise actually shift
-                    with m.If(reg[instruction_cache.r.rs2] > 5):
-                        m.d.sync += reg[instruction_cache.r.rd].eq(0)
-                    with m.Else():
-                        m.d.sync += reg[instruction_cache.r.rd].eq(
-                            reg[instruction_cache.r.rs1] <<
-                            reg[instruction_cache.r.rs2].as_unsigned()[0:3]
-                        )
-                with m.Else():
-                    pass
-                    #m.d.sync += Assert(0, "Function not implemented")
-            with m.Case(0b010):
-                with m.If(instruction_cache.r.f_upper == 0b0000000):
-                    # Less than
-                    m.d.sync += reg[instruction_cache.r.rd].eq(
-                        reg[instruction_cache.r.rs1] <
-                        reg[instruction_cache.r.rs2]
-                    )
-            with m.Case(0b011):
-                with m.If(instruction_cache.r.f_upper == 0b0000000):
-                    # Unsigned less than
-                    m.d.sync += reg[instruction_cache.r.rd].eq(
-                        reg[instruction_cache.r.rs1].as_unsigned() <
-                        reg[instruction_cache.r.rs2].as_unsigned()
-                    )
-            with m.Case(0b100):
-                with m.If(instruction_cache.r.f_upper == 0b000000):
-                    m.d.sync += reg[instruction_cache.r.rd].eq(
-                        reg[instruction_cache.r.rs1] ^
-                        reg[instruction_cache.r.rs2]
-                    )
-            with m.Case(0b101):
-                with m.If(instruction_cache.r.f_upper == 0b00000_00):
-                    # Logical shift right
-                    m.d.sync += reg[instruction_cache.r.rd].eq(
-                        reg[instruction_cache.r.rs1] >>
-                        reg[instruction_cache.r.rs2].as_unsigned()
-                    )
-                with m.Elif(instruction_cache.r.f_upper == 0b01000_00):
-                    # Arithmetic shift right
-                    m.d.sync += reg[instruction_cache.r.rd][0:31].eq(
-                        reg[instruction_cache.r.rs1] >>
-                                reg[instruction_cache.r.rs2].as_unsigned()
-                            )
-                    m.d.sync += reg[instruction_cache.r.rd][-1].eq(
-                        reg[instruction_cache.r.rs1][-1]
-                    )
-            with m.Case(0b110):
-                # OR
-                with m.If(instruction_cache.r.f_upper == 0b00000_00):
-                    m.d.sync += reg[instruction_cache.r.rd].eq(
-                        reg[instruction_cache.r.rs1] |
-                        reg[instruction_cache.r.rs2]
-                    )
-            with m.Case(0b111):
-                # AND
-                with m.If(instruction_cache.r.f_upper == 0b00000_00):
-                    m.d.sync += reg[instruction_cache.r.rd].eq(
-                        reg[instruction_cache.r.rs1] &
-                        reg[instruction_cache.r.rs2]
-                    )
-        
+                
     def elaborate(self, platform):
         m = Module()
         
-        enable = Signal(init = 1)
+        enable = self.enable = Signal(init=self.normally_on)
+        fetch = Signal(init = 1)
+        run_mode = self.run_mode = Signal(RunMode)
         
         reg = Array([Signal(signed(32), name = "r{:02X}".format(i)) for i in range(32)])
         
@@ -257,22 +189,41 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         # Debugger
         with m.If(self.debug.cyc & self.debug.stb):
             with m.If(self.debug.w_en):
-                # TODO: consider direct read/write
                 # TODO: add step or similiar type modes
                 m.d.comb += self.debug.ack.eq(1)
+                # Direct register write
+                with m.If((self.debug.addr > 0) & (self.debug.addr < 33)):
+                    m.d.sync += reg[self.debug.addr - 1].eq(self.debug.w_data)
+                with m.If(self.debug.addr == 0):
+                    with m.Switch(self.debug.w_data):
+                        with m.Case(0):
+                            m.d.sync += enable.eq(0)
+                            m.d.sync += run_mode.eq(RunMode.STOP)
+                        with m.Case(1):
+                            m.d.sync += enable.eq(1)
+                            m.d.sync += run_mode.eq(RunMode.STEP)
+                        with m.Case(2):
+                            m.d.sync += enable.eq(1)
+                            m.d.sync += run_mode.eq(RunMode.RUN)
             with m.Else():
                 # Read
                 m.d.comb += self.debug.ack.eq(1)
-                with m.If(self.debug.addr == 0):
-                    m.d.comb += self.debug.r_data.eq(ord('C'))
-                with m.Elif(self.debug.addr < 32):
-                    m.d.comb += self.debug.r_data.eq(reg[self.debug.addr])
-                with m.If(self.debug.addr == 33):
-                    m.d.comb += self.debug.r_data.eq(program_counter)
-                with m.If(self.debug.addr == 34):
-                    m.d.comb += self.debug.r_data.eq(instruction_fetch)
-                with m.If(self.debug.addr == 35):
-                    m.d.comb += self.debug.r_data.eq(instruction_cache)
+                with m.Switch(self.debug.addr):
+                    with m.Case(0):
+                        m.d.comb += self.debug.r_data.eq(run_mode)
+                    with m.Case(33):
+                        m.d.comb += self.debug.r_data.eq(program_counter)
+                    with m.Case(34):
+                        m.d.comb += self.debug.r_data.eq(instruction_fetch)
+                    with m.Case(35):
+                        m.d.comb += self.debug.r_data.eq(instruction_cache)
+                    with m.Case(36):
+                        m.d.comb += self.debug.r_data.eq(fetch)
+                    with m.Case(37):
+                        m.d.comb += self.debug.r_data.eq(enable)
+                    with m.Default():
+                        m.d.comb += self.debug.r_data.eq(reg[self.debug.addr - 1])
+                
         
         mem_counter = Signal(range(4))
         mem_register = Signal(32)
@@ -314,8 +265,6 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         opcode_cache = Signal(Instruction)
         m.d.comb += opcode_cache.eq(instruction_cache.op)
         
-        fetch = Signal(init = 1)
-            
         mode = Signal(Instruction)
         active = Signal()
             
@@ -332,6 +281,13 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         with m.If(branch_en):
             m.d.sync += program_counter.eq(branch_next)
             m.d.sync += fetch.eq(1)
+            
+        with m.If(self.aluout.valid):
+            # Get result of ALU
+            m.d.sync += reg[self.aluout.d].eq(self.aluout.value)
+            with m.If(self.aluout.error):
+                m.d.sync += self.run_mode.eq(RunMode.ERROR)
+                m.d.sync += enable.eq(0)
         
         #################################
         ## Run instruction ##############
@@ -411,79 +367,42 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                 ### Register integer operations ##
                 ###################################
                 with m.Case(Instruction.ARITH):
+                    
+                
                     if self.has_mul:
                         with m.If(instruction_cache.r.f_upper == 0x1):
                             #multiplication
                             self.describe_mul(m, reg, instruction_cache, fetch, active, mulstage)
                         with m.Else():
+                            with m.If(self.aluout.valid):
+                                m.d.sync += active.eq(0)
+                                m.d.sync += fetch.eq(1)
+                        
                             # Normal operation
-                            self.describe_arith(m, reg, instruction_cache, fetch, active)
+                            m.d.comb += self.aluin.s1.eq(reg[instruction_cache.r.rs1])
+                            m.d.comb += self.aluin.s2.eq(reg[instruction_cache.r.rs2])
+                            m.d.comb += self.aluin.valid.eq(1)
+                            m.d.comb += self.aluin.d.eq(instruction_cache.r.rd)
                     else:
-                        self.describe_arith(m, reg, instruction_cache, fetch, active)
+                        with m.If(self.aluout.valid):
+                            m.d.sync += active.eq(0)
+                            m.d.sync += fetch.eq(1)
+                        # No multiplication unit
+                        m.d.comb += self.aluin.s1.eq(reg[instruction_cache.r.rs1])
+                        m.d.comb += self.aluin.s2.eq(reg[instruction_cache.r.rs2])
+                        m.d.comb += self.aluin.valid.eq(1)
+                        m.d.comb += self.aluin.d.eq(instruction_cache.r.rd)
                 #################################
                 ### immediate instructions ######
                 #################################
                 with m.Case(Instruction.ARITHIMM):
-                    m.d.sync += active.eq(0)
-                    with m.Switch(instruction_cache.i.f):
-                        with m.Case(0b000): # ADDI
-                            # Add immediate
-                            m.d.sync += reg[instruction_cache.i.rd].eq(
-                                reg[instruction_cache.i.rs] +
-                                instruction_cache.i.imm
-                            )
-                        with m.Case(0b010): #SLTI
-                            # Set less than immeddiate
-                            m.d.sync += reg[instruction_cache.i.rd].eq(
-                                reg[instruction_cache.i.rs] <
-                                instruction_cache.i.imm
-                            )
-                        with m.Case(0b011): # SLTIU
-                            # Set less than immediate unsigned
-                            m.d.sync += reg[instruction_cache.i.rd].eq(
-                                reg[instruction_cache.i.rs].as_unsigned() <
-                                instruction_cache.i.imm.as_unsigned()
-                            )
-                        with m.Case(0b100): # XORI
-                            # bitwise xori
-                            m.d.sync += reg[instruction_cache.i.rd].eq(
-                                reg[instruction_cache.i.rs] ^
-                                instruction_cache.i.imm
-                            )
-                        with m.Case(0b111): # ANDI
-                            # And immediate
-                            m.d.sync += reg[instruction_cache.i.rd].eq(
-                                reg[instruction_cache.i.rs] &
-                                instruction_cache.i.imm
-                            )
-                        with m.Case(0b001): # SLLI
-                            # Shift left
-                            m.d.sync += reg[instruction_cache.i.rd].eq(
-                                reg[instruction_cache.i.rs] <<
-                                instruction_cache.i.imm[0:5].as_unsigned()
-                            )
-                        with m.Case(0b101): # SRLI
-                            with m.If(instruction_cache.as_value()[27:] == 0b00000):
-                                # Shift right logical
-                                m.d.sync += reg[instruction_cache.i.rd].eq(
-                                    reg[instruction_cache.i.rs] >>
-                                    instruction_cache.i.imm[0:5].as_unsigned()
-                                )
-                            with m.Elif(instruction_cache.as_value()[27:] == 0b01000):
-                                # Shift right arithmetic
-                                m.d.sync += reg[instruction_cache.i.rd][0:31].eq(
-                                    reg[instruction_cache.i.rs] >>
-                                    instruction_cache.i.imm[0:5].as_unsigned()
-                                )
-                                m.d.sync += reg[instruction_cache.i.rd][-1].eq(
-                                    reg[instruction_cache.i.rs][-1]
-                                )
-                            with m.Else():
-                                pass
-                                #m.d.sync += Assert(0, "Shift function not implemented")
-                        with m.Default():
-                            pass
-                            #m.d.sync += Assert(0, "Function not implemented")
+                    with m.If(self.aluout.valid):
+                        m.d.sync += active.eq(0)
+                        m.d.sync += fetch.eq(1)
+                    m.d.comb += self.aluin.s1.eq(reg[instruction_cache.i.rs])
+                    m.d.comb += self.aluin.s2.eq(instruction_cache.i.imm)
+                    m.d.comb += self.aluin.valid.eq(1)
+                    m.d.comb += self.aluin.d.eq(instruction_cache.i.rd)
                 with m.Case(Instruction.LUI):
                     # Load upper immediate
                     m.d.sync += active.eq(0)
@@ -502,6 +421,7 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                     )
                 with m.Case(Instruction.JAL):
                     # jump and link
+                    m.d.sync += fetch.eq(1)
                     m.d.sync += active.eq(0)
                     m.d.sync += reg[instruction_cache.j.rd].eq(
                         program_counter
@@ -511,6 +431,7 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                     )
                 with m.Case(Instruction.JALR):
                     # jump and link register
+                    m.d.sync += fetch.eq(1)
                     m.d.sync += active.eq(0)
                     m.d.sync += reg[instruction_cache.i.rd].eq(
                         program_counter
@@ -521,14 +442,19 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                         & ~1
                     )
                 with m.Default():
-                    pass
-                    #m.d.sync += Assert(0, "Unimplemented Instruction")
+                    m.d.sync += run_mode.eq(RunMode.ERROR)
+                    m.d.sync += enable.eq(0)
         
         ####################
         ## Fetch ###########
         ####################
         # Instruction is ready
         with m.If(self.prog.cyc & self.prog.stb & self.prog.ack):
+            # Debug step
+            with m.If(run_mode == RunMode.STEP):
+                # Stops automatically after one step
+                m.d.sync += enable.eq(0)
+        
             m.d.sync += instruction_cache.eq(self.prog.r_data)
             m.d.sync += program_counter.eq(program_counter + 4)
             m.d.sync += active.eq(1)
@@ -536,17 +462,6 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
             m.d.sync += fetch.eq(0)
             
             m.d.sync += self.mpu.en.eq(0)
-            
-            # Fetch can occur while operation is running
-            # These all always take one cycle
-            for single in (Instruction.ARITHIMM, Instruction.AUIPC, Instruction.LUI, Instruction.JAL, Instruction.JALR):
-                with m.If(opcode == single):
-                    m.d.sync += fetch.eq(1)
-                    
-            # Non multiplication
-            with m.If((opcode == Instruction.ARITH) & 
-                    (instruction_fetch.r.f_upper != 0x01)):
-                m.d.sync += fetch.eq(1)
                    
         self.debug = CoreDebug()
         
@@ -556,3 +471,45 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         
         return m
     
+class RiscCore(wiring.Component):
+    """
+    Risc Core wrapper
+    """
+    def __init__(self, n_regs=32, has_mul=False):
+        """
+        :arg n_regs: number of registers use 16 for embedded, 32 for normal implementation
+        :arg has_mul: use multiplier unit
+        """
+        self.n_regs = n_regs
+        self.has_mul = has_mul
+        
+        super().__init__({
+            "bus": Out(Bus(32, 32)),
+            "prog": Out(Bus(32, 32)),
+            "int": In(Bus(32, 8)), # Interrupt
+            "debug": In(Bus(32, 32)) # Debugger access
+        })
+        
+    def elaborate(self, platform):
+        m = Module()
+        
+        m.submodules.core = core = InternalCore(self.n_regs, self.has_mul)
+        
+        # Add internals
+        m.submodules.alu = alu = Alu()
+        
+        wiring.connect(m, core.aluin, alu.consume)
+        wiring.connect(m, core.aluout, alu.produce)
+        
+        # Add mpu
+        if self.has_mul:
+            m.submodules.mul = mul = MulUnit()
+            
+            wiring.connect(m, core.mpu, mul.bus)
+            
+        # Connect to top
+        wiring.connect(m, wiring.flipped(self.bus), core.bus)
+        wiring.connect(m, wiring.flipped(self.prog), core.prog)
+        wiring.connect(m, wiring.flipped(self.debug), core.debug)
+        
+        return m

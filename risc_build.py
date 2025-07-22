@@ -32,8 +32,8 @@ class RiscProject(wiring.Component):
         m = Module()
         
         # UART In/Out
-        m.submodules.uart_tx = uart_tx = UartTx()
-        m.submodules.uart_rx = uart_rx = UartRx()
+        m.submodules.uart_tx = uart_tx = UartTx(period=868)
+        m.submodules.uart_rx = uart_rx = UartRx(period=868)
         
         m.d.comb += [
             self.tx.eq(uart_tx.tx),
@@ -68,8 +68,11 @@ class RiscProject(wiring.Component):
         # Control from uart
         wiring.connect(m, bridge_sw.a, core.debug)
         
-        # Bridge to axi
+        m.submodules.prog_to_axi = prog_to_axi = WishboneToAxi()
         
+        # Bridge to axi
+        wiring.connect(m, prog_to_axi.wish, core.prog)
+        wiring.connect(m, prog_to_axi.axi, wiring.flipped(self.prog))
         
         return m
         

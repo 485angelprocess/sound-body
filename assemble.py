@@ -159,6 +159,16 @@ class Line(object):
                 data += a.value(self._args)
             return data
         return None
+        
+class Assemble(object):
+    def __init__(self, program):
+        self.program = program
+        self.keys = dict()
+        
+    def get_words(self):
+        # TODO get labels/link
+        for p in self.program:
+            yield Line(p).parse()
 
 class ListAssemble(object):
     def __init__(self, reset, get, next):
@@ -173,8 +183,8 @@ class ListAssemble(object):
         self.insert_loop()
         
     def insert_loop(self, dest = "r7"):
-        offset = -4 * (len(self._get) + len(self._next) + 1)
-        self._next.append("jal {},{}".format(dest, offset))
+        to_line = -4 * (len(self._get) + len(self._next) + 1)
+        self._next.append("jal {},{}".format(dest, to_line))
         
     def assemble(self):
         program = self._reset + self._get + self._next
@@ -182,12 +192,9 @@ class ListAssemble(object):
         for p in program:
             for k in self.keys:
                 p = p.replace(k, self.keys[k])
-            
+            print(p)
             data = Line(p).parse()
-            yield (data >>  0) & 0xFF
-            yield (data >>  8) & 0xFF
-            yield (data >> 16) & 0xFF
-            yield (data >> 24) & 0xFF
+            yield data
         
 if __name__ == "__main__":
     my_andi = Line("andi r0, r1, 0")

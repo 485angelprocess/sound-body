@@ -2,7 +2,7 @@ from amaranth import *
 from amaranth.lib import wiring, memory, enum, data
 from amaranth.lib.wiring import In, Out
 
-from signature import Bus
+from infra.signature import Bus
 
 class WishboneMemory(wiring.Component):
     """
@@ -21,7 +21,9 @@ class WishboneMemory(wiring.Component):
     def elaborate(self, platform):
         m = Module()
         
-        mem = m.submodules.mem = memory.Memory(shape = self.shape, depth = self.depth, init = self.init)
+        mem = m.submodules.mem = memory.Memory(shape=self.shape, 
+                depth=self.depth,
+                init=self.init)
         
         read_port = mem.read_port(domain = "comb")
         write_port = mem.write_port()
