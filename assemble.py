@@ -165,10 +165,20 @@ class Assemble(object):
         self.program = program
         self.keys = dict()
         
-    def get_words(self):
+    def get_words(self,lsb=False):
         # TODO get labels/link
         for p in self.program:
-            yield Line(p).parse()
+            if lsb:
+                yield Line(p).parse()
+            else:
+                line = Line(p).parse()
+                a = [
+                    (line >> 24) & 0xFF,
+                    (line >> 16) & 0xFF,
+                    (line >> 8)  & 0xFF,
+                    (line  >> 0) & 0xFF
+                ]
+                yield (a[0]) + (a[1] << 8) + (a[2] << 16) + (a[3] << 24)
 
 class ListAssemble(object):
     def __init__(self, reset, get, next):

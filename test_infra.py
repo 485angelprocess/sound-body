@@ -2,7 +2,8 @@ import unittest
 from amaranth.sim import *
 
 from infra.switch import AddressSwitch
-from infra.signature import Bus
+from infra.signature import Bus, Stream
+from infra.buffer import Buffer
 
 class TestAddressSwitch(unittest.TestCase):
     def test_switch(self):
@@ -35,6 +36,31 @@ class TestAddressSwitch(unittest.TestCase):
         sim.add_testbench(b_process)
         
         with sim.write_vcd("bench/tb_address_switch.vcd"):
+            sim.run()
+            
+class TestBuffer(unittest.TestCase):
+    def test_buffer(self):
+        dut = Buffer(8)
+        
+        async def write(ctx):
+            await Stream.write(ctx, dut.consume, 8)
+            await Stream.write(ctx, dut.consume, 11)
+            await Stream.write(ctx, dut.consume, 15)
+            await Stream.write(ctx, dut.consume, 17)
+        
+        async def get(ctx):
+            assert await Stream.get(ctx, dut.produce) == 8
+            assert await Stream.get(ctx, dut.produce) == 11
+            assert await Stream.get(ctx, dut.produce) == 15
+            assert await Stream.get(ctx, dut.produce) == 17
+            print("Got all values")
+            
+        sim = Simulator(dut)
+        sim.add_clock(1e-8)
+        sim.add_testbench(write)
+        sim.add_testbench(get)
+        
+        with sim.write_vcd("bench/tb_buffer.vcd"):
             sim.run()
             
 if __name__ == "__main__":

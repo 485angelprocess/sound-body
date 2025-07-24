@@ -15,6 +15,7 @@ class AluFunction(enum.Enum, shape=3):
     OR        =0b110
     AND       =0b111
 
+# TODO make into more of a stream
 class AluInputSignature(wiring.Signature):
     def __init__(self):
         super().__init__({

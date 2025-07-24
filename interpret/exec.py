@@ -38,10 +38,11 @@ class ExecProgram(object):
         for r in self.regs:
             ser.write_long(r + RegisterMap.REG_BASE, self.regs[r])
             
-    def assemble(self):
+    def assemble(self, lsb=True):
         a = Assemble(self.program)
         
-        for w in a.get_words():
+        for w in a.get_words(lsb):
+            print("0b{:032b}".format(w))
             yield w
             
     def upload_program(self, ser):

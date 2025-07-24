@@ -79,26 +79,25 @@ class MockBusDevice(object):
     
     
 class Stream(wiring.Signature):
-    def __init__(self, data_shape = 8, **kwargs):
+    def __init__(self, data_shape = 8, prefix = "", **kwargs):
         super().__init__({
-            "tdata": Out(data_shape),
-            "tvalid": Out(1),
-            "tready": In(1)
+            "{}data".format(prefix): Out(data_shape),
+            "{}valid".format(prefix): Out(1),
+            "{}ready".format(prefix): In(1)
         } | kwargs)
         
     @staticmethod
-    async def sim_write(ctx, port, data):
-        ctx.set(port.tvalid, 1)
-        ctx.set(port.tdata, data)
-        await ctx.tick().until(port.tready)
-        ctx.set(port.tvalid, 0)
+    async def write(ctx, port, data):
+        ctx.set(port.valid, 1)
+        ctx.set(port.data, data)
+        await ctx.tick().until(port.ready)
+        ctx.set(port.valid, 0)
 
     @staticmethod
-    async def sim_get(ctx, port):
-        ctx.set(port.tready, 1)
-        data, = await ctx.tick().sample(port.tdata).until(port.tvalid)
-        #print("Got data {}", data)
-        ctx.set(port.tready, 0)
+    async def get(ctx, port):
+        ctx.set(port.ready, 1)
+        data, = await ctx.tick().sample(port.data).until(port.valid)
+        ctx.set(port.ready, 0)
         return data
 
 class AxiLite(wiring.Signature):
