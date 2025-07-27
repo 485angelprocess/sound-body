@@ -22,7 +22,11 @@ class Buffer(wiring.Component):
         
         m.submodules["{}_buffer".format(name)] = b
         
-        wiring.connect(m, port, b.consume)
+        m.d.comb += [
+            b.consume.data.eq(port.data),
+            b.consume.valid.eq(port.valid),
+            port.ready.eq(b.consume.ready)
+        ]
         
         return b
         
@@ -30,15 +34,21 @@ class Buffer(wiring.Component):
         m = Module()
         
         cache = Array([Signal(self.shape, name="c{}".format(i)) for i in range(2)])
-        cache_ready = Signal(2, init=0b11)
+        cache_ready = Signal(2, reset=0b11)
         select = Signal()
         produce_select = Signal()
         
         m.d.comb += produce_select.eq(select + 1)
         
         m.d.comb += self.produce.data.eq(cache[produce_select])
-        m.d.comb += self.consume.ready.eq(cache_ready.bit_select(select, 1))
-        m.d.comb += self.produce.valid.eq(~cache_ready.bit_select(produce_select, 1))
+        
+        with m.Switch(select):
+            with m.Case(0):
+                m.d.comb += self.consume.ready.eq(cache_ready[0])
+                m.d.comb += self.produce.valid.eq(~cache_ready[1])
+            with m.Case(1):
+                m.d.comb += self.consume.ready.eq(cache_ready[1])
+                m.d.comb += self.produce.valid.eq(~cache_ready[0])
         
         with m.If(self.consume.ready & self.consume.valid):
             m.d.sync += cache[select].eq(self.consume.data)

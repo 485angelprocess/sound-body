@@ -88,6 +88,10 @@ decode_shape = data.StructLayout({
             "offset": signed(12),
             "s1": signed(32),
             "s2": signed(32)
+        }),
+        "upper": data.StructLayout({
+            "d": 5,
+            "i": signed(32)
         })
     })
 })

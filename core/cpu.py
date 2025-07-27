@@ -12,11 +12,12 @@ from core.mul import MulSignature, MulUnit
 
 from core.alu import Alu, AluInputSignature, AluOutputSignature
 from core.decode import InstructionDecode
-from core.shape import Instruction, write_shape
+from core.shape import Instruction, write_shape, decode_shape
 
 class WriteRoute(enum.Enum):
-    ALU = 0
-    NONE= 1
+    NONE= 0
+    ALU = 1
+    IMM = 2
 
 class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
     """
@@ -45,23 +46,38 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         pc = Signal(32)
         prog_enable = Signal(init=self.normally_on)
         
+        # Signal prevents program read when pc might change
         latch = Signal()
         
         m.submodules.decode = decode = InstructionDecode()
         
-        decode_buffer = Buffer.from_port(m, decode.produce, "decode")
+        m.submodules.decode_buffer = decode_buffer = Buffer(decode_shape)
+        
+        wiring.connect(m, decode_buffer.consume, decode.produce)
         
         # Get instruction
         m.d.comb += self.prog.addr.eq(pc)
         m.d.comb += self.prog.cyc.eq(decode.consume.ready & prog_enable & (~latch))
         m.d.comb += self.prog.stb.eq(decode.consume.ready & prog_enable & (~latch))
         
-        # TODO latch if program counter might change
+        # latch if program counter might change
         with m.If(self.prog.cyc & self.prog.stb & self.prog.ack):
-            m.d.sync += latch.eq(1)
+            with m.Switch(decode.consume.data.op):
+                with m.Case(Instruction.BRANCH):
+                    m.d.sync += latch.eq(1)
+                with m.Case(Instruction.JAL):
+                    m.d.sync += latch.eq(1)
+                with m.Case(Instruction.JALR):
+                    m.d.sync += latch.eq(1)
+                with m.Default():
+                    # Just go to the next program counter immediately
+                    #m.d.sync += latch.eq(1)
+                    m.d.sync += pc.eq(pc+4)
         
         # Data includes program counter and instruction data
-        m.d.comb += decode.consume.data.pc.eq(pc+4)
+        # This may give slightly different jump behavior,
+        # Since this will make branching relative to the next instruction
+        m.d.comb += decode.consume.data.pc.eq(pc)
         
         m.d.comb += decode.consume.data.as_value()[32:].eq(self.prog.r_data)
         
@@ -73,9 +89,8 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         # Route decoder
         with m.Switch(decode_buffer.produce.data.op):
             with m.Case(Instruction.ARITHIMM):
-                with m.If(alu.consume.valid):            
-                    m.d.sync += Print("Artihmetic Immediate")
                 data = decode_buffer.produce.data.mode.imm
+                # TODO move some of these outside of switch
                 m.d.comb += [
                     alu.consume.s1.eq(data.s),
                     alu.consume.s2.eq(data.i),
@@ -87,6 +102,7 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                     decode_buffer.produce.ready.eq(1)
                 ]
             with m.Case(Instruction.ARITH):
+                # Register arithmetic
                 data = decode_buffer.produce.data.mode.arith
                 m.d.comb += [
                     alu.consume.s1.eq(data.s1),
@@ -105,12 +121,12 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                     self.bus.w_data.eq(data.s2),
                     self.bus.w_en.eq(1),
                     self.bus.stb.eq(decode_buffer.produce.valid),
+                    self.bus.cyc.eq(decode_buffer.produce.valid),
                     decode_buffer.produce.ready.eq(self.bus.ack)
                 ]
                 m.d.comb += self.size.eq(data.offset)
             with m.Default():
-                with m.If(decode_buffer.produce.valid):
-                    m.d.sync += Print("Unknown instruction")
+                pass
         
         # Route result
         write_buffer = m.submodules.write_buffer = Buffer(write_shape)
@@ -128,22 +144,36 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         ]
         
         with m.If(write_buffer.produce.valid & write_buffer.produce.ready):
-            m.d.sync += latch.eq(0)
-            m.d.sync += pc.eq(decode_buffer.produce.data.pc)
+            with m.If(latch):
+                # TODO check for branch
+                m.d.sync += latch.eq(0)
+                m.d.sync += pc.eq(decode_buffer.produce.data.pc+4)
         
         with m.Switch(write_route):
             with m.Case(WriteRoute.ALU):
+                # Write register from ALU
                 m.d.comb += write_buffer.consume.data.value.eq(alu.produce.value)
                 m.d.comb += write_buffer.consume.data.d.eq(alu.produce.d)
                 m.d.comb += write_buffer.consume.valid.eq(alu.produce.valid)
+            with m.Case(WriteRoute.IMM):
+                # Write register from an immediate (i.e. AUIPC or LUI)
+                m.d.comb += write_buffer.consume.data.value.eq(decode_buffer.produce.data.mode.upper.i)
+                m.d.comb += write_buffer.consume.data.d.eq(decode_buffer.produce.data.mode.upper.d)
+                m.d.comb += write_buffer.consume.valid.eq(decode_buffer.produce.valid)
+                m.d.comb += decode_buffer.produce.ready.eq(write_buffer.consume.ready)
             with m.Default():
                 pass
         
+        # How are registers being written to
         with m.Switch(decode_buffer.produce.data.op):
             with m.Case(Instruction.ARITHIMM):
                 m.d.comb += write_route.eq(WriteRoute.ALU)
             with m.Case(Instruction.ARITH):
                 m.d.comb += write_route.eq(WriteRoute.ALU)
+            with m.Case(Instruction.AUIPC):
+                m.d.comb += write_route.eq(WriteRoute.IMM)
+            with m.Case(Instruction.LUI):
+                m.d.comb += write_route.eq(WriteRoute.IMM)
             with m.Default():
                 m.d.comb += write_route.eq(WriteRoute.NONE)
         

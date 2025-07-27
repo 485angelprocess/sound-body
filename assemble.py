@@ -78,6 +78,11 @@ DefinitionTable = dict()
 # Immediate
 DefinitionTable["andi"] = Definition.arith_imm(0b111)
 DefinitionTable["addi"] = Definition.arith_imm(0b000)
+DefinitionTable["lui"] = Definition(
+    Immediate(arg=1,start=0,stop=19),
+    Register(arg=0),
+    Constant(0b01101_11, width=7)
+)
         
 #Multiplcation
 DefinitionTable["mul"] =    Definition.mul(0b000)

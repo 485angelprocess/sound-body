@@ -38,7 +38,8 @@ class Bus(wiring.Signature):
                 ctx.set(port.ack, 1)
                 addr, data = ctx.get(port.addr), ctx.get(port.w_data)
                 print("Consumed {}: {}".format(addr, data))
-                await ctx.delay(1e-6)
+                if not sync:
+                    await ctx.delay(1e-6)
                 ctx.set(port.ack, 0)
                 return addr, data
             if sync:

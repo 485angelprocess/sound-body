@@ -39,13 +39,20 @@ class RegisterMask(wiring.Component):
         m.d.comb += self.r_ok1.eq(r1_ok)
         m.d.comb += self.r_ok2.eq(r2_ok)
         
+        set_mask = Signal(32)
+        clear_mask = Signal(32)
+        
         # Add new destination register to mask
         with m.If(self.r_valid):
-            m.d.sync += reg_mask.eq(reg_mask | (1 << self.r_rd))
+            m.d.comb += set_mask.eq((1 << self.r_rd))
         
         # Clear destination register from mask
         with m.If(self.w_valid):
-            m.d.sync += reg_mask.eq(reg_mask & (~(1 << self.w_rd)))
+            m.d.comb += clear_mask.eq((~(1 << self.w_rd)))
+        with m.Else():
+            m.d.comb += clear_mask.eq(0xFF_FF_FF_FF)
+            
+        m.d.sync += reg_mask.eq( (reg_mask | set_mask) & clear_mask )
         
         return m
         
@@ -184,6 +191,20 @@ class InstructionDecode(wiring.Component):
                     out_register.mode.store.s1.eq(reg.rs1.r_data),
                     out_register.mode.store.s2.eq(reg.rs2.r_data)
                 ]
+            with m.Case(Instruction.AUIPC):
+                # Add upper immediate to program counter
+                m.d.comb += [
+                    out_register.mode.upper.d.eq(self.consume.data.mode.u.rd),
+                    out_register.mode.upper.i.eq(self.consume.data.pc +
+                            self.consume.data.mode.u.imm << 12)
+                ]
+            with m.Case(Instruction.LUI):
+                # Add upper immediate to register
+                m.d.comb += [
+                    out_register.mode.upper.d.eq(self.consume.data.mode.u.rd),
+                    out_register.mode.upper.i.eq(
+                            self.consume.data.mode.u.imm << 12)
+                ]
             with m.Default():
                 m.d.comb += error_flag.eq(1)
                 m.d.comb += self.error.cyc.eq(1)
@@ -206,7 +227,7 @@ class InstructionDecode(wiring.Component):
                 m.d.comb += reg.rs1.stb.eq(self.consume.valid)
                 m.d.comb += reg.rs2.cyc.eq(self.consume.valid)
                 m.d.comb += reg.rs2.stb.eq(self.consume.valid)
-                m.d.comb += register_ready.eq(reg.rs1.ack & reg.rs1.ack)
+                m.d.comb += register_ready.eq(reg.rs1.ack & reg.rs2.ack)
             with m.Default():
                 m.d.comb += register_ready.eq(1)
     
