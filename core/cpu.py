@@ -18,6 +18,7 @@ class WriteRoute(enum.Enum):
     NONE= 0
     ALU = 1
     IMM = 2
+    PC = 3
 
 class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
     """
@@ -71,12 +72,10 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                     m.d.sync += latch.eq(1)
                 with m.Default():
                     # Just go to the next program counter immediately
-                    #m.d.sync += latch.eq(1)
                     m.d.sync += pc.eq(pc+4)
         
         # Data includes program counter and instruction data
-        # This may give slightly different jump behavior,
-        # Since this will make branching relative to the next instruction
+        # This may give slightly different jump behavior
         m.d.comb += decode.consume.data.pc.eq(pc)
         
         m.d.comb += decode.consume.data.as_value()[32:].eq(self.prog.r_data)
@@ -145,9 +144,14 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         
         with m.If(write_buffer.produce.valid & write_buffer.produce.ready):
             with m.If(latch):
-                # TODO check for branch
                 m.d.sync += latch.eq(0)
-                m.d.sync += pc.eq(decode_buffer.produce.data.pc+4)
+                with m.Switch(decode_buffer.produce.data.op):
+                    with m.Case(Instruction.JAL):
+                        m.d.sync += pc.eq(decode_buffer.produce.data.pc+
+                                        decode_buffer.produce.data.mode.jump.offset)
+                    with m.Default():
+                        # TODO check for branch
+                        m.d.sync += pc.eq(decode_buffer.produce.data.pc+4)
         
         with m.Switch(write_route):
             with m.Case(WriteRoute.ALU):
@@ -159,6 +163,12 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                 # Write register from an immediate (i.e. AUIPC or LUI)
                 m.d.comb += write_buffer.consume.data.value.eq(decode_buffer.produce.data.mode.upper.i)
                 m.d.comb += write_buffer.consume.data.d.eq(decode_buffer.produce.data.mode.upper.d)
+                m.d.comb += write_buffer.consume.valid.eq(decode_buffer.produce.valid)
+                m.d.comb += decode_buffer.produce.ready.eq(write_buffer.consume.ready)
+            with m.Case(WriteRoute.PC):
+                # Write program counter to register
+                m.d.comb += write_buffer.consume.data.value.eq(pc+4)
+                m.d.comb += write_buffer.consume.data.d.eq(decode_buffer.produce.data.mode.jump.d)
                 m.d.comb += write_buffer.consume.valid.eq(decode_buffer.produce.valid)
                 m.d.comb += decode_buffer.produce.ready.eq(write_buffer.consume.ready)
             with m.Default():
@@ -174,6 +184,8 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                 m.d.comb += write_route.eq(WriteRoute.IMM)
             with m.Case(Instruction.LUI):
                 m.d.comb += write_route.eq(WriteRoute.IMM)
+            with m.Case(Instruction.JAL):
+                m.d.comb += write_route.eq(WriteRoute.PC)
             with m.Default():
                 m.d.comb += write_route.eq(WriteRoute.NONE)
         

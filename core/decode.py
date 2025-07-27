@@ -205,7 +205,23 @@ class InstructionDecode(wiring.Component):
                     out_register.mode.upper.i.eq(
                             self.consume.data.mode.u.imm << 12)
                 ]
+            with m.Case(Instruction.JAL):
+                m.d.comb += [
+                    out_register.mode.jump.d.eq(self.consume.data.mode.j.rd),
+                ]
+                
+                # Bit mapping for offset
+                offset = out_register.mode.jump.offset
+                source = self.consume.data.mode.j.offset
+                m.d.comb += [
+                    offset[0].eq(0),
+                    offset[1:11].eq(source[9:19]),
+                    offset[11].eq(source[8]),
+                    offset[12:20].eq(source[0:8]),
+                    offset[20].eq(source[19])
+                ]
             with m.Default():
+                # Unknown operation sends error information
                 m.d.comb += error_flag.eq(1)
                 m.d.comb += self.error.cyc.eq(1)
                 m.d.comb += self.error.stb.eq(1)
@@ -219,10 +235,12 @@ class InstructionDecode(wiring.Component):
         # Read from register device
         with m.Switch(num_regs):
             with m.Case(1):
+                # Reads from one register
                 m.d.comb += reg.rs1.cyc.eq(self.consume.valid)
                 m.d.comb += reg.rs1.stb.eq(self.consume.valid)
                 m.d.comb += register_ready.eq(reg.rs1.ack)
             with m.Case(2):
+                # Reads from both registers
                 m.d.comb += reg.rs1.cyc.eq(self.consume.valid)
                 m.d.comb += reg.rs1.stb.eq(self.consume.valid)
                 m.d.comb += reg.rs2.cyc.eq(self.consume.valid)
@@ -242,15 +260,21 @@ class InstructionDecode(wiring.Component):
                 m.d.comb += num_regs.eq(1)
                 m.d.comb += reg_write.eq(1)
             with m.Case(Instruction.MEMORYLOAD):
+                # Address and writes to one register
                 m.d.comb += num_regs.eq(1)
                 m.d.comb += reg_write.eq(1)
             with m.Case(Instruction.MEMORYSTORE):
+                # Reads two register for data and address
                 m.d.comb += num_regs.eq(2)
                 m.d.comb += reg_write.eq(0)
+            with m.Case(Instruction.JAL):
+                # Jump and Link writes to a register
+                m.d.comb += num_regs.eq(0)
+                m.d.comb += reg_write.eq(1)
             with m.Default():
                 pass
                 
-        with m.If(~self.error.cyc):
+        with m.If(~self.debug.cyc):
             # normal operation
             m.d.comb += [
                 reg.rd.addr.eq(self.write.addr),

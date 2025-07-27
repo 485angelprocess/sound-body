@@ -20,110 +20,110 @@ module risc_project(axi_wready, axi_arready, axi_rdata, axi_rvalid, axi_bresp, a
   wire [31:0] a_w_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
   wire a_w_en;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:110" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:112" *)
   output [31:0] axi_araddr;
   wire [31:0] axi_araddr;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:115" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:117" *)
   wire [31:0] \axi_araddr$136 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:115" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:117" *)
   wire [31:0] \axi_araddr$92 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:114" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:116" *)
   input axi_arready;
   wire axi_arready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:114" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:116" *)
   wire \axi_arready$137 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:114" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:116" *)
   wire \axi_arready$93 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
   output axi_arvalid;
   wire axi_arvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:113" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:115" *)
   wire \axi_arvalid$138 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:113" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:115" *)
   wire \axi_arvalid$94 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:110" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:112" *)
   output [31:0] axi_awaddr;
   wire [31:0] axi_awaddr;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:109" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:111" *)
   wire [31:0] \axi_awaddr$139 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:109" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:111" *)
   wire [31:0] \axi_awaddr$95 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:108" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:110" *)
   input axi_awready;
   wire axi_awready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:108" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:110" *)
   wire \axi_awready$140 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:108" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:110" *)
   wire \axi_awready$96 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
   output axi_awvalid;
   wire axi_awvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:107" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:109" *)
   wire \axi_awvalid$141 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:107" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:109" *)
   wire \axi_awvalid$97 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
   output axi_bready;
   wire axi_bready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:120" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:122" *)
   wire \axi_bready$142 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:120" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:122" *)
   wire \axi_bready$98 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:119" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:121" *)
   input [1:0] axi_bresp;
   wire [1:0] axi_bresp;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:119" *)
-  wire [1:0] \axi_bresp$143 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:119" *)
-  wire [1:0] \axi_bresp$99 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:121" *)
+  wire [1:0] \axi_bresp$143 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:121" *)
+  wire [1:0] \axi_bresp$99 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:123" *)
   input axi_bvalid;
   wire axi_bvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:121" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:123" *)
   wire \axi_bvalid$100 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:121" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:123" *)
   wire \axi_bvalid$144 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:116" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:118" *)
   input [31:0] axi_rdata;
   wire [31:0] axi_rdata;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:116" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:118" *)
   wire [31:0] \axi_rdata$101 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:116" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:118" *)
   wire [31:0] \axi_rdata$145 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
   output axi_rready;
   wire axi_rready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:118" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:120" *)
   wire \axi_rready$102 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:118" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:120" *)
   wire \axi_rready$146 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:117" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:119" *)
   input axi_rvalid;
   wire axi_rvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:117" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:119" *)
   wire \axi_rvalid$103 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:117" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:119" *)
   wire \axi_rvalid$147 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:110" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:112" *)
   output [31:0] axi_wdata;
   wire [31:0] axi_wdata;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:110" *)
-  wire [31:0] \axi_wdata$104 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:110" *)
-  wire [31:0] \axi_wdata$148 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:112" *)
+  wire [31:0] \axi_wdata$104 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:112" *)
+  wire [31:0] \axi_wdata$148 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:114" *)
   input axi_wready;
   wire axi_wready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:112" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:114" *)
   wire \axi_wready$105 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:112" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:114" *)
   wire \axi_wready$149 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
   output axi_wvalid;
   wire axi_wvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:111" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:113" *)
   wire \axi_wvalid$106 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:111" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:113" *)
   wire \axi_wvalid$150 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
   wire b_ack;
@@ -142,28 +142,28 @@ module risc_project(axi_wready, axi_arready, axi_rdata, axi_rvalid, axi_bresp, a
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input clk;
   wire clk;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:84" *)
-  wire [7:0] command_tdata;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:86" *)
-  wire command_tready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:85" *)
-  wire command_tvalid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:87" *)
+  wire [7:0] command_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  wire command_ready;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
+  wire command_valid;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
   wire consume_ack;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
   wire [31:0] consume_addr;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
   wire consume_cyc;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:87" *)
+  wire [7:0] consume_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
   wire [31:0] consume_r_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  wire consume_ready;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
   wire consume_stb;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:84" *)
-  wire [7:0] consume_tdata;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:86" *)
-  wire consume_tready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:85" *)
-  wire consume_tvalid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
+  wire consume_valid;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
   wire [31:0] consume_w_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
@@ -182,49 +182,49 @@ module risc_project(axi_wready, axi_arready, axi_rdata, axi_rvalid, axi_bresp, a
   wire [31:0] debug_w_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
   wire debug_w_en;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:109" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:111" *)
   output [31:0] direct_araddr;
   wire [31:0] direct_araddr;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:114" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:116" *)
   input direct_arready;
   wire direct_arready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:113" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:115" *)
   output direct_arvalid;
   wire direct_arvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:109" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:111" *)
   output [31:0] direct_awaddr;
   wire [31:0] direct_awaddr;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:108" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:110" *)
   input direct_awready;
   wire direct_awready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:107" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:109" *)
   output direct_awvalid;
   wire direct_awvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:120" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:122" *)
   output direct_bready;
   wire direct_bready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:119" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:121" *)
   input [1:0] direct_bresp;
   wire [1:0] direct_bresp;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:121" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:123" *)
   input direct_bvalid;
   wire direct_bvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:116" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:118" *)
   input [31:0] direct_rdata;
   wire [31:0] direct_rdata;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:118" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:120" *)
   output direct_rready;
   wire direct_rready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:117" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:119" *)
   input direct_rvalid;
   wire direct_rvalid;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
   output [31:0] direct_wdata;
   wire [31:0] direct_wdata;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:112" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:114" *)
   input direct_wready;
   wire direct_wready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:111" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:113" *)
   output direct_wvalid;
   wire direct_wvalid;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\serial_to_wishbone.py:29" *)
@@ -236,16 +236,16 @@ module risc_project(axi_wready, axi_arready, axi_rdata, axi_rvalid, axi_bresp, a
   wire [31:0] produce_addr;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
   wire produce_cyc;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:87" *)
+  wire [7:0] produce_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
   wire [31:0] produce_r_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  wire produce_ready;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
   wire produce_stb;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:84" *)
-  wire [7:0] produce_tdata;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:86" *)
-  wire produce_tready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:85" *)
-  wire produce_tvalid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
+  wire produce_valid;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
   wire [31:0] produce_w_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
@@ -254,44 +254,44 @@ module risc_project(axi_wready, axi_arready, axi_rdata, axi_rvalid, axi_bresp, a
   wire prog_ack;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
   wire [31:0] prog_addr;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:109" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:111" *)
   output [31:0] prog_araddr;
   wire [31:0] prog_araddr;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:114" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:116" *)
   input prog_arready;
   wire prog_arready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:113" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:115" *)
   output prog_arvalid;
   wire prog_arvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:109" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:111" *)
   output [31:0] prog_awaddr;
   wire [31:0] prog_awaddr;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:108" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:110" *)
   input prog_awready;
   wire prog_awready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:107" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:109" *)
   output prog_awvalid;
   wire prog_awvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:120" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:122" *)
   output prog_bready;
   wire prog_bready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:119" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:121" *)
   input [1:0] prog_bresp;
   wire [1:0] prog_bresp;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:121" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:123" *)
   input prog_bvalid;
   wire prog_bvalid;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
   wire prog_cyc;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
   wire [31:0] prog_r_data;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:116" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:118" *)
   input [31:0] prog_rdata;
   wire [31:0] prog_rdata;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:118" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:120" *)
   output prog_rready;
   wire prog_rready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:117" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:119" *)
   input prog_rvalid;
   wire prog_rvalid;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
@@ -300,21 +300,21 @@ module risc_project(axi_wready, axi_arready, axi_rdata, axi_rvalid, axi_bresp, a
   wire [31:0] prog_w_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
   wire prog_w_en;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:110" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:112" *)
   output [31:0] prog_wdata;
   wire [31:0] prog_wdata;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:112" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:114" *)
   input prog_wready;
   wire prog_wready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:111" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:113" *)
   output prog_wvalid;
   wire prog_wvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:84" *)
-  wire [7:0] reply_tdata;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:86" *)
-  wire reply_tready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:85" *)
-  wire reply_tvalid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:87" *)
+  wire [7:0] reply_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  wire reply_ready;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
+  wire reply_valid;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input rst;
   wire rst;
@@ -361,9 +361,9 @@ module risc_project(axi_wready, axi_arready, axi_rdata, axi_rvalid, axi_bresp, a
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\risc_build.py:44" *)
   \risc_project.bridge  bridge (
     .clk(clk),
-    .command_tdata(command_tdata),
-    .command_tready(produce_tready),
-    .command_tvalid(command_tvalid),
+    .command_data(command_data),
+    .command_ready(produce_ready),
+    .command_valid(command_valid),
     .produce_ack(produce_ack),
     .produce_addr(consume_addr),
     .produce_cyc(consume_cyc),
@@ -371,18 +371,16 @@ module risc_project(axi_wready, axi_arready, axi_rdata, axi_rvalid, axi_bresp, a
     .produce_stb(consume_stb),
     .produce_w_data(direct_wdata),
     .produce_w_en(consume_w_en),
-    .reply_tdata(consume_tdata),
-    .reply_tready(reply_tready),
-    .reply_tvalid(consume_tvalid),
+    .reply_data(consume_data),
+    .reply_ready(reply_ready),
+    .reply_valid(consume_valid),
     .rst(rst),
     .soft_reset(periph_resetn)
   );
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\risc_build.py:53" *)
   \risc_project.bridge_sw  bridge_sw (
     .\0_address (direct_awaddr),
-    .a_ack(a_ack),
     .a_cyc(debug_cyc),
-    .a_r_data(a_r_data),
     .a_stb(debug_stb),
     .a_w_data(direct_wdata),
     .a_w_en(consume_w_en),
@@ -421,14 +419,7 @@ module risc_project(axi_wready, axi_arready, axi_rdata, axi_rvalid, axi_bresp, a
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\risc_build.py:66" *)
   \risc_project.core  core (
     .clk(clk),
-    .debug_ack(a_ack),
-    .debug_addr(consume_addr),
-    .debug_cyc(debug_cyc),
-    .debug_r_data(a_r_data),
-    .debug_stb(debug_stb),
-    .debug_w_data(direct_wdata),
-    .debug_w_en(consume_w_en),
-    .prog_ack(prog_ack),
+    .\consume_valid$15 (prog_ack),
     .prog_addr(prog_awaddr),
     .prog_cyc(\wish_cyc$126 ),
     .prog_r_data(prog_rdata),
@@ -458,29 +449,29 @@ module risc_project(axi_wready, axi_arready, axi_rdata, axi_rvalid, axi_bresp, a
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\risc_build.py:36" *)
   \risc_project.uart_rx  uart_rx (
     .clk(clk),
-    .produce_tdata(command_tdata),
-    .produce_tvalid(command_tvalid),
-    .r_en(produce_tready),
+    .produce_data(command_data),
+    .produce_valid(command_valid),
+    .r_en(produce_ready),
     .rst(rst),
     .rx(rx)
   );
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\risc_build.py:35" *)
   \risc_project.uart_tx  uart_tx (
     .clk(clk),
-    .consume_tready(reply_tready),
+    .consume_ready(reply_ready),
     .rst(rst),
     .tx(tx),
-    .w_data(consume_tdata),
-    .w_en(consume_tvalid)
+    .w_data(consume_data),
+    .w_en(consume_valid)
   );
   assign \tx$50  = tx;
   assign \rx$51  = rx;
-  assign reply_tdata = consume_tdata;
-  assign consume_tready = reply_tready;
-  assign reply_tvalid = consume_tvalid;
-  assign produce_tdata = command_tdata;
-  assign command_tready = produce_tready;
-  assign produce_tvalid = command_tvalid;
+  assign reply_data = consume_data;
+  assign consume_ready = reply_ready;
+  assign reply_valid = consume_valid;
+  assign produce_data = command_data;
+  assign command_ready = produce_ready;
+  assign produce_valid = command_valid;
   assign consume_ack = produce_ack;
   assign produce_addr = consume_addr;
   assign produce_cyc = consume_cyc;
@@ -516,11 +507,13 @@ module risc_project(axi_wready, axi_arready, axi_rdata, axi_rvalid, axi_bresp, a
   assign \axi_wready$105  = direct_wready;
   assign \axi_wvalid$106  = direct_wvalid;
   assign soft_reset = periph_resetn;
-  assign debug_ack = a_ack;
+  assign a_ack = 1'h0;
+  assign debug_ack = 1'h0;
   assign debug_addr = consume_addr;
   assign a_addr = consume_addr;
   assign a_cyc = debug_cyc;
-  assign debug_r_data = a_r_data;
+  assign a_r_data = 32'd0;
+  assign debug_r_data = 32'd0;
   assign a_stb = debug_stb;
   assign debug_w_data = direct_wdata;
   assign a_w_data = direct_wdata;
@@ -567,7 +560,7 @@ endmodule
 
 (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\serial_to_wishbone.py:33" *)
 (* generator = "Amaranth" *)
-module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, command_tready, produce_stb, produce_cyc, reply_tvalid, reply_tdata, produce_addr, produce_w_data, produce_w_en, soft_reset, produce_ack, produce_r_data, clk);
+module \risc_project.bridge (rst, reply_ready, command_valid, command_data, command_ready, produce_stb, produce_cyc, reply_valid, reply_data, produce_addr, produce_w_data, produce_w_en, soft_reset, produce_ack, produce_r_data, clk);
   reg \$auto$verilog_backend.cc:2352:dump_module$1  = 0;
   wire [7:0] \$1 ;
   wire \$10 ;
@@ -617,15 +610,15 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input clk;
   wire clk;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:84" *)
-  input [7:0] command_tdata;
-  wire [7:0] command_tdata;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:86" *)
-  output command_tready;
-  reg command_tready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:85" *)
-  input command_tvalid;
-  wire command_tvalid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:87" *)
+  input [7:0] command_data;
+  wire [7:0] command_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  output command_ready;
+  reg command_ready;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
+  input command_valid;
+  wire command_valid;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\serial_to_wishbone.py:36" *)
   reg [2:0] counter = 3'h0;
   (* init = 1'h1 *)
@@ -656,15 +649,15 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
   output produce_w_en;
   reg produce_w_en = 1'h0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:84" *)
-  output [7:0] reply_tdata;
-  reg [7:0] reply_tdata;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:86" *)
-  input reply_tready;
-  wire reply_tready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:85" *)
-  output reply_tvalid;
-  reg reply_tvalid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:87" *)
+  output [7:0] reply_data;
+  reg [7:0] reply_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  input reply_ready;
+  wire reply_ready;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
+  output reply_valid;
+  reg reply_valid;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input rst;
   wire rst;
@@ -677,7 +670,7 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
   reg [31:0] timer = 32'd0;
   assign \$33  = counter * (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\serial_to_wishbone.py:153" *) 4'h8;
   assign \$1  = arg >> \$33 ;
-  assign \$2  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\serial_to_wishbone.py:178" *) command_tvalid;
+  assign \$2  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\serial_to_wishbone.py:178" *) command_valid;
   assign \$3  = \$6  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\serial_to_wishbone.py:178" *) \$2 ;
   assign \$6  = ! (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) fsm_state;
   assign \$7  = fsm_state == (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_dsl.py:486" *) 1'h1;
@@ -695,7 +688,7 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
   assign \$19  = timer + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\serial_to_wishbone.py:124" *) 1'h1;
   assign \$20  = ! (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\serial_to_wishbone.py:156" *) counter;
   assign \$21  = counter - (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\serial_to_wishbone.py:159" *) 1'h1;
-  assign \$22  = reply_tvalid & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\serial_to_wishbone.py:175" *) reply_tready;
+  assign \$22  = reply_valid & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\serial_to_wishbone.py:175" *) reply_ready;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
   always @(posedge clk)
     produce_addr <= \$23 ;
@@ -728,15 +721,15 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
     soft_reset <= \$32 ;
   always @* begin
     if (\$auto$verilog_backend.cc:2352:dump_module$1 ) begin end
-    command_tready = 1'h0;
+    command_ready = 1'h0;
     (* full_case = 32'd1 *)
     casez (fsm_state)
       3'h0:
-          command_tready = 1'h1;
+          command_ready = 1'h1;
       3'h1:
-          command_tready = 1'h1;
+          command_ready = 1'h1;
       3'h5:
-          command_tready = 1'h1;
+          command_ready = 1'h1;
       3'h6:
           /* empty */;
       3'h2:
@@ -746,7 +739,7 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
       3'h4:
           /* empty */;
       3'h3:
-          command_tready = reply_tready;
+          command_ready = reply_ready;
     endcase
   end
   always @* begin
@@ -779,7 +772,7 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
   end
   always @* begin
     if (\$auto$verilog_backend.cc:2352:dump_module$1 ) begin end
-    reply_tvalid = 1'h0;
+    reply_valid = 1'h0;
     (* full_case = 32'd1 *)
     casez (fsm_state)
       3'h0:
@@ -791,23 +784,23 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
       3'h6:
           /* empty */;
       3'h2:
-          reply_tvalid = 1'h1;
+          reply_valid = 1'h1;
       3'h7:
-          reply_tvalid = 1'h1;
+          reply_valid = 1'h1;
       3'h4:
-          reply_tvalid = 1'h1;
+          reply_valid = 1'h1;
       3'h3:
-          reply_tvalid = command_tvalid;
+          reply_valid = command_valid;
     endcase
     if (\$3 ) begin
       if (\$5 ) begin
-        reply_tvalid = 1'h1;
+        reply_valid = 1'h1;
       end
     end
   end
   always @* begin
     if (\$auto$verilog_backend.cc:2352:dump_module$1 ) begin end
-    reply_tdata = 8'h00;
+    reply_data = 8'h00;
     (* full_case = 32'd1 *)
     casez (fsm_state)
       3'h0:
@@ -819,17 +812,17 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
       3'h6:
           /* empty */;
       3'h2:
-          reply_tdata = prefix;
+          reply_data = prefix;
       3'h7:
-          reply_tdata = \$1 ;
+          reply_data = \$1 ;
       3'h4:
-          reply_tdata = 8'h0a;
+          reply_data = 8'h0a;
       3'h3:
-          reply_tdata = command_tdata;
+          reply_data = command_data;
     endcase
     if (\$3 ) begin
       if (\$5 ) begin
-        reply_tdata = 8'h00;
+        reply_data = 8'h00;
       end
     end
   end
@@ -838,7 +831,7 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
     bus_ack = 1'h0;
     if (\$3 ) begin
       if (\$5 ) begin
-        bus_ack = reply_tready;
+        bus_ack = reply_ready;
       end
     end
   end
@@ -849,16 +842,16 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
       3'h0:
           \$23  = 32'd0;
       3'h1:
-          if (command_tvalid) begin
+          if (command_valid) begin
             casez (counter)
               3'h0:
-                  \$23 [7:0] = command_tdata;
+                  \$23 [7:0] = command_data;
               3'h1:
-                  \$23 [15:8] = command_tdata;
+                  \$23 [15:8] = command_data;
               3'h2:
-                  \$23 [23:16] = command_tdata;
+                  \$23 [23:16] = command_data;
               3'h3:
-                  \$23 [31:24] = command_tdata;
+                  \$23 [31:24] = command_data;
             endcase
           end
     endcase
@@ -875,16 +868,16 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
       3'h1:
           /* empty */;
       3'h5:
-          if (command_tvalid) begin
+          if (command_valid) begin
             casez (counter)
               3'h0:
-                  \$24 [7:0] = command_tdata;
+                  \$24 [7:0] = command_data;
               3'h1:
-                  \$24 [15:8] = command_tdata;
+                  \$24 [15:8] = command_data;
               3'h2:
-                  \$24 [23:16] = command_tdata;
+                  \$24 [23:16] = command_data;
               3'h3:
-                  \$24 [31:24] = command_tdata;
+                  \$24 [31:24] = command_data;
             endcase
           end
     endcase
@@ -899,8 +892,8 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
       3'h0:
         begin
           \$25  = 1'h0;
-          if (command_tvalid) begin
-            casez (command_tdata)
+          if (command_valid) begin
+            casez (command_data)
               8'h77:
                   \$25  = 1'h1;
               8'h57:
@@ -949,8 +942,8 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
     \$27  = size;
     casez (fsm_state)
       3'h0:
-          if (command_tvalid) begin
-            casez (command_tdata)
+          if (command_valid) begin
+            casez (command_data)
               8'h77:
                   \$27  = 2'h0;
               8'h57:
@@ -971,9 +964,9 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
     \$28  = counter;
     casez (fsm_state)
       3'h0:
-          if (command_tvalid) begin
+          if (command_valid) begin
             (* full_case = 32'd1 *)
-            casez (command_tdata)
+            casez (command_data)
               8'h77:
                   \$28  = 3'h0;
               8'h57:
@@ -995,7 +988,7 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
             endcase
           end
       3'h1:
-          if (command_tvalid) begin
+          if (command_valid) begin
             (* full_case = 32'd1 *)
             if (\$14 ) begin
               \$28  = { 1'h0, size };
@@ -1004,7 +997,7 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
             end
           end
       3'h5:
-          if (command_tvalid) begin
+          if (command_valid) begin
             (* full_case = 32'd1 *)
             if (\$16 ) begin
             end else begin
@@ -1028,7 +1021,7 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
       3'h2:
           /* empty */;
       3'h7:
-          if (reply_tready) begin
+          if (reply_ready) begin
             (* full_case = 32'd1 *)
             if (\$20 ) begin
             end else begin
@@ -1046,9 +1039,9 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
     (* full_case = 32'd1 *)
     casez (fsm_state)
       3'h0:
-          if (command_tvalid) begin
+          if (command_valid) begin
             (* full_case = 32'd1 *)
-            casez (command_tdata)
+            casez (command_data)
               8'h77:
                   \$29  = 3'h1;
               8'h57:
@@ -1070,7 +1063,7 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
             endcase
           end
       3'h1:
-          if (command_tvalid) begin
+          if (command_valid) begin
             if (\$14 ) begin
               (* full_case = 32'd1 *)
               if (produce_w_en) begin
@@ -1081,7 +1074,7 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
             end
           end
       3'h5:
-          if (command_tvalid) begin
+          if (command_valid) begin
             if (\$16 ) begin
               \$29  = 3'h6;
             end
@@ -1096,17 +1089,17 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
           end
         end
       3'h2:
-          if (reply_tready) begin
+          if (reply_ready) begin
             \$29  = 3'h7;
           end
       3'h7:
-          if (reply_tready) begin
+          if (reply_ready) begin
             if (\$20 ) begin
               \$29  = 3'h0;
             end
           end
       3'h4:
-          if (reply_tready) begin
+          if (reply_ready) begin
             \$29  = 3'h0;
           end
       3'h3:
@@ -1123,9 +1116,9 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
     \$30  = prefix;
     casez (fsm_state)
       3'h0:
-          if (command_tvalid) begin
+          if (command_valid) begin
             (* full_case = 32'd1 *)
-            casez (command_tdata)
+            casez (command_data)
               8'h77:
                   /* empty */;
               8'h57:
@@ -1174,9 +1167,9 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
     \$31  = arg;
     casez (fsm_state)
       3'h0:
-          if (command_tvalid) begin
+          if (command_valid) begin
             (* full_case = 32'd1 *)
-            casez (command_tdata)
+            casez (command_data)
               8'h77:
                   /* empty */;
               8'h57:
@@ -1194,7 +1187,7 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
               8'h78:
                   /* empty */;
               default:
-                  \$31  = { 56'h00000000000000, command_tdata };
+                  \$31  = { 56'h00000000000000, command_data };
             endcase
           end
       3'h1:
@@ -1227,8 +1220,8 @@ module \risc_project.bridge (rst, reply_tready, command_tvalid, command_tdata, c
     \$32  = soft_reset;
     casez (fsm_state)
       3'h0:
-          if (command_tvalid) begin
-            casez (command_tdata)
+          if (command_valid) begin
+            casez (command_data)
               8'h77:
                   /* empty */;
               8'h57:
@@ -1263,7 +1256,7 @@ endmodule
 
 (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\switch.py:171" *)
 (* generator = "Amaranth" *)
-module \risc_project.bridge_sw (\0_address , consume_stb, consume_cyc, consume_addr, a_w_data, a_w_en, b_ack, a_stb, a_cyc, consume_ack, consume_r_data, b_stb, b_cyc, a_ack, a_r_data, b_r_data);
+module \risc_project.bridge_sw (\0_address , consume_stb, consume_cyc, consume_addr, a_w_data, a_w_en, b_ack, a_stb, a_cyc, consume_ack, consume_r_data, b_stb, b_cyc, b_r_data);
   reg \$auto$verilog_backend.cc:2352:dump_module$2  = 0;
   wire \$1 ;
   wire [32:0] \$2 ;
@@ -1271,7 +1264,6 @@ module \risc_project.bridge_sw (\0_address , consume_stb, consume_cyc, consume_a
   output [31:0] \0_address ;
   wire [31:0] \0_address ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
-  input a_ack;
   wire a_ack;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
   wire [31:0] a_addr;
@@ -1279,7 +1271,6 @@ module \risc_project.bridge_sw (\0_address , consume_stb, consume_cyc, consume_a
   output a_cyc;
   reg a_cyc;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
-  input [31:0] a_r_data;
   wire [31:0] a_r_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
   output a_stb;
@@ -1383,7 +1374,7 @@ module \risc_project.bridge_sw (\0_address , consume_stb, consume_cyc, consume_a
     (* full_case = 32'd1 *)
     casez (select)
       1'h0:
-          consume_ack = a_ack;
+          consume_ack = 1'h0;
       1'h1:
           consume_ack = b_ack;
     endcase
@@ -1393,7 +1384,7 @@ module \risc_project.bridge_sw (\0_address , consume_stb, consume_cyc, consume_a
     (* full_case = 32'd1 *)
     casez (select)
       1'h0:
-          consume_r_data = a_r_data;
+          consume_r_data = 32'd0;
       1'h1:
           consume_r_data = b_r_data;
     endcase
@@ -1404,6 +1395,8 @@ module \risc_project.bridge_sw (\0_address , consume_stb, consume_cyc, consume_a
   assign b_addr = \$2 [31:0];
   assign b_w_en = a_w_en;
   assign b_w_data = a_w_data;
+  assign a_ack = 1'h0;
+  assign a_r_data = 32'd0;
   assign \0_address  = \$2 [31:0];
 endmodule
 
@@ -1434,44 +1427,44 @@ module \risc_project.bridge_to_axi (axi_wready, axi_arready, wish_r_data, axi_rv
   wire \$9 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\axi\\wish_to_axi.py:22" *)
   reg address_written = 1'h0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:115" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:117" *)
   wire [31:0] axi_araddr;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:114" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:116" *)
   input axi_arready;
   wire axi_arready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:113" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:115" *)
   output axi_arvalid;
   wire axi_arvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:115" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:117" *)
   input [31:0] axi_awaddr;
   wire [31:0] axi_awaddr;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:108" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:110" *)
   input axi_awready;
   wire axi_awready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:107" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:109" *)
   output axi_awvalid;
   wire axi_awvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:120" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:122" *)
   output axi_bready;
   reg axi_bready = 1'h0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:121" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:123" *)
   input axi_bvalid;
   wire axi_bvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:116" *)
-  wire [31:0] axi_rdata;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:118" *)
+  wire [31:0] axi_rdata;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:120" *)
   output axi_rready;
   wire axi_rready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:117" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:119" *)
   input axi_rvalid;
   wire axi_rvalid;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
   input [31:0] axi_wdata;
   wire [31:0] axi_wdata;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:112" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:114" *)
   input axi_wready;
   wire axi_wready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:111" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:113" *)
   output axi_wvalid;
   wire axi_wvalid;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
@@ -1488,7 +1481,7 @@ module \risc_project.bridge_to_axi (axi_wready, axi_arready, wish_r_data, axi_rv
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
   input wish_cyc;
   wire wish_cyc;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:116" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:118" *)
   input [31:0] wish_r_data;
   wire [31:0] wish_r_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
@@ -1525,7 +1518,7 @@ module \risc_project.bridge_to_axi (axi_wready, axi_arready, wish_r_data, axi_rv
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\axi\\wish_to_axi.py:22" *)
   always @(posedge clk)
     address_written <= \$20 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:120" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:122" *)
   always @(posedge clk)
     axi_bready <= \$21 ;
   always @* begin
@@ -1575,71 +1568,203 @@ module \risc_project.bridge_to_axi (axi_wready, axi_arready, wish_r_data, axi_rv
   assign axi_rdata = wish_r_data;
 endmodule
 
-(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:494" *)
+(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:45" *)
 (* generator = "Amaranth" *)
-module \risc_project.core (clk, rst, prog_cyc, prog_stb, debug_addr, debug_w_data, debug_w_en, debug_stb, debug_cyc, debug_ack, debug_r_data, prog_addr, prog_ack, prog_r_data);
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:23" *)
-  wire [4:0] aluin_d;
-  (* enum_base_type = "AluFunction" *)
-  (* enum_value_000 = "ADDSUB" *)
-  (* enum_value_001 = "SHIFTLEFT" *)
-  (* enum_value_010 = "LESSTHAN" *)
-  (* enum_value_011 = "LESSTHANU" *)
-  (* enum_value_100 = "XOR" *)
-  (* enum_value_101 = "SHIFTRIGHT" *)
-  (* enum_value_110 = "OR" *)
-  (* enum_value_111 = "AND" *)
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:109" *)
-  wire [2:0] aluin_function;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:25" *)
-  wire [6:0] aluin_mode;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:21" *)
-  wire [31:0] aluin_s1;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:22" *)
-  wire [31:0] aluin_s2;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:26" *)
-  wire aluin_valid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:33" *)
-  wire [4:0] aluout_d;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:34" *)
-  wire aluout_error;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:35" *)
-  wire aluout_valid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:32" *)
-  wire [31:0] aluout_value;
+module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_valid$15 , prog_r_data);
+  reg \$auto$verilog_backend.cc:2352:dump_module$4  = 0;
+  wire \$1 ;
+  wire \$10 ;
+  wire [33:0] \$11 ;
+  wire [32:0] \$12 ;
+  reg \$13 ;
+  reg [31:0] \$14 ;
+  wire \$2 ;
+  wire \$3 ;
+  wire \$4 ;
+  wire [32:0] \$5 ;
+  wire [32:0] \$6 ;
+  wire \$7 ;
+  wire \$8 ;
+  wire [32:0] \$9 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
   wire bus_ack;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
-  wire \bus_ack$21 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
-  wire [31:0] bus_addr;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
-  wire [31:0] \bus_addr$23 ;
+  reg [31:0] bus_addr;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
-  wire bus_cyc;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
-  wire \bus_cyc$25 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
-  wire [31:0] bus_r_data;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
-  wire [31:0] \bus_r_data$27 ;
+  reg bus_cyc;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
-  wire bus_stb;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
-  wire \bus_stb$29 ;
+  reg bus_stb;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
-  wire [31:0] bus_w_data;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
-  wire [31:0] \bus_w_data$31 ;
+  reg [31:0] bus_w_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
-  wire bus_w_en;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
-  wire \bus_w_en$33 ;
+  reg bus_w_en;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input clk;
   wire clk;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:23" *)
-  wire [4:0] consume_d;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:24" *)
+  reg [4:0] consume_d;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [117:0] consume_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [63:0] \consume_data$13 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [24:0] \consume_data$13.mode ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [24:0] \consume_data$13.mode.b ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \consume_data$13.mode.b.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data$13.mode.b.offset_lower ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [6:0] \consume_data$13.mode.b.offset_upper ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data$13.mode.b.rs1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data$13.mode.b.rs2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [24:0] \consume_data$13.mode.i ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \consume_data$13.mode.i.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [11:0] \consume_data$13.mode.i.imm ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data$13.mode.i.rd ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data$13.mode.i.rs ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [24:0] \consume_data$13.mode.j ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [19:0] \consume_data$13.mode.j.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data$13.mode.j.rd ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [24:0] \consume_data$13.mode.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \consume_data$13.mode.m.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [6:0] \consume_data$13.mode.m.muldiv ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data$13.mode.m.rd ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data$13.mode.m.rs1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data$13.mode.m.rs2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [24:0] \consume_data$13.mode.r ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \consume_data$13.mode.r.f_lower ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [6:0] \consume_data$13.mode.r.f_upper ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data$13.mode.r.rd ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data$13.mode.r.rs1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data$13.mode.r.rs2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [24:0] \consume_data$13.mode.s ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \consume_data$13.mode.s.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data$13.mode.s.imm_lower ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [6:0] \consume_data$13.mode.s.imm_upper ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data$13.mode.s.rs1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data$13.mode.s.rs2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [24:0] \consume_data$13.mode.u ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [19:0] \consume_data$13.mode.u.imm ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data$13.mode.u.rd ;
+  (* enum_base_type = "Instruction" *)
+  (* enum_value_0000011 = "MEMORYLOAD" *)
+  (* enum_value_0001111 = "FENCE" *)
+  (* enum_value_0010011 = "ARITHIMM" *)
+  (* enum_value_0010111 = "AUIPC" *)
+  (* enum_value_0100011 = "MEMORYSTORE" *)
+  (* enum_value_0110011 = "ARITH" *)
+  (* enum_value_0110111 = "LUI" *)
+  (* enum_value_1100011 = "BRANCH" *)
+  (* enum_value_1100111 = "JALR" *)
+  (* enum_value_1101111 = "JAL" *)
+  (* enum_value_1110011 = "E" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [6:0] \consume_data$13.op ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \consume_data$13.pc ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  reg [36:0] \consume_data$43 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \consume_data$43.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data$43.value ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [78:0] \consume_data.mode ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [78:0] \consume_data.mode.arith ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \consume_data.mode.arith.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [2:0] \consume_data.mode.arith.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [6:0] \consume_data.mode.arith.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.mode.arith.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.mode.arith.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [58:0] \consume_data.mode.imm ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \consume_data.mode.imm.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [2:0] \consume_data.mode.imm.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [11:0] \consume_data.mode.imm.i ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [6:0] \consume_data.mode.imm.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.mode.imm.s ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [25:0] \consume_data.mode.jump ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \consume_data.mode.jump.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [20:0] \consume_data.mode.jump.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [78:0] \consume_data.mode.store ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [2:0] \consume_data.mode.store.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [11:0] \consume_data.mode.store.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.mode.store.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.mode.store.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [36:0] \consume_data.mode.upper ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \consume_data.mode.upper.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.mode.upper.i ;
+  (* enum_base_type = "Instruction" *)
+  (* enum_value_0000011 = "MEMORYLOAD" *)
+  (* enum_value_0001111 = "FENCE" *)
+  (* enum_value_0010011 = "ARITHIMM" *)
+  (* enum_value_0010111 = "AUIPC" *)
+  (* enum_value_0100011 = "MEMORYSTORE" *)
+  (* enum_value_0110011 = "ARITH" *)
+  (* enum_value_0110111 = "LUI" *)
+  (* enum_value_1100011 = "BRANCH" *)
+  (* enum_value_1100111 = "JALR" *)
+  (* enum_value_1101111 = "JAL" *)
+  (* enum_value_1110011 = "E" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [6:0] \consume_data.op ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.pc ;
   (* enum_base_type = "AluFunction" *)
   (* enum_value_000 = "ADDSUB" *)
   (* enum_value_001 = "SHIFTLEFT" *)
@@ -1649,188 +1774,698 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, debug_addr, debug_w_dat
   (* enum_value_101 = "SHIFTRIGHT" *)
   (* enum_value_110 = "OR" *)
   (* enum_value_111 = "AND" *)
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:40" *)
-  wire [2:0] consume_function;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:25" *)
-  wire [6:0] consume_mode;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:21" *)
-  wire [31:0] consume_s1;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:22" *)
-  wire [31:0] consume_s2;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:41" *)
+  reg [2:0] consume_function;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:26" *)
+  reg [6:0] consume_mode;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  wire consume_ready;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  wire \consume_ready$48 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  wire \consume_ready$9 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:22" *)
+  reg [31:0] consume_s1;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:23" *)
+  reg [31:0] consume_s2;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
   wire consume_valid;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
-  output debug_ack;
-  wire debug_ack;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
-  wire \debug_ack$49 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
-  input [31:0] debug_addr;
-  wire [31:0] debug_addr;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
-  wire [31:0] \debug_addr$51 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
-  input debug_cyc;
-  wire debug_cyc;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
-  wire \debug_cyc$53 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
-  output [31:0] debug_r_data;
-  wire [31:0] debug_r_data;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
-  wire [31:0] \debug_r_data$55 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
-  input debug_stb;
-  wire debug_stb;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
-  wire \debug_stb$57 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
-  input [31:0] debug_w_data;
-  wire [31:0] debug_w_data;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
-  wire [31:0] \debug_w_data$59 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
-  input debug_w_en;
-  wire debug_w_en;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
-  wire \debug_w_en$61 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:33" *)
-  wire [4:0] produce_d;
+  input \consume_valid$15 ;
+  wire \consume_valid$15 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:27" *)
+  reg \consume_valid$23 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
+  reg \consume_valid$46 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:51" *)
+  reg latch = 1'h0;
+  (* init = 32'd0 *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:47" *)
+  wire [31:0] pc;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:34" *)
-  wire produce_error;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:35" *)
+  wire [4:0] produce_d;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [117:0] produce_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [117:0] \produce_data$17 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [78:0] \produce_data$17.mode ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [78:0] \produce_data$17.mode.arith ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \produce_data$17.mode.arith.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [2:0] \produce_data$17.mode.arith.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [6:0] \produce_data$17.mode.arith.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data$17.mode.arith.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data$17.mode.arith.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [58:0] \produce_data$17.mode.imm ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \produce_data$17.mode.imm.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [2:0] \produce_data$17.mode.imm.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [11:0] \produce_data$17.mode.imm.i ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [6:0] \produce_data$17.mode.imm.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data$17.mode.imm.s ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [25:0] \produce_data$17.mode.jump ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \produce_data$17.mode.jump.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [20:0] \produce_data$17.mode.jump.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [78:0] \produce_data$17.mode.store ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [2:0] \produce_data$17.mode.store.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [11:0] \produce_data$17.mode.store.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data$17.mode.store.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data$17.mode.store.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [36:0] \produce_data$17.mode.upper ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \produce_data$17.mode.upper.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data$17.mode.upper.i ;
+  (* enum_base_type = "Instruction" *)
+  (* enum_value_0000011 = "MEMORYLOAD" *)
+  (* enum_value_0001111 = "FENCE" *)
+  (* enum_value_0010011 = "ARITHIMM" *)
+  (* enum_value_0010111 = "AUIPC" *)
+  (* enum_value_0100011 = "MEMORYSTORE" *)
+  (* enum_value_0110011 = "ARITH" *)
+  (* enum_value_0110111 = "LUI" *)
+  (* enum_value_1100011 = "BRANCH" *)
+  (* enum_value_1100111 = "JALR" *)
+  (* enum_value_1101111 = "JAL" *)
+  (* enum_value_1110011 = "E" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [6:0] \produce_data$17.op ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data$17.pc ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [36:0] \produce_data$34 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \produce_data$34.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data$34.value ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [78:0] \produce_data.mode ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [78:0] \produce_data.mode.arith ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \produce_data.mode.arith.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \produce_data.mode.arith.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [6:0] \produce_data.mode.arith.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.mode.arith.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.mode.arith.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [58:0] \produce_data.mode.imm ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \produce_data.mode.imm.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \produce_data.mode.imm.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [11:0] \produce_data.mode.imm.i ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [6:0] \produce_data.mode.imm.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.mode.imm.s ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [25:0] \produce_data.mode.jump ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \produce_data.mode.jump.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [20:0] \produce_data.mode.jump.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [78:0] \produce_data.mode.store ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \produce_data.mode.store.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [11:0] \produce_data.mode.store.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.mode.store.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.mode.store.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [36:0] \produce_data.mode.upper ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \produce_data.mode.upper.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.mode.upper.i ;
+  (* enum_base_type = "Instruction" *)
+  (* enum_value_0000011 = "MEMORYLOAD" *)
+  (* enum_value_0001111 = "FENCE" *)
+  (* enum_value_0010011 = "ARITHIMM" *)
+  (* enum_value_0010111 = "AUIPC" *)
+  (* enum_value_0100011 = "MEMORYSTORE" *)
+  (* enum_value_0110011 = "ARITH" *)
+  (* enum_value_0110111 = "LUI" *)
+  (* enum_value_1100011 = "BRANCH" *)
+  (* enum_value_1100111 = "JALR" *)
+  (* enum_value_1101111 = "JAL" *)
+  (* enum_value_1110011 = "E" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [6:0] \produce_data.op ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.pc ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  wire produce_ready;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  reg \produce_ready$25 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  wire \produce_ready$40 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
   wire produce_valid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:32" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
+  wire \produce_valid$24 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
+  wire \produce_valid$38 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:36" *)
+  wire \produce_valid$47 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:33" *)
   wire [31:0] produce_value;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
-  input prog_ack;
   wire prog_ack;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
-  wire \prog_ack$35 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:47" *)
   output [31:0] prog_addr;
-  wire [31:0] prog_addr;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
-  wire [31:0] \prog_addr$37 ;
+  reg [31:0] prog_addr = 32'd0;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
   output prog_cyc;
   wire prog_cyc;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
-  wire \prog_cyc$39 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
   input [31:0] prog_r_data;
   wire [31:0] prog_r_data;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
-  wire [31:0] \prog_r_data$41 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
   output prog_stb;
   wire prog_stb;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
-  wire \prog_stb$43 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
-  wire [31:0] prog_w_data;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
-  wire [31:0] \prog_w_data$45 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
-  wire prog_w_en;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
-  wire \prog_w_en$47 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:48" *)
+  wire prog_enable;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input rst;
   wire rst;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:499" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:38" *)
+  reg [1:0] size;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
+  wire write_ack;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
+  wire [4:0] write_addr;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
+  wire write_cyc;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
+  wire write_stb;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
+  wire [31:0] write_w_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
+  wire write_w_en;
+  (* enum_base_type = "WriteRoute" *)
+  (* enum_value_00 = "NONE" *)
+  (* enum_value_01 = "ALU" *)
+  (* enum_value_10 = "IMM" *)
+  (* enum_value_11 = "PC" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:135" *)
+  reg [1:0] write_route;
+  assign \$2  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:61" *) latch;
+  assign prog_cyc = \$1  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:61" *) \$2 ;
+  assign \$4  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:62" *) latch;
+  assign prog_stb = \$3  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:62" *) \$4 ;
+  assign \$5  = $signed(\produce_data$17 [53:42]) + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:121" *) $signed(\produce_data$17 [85:54]);
+  assign \$6  = prog_addr + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:172" *) 3'h4;
+  assign \$7  = prog_cyc & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:65" *) prog_stb;
+  assign \$8  = \$7  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:65" *) \consume_valid$15 ;
+  assign \$9  = prog_addr + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:76" *) 3'h4;
+  assign \$10  = write_stb & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:147" *) \produce_ready$40 ;
+  assign \$11  = $signed({ 1'h0, \produce_data$17 [31:0] }) + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:152" *) $signed(\produce_data$17 [64:44]);
+  assign \$12  = \produce_data$17 [31:0] + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:156" *) 3'h4;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:51" *)
+  always @(posedge clk)
+    latch <= \$13 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:47" *)
+  always @(posedge clk)
+    prog_addr <= \$14 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:88" *)
   \risc_project.core.alu  alu (
-    .clk(clk),
-    .consume_d(consume_d),
+    .consume_function(consume_function),
+    .consume_mode(consume_mode),
     .consume_s1(consume_s1),
     .consume_s2(consume_s2),
-    .consume_valid(consume_valid),
-    .produce_d(aluout_d),
-    .produce_error(aluout_error),
-    .produce_valid(aluout_valid),
-    .produce_value(aluout_value),
-    .rst(rst)
+    .produce_d(consume_d),
+    .produce_valid(\consume_valid$23 ),
+    .produce_value(produce_value)
   );
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:496" *)
-  \risc_project.core.core  core (
-    .aluin_d(consume_d),
-    .aluin_s1(consume_s1),
-    .aluin_s2(consume_s2),
-    .aluin_valid(consume_valid),
-    .aluout_d(aluout_d),
-    .aluout_error(aluout_error),
-    .aluout_valid(aluout_valid),
-    .aluout_value(aluout_value),
-    .bus_addr(bus_addr),
-    .bus_cyc(bus_cyc),
-    .bus_stb(bus_stb),
-    .bus_w_data(bus_w_data),
-    .bus_w_en(bus_w_en),
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:53" *)
+  \risc_project.core.decode  decode (
     .clk(clk),
-    .debug_ack(debug_ack),
-    .debug_addr(debug_addr),
-    .debug_cyc(debug_cyc),
-    .debug_r_data(debug_r_data),
-    .debug_stb(debug_stb),
-    .debug_w_data(debug_w_data),
-    .debug_w_en(debug_w_en),
-    .instruction_fetch(prog_r_data),
-    .prog_ack(prog_ack),
-    .prog_addr(prog_addr),
-    .prog_cyc(prog_cyc),
-    .prog_stb(prog_stb),
+    .consume_data(\consume_data$13 ),
+    .consume_ready(\consume_ready$9 ),
+    .consume_valid(\consume_valid$15 ),
+    .\port$573$0 (\produce_data$34 ),
+    .produce_data(consume_data),
+    .produce_ready(produce_ready),
+    .produce_valid(consume_valid),
+    .rst(rst),
+    .write_ack(\produce_ready$40 ),
+    .write_cyc(write_stb)
+  );
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:55" *)
+  \risc_project.core.decode_buffer  decode_buffer (
+    .clk(clk),
+    .consume_data(consume_data),
+    .consume_ready(produce_ready),
+    .consume_valid(consume_valid),
+    .produce_data(\produce_data$17 ),
+    .produce_ready(\produce_ready$25 ),
+    .produce_valid(\produce_valid$24 ),
     .rst(rst)
   );
-  assign aluin_d = consume_d;
-  assign consume_function = 3'h0;
-  assign aluin_function = 3'h0;
-  assign consume_mode = 7'h00;
-  assign aluin_mode = 7'h00;
-  assign aluin_s1 = consume_s1;
-  assign aluin_s2 = consume_s2;
-  assign aluin_valid = consume_valid;
-  assign produce_d = aluout_d;
-  assign produce_error = aluout_error;
-  assign produce_valid = aluout_valid;
-  assign produce_value = aluout_value;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:133" *)
+  \risc_project.core.write_buffer  write_buffer (
+    .clk(clk),
+    .consume_data(\consume_data$43 ),
+    .consume_ready(\consume_ready$48 ),
+    .consume_valid(\consume_valid$46 ),
+    .produce_data(\produce_data$34 ),
+    .produce_ready(\produce_ready$40 ),
+    .produce_valid(write_stb),
+    .rst(rst)
+  );
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    consume_s1 = 32'd0;
+    casez (\produce_data$17 [38:32])
+      7'h13:
+          consume_s1 = \produce_data$17 [80:49];
+      7'h33:
+          consume_s1 = \produce_data$17 [80:49];
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    consume_s2 = 32'd0;
+    casez (\produce_data$17 [38:32])
+      7'h13:
+          consume_s2 = { \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92], \produce_data$17 [92:81] };
+      7'h33:
+          consume_s2 = \produce_data$17 [112:81];
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    consume_function = 3'h0;
+    casez (\produce_data$17 [38:32])
+      7'h13:
+          consume_function = \produce_data$17 [41:39];
+      7'h33:
+          consume_function = \produce_data$17 [41:39];
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    consume_mode = 7'h00;
+    casez (\produce_data$17 [38:32])
+      7'h13:
+          consume_mode = \produce_data$17 [48:42];
+      7'h33:
+          consume_mode = \produce_data$17 [48:42];
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    consume_d = 5'h00;
+    casez (\produce_data$17 [38:32])
+      7'h13:
+          consume_d = \produce_data$17 [97:93];
+      7'h33:
+          consume_d = \produce_data$17 [117:113];
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    \consume_valid$23  = 1'h0;
+    casez (\produce_data$17 [38:32])
+      7'h13:
+          \consume_valid$23  = \produce_valid$24 ;
+      7'h33:
+          \consume_valid$23  = \produce_valid$24 ;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    \produce_ready$25  = 1'h0;
+    casez (\produce_data$17 [38:32])
+      7'h13:
+          \produce_ready$25  = 1'h1;
+      7'h33:
+          \produce_ready$25  = 1'h1;
+      7'h23:
+          \produce_ready$25  = 1'h0;
+    endcase
+    casez (write_route)
+      2'h1:
+          /* empty */;
+      2'h2:
+          \produce_ready$25  = \consume_ready$48 ;
+      2'h3:
+          \produce_ready$25  = \consume_ready$48 ;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    bus_addr = 32'd0;
+    casez (\produce_data$17 [38:32])
+      7'h13:
+          /* empty */;
+      7'h33:
+          /* empty */;
+      7'h23:
+          bus_addr = \$5 [31:0];
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    bus_w_data = 32'd0;
+    casez (\produce_data$17 [38:32])
+      7'h13:
+          /* empty */;
+      7'h33:
+          /* empty */;
+      7'h23:
+          bus_w_data = \produce_data$17 [117:86];
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    bus_w_en = 1'h0;
+    casez (\produce_data$17 [38:32])
+      7'h13:
+          /* empty */;
+      7'h33:
+          /* empty */;
+      7'h23:
+          bus_w_en = 1'h1;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    bus_stb = 1'h0;
+    casez (\produce_data$17 [38:32])
+      7'h13:
+          /* empty */;
+      7'h33:
+          /* empty */;
+      7'h23:
+          bus_stb = \produce_valid$24 ;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    bus_cyc = 1'h0;
+    casez (\produce_data$17 [38:32])
+      7'h13:
+          /* empty */;
+      7'h33:
+          /* empty */;
+      7'h23:
+          bus_cyc = \produce_valid$24 ;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    size = 2'h0;
+    casez (\produce_data$17 [38:32])
+      7'h13:
+          /* empty */;
+      7'h33:
+          /* empty */;
+      7'h23:
+          size = \produce_data$17 [43:42];
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    \consume_data$43  = 37'h0000000000;
+    casez (write_route)
+      2'h1:
+        begin
+          \consume_data$43 [36:5] = produce_value;
+          \consume_data$43 [4:0] = consume_d;
+        end
+      2'h2:
+        begin
+          \consume_data$43 [36:5] = \produce_data$17 [75:44];
+          \consume_data$43 [4:0] = \produce_data$17 [43:39];
+        end
+      2'h3:
+        begin
+          \consume_data$43 [36:5] = \$6 [31:0];
+          \consume_data$43 [4:0] = \produce_data$17 [43:39];
+        end
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    \consume_valid$46  = 1'h0;
+    casez (write_route)
+      2'h1:
+          \consume_valid$46  = \consume_valid$23 ;
+      2'h2:
+          \consume_valid$46  = \produce_valid$24 ;
+      2'h3:
+          \consume_valid$46  = \produce_valid$24 ;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    (* full_case = 32'd1 *)
+    casez (\produce_data$17 [38:32])
+      7'h13:
+          write_route = 2'h1;
+      7'h33:
+          write_route = 2'h1;
+      7'h17:
+          write_route = 2'h2;
+      7'h37:
+          write_route = 2'h2;
+      7'h6f:
+          write_route = 2'h3;
+      default:
+          write_route = 2'h0;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    \$13  = latch;
+    if (\$8 ) begin
+      casez (\consume_data$13 [38:32])
+        7'h63:
+            \$13  = 1'h1;
+        7'h6f:
+            \$13  = 1'h1;
+        7'h67:
+            \$13  = 1'h1;
+      endcase
+    end
+    if (\$10 ) begin
+      if (latch) begin
+        \$13  = 1'h0;
+      end
+    end
+    if (rst) begin
+      \$13  = 1'h0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
+    \$14  = prog_addr;
+    if (\$8 ) begin
+      (* full_case = 32'd1 *)
+      casez (\consume_data$13 [38:32])
+        7'h63:
+            /* empty */;
+        7'h6f:
+            /* empty */;
+        7'h67:
+            /* empty */;
+        default:
+            \$14  = \$9 [31:0];
+      endcase
+    end
+    if (\$10 ) begin
+      if (latch) begin
+        (* full_case = 32'd1 *)
+        casez (\produce_data$17 [38:32])
+          7'h6f:
+              \$14  = \$11 [31:0];
+          default:
+              \$14  = \$12 [31:0];
+        endcase
+      end
+    end
+    if (rst) begin
+      \$14  = 32'd0;
+    end
+  end
+  assign produce_data = consume_data;
+  assign consume_ready = produce_ready;
+  assign produce_valid = consume_valid;
+  assign pc = prog_addr;
+  assign prog_enable = 1'h1;
+  assign prog_ack = \consume_valid$15 ;
   assign bus_ack = 1'h0;
-  assign \bus_ack$21  = 1'h0;
-  assign \bus_addr$23  = bus_addr;
-  assign \bus_cyc$25  = bus_cyc;
-  assign bus_r_data = 32'd0;
-  assign \bus_r_data$27  = 32'd0;
-  assign \bus_stb$29  = bus_stb;
-  assign \bus_w_data$31  = bus_w_data;
-  assign \bus_w_en$33  = bus_w_en;
-  assign \prog_ack$35  = prog_ack;
-  assign \prog_addr$37  = prog_addr;
-  assign \prog_cyc$39  = prog_cyc;
-  assign \prog_r_data$41  = prog_r_data;
-  assign \prog_stb$43  = prog_stb;
-  assign prog_w_data = 32'd0;
-  assign \prog_w_data$45  = 32'd0;
-  assign prog_w_en = 1'h0;
-  assign \prog_w_en$47  = 1'h0;
-  assign \debug_ack$49  = debug_ack;
-  assign \debug_addr$51  = debug_addr;
-  assign \debug_cyc$53  = debug_cyc;
-  assign \debug_r_data$55  = debug_r_data;
-  assign \debug_stb$57  = debug_stb;
-  assign \debug_w_data$59  = debug_w_data;
-  assign \debug_w_en$61  = debug_w_en;
+  assign write_addr = \produce_data$34 [4:0];
+  assign write_w_data = \produce_data$34 [36:5];
+  assign write_w_en = 1'h1;
+  assign \produce_valid$38  = write_stb;
+  assign write_cyc = write_stb;
+  assign write_ack = \produce_ready$40 ;
+  assign produce_d = consume_d;
+  assign \produce_valid$47  = \consume_valid$23 ;
+  assign \consume_data.pc  = consume_data[31:0];
+  assign \consume_data.op  = consume_data[38:32];
+  assign \consume_data.mode  = consume_data[117:39];
+  assign \consume_data.mode.arith  = consume_data[117:39];
+  assign \consume_data.mode.arith.f  = consume_data[41:39];
+  assign \consume_data.mode.arith.m  = consume_data[48:42];
+  assign \consume_data.mode.arith.s1  = consume_data[80:49];
+  assign \consume_data.mode.arith.s2  = consume_data[112:81];
+  assign \consume_data.mode.arith.d  = consume_data[117:113];
+  assign \consume_data.mode.imm  = consume_data[97:39];
+  assign \consume_data.mode.imm.f  = consume_data[41:39];
+  assign \consume_data.mode.imm.m  = consume_data[48:42];
+  assign \consume_data.mode.imm.s  = consume_data[80:49];
+  assign \consume_data.mode.imm.i  = consume_data[92:81];
+  assign \consume_data.mode.imm.d  = consume_data[97:93];
+  assign \consume_data.mode.store  = consume_data[117:39];
+  assign \consume_data.mode.store.f  = consume_data[41:39];
+  assign \consume_data.mode.store.offset  = consume_data[53:42];
+  assign \consume_data.mode.store.s1  = consume_data[85:54];
+  assign \consume_data.mode.store.s2  = consume_data[117:86];
+  assign \consume_data.mode.upper  = consume_data[75:39];
+  assign \consume_data.mode.upper.d  = consume_data[43:39];
+  assign \consume_data.mode.upper.i  = consume_data[75:44];
+  assign \consume_data.mode.jump  = consume_data[64:39];
+  assign \consume_data.mode.jump.d  = consume_data[43:39];
+  assign \consume_data.mode.jump.offset  = consume_data[64:44];
+  assign \produce_data.pc  = consume_data[31:0];
+  assign \produce_data.op  = consume_data[38:32];
+  assign \produce_data.mode  = consume_data[117:39];
+  assign \produce_data.mode.arith  = consume_data[117:39];
+  assign \produce_data.mode.arith.f  = consume_data[41:39];
+  assign \produce_data.mode.arith.m  = consume_data[48:42];
+  assign \produce_data.mode.arith.s1  = consume_data[80:49];
+  assign \produce_data.mode.arith.s2  = consume_data[112:81];
+  assign \produce_data.mode.arith.d  = consume_data[117:113];
+  assign \produce_data.mode.imm  = consume_data[97:39];
+  assign \produce_data.mode.imm.f  = consume_data[41:39];
+  assign \produce_data.mode.imm.m  = consume_data[48:42];
+  assign \produce_data.mode.imm.s  = consume_data[80:49];
+  assign \produce_data.mode.imm.i  = consume_data[92:81];
+  assign \produce_data.mode.imm.d  = consume_data[97:93];
+  assign \produce_data.mode.store  = consume_data[117:39];
+  assign \produce_data.mode.store.f  = consume_data[41:39];
+  assign \produce_data.mode.store.offset  = consume_data[53:42];
+  assign \produce_data.mode.store.s1  = consume_data[85:54];
+  assign \produce_data.mode.store.s2  = consume_data[117:86];
+  assign \produce_data.mode.upper  = consume_data[75:39];
+  assign \produce_data.mode.upper.d  = consume_data[43:39];
+  assign \produce_data.mode.upper.i  = consume_data[75:44];
+  assign \produce_data.mode.jump  = consume_data[64:39];
+  assign \produce_data.mode.jump.d  = consume_data[43:39];
+  assign \produce_data.mode.jump.offset  = consume_data[64:44];
+  assign \consume_data$13.pc  = \consume_data$13 [31:0];
+  assign \consume_data$13.op  = \consume_data$13 [38:32];
+  assign \consume_data$13.mode  = \consume_data$13 [63:39];
+  assign \consume_data$13.mode.r  = \consume_data$13 [63:39];
+  assign \consume_data$13.mode.r.rd  = \consume_data$13 [43:39];
+  assign \consume_data$13.mode.r.f_lower  = \consume_data$13 [46:44];
+  assign \consume_data$13.mode.r.rs1  = \consume_data$13 [51:47];
+  assign \consume_data$13.mode.r.rs2  = \consume_data$13 [56:52];
+  assign \consume_data$13.mode.r.f_upper  = \consume_data$13 [63:57];
+  assign \consume_data$13.mode.i  = \consume_data$13 [63:39];
+  assign \consume_data$13.mode.i.rd  = \consume_data$13 [43:39];
+  assign \consume_data$13.mode.i.f  = \consume_data$13 [46:44];
+  assign \consume_data$13.mode.i.rs  = \consume_data$13 [51:47];
+  assign \consume_data$13.mode.i.imm  = \consume_data$13 [63:52];
+  assign \consume_data$13.mode.u  = \consume_data$13 [63:39];
+  assign \consume_data$13.mode.u.rd  = \consume_data$13 [43:39];
+  assign \consume_data$13.mode.u.imm  = \consume_data$13 [63:44];
+  assign \consume_data$13.mode.s  = \consume_data$13 [63:39];
+  assign \consume_data$13.mode.s.imm_lower  = \consume_data$13 [43:39];
+  assign \consume_data$13.mode.s.f  = \consume_data$13 [46:44];
+  assign \consume_data$13.mode.s.rs1  = \consume_data$13 [51:47];
+  assign \consume_data$13.mode.s.rs2  = \consume_data$13 [56:52];
+  assign \consume_data$13.mode.s.imm_upper  = \consume_data$13 [63:57];
+  assign \consume_data$13.mode.j  = \consume_data$13 [63:39];
+  assign \consume_data$13.mode.j.rd  = \consume_data$13 [43:39];
+  assign \consume_data$13.mode.j.offset  = \consume_data$13 [63:44];
+  assign \consume_data$13.mode.b  = \consume_data$13 [63:39];
+  assign \consume_data$13.mode.b.offset_lower  = \consume_data$13 [43:39];
+  assign \consume_data$13.mode.b.f  = \consume_data$13 [46:44];
+  assign \consume_data$13.mode.b.rs1  = \consume_data$13 [51:47];
+  assign \consume_data$13.mode.b.rs2  = \consume_data$13 [56:52];
+  assign \consume_data$13.mode.b.offset_upper  = \consume_data$13 [63:57];
+  assign \consume_data$13.mode.m  = \consume_data$13 [63:39];
+  assign \consume_data$13.mode.m.rd  = \consume_data$13 [43:39];
+  assign \consume_data$13.mode.m.f  = \consume_data$13 [46:44];
+  assign \consume_data$13.mode.m.rs1  = \consume_data$13 [51:47];
+  assign \consume_data$13.mode.m.rs2  = \consume_data$13 [56:52];
+  assign \consume_data$13.mode.m.muldiv  = \consume_data$13 [63:57];
+  assign \produce_data$17.pc  = \produce_data$17 [31:0];
+  assign \produce_data$17.op  = \produce_data$17 [38:32];
+  assign \produce_data$17.mode  = \produce_data$17 [117:39];
+  assign \produce_data$17.mode.arith  = \produce_data$17 [117:39];
+  assign \produce_data$17.mode.arith.f  = \produce_data$17 [41:39];
+  assign \produce_data$17.mode.arith.m  = \produce_data$17 [48:42];
+  assign \produce_data$17.mode.arith.s1  = \produce_data$17 [80:49];
+  assign \produce_data$17.mode.arith.s2  = \produce_data$17 [112:81];
+  assign \produce_data$17.mode.arith.d  = \produce_data$17 [117:113];
+  assign \produce_data$17.mode.imm  = \produce_data$17 [97:39];
+  assign \produce_data$17.mode.imm.f  = \produce_data$17 [41:39];
+  assign \produce_data$17.mode.imm.m  = \produce_data$17 [48:42];
+  assign \produce_data$17.mode.imm.s  = \produce_data$17 [80:49];
+  assign \produce_data$17.mode.imm.i  = \produce_data$17 [92:81];
+  assign \produce_data$17.mode.imm.d  = \produce_data$17 [97:93];
+  assign \produce_data$17.mode.store  = \produce_data$17 [117:39];
+  assign \produce_data$17.mode.store.f  = \produce_data$17 [41:39];
+  assign \produce_data$17.mode.store.offset  = \produce_data$17 [53:42];
+  assign \produce_data$17.mode.store.s1  = \produce_data$17 [85:54];
+  assign \produce_data$17.mode.store.s2  = \produce_data$17 [117:86];
+  assign \produce_data$17.mode.upper  = \produce_data$17 [75:39];
+  assign \produce_data$17.mode.upper.d  = \produce_data$17 [43:39];
+  assign \produce_data$17.mode.upper.i  = \produce_data$17 [75:44];
+  assign \produce_data$17.mode.jump  = \produce_data$17 [64:39];
+  assign \produce_data$17.mode.jump.d  = \produce_data$17 [43:39];
+  assign \produce_data$17.mode.jump.offset  = \produce_data$17 [64:44];
+  assign \produce_data$34.d  = \produce_data$34 [4:0];
+  assign \produce_data$34.value  = \produce_data$34 [36:5];
+  assign \consume_data$43.d  = \consume_data$43 [4:0];
+  assign \consume_data$43.value  = \consume_data$43 [36:5];
+  assign \consume_data$13 [63:32] = prog_r_data;
+  assign \consume_data$13 [31:0] = prog_addr;
+  assign \$1  = \consume_ready$9 ;
+  assign \$3  = \consume_ready$9 ;
 endmodule
 
-(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:46" *)
+(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:47" *)
 (* generator = "Amaranth" *)
-module \risc_project.core.alu (rst, consume_s1, consume_s2, consume_valid, consume_d, produce_valid, produce_d, produce_value, produce_error, clk);
-  reg \$auto$verilog_backend.cc:2352:dump_module$4  = 0;
+module \risc_project.core.alu (consume_s2, consume_function, consume_mode, produce_d, produce_valid, produce_value, consume_s1);
+  reg \$auto$verilog_backend.cc:2352:dump_module$5  = 0;
   wire [32:0] \$1 ;
   wire [31:0] \$10 ;
   wire [31:0] \$11 ;
-  reg \$12 ;
-  reg [4:0] \$13 ;
-  reg [31:0] \$14 ;
-  reg \$15 ;
   wire [32:0] \$2 ;
   wire \$3 ;
   wire [38:0] \$4 ;
@@ -1839,11 +2474,7 @@ module \risc_project.core.alu (rst, consume_s1, consume_s2, consume_valid, consu
   wire [31:0] \$7 ;
   wire [31:0] \$8 ;
   wire [31:0] \$9 ;
-  (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
-  input clk;
-  wire clk;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:23" *)
-  input [4:0] consume_d;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:24" *)
   wire [4:0] consume_d;
   (* enum_base_type = "AluFunction" *)
   (* enum_value_000 = "ADDSUB" *)
@@ -1854,11057 +2485,3693 @@ module \risc_project.core.alu (rst, consume_s1, consume_s2, consume_valid, consu
   (* enum_value_101 = "SHIFTRIGHT" *)
   (* enum_value_110 = "OR" *)
   (* enum_value_111 = "AND" *)
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:40" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:41" *)
+  input [2:0] consume_function;
   wire [2:0] consume_function;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:25" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:26" *)
+  input [6:0] consume_mode;
   wire [6:0] consume_mode;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:21" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:22" *)
   input [31:0] consume_s1;
   wire [31:0] consume_s1;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:22" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:23" *)
   input [31:0] consume_s2;
   wire [31:0] consume_s2;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:26" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:27" *)
+  wire consume_valid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:24" *)
+  input [4:0] produce_d;
+  wire [4:0] produce_d;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:35" *)
+  reg produce_error;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:27" *)
+  input produce_valid;
+  wire produce_valid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:33" *)
+  output [31:0] produce_value;
+  reg [31:0] produce_value;
+  assign \$1  = consume_s1 + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:60" *) consume_s2;
+  assign \$2  = consume_s1 - (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:65" *) consume_s2;
+  assign \$3  = consume_s2 > (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:73" *) 3'h5;
+  assign \$4  = consume_s1 << (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:79" *) consume_s2[2:0];
+  assign \$5  = consume_s1 < (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:89" *) consume_s2;
+  assign \$6  = consume_s1 < (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:99" *) consume_s2;
+  assign \$7  = consume_s1 ^ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:109" *) consume_s2;
+  assign \$8  = consume_s1 >> (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:119" *) consume_s2;
+  assign \$9  = consume_s1 >> (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:124" *) consume_s2;
+  assign \$10  = consume_s1 | (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:136" *) consume_s2;
+  assign \$11  = consume_s1 & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:145" *) consume_s2;
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
+    produce_value = 32'd0;
+    (* full_case = 32'd1 *)
+    casez (consume_function)
+      3'h0:
+          casez (consume_mode)
+            7'h00:
+                produce_value = \$1 [31:0];
+            7'h20:
+                produce_value = \$2 [31:0];
+          endcase
+      3'h1:
+          casez (consume_mode)
+            7'h00:
+                (* full_case = 32'd1 *)
+                if (\$3 ) begin
+                  produce_value = 32'd0;
+                end else begin
+                  produce_value = \$4 [31:0];
+                end
+          endcase
+      3'h2:
+          casez (consume_mode)
+            7'h00:
+                produce_value = { 31'h00000000, \$5  };
+          endcase
+      3'h3:
+          casez (consume_mode)
+            7'h00:
+                produce_value = { 31'h00000000, \$6  };
+          endcase
+      3'h4:
+          casez (consume_mode)
+            7'h00:
+                produce_value = \$7 ;
+          endcase
+      3'h5:
+          casez (consume_mode)
+            7'h00:
+                produce_value = \$8 ;
+            7'h20:
+              begin
+                produce_value[30:0] = \$9 [30:0];
+                produce_value[31] = consume_s1[31];
+              end
+          endcase
+      3'h6:
+          casez (consume_mode)
+            7'h00:
+                produce_value = \$10 ;
+          endcase
+      3'h7:
+          casez (consume_mode)
+            7'h00:
+                produce_value = \$11 ;
+          endcase
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
+    produce_error = 1'h0;
+    (* full_case = 32'd1 *)
+    casez (consume_function)
+      3'h0:
+          (* full_case = 32'd1 *)
+          casez (consume_mode)
+            7'h00:
+                /* empty */;
+            7'h20:
+                /* empty */;
+            default:
+                produce_error = 1'h1;
+          endcase
+      3'h1:
+          (* full_case = 32'd1 *)
+          casez (consume_mode)
+            7'h00:
+                /* empty */;
+            default:
+                produce_error = 1'h1;
+          endcase
+      3'h2:
+          (* full_case = 32'd1 *)
+          casez (consume_mode)
+            7'h00:
+                /* empty */;
+            default:
+                produce_error = 1'h1;
+          endcase
+      3'h3:
+          (* full_case = 32'd1 *)
+          casez (consume_mode)
+            7'h00:
+                /* empty */;
+            default:
+                produce_error = 1'h1;
+          endcase
+      3'h4:
+          (* full_case = 32'd1 *)
+          casez (consume_mode)
+            7'h00:
+                /* empty */;
+            default:
+                produce_error = 1'h1;
+          endcase
+      3'h5:
+          (* full_case = 32'd1 *)
+          casez (consume_mode)
+            7'h00:
+                /* empty */;
+            7'h20:
+                /* empty */;
+            default:
+                produce_error = 1'h1;
+          endcase
+      3'h6:
+          (* full_case = 32'd1 *)
+          casez (consume_mode)
+            7'h00:
+                /* empty */;
+            default:
+                produce_error = 1'h1;
+          endcase
+      3'h7:
+          (* full_case = 32'd1 *)
+          casez (consume_mode)
+            7'h00:
+                /* empty */;
+            default:
+                produce_error = 1'h1;
+          endcase
+    endcase
+  end
+  assign consume_valid = produce_valid;
+  assign consume_d = produce_d;
+endmodule
+
+(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:128" *)
+(* generator = "Amaranth" *)
+module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0 , consume_data, produce_data, write_ack, produce_ready, write_cyc, consume_valid, clk);
+  reg \$auto$verilog_backend.cc:2352:dump_module$6  = 0;
+  wire \$1 ;
+  wire \$10 ;
+  wire \$2 ;
+  wire \$3 ;
+  wire \$4 ;
+  wire \$5 ;
+  wire [33:0] \$6 ;
+  wire [48:0] \$7 ;
+  wire [34:0] \$8 ;
+  wire \$9 ;
+  (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
+  input clk;
+  wire clk;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  input [63:0] consume_data;
+  wire [63:0] consume_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [24:0] \consume_data.mode ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [24:0] \consume_data.mode.b ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \consume_data.mode.b.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data.mode.b.offset_lower ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [6:0] \consume_data.mode.b.offset_upper ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data.mode.b.rs1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data.mode.b.rs2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [24:0] \consume_data.mode.i ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \consume_data.mode.i.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [11:0] \consume_data.mode.i.imm ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data.mode.i.rd ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data.mode.i.rs ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [24:0] \consume_data.mode.j ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [19:0] \consume_data.mode.j.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data.mode.j.rd ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [24:0] \consume_data.mode.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \consume_data.mode.m.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [6:0] \consume_data.mode.m.muldiv ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data.mode.m.rd ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data.mode.m.rs1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data.mode.m.rs2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [24:0] \consume_data.mode.r ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \consume_data.mode.r.f_lower ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [6:0] \consume_data.mode.r.f_upper ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data.mode.r.rd ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data.mode.r.rs1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data.mode.r.rs2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [24:0] \consume_data.mode.s ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \consume_data.mode.s.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data.mode.s.imm_lower ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [6:0] \consume_data.mode.s.imm_upper ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data.mode.s.rs1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data.mode.s.rs2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [24:0] \consume_data.mode.u ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [19:0] \consume_data.mode.u.imm ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \consume_data.mode.u.rd ;
+  (* enum_base_type = "Instruction" *)
+  (* enum_value_0000011 = "MEMORYLOAD" *)
+  (* enum_value_0001111 = "FENCE" *)
+  (* enum_value_0010011 = "ARITHIMM" *)
+  (* enum_value_0010111 = "AUIPC" *)
+  (* enum_value_0100011 = "MEMORYSTORE" *)
+  (* enum_value_0110011 = "ARITH" *)
+  (* enum_value_0110111 = "LUI" *)
+  (* enum_value_1100011 = "BRANCH" *)
+  (* enum_value_1100111 = "JALR" *)
+  (* enum_value_1101111 = "JAL" *)
+  (* enum_value_1110011 = "E" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [6:0] \consume_data.op ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \consume_data.pc ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  output consume_ready;
+  wire consume_ready;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
   input consume_valid;
   wire consume_valid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:33" *)
-  output [4:0] produce_d;
-  reg [4:0] produce_d = 5'h00;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:34" *)
-  output produce_error;
-  reg produce_error = 1'h0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:35" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
+  reg debug_ack;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
+  wire [4:0] debug_addr;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
+  wire debug_cyc;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
+  reg [31:0] debug_r_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
+  wire debug_stb;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
+  wire [31:0] debug_w_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
+  wire debug_w_en;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
+  reg error_cyc;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
+  reg error_stb;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
+  reg [31:0] error_w_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
+  reg error_w_en;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:134" *)
+  reg error_flag;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:137" *)
+  reg [1:0] num_regs;
+  input [36:0] \port$573$0 ;
+  wire [36:0] \port$573$0 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  output [117:0] produce_data;
+  reg [117:0] produce_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [78:0] \produce_data.mode ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [78:0] \produce_data.mode.arith ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \produce_data.mode.arith.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \produce_data.mode.arith.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [6:0] \produce_data.mode.arith.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.mode.arith.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.mode.arith.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [58:0] \produce_data.mode.imm ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \produce_data.mode.imm.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \produce_data.mode.imm.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [11:0] \produce_data.mode.imm.i ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [6:0] \produce_data.mode.imm.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.mode.imm.s ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [25:0] \produce_data.mode.jump ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \produce_data.mode.jump.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [20:0] \produce_data.mode.jump.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [78:0] \produce_data.mode.store ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \produce_data.mode.store.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [11:0] \produce_data.mode.store.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.mode.store.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.mode.store.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [36:0] \produce_data.mode.upper ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [4:0] \produce_data.mode.upper.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.mode.upper.i ;
+  (* enum_base_type = "Instruction" *)
+  (* enum_value_0000011 = "MEMORYLOAD" *)
+  (* enum_value_0001111 = "FENCE" *)
+  (* enum_value_0010011 = "ARITHIMM" *)
+  (* enum_value_0010111 = "AUIPC" *)
+  (* enum_value_0100011 = "MEMORYSTORE" *)
+  (* enum_value_0110011 = "ARITH" *)
+  (* enum_value_0110111 = "LUI" *)
+  (* enum_value_1100011 = "BRANCH" *)
+  (* enum_value_1100111 = "JALR" *)
+  (* enum_value_1101111 = "JAL" *)
+  (* enum_value_1110011 = "E" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [6:0] \produce_data.op ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.pc ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  input produce_ready;
+  wire produce_ready;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
   output produce_valid;
-  reg produce_valid = 1'h0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:32" *)
-  output [31:0] produce_value;
-  reg [31:0] produce_value = 32'd0;
+  wire produce_valid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:67" *)
+  wire [4:0] r_rd;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:68" *)
+  wire r_valid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
+  wire rd_ack;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
+  reg [4:0] rd_addr;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
+  reg rd_cyc;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
+  wire [31:0] rd_r_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
+  reg rd_stb;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
+  reg [31:0] rd_w_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
+  reg rd_w_en;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:139" *)
+  reg reg_write;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:133" *)
+  reg register_ready;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
+  wire rs1_ack;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
+  wire [4:0] rs1_addr;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
+  reg rs1_cyc;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
+  wire [31:0] rs1_r_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
+  reg rs1_stb;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
+  wire rs2_ack;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
+  wire [4:0] rs2_addr;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
+  reg rs2_cyc;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
+  wire [31:0] rs2_r_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
+  reg rs2_stb;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input rst;
   wire rst;
-  assign \$1  = consume_s1 + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:62" *) consume_s2;
-  assign \$2  = consume_s1 - (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:67" *) consume_s2;
-  assign \$3  = consume_s2 > (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:75" *) 3'h5;
-  assign \$4  = consume_s1 << (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:81" *) consume_s2[2:0];
-  assign \$5  = consume_s1 < (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:91" *) consume_s2;
-  assign \$6  = consume_s1 < (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:101" *) consume_s2;
-  assign \$7  = consume_s1 ^ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:111" *) consume_s2;
-  assign \$8  = consume_s1 >> (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:121" *) consume_s2;
-  assign \$9  = consume_s1 >> (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:126" *) consume_s2;
-  assign \$10  = consume_s1 | (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:138" *) consume_s2;
-  assign \$11  = consume_s1 & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:147" *) consume_s2;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:35" *)
-  always @(posedge clk)
-    produce_valid <= \$12 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:33" *)
-  always @(posedge clk)
-    produce_d <= \$13 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:32" *)
-  always @(posedge clk)
-    produce_value <= \$14 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:34" *)
-  always @(posedge clk)
-    produce_error <= \$15 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
+  output write_ack;
+  reg write_ack;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
+  wire [4:0] write_addr;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
+  input write_cyc;
+  wire write_cyc;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
+  wire write_stb;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
+  wire [31:0] write_w_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
+  wire write_w_en;
+  assign \$1  = reg_write & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:143" *) consume_ready;
+  assign r_valid = \$1  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:143" *) consume_valid;
+  assign \$2  = register_ready & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:145" *) produce_ready;
+  assign \$3  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:145" *) error_flag;
+  assign consume_ready = \$2  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:145" *) \$3 ;
+  assign \$4  = consume_valid & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:146" *) register_ready;
+  assign \$5  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:146" *) error_flag;
+  assign produce_valid = \$4  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:146" *) \$5 ;
+  assign \$6  = $signed({ 1'h0, consume_data[31:0] }) + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:198" *) $signed(consume_data[63:44]);
+  assign \$9  = rs1_ack & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:247" *) rs2_ack;
+  assign \$10  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:273" *) error_cyc;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:131" *)
+  \risc_project.core.decode.reg  \reg  (
+    .clk(clk),
+    .\port$714$47 (consume_data[56:47]),
+    .r_rd(consume_data[43:39]),
+    .r_valid(r_valid),
+    .rd_ack(rd_ack),
+    .rd_cyc(rd_cyc),
+    .rd_r_data(rd_r_data),
+    .rd_stb(rd_stb),
+    .rd_w_data(rd_w_data),
+    .rd_w_en(rd_w_en),
+    .rs1_ack(rs1_ack),
+    .rs1_r_data(rs1_r_data),
+    .rs2_ack(rs2_ack),
+    .rs2_r_data(rs2_r_data),
+    .rst(rst),
+    .w_rd(rd_addr)
+  );
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
-    \$12  = produce_valid;
-    if (produce_valid) begin
-      \$12  = 1'h0;
-    end
-    if (consume_valid) begin
-      \$12  = 1'h1;
-    end
-    if (rst) begin
-      \$12  = 1'h0;
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    produce_data[117:39] = 79'h00000000000000000000;
+    casez (consume_data[38:32])
+      7'h33:
+        begin
+          produce_data[41:39] = consume_data[46:44];
+          produce_data[80:49] = rs1_r_data;
+          produce_data[112:81] = rs2_r_data;
+          produce_data[48:42] = consume_data[63:57];
+          produce_data[117:113] = consume_data[43:39];
+        end
+      7'h13:
+        begin
+          produce_data[41:39] = consume_data[46:44];
+          produce_data[80:49] = rs1_r_data;
+          produce_data[92:81] = consume_data[63:52];
+          produce_data[97:93] = consume_data[43:39];
+        end
+      7'h03:
+        begin
+          produce_data[41:39] = consume_data[46:44];
+          produce_data[80:49] = rs1_r_data;
+          produce_data[92:81] = consume_data[63:52];
+          produce_data[97:93] = consume_data[43:39];
+        end
+      7'h23:
+        begin
+          produce_data[41:39] = consume_data[46:44];
+          produce_data[53:42] = { consume_data[63:57], consume_data[43:39] };
+          produce_data[85:54] = rs1_r_data;
+          produce_data[117:86] = rs2_r_data;
+        end
+      7'h17:
+        begin
+          produce_data[43:39] = consume_data[43:39];
+          produce_data[75:44] = \$7 [31:0];
+        end
+      7'h37:
+        begin
+          produce_data[43:39] = consume_data[43:39];
+          produce_data[75:44] = \$8 [31:0];
+        end
+      7'h6f:
+        begin
+          produce_data[43:39] = consume_data[43:39];
+          produce_data[44] = 1'h0;
+          produce_data[54:45] = consume_data[62:53];
+          produce_data[55] = consume_data[52];
+          produce_data[63:56] = consume_data[51:44];
+          produce_data[64] = consume_data[63];
+        end
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    error_flag = 1'h0;
+    (* full_case = 32'd1 *)
+    casez (consume_data[38:32])
+      7'h33:
+          /* empty */;
+      7'h13:
+          /* empty */;
+      7'h03:
+          /* empty */;
+      7'h23:
+          /* empty */;
+      7'h17:
+          /* empty */;
+      7'h37:
+          /* empty */;
+      7'h6f:
+          /* empty */;
+      default:
+          error_flag = 1'h1;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    error_cyc = 1'h0;
+    (* full_case = 32'd1 *)
+    casez (consume_data[38:32])
+      7'h33:
+          /* empty */;
+      7'h13:
+          /* empty */;
+      7'h03:
+          /* empty */;
+      7'h23:
+          /* empty */;
+      7'h17:
+          /* empty */;
+      7'h37:
+          /* empty */;
+      7'h6f:
+          /* empty */;
+      default:
+          error_cyc = 1'h1;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    error_stb = 1'h0;
+    (* full_case = 32'd1 *)
+    casez (consume_data[38:32])
+      7'h33:
+          /* empty */;
+      7'h13:
+          /* empty */;
+      7'h03:
+          /* empty */;
+      7'h23:
+          /* empty */;
+      7'h17:
+          /* empty */;
+      7'h37:
+          /* empty */;
+      7'h6f:
+          /* empty */;
+      default:
+          error_stb = 1'h1;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    error_w_en = 1'h0;
+    (* full_case = 32'd1 *)
+    casez (consume_data[38:32])
+      7'h33:
+          /* empty */;
+      7'h13:
+          /* empty */;
+      7'h03:
+          /* empty */;
+      7'h23:
+          /* empty */;
+      7'h17:
+          /* empty */;
+      7'h37:
+          /* empty */;
+      7'h6f:
+          /* empty */;
+      default:
+          error_w_en = 1'h1;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    error_w_data = 32'd0;
+    (* full_case = 32'd1 *)
+    casez (consume_data[38:32])
+      7'h33:
+          /* empty */;
+      7'h13:
+          /* empty */;
+      7'h03:
+          /* empty */;
+      7'h23:
+          /* empty */;
+      7'h17:
+          /* empty */;
+      7'h37:
+          /* empty */;
+      7'h6f:
+          /* empty */;
+      default:
+          error_w_data = { 25'h0000000, consume_data[38:32] };
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    rs1_cyc = 1'h0;
+    casez (num_regs)
+      2'h1:
+          rs1_cyc = consume_valid;
+      2'h2:
+          rs1_cyc = consume_valid;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    rs1_stb = 1'h0;
+    casez (num_regs)
+      2'h1:
+          rs1_stb = consume_valid;
+      2'h2:
+          rs1_stb = consume_valid;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    (* full_case = 32'd1 *)
+    casez (num_regs)
+      2'h1:
+          register_ready = rs1_ack;
+      2'h2:
+          register_ready = \$9 ;
+      default:
+          register_ready = 1'h1;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    rs2_cyc = 1'h0;
+    casez (num_regs)
+      2'h1:
+          /* empty */;
+      2'h2:
+          rs2_cyc = consume_valid;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    rs2_stb = 1'h0;
+    casez (num_regs)
+      2'h1:
+          /* empty */;
+      2'h2:
+          rs2_stb = consume_valid;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    num_regs = 2'h0;
+    casez (consume_data[38:32])
+      7'h33:
+          num_regs = 2'h2;
+      7'h13:
+          num_regs = 2'h1;
+      7'h03:
+          num_regs = 2'h1;
+      7'h23:
+          num_regs = 2'h2;
+      7'h6f:
+          num_regs = 2'h0;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    reg_write = 1'h0;
+    casez (consume_data[38:32])
+      7'h33:
+          reg_write = 1'h1;
+      7'h13:
+          reg_write = 1'h1;
+      7'h03:
+          reg_write = 1'h1;
+      7'h23:
+          reg_write = 1'h0;
+      7'h6f:
+          reg_write = 1'h1;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    (* full_case = 32'd1 *)
+    if (\$10 ) begin
+      rd_addr = \port$573$0 [4:0];
+    end else begin
+      rd_addr = 5'h00;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
-    \$13  = produce_d;
-    if (consume_valid) begin
-      \$13  = consume_d;
-    end
-    if (rst) begin
-      \$13  = 5'h00;
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    (* full_case = 32'd1 *)
+    if (\$10 ) begin
+      rd_cyc = write_cyc;
+    end else begin
+      rd_cyc = 1'h0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
-    \$14  = produce_value;
-    if (consume_valid) begin
-      \$14  = \$1 [31:0];
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    (* full_case = 32'd1 *)
+    if (\$10 ) begin
+      rd_stb = write_cyc;
+    end else begin
+      rd_stb = 1'h0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    (* full_case = 32'd1 *)
+    if (\$10 ) begin
+      rd_w_data = \port$573$0 [36:5];
+    end else begin
+      rd_w_data = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    (* full_case = 32'd1 *)
+    if (\$10 ) begin
+      rd_w_en = 1'h1;
+    end else begin
+      rd_w_en = 1'h0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    (* full_case = 32'd1 *)
+    if (\$10 ) begin
+      debug_r_data = rd_r_data;
+    end else begin
+      debug_r_data = rd_r_data;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    write_ack = 1'h0;
+    if (\$10 ) begin
+      write_ack = rd_ack;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    debug_ack = 1'h0;
+    (* full_case = 32'd1 *)
+    if (\$10 ) begin
+    end else begin
+      debug_ack = rd_ack;
+    end
+  end
+  assign r_rd = consume_data[43:39];
+  assign rs1_addr = consume_data[51:47];
+  assign rs2_addr = consume_data[56:52];
+  assign write_addr = \port$573$0 [4:0];
+  assign write_stb = write_cyc;
+  assign write_w_data = \port$573$0 [36:5];
+  assign write_w_en = 1'h1;
+  assign debug_addr = 5'h00;
+  assign debug_cyc = 1'h0;
+  assign debug_stb = 1'h0;
+  assign debug_w_data = 32'd0;
+  assign debug_w_en = 1'h0;
+  assign \consume_data.pc  = consume_data[31:0];
+  assign \consume_data.op  = consume_data[38:32];
+  assign \consume_data.mode  = consume_data[63:39];
+  assign \consume_data.mode.r  = consume_data[63:39];
+  assign \consume_data.mode.r.rd  = consume_data[43:39];
+  assign \consume_data.mode.r.f_lower  = consume_data[46:44];
+  assign \consume_data.mode.r.rs1  = consume_data[51:47];
+  assign \consume_data.mode.r.rs2  = consume_data[56:52];
+  assign \consume_data.mode.r.f_upper  = consume_data[63:57];
+  assign \consume_data.mode.i  = consume_data[63:39];
+  assign \consume_data.mode.i.rd  = consume_data[43:39];
+  assign \consume_data.mode.i.f  = consume_data[46:44];
+  assign \consume_data.mode.i.rs  = consume_data[51:47];
+  assign \consume_data.mode.i.imm  = consume_data[63:52];
+  assign \consume_data.mode.u  = consume_data[63:39];
+  assign \consume_data.mode.u.rd  = consume_data[43:39];
+  assign \consume_data.mode.u.imm  = consume_data[63:44];
+  assign \consume_data.mode.s  = consume_data[63:39];
+  assign \consume_data.mode.s.imm_lower  = consume_data[43:39];
+  assign \consume_data.mode.s.f  = consume_data[46:44];
+  assign \consume_data.mode.s.rs1  = consume_data[51:47];
+  assign \consume_data.mode.s.rs2  = consume_data[56:52];
+  assign \consume_data.mode.s.imm_upper  = consume_data[63:57];
+  assign \consume_data.mode.j  = consume_data[63:39];
+  assign \consume_data.mode.j.rd  = consume_data[43:39];
+  assign \consume_data.mode.j.offset  = consume_data[63:44];
+  assign \consume_data.mode.b  = consume_data[63:39];
+  assign \consume_data.mode.b.offset_lower  = consume_data[43:39];
+  assign \consume_data.mode.b.f  = consume_data[46:44];
+  assign \consume_data.mode.b.rs1  = consume_data[51:47];
+  assign \consume_data.mode.b.rs2  = consume_data[56:52];
+  assign \consume_data.mode.b.offset_upper  = consume_data[63:57];
+  assign \consume_data.mode.m  = consume_data[63:39];
+  assign \consume_data.mode.m.rd  = consume_data[43:39];
+  assign \consume_data.mode.m.f  = consume_data[46:44];
+  assign \consume_data.mode.m.rs1  = consume_data[51:47];
+  assign \consume_data.mode.m.rs2  = consume_data[56:52];
+  assign \consume_data.mode.m.muldiv  = consume_data[63:57];
+  assign \produce_data.pc  = produce_data[31:0];
+  assign \produce_data.op  = produce_data[38:32];
+  assign \produce_data.mode  = produce_data[117:39];
+  assign \produce_data.mode.arith  = produce_data[117:39];
+  assign \produce_data.mode.arith.f  = produce_data[41:39];
+  assign \produce_data.mode.arith.m  = produce_data[48:42];
+  assign \produce_data.mode.arith.s1  = produce_data[80:49];
+  assign \produce_data.mode.arith.s2  = produce_data[112:81];
+  assign \produce_data.mode.arith.d  = produce_data[117:113];
+  assign \produce_data.mode.imm  = produce_data[97:39];
+  assign \produce_data.mode.imm.f  = produce_data[41:39];
+  assign \produce_data.mode.imm.m  = produce_data[48:42];
+  assign \produce_data.mode.imm.s  = produce_data[80:49];
+  assign \produce_data.mode.imm.i  = produce_data[92:81];
+  assign \produce_data.mode.imm.d  = produce_data[97:93];
+  assign \produce_data.mode.store  = produce_data[117:39];
+  assign \produce_data.mode.store.f  = produce_data[41:39];
+  assign \produce_data.mode.store.offset  = produce_data[53:42];
+  assign \produce_data.mode.store.s1  = produce_data[85:54];
+  assign \produce_data.mode.store.s2  = produce_data[117:86];
+  assign \produce_data.mode.upper  = produce_data[75:39];
+  assign \produce_data.mode.upper.d  = produce_data[43:39];
+  assign \produce_data.mode.upper.i  = produce_data[75:44];
+  assign \produce_data.mode.jump  = produce_data[64:39];
+  assign \produce_data.mode.jump.d  = produce_data[43:39];
+  assign \produce_data.mode.jump.offset  = produce_data[64:44];
+  always @*
+    produce_data[31:0] = consume_data[31:0];
+  always @*
+    produce_data[38:32] = consume_data[38:32];
+  assign \$7  = { \$6 [33], \$6 [33], \$6 [33], \$6 , 12'h000 };
+  assign \$8  = { consume_data[63], consume_data[63], consume_data[63], consume_data[63:44], 12'h000 };
+endmodule
+
+(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:73" *)
+(* generator = "Amaranth" *)
+module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_ack, rs1_ack, rs2_ack, r_rd, \port$714$47 , w_rd, rd_cyc, rd_stb, rd_w_data, rd_w_en, rd_r_data, clk);
+  reg \$auto$verilog_backend.cc:2352:dump_module$7  = 0;
+  wire \$1 ;
+  reg [31:0] \$10 ;
+  reg [31:0] \$11 ;
+  reg [31:0] \$12 ;
+  reg [31:0] \$13 ;
+  reg [31:0] \$14 ;
+  reg [31:0] \$15 ;
+  reg [31:0] \$16 ;
+  reg [31:0] \$17 ;
+  reg [31:0] \$18 ;
+  reg [31:0] \$19 ;
+  reg [31:0] \$2 ;
+  reg [31:0] \$20 ;
+  reg [31:0] \$21 ;
+  reg [31:0] \$22 ;
+  reg [31:0] \$23 ;
+  reg [31:0] \$24 ;
+  reg [31:0] \$25 ;
+  reg [31:0] \$26 ;
+  reg [31:0] \$27 ;
+  reg [31:0] \$28 ;
+  reg [31:0] \$29 ;
+  wire \$3 ;
+  reg [31:0] \$30 ;
+  reg [31:0] \$31 ;
+  reg [31:0] \$32 ;
+  reg [31:0] \$33 ;
+  reg [31:0] \$34 ;
+  reg [31:0] \$35 ;
+  reg [31:0] \$4 ;
+  reg [31:0] \$5 ;
+  reg [31:0] \$6 ;
+  reg [31:0] \$7 ;
+  reg [31:0] \$8 ;
+  reg [31:0] \$9 ;
+  (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
+  input clk;
+  wire clk;
+  input [9:0] \port$714$47 ;
+  wire [9:0] \port$714$47 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r00 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r01 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r02 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r03 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r04 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r05 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r06 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r07 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r08 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r09 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r0A = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r0B = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r0C = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r0D = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r0E = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r0F = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r10 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r11 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r12 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r13 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r14 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r15 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r16 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r17 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r18 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r19 = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r1A = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r1B = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r1C = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r1D = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r1E = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  reg [31:0] r1F = 32'd0;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:21" *)
+  wire r_ok1;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:22" *)
+  wire r_ok2;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:67" *)
+  input [4:0] r_rd;
+  wire [4:0] r_rd;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:67" *)
+  wire [4:0] \r_rd$3 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:18" *)
+  wire [4:0] r_rs1;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:19" *)
+  wire [4:0] r_rs2;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:68" *)
+  input r_valid;
+  wire r_valid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:68" *)
+  wire \r_valid$1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
+  output rd_ack;
+  wire rd_ack;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
+  wire [4:0] rd_addr;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
+  input rd_cyc;
+  wire rd_cyc;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
+  output [31:0] rd_r_data;
+  reg [31:0] rd_r_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
+  input rd_stb;
+  wire rd_stb;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
+  input [31:0] rd_w_data;
+  wire [31:0] rd_w_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
+  input rd_w_en;
+  wire rd_w_en;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:21" *)
+  output rs1_ack;
+  wire rs1_ack;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
+  wire [4:0] rs1_addr;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
+  output [31:0] rs1_r_data;
+  reg [31:0] rs1_r_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:22" *)
+  output rs2_ack;
+  wire rs2_ack;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
+  wire [4:0] rs2_addr;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
+  output [31:0] rs2_r_data;
+  reg [31:0] rs2_r_data;
+  (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
+  input rst;
+  wire rst;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
+  input [4:0] w_rd;
+  wire [4:0] w_rd;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:24" *)
+  wire w_valid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r1C <= \$32 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r1D <= \$33 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r1E <= \$34 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r1F <= \$35 ;
+  assign w_valid = rd_cyc & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:95" *) rd_stb;
+  assign rd_ack = rd_cyc & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:98" *) rd_stb;
+  assign \$1  = rd_cyc & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:100" *) rd_stb;
+  assign \$3  = rd_cyc & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:100" *) rd_stb;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r00 <= \$4 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r01 <= \$5 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r02 <= \$6 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r03 <= \$7 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r04 <= \$8 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r05 <= \$9 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r06 <= \$10 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r07 <= \$11 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r08 <= \$12 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r09 <= \$13 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r0A <= \$14 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r0B <= \$15 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r0C <= \$16 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r0D <= \$17 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r0E <= \$18 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r0F <= \$19 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r10 <= \$20 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r11 <= \$21 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r12 <= \$22 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r13 <= \$23 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r14 <= \$24 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r15 <= \$25 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r16 <= \$26 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r17 <= \$27 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r18 <= \$28 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r19 <= \$29 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r1A <= \$30 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
+  always @(posedge clk)
+    r1B <= \$31 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:77" *)
+  \risc_project.core.decode.reg.mask  mask (
+    .clk(clk),
+    .\port$714$47 (\port$714$47 ),
+    .r1_ok(rs1_ack),
+    .r2_ok(rs2_ack),
+    .r_rd(r_rd),
+    .r_valid(r_valid),
+    .rst(rst),
+    .w_rd(w_rd),
+    .w_valid(w_valid)
+  );
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$32  = r1C;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              /* empty */;
+          5'h10:
+              /* empty */;
+          5'h11:
+              /* empty */;
+          5'h12:
+              /* empty */;
+          5'h13:
+              /* empty */;
+          5'h14:
+              /* empty */;
+          5'h15:
+              /* empty */;
+          5'h16:
+              /* empty */;
+          5'h17:
+              /* empty */;
+          5'h18:
+              /* empty */;
+          5'h19:
+              /* empty */;
+          5'h1a:
+              /* empty */;
+          5'h1b:
+              /* empty */;
+          5'h1c:
+              \$32  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$32  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$33  = r1D;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              /* empty */;
+          5'h10:
+              /* empty */;
+          5'h11:
+              /* empty */;
+          5'h12:
+              /* empty */;
+          5'h13:
+              /* empty */;
+          5'h14:
+              /* empty */;
+          5'h15:
+              /* empty */;
+          5'h16:
+              /* empty */;
+          5'h17:
+              /* empty */;
+          5'h18:
+              /* empty */;
+          5'h19:
+              /* empty */;
+          5'h1a:
+              /* empty */;
+          5'h1b:
+              /* empty */;
+          5'h1c:
+              /* empty */;
+          5'h1d:
+              \$33  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$33  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$34  = r1E;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              /* empty */;
+          5'h10:
+              /* empty */;
+          5'h11:
+              /* empty */;
+          5'h12:
+              /* empty */;
+          5'h13:
+              /* empty */;
+          5'h14:
+              /* empty */;
+          5'h15:
+              /* empty */;
+          5'h16:
+              /* empty */;
+          5'h17:
+              /* empty */;
+          5'h18:
+              /* empty */;
+          5'h19:
+              /* empty */;
+          5'h1a:
+              /* empty */;
+          5'h1b:
+              /* empty */;
+          5'h1c:
+              /* empty */;
+          5'h1d:
+              /* empty */;
+          5'h1e:
+              \$34  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$34  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$35  = r1F;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        (* full_case = 32'd1 *)
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              /* empty */;
+          5'h10:
+              /* empty */;
+          5'h11:
+              /* empty */;
+          5'h12:
+              /* empty */;
+          5'h13:
+              /* empty */;
+          5'h14:
+              /* empty */;
+          5'h15:
+              /* empty */;
+          5'h16:
+              /* empty */;
+          5'h17:
+              /* empty */;
+          5'h18:
+              /* empty */;
+          5'h19:
+              /* empty */;
+          5'h1a:
+              /* empty */;
+          5'h1b:
+              /* empty */;
+          5'h1c:
+              /* empty */;
+          5'h1d:
+              /* empty */;
+          5'h1e:
+              /* empty */;
+          5'h1f:
+              \$35  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$35  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    (* full_case = 32'd1 *)
+    casez (\port$714$47 [4:0])
+      5'h00:
+          rs1_r_data = r00;
+      5'h01:
+          rs1_r_data = r01;
+      5'h02:
+          rs1_r_data = r02;
+      5'h03:
+          rs1_r_data = r03;
+      5'h04:
+          rs1_r_data = r04;
+      5'h05:
+          rs1_r_data = r05;
+      5'h06:
+          rs1_r_data = r06;
+      5'h07:
+          rs1_r_data = r07;
+      5'h08:
+          rs1_r_data = r08;
+      5'h09:
+          rs1_r_data = r09;
+      5'h0a:
+          rs1_r_data = r0A;
+      5'h0b:
+          rs1_r_data = r0B;
+      5'h0c:
+          rs1_r_data = r0C;
+      5'h0d:
+          rs1_r_data = r0D;
+      5'h0e:
+          rs1_r_data = r0E;
+      5'h0f:
+          rs1_r_data = r0F;
+      5'h10:
+          rs1_r_data = r10;
+      5'h11:
+          rs1_r_data = r11;
+      5'h12:
+          rs1_r_data = r12;
+      5'h13:
+          rs1_r_data = r13;
+      5'h14:
+          rs1_r_data = r14;
+      5'h15:
+          rs1_r_data = r15;
+      5'h16:
+          rs1_r_data = r16;
+      5'h17:
+          rs1_r_data = r17;
+      5'h18:
+          rs1_r_data = r18;
+      5'h19:
+          rs1_r_data = r19;
+      5'h1a:
+          rs1_r_data = r1A;
+      5'h1b:
+          rs1_r_data = r1B;
+      5'h1c:
+          rs1_r_data = r1C;
+      5'h1d:
+          rs1_r_data = r1D;
+      5'h1e:
+          rs1_r_data = r1E;
+      5'h1f:
+          rs1_r_data = r1F;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    (* full_case = 32'd1 *)
+    casez (\port$714$47 [9:5])
+      5'h00:
+          rs2_r_data = r00;
+      5'h01:
+          rs2_r_data = r01;
+      5'h02:
+          rs2_r_data = r02;
+      5'h03:
+          rs2_r_data = r03;
+      5'h04:
+          rs2_r_data = r04;
+      5'h05:
+          rs2_r_data = r05;
+      5'h06:
+          rs2_r_data = r06;
+      5'h07:
+          rs2_r_data = r07;
+      5'h08:
+          rs2_r_data = r08;
+      5'h09:
+          rs2_r_data = r09;
+      5'h0a:
+          rs2_r_data = r0A;
+      5'h0b:
+          rs2_r_data = r0B;
+      5'h0c:
+          rs2_r_data = r0C;
+      5'h0d:
+          rs2_r_data = r0D;
+      5'h0e:
+          rs2_r_data = r0E;
+      5'h0f:
+          rs2_r_data = r0F;
+      5'h10:
+          rs2_r_data = r10;
+      5'h11:
+          rs2_r_data = r11;
+      5'h12:
+          rs2_r_data = r12;
+      5'h13:
+          rs2_r_data = r13;
+      5'h14:
+          rs2_r_data = r14;
+      5'h15:
+          rs2_r_data = r15;
+      5'h16:
+          rs2_r_data = r16;
+      5'h17:
+          rs2_r_data = r17;
+      5'h18:
+          rs2_r_data = r18;
+      5'h19:
+          rs2_r_data = r19;
+      5'h1a:
+          rs2_r_data = r1A;
+      5'h1b:
+          rs2_r_data = r1B;
+      5'h1c:
+          rs2_r_data = r1C;
+      5'h1d:
+          rs2_r_data = r1D;
+      5'h1e:
+          rs2_r_data = r1E;
+      5'h1f:
+          rs2_r_data = r1F;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    (* full_case = 32'd1 *)
+    casez (w_rd)
+      5'h00:
+          \$2  = r00;
+      5'h01:
+          \$2  = r01;
+      5'h02:
+          \$2  = r02;
+      5'h03:
+          \$2  = r03;
+      5'h04:
+          \$2  = r04;
+      5'h05:
+          \$2  = r05;
+      5'h06:
+          \$2  = r06;
+      5'h07:
+          \$2  = r07;
+      5'h08:
+          \$2  = r08;
+      5'h09:
+          \$2  = r09;
+      5'h0a:
+          \$2  = r0A;
+      5'h0b:
+          \$2  = r0B;
+      5'h0c:
+          \$2  = r0C;
+      5'h0d:
+          \$2  = r0D;
+      5'h0e:
+          \$2  = r0E;
+      5'h0f:
+          \$2  = r0F;
+      5'h10:
+          \$2  = r10;
+      5'h11:
+          \$2  = r11;
+      5'h12:
+          \$2  = r12;
+      5'h13:
+          \$2  = r13;
+      5'h14:
+          \$2  = r14;
+      5'h15:
+          \$2  = r15;
+      5'h16:
+          \$2  = r16;
+      5'h17:
+          \$2  = r17;
+      5'h18:
+          \$2  = r18;
+      5'h19:
+          \$2  = r19;
+      5'h1a:
+          \$2  = r1A;
+      5'h1b:
+          \$2  = r1B;
+      5'h1c:
+          \$2  = r1C;
+      5'h1d:
+          \$2  = r1D;
+      5'h1e:
+          \$2  = r1E;
+      5'h1f:
+          \$2  = r1F;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    rd_r_data = 32'd0;
+    if (\$1 ) begin
+      (* full_case = 32'd1 *)
+      if (rd_w_en) begin
+      end else begin
+        rd_r_data = \$2 ;
+      end
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$4  = r00;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              \$4  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$4  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$5  = r01;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              \$5  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$5  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$6  = r02;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              \$6  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$6  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$7  = r03;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              \$7  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$7  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$8  = r04;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              \$8  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$8  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$9  = r05;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              \$9  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$9  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$10  = r06;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              \$10  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$10  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$11  = r07;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              \$11  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$11  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$12  = r08;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              \$12  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$12  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$13  = r09;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              \$13  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$13  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$14  = r0A;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              \$14  = rd_w_data;
+        endcase
+      end
     end
     if (rst) begin
       \$14  = 32'd0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
-    \$15  = produce_error;
-    if (rst) begin
-      \$15  = 1'h0;
-    end
-  end
-  assign consume_function = 3'h0;
-  assign consume_mode = 7'h00;
-endmodule
-
-(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:172" *)
-(* generator = "Amaranth" *)
-module \risc_project.core.core (clk, rst, prog_cyc, prog_stb, debug_addr, debug_w_data, debug_w_en, debug_stb, debug_cyc, debug_ack, debug_r_data, bus_cyc, bus_stb, bus_addr, bus_w_en, bus_w_data, aluin_s1, aluin_s2, aluin_valid, aluin_d, prog_addr
-, aluout_valid, aluout_d, aluout_value, aluout_error, prog_ack, instruction_fetch);
-  reg \$auto$verilog_backend.cc:2352:dump_module$5  = 0;
-  wire \$1 ;
-  wire [18:0] \$10 ;
-  wire [33:0] \$11 ;
-  wire [34:0] \$12 ;
-  reg [31:0] \$13 ;
-  reg [31:0] \$14 ;
-  wire \$15 ;
-  reg [31:0] \$16 ;
-  reg [31:0] \$17 ;
-  reg [31:0] \$18 ;
-  wire \$19 ;
-  wire [32:0] \$2 ;
-  wire \$20 ;
-  wire \$21 ;
-  wire \$22 ;
-  wire [32:0] \$23 ;
-  wire \$24 ;
-  reg [31:0] \$25 ;
-  wire [32:0] \$26 ;
-  reg [31:0] \$27 ;
-  wire [13:0] \$28 ;
-  wire [14:0] \$29 ;
-  reg [31:0] \$3 ;
-  wire [32:0] \$30 ;
-  reg [31:0] \$31 ;
-  wire [34:0] \$32 ;
-  wire [32:0] \$33 ;
-  wire [34:0] \$34 ;
-  wire [35:0] \$35 ;
-  wire [33:0] \$36 ;
-  reg [31:0] \$37 ;
-  wire [32:0] \$38 ;
-  wire [32:0] \$39 ;
-  wire [15:0] \$4 ;
-  wire \$40 ;
-  wire \$41 ;
-  wire \$42 ;
-  wire [32:0] \$43 ;
-  reg [31:0] \$44 ;
-  reg [31:0] \$45 ;
-  reg [31:0] \$46 ;
-  reg [31:0] \$47 ;
-  reg [31:0] \$48 ;
-  reg [31:0] \$49 ;
-  wire [4:0] \$5 ;
-  reg [31:0] \$50 ;
-  reg [31:0] \$51 ;
-  reg [31:0] \$52 ;
-  reg [31:0] \$53 ;
-  reg [31:0] \$54 ;
-  reg [31:0] \$55 ;
-  reg [31:0] \$56 ;
-  reg [31:0] \$57 ;
-  reg [31:0] \$58 ;
-  reg [31:0] \$59 ;
-  wire [16:0] \$6 ;
-  reg [31:0] \$60 ;
-  reg [31:0] \$61 ;
-  reg [31:0] \$62 ;
-  reg [31:0] \$63 ;
-  reg [31:0] \$64 ;
-  reg [31:0] \$65 ;
-  reg [31:0] \$66 ;
-  reg [31:0] \$67 ;
-  reg [31:0] \$68 ;
-  reg [31:0] \$69 ;
-  wire [12:0] \$7 ;
-  reg [31:0] \$70 ;
-  reg [31:0] \$71 ;
-  reg [31:0] \$72 ;
-  reg [31:0] \$73 ;
-  reg [31:0] \$74 ;
-  reg [31:0] \$75 ;
-  reg \$76 ;
-  reg [1:0] \$77 ;
-  reg [31:0] \$78 ;
-  reg \$79 ;
-  wire [17:0] \$8 ;
-  reg \$80 ;
-  reg [31:0] \$81 ;
-  reg \$82 ;
-  reg [31:0] \$83 ;
-  reg [31:0] \$84 ;
-  reg \$85 ;
-  wire [15:0] \$9 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:269" *)
-  reg active = 1'h0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:23" *)
-  output [4:0] aluin_d;
-  reg [4:0] aluin_d;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:21" *)
-  output [31:0] aluin_s1;
-  reg [31:0] aluin_s1;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:22" *)
-  output [31:0] aluin_s2;
-  reg [31:0] aluin_s2;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:26" *)
-  output aluin_valid;
-  reg aluin_valid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:33" *)
-  input [4:0] aluout_d;
-  wire [4:0] aluout_d;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:34" *)
-  input aluout_error;
-  wire aluout_error;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:35" *)
-  input aluout_valid;
-  wire aluout_valid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:32" *)
-  input [31:0] aluout_value;
-  wire [31:0] aluout_value;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:259" *)
-  reg branch_en;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:252" *)
-  wire [31:0] branch_next;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:241" *)
-  wire [12:0] branch_offset;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
-  wire bus_ack;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
-  output [31:0] bus_addr;
-  reg [31:0] bus_addr;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
-  output bus_cyc;
-  reg bus_cyc;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
-  wire [31:0] bus_r_data;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
-  output bus_stb;
-  reg bus_stb;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
-  output [31:0] bus_w_data;
-  reg [31:0] bus_w_data;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
-  output bus_w_en;
-  reg bus_w_en;
-  (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
-  input clk;
-  wire clk;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
-  output debug_ack;
-  reg debug_ack;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
-  input [31:0] debug_addr;
-  wire [31:0] debug_addr;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
-  input debug_cyc;
-  wire debug_cyc;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
-  output [31:0] debug_r_data;
-  reg [31:0] debug_r_data;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
-  input debug_stb;
-  wire debug_stb;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:12" *)
-  input [31:0] debug_w_data;
-  wire [31:0] debug_w_data;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:11" *)
-  input debug_w_en;
-  wire debug_w_en;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:174" *)
-  reg enable = 1'h1;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:175" *)
-  reg fetch = 1'h1;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  reg [31:0] instruction_cache = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [31:0] \instruction_cache.b ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [2:0] \instruction_cache.b.f ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [4:0] \instruction_cache.b.offset_lower ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [6:0] \instruction_cache.b.offset_upper ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [6:0] \instruction_cache.b.op ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [4:0] \instruction_cache.b.rs1 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [4:0] \instruction_cache.b.rs2 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [31:0] \instruction_cache.i ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [2:0] \instruction_cache.i.f ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [11:0] \instruction_cache.i.imm ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [6:0] \instruction_cache.i.op ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [4:0] \instruction_cache.i.rd ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [4:0] \instruction_cache.i.rs ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [31:0] \instruction_cache.j ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [19:0] \instruction_cache.j.offset ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [6:0] \instruction_cache.j.op ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [4:0] \instruction_cache.j.rd ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [31:0] \instruction_cache.m ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [2:0] \instruction_cache.m.f ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [6:0] \instruction_cache.m.muldiv ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [6:0] \instruction_cache.m.op ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [4:0] \instruction_cache.m.rd ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [4:0] \instruction_cache.m.rs1 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [4:0] \instruction_cache.m.rs2 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [6:0] \instruction_cache.op ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [31:0] \instruction_cache.r ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [2:0] \instruction_cache.r.f_lower ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [6:0] \instruction_cache.r.f_upper ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [6:0] \instruction_cache.r.op ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [4:0] \instruction_cache.r.rd ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [4:0] \instruction_cache.r.rs1 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [4:0] \instruction_cache.r.rs2 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [31:0] \instruction_cache.s ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [2:0] \instruction_cache.s.f ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [4:0] \instruction_cache.s.imm_lower ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [6:0] \instruction_cache.s.imm_upper ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [6:0] \instruction_cache.s.op ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [4:0] \instruction_cache.s.rs1 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [4:0] \instruction_cache.s.rs2 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [31:0] \instruction_cache.u ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [19:0] \instruction_cache.u.imm ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [6:0] \instruction_cache.u.op ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  wire [4:0] \instruction_cache.u.rd ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
-  input [31:0] instruction_fetch;
-  wire [31:0] instruction_fetch;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [31:0] \instruction_fetch.b ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [2:0] \instruction_fetch.b.f ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [4:0] \instruction_fetch.b.offset_lower ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [6:0] \instruction_fetch.b.offset_upper ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [6:0] \instruction_fetch.b.op ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [4:0] \instruction_fetch.b.rs1 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [4:0] \instruction_fetch.b.rs2 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [31:0] \instruction_fetch.i ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [2:0] \instruction_fetch.i.f ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [11:0] \instruction_fetch.i.imm ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [6:0] \instruction_fetch.i.op ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [4:0] \instruction_fetch.i.rd ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [4:0] \instruction_fetch.i.rs ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [31:0] \instruction_fetch.j ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [19:0] \instruction_fetch.j.offset ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [6:0] \instruction_fetch.j.op ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [4:0] \instruction_fetch.j.rd ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [31:0] \instruction_fetch.m ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [2:0] \instruction_fetch.m.f ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [6:0] \instruction_fetch.m.muldiv ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [6:0] \instruction_fetch.m.op ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [4:0] \instruction_fetch.m.rd ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [4:0] \instruction_fetch.m.rs1 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [4:0] \instruction_fetch.m.rs2 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [6:0] \instruction_fetch.op ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [31:0] \instruction_fetch.r ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [2:0] \instruction_fetch.r.f_lower ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [6:0] \instruction_fetch.r.f_upper ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [6:0] \instruction_fetch.r.op ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [4:0] \instruction_fetch.r.rd ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [4:0] \instruction_fetch.r.rs1 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [4:0] \instruction_fetch.r.rs2 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [31:0] \instruction_fetch.s ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [2:0] \instruction_fetch.s.f ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [4:0] \instruction_fetch.s.imm_lower ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [6:0] \instruction_fetch.s.imm_upper ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [6:0] \instruction_fetch.s.op ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [4:0] \instruction_fetch.s.rs1 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [4:0] \instruction_fetch.s.rs2 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [31:0] \instruction_fetch.u ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [19:0] \instruction_fetch.u.imm ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [6:0] \instruction_fetch.u.op ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:187" *)
-  wire [4:0] \instruction_fetch.u.rd ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:232" *)
-  wire [20:0] jal_offset;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:230" *)
-  reg [31:0] mem_address = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:229" *)
-  reg [31:0] mem_register = 32'd0;
-  (* enum_base_type = "MemoryStage" *)
-  (* enum_value_0 = "SETUP" *)
-  (* enum_value_1 = "RUN" *)
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:277" *)
-  reg memorystage = 1'h0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\mul.py:12" *)
-  reg mpu_en = 1'h0;
-  (* enum_base_type = "Instruction" *)
-  (* enum_value_0000011 = "MEMORYLOAD" *)
-  (* enum_value_0001111 = "FENCE" *)
-  (* enum_value_0010011 = "ARITHIMM" *)
-  (* enum_value_0010111 = "AUIPC" *)
-  (* enum_value_0100011 = "MEMORYSTORE" *)
-  (* enum_value_0110011 = "ARITH" *)
-  (* enum_value_0110111 = "LUI" *)
-  (* enum_value_1100011 = "BRANCH" *)
-  (* enum_value_1100111 = "JALR" *)
-  (* enum_value_1101111 = "JAL" *)
-  (* enum_value_1110011 = "E" *)
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:262" *)
-  wire [6:0] opcode;
-  (* enum_base_type = "Instruction" *)
-  (* enum_value_0000011 = "MEMORYLOAD" *)
-  (* enum_value_0001111 = "FENCE" *)
-  (* enum_value_0010011 = "ARITHIMM" *)
-  (* enum_value_0010111 = "AUIPC" *)
-  (* enum_value_0100011 = "MEMORYSTORE" *)
-  (* enum_value_0110011 = "ARITH" *)
-  (* enum_value_0110111 = "LUI" *)
-  (* enum_value_1100011 = "BRANCH" *)
-  (* enum_value_1100111 = "JALR" *)
-  (* enum_value_1101111 = "JAL" *)
-  (* enum_value_1110011 = "E" *)
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:265" *)
-  wire [6:0] opcode_cache;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
-  input prog_ack;
-  wire prog_ack;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:182" *)
-  output [31:0] prog_addr;
-  reg [31:0] prog_addr = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
-  output prog_cyc;
-  wire prog_cyc;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:13" *)
-  wire [31:0] prog_r_data;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
-  output prog_stb;
-  wire prog_stb;
-  (* init = 32'd0 *)
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:182" *)
-  wire [31:0] program_counter;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r00 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r01 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r02 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r03 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r04 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r05 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r06 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r07 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r08 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r09 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r0A = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r0B = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r0C = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r0D = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r0E = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r0F = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r10 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r11 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r12 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r13 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r14 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r15 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r16 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r17 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r18 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r19 = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r1A = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r1B = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r1C = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r1D = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r1E = 32'd0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  reg [31:0] r1F = 32'd0;
-  (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
-  input rst;
-  wire rst;
-  (* enum_base_type = "RunMode" *)
-  (* enum_value_00 = "STOP" *)
-  (* enum_value_01 = "STEP" *)
-  (* enum_value_10 = "RUN" *)
-  (* enum_value_11 = "ERROR" *)
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:176" *)
-  reg [1:0] run_mode = 2'h0;
-  assign \$15  = \$13  == (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ast.py:2423" *) \$14 ;
-  assign \$19  = debug_cyc & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:190" *) debug_stb;
-  assign \$20  = debug_addr > (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:195" *) 1'h0;
-  assign \$21  = debug_addr < (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:195" *) 6'h21;
-  assign \$22  = \$20  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:195" *) \$21 ;
-  assign \$23  = debug_addr - (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:196" *) 1'h1;
-  assign \$24  = ! (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:197" *) debug_addr;
-  assign \$26  = $signed(\$25 ) + (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ast.py:2423" *) $signed(instruction_cache[31:20]);
-  assign \$29  = instruction_cache[11:7] + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:341" *) \$28 ;
-  assign \$30  = $signed(\$27 ) + (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ast.py:2423" *) $signed(\$29 );
-  assign \$33  = prog_addr - (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:419" *) 3'h4;
-  assign \$35  = $signed(\$33 ) + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:419" *) $signed(\$34 );
-  assign \$36  = $signed({ 1'h0, prog_addr }) + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:430" *) $signed(jal_offset);
-  assign \$38  = $signed(\$37 ) + (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ast.py:2423" *) $signed(instruction_cache[31:20]);
-  assign \$40  = prog_cyc & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:452" *) prog_stb;
-  assign \$41  = \$40  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:452" *) prog_ack;
-  assign \$42  = run_mode == (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:454" *) 1'h1;
-  assign \$43  = prog_addr + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:459" *) 3'h4;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r00 <= \$44 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r01 <= \$45 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r02 <= \$46 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r03 <= \$47 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r04 <= \$48 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r05 <= \$49 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r06 <= \$50 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r07 <= \$51 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r08 <= \$52 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r09 <= \$53 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r0A <= \$54 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r0B <= \$55 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r0C <= \$56 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r0D <= \$57 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r0E <= \$58 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r0F <= \$59 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r10 <= \$60 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r11 <= \$61 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r12 <= \$62 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r13 <= \$63 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r14 <= \$64 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r15 <= \$65 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r16 <= \$66 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r17 <= \$67 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r18 <= \$68 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r19 <= \$69 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r1A <= \$70 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r1B <= \$71 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r1C <= \$72 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r1D <= \$73 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r1E <= \$74 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:178" *)
-  always @(posedge clk)
-    r1F <= \$75 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:174" *)
-  always @(posedge clk)
-    enable <= \$76 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:176" *)
-  always @(posedge clk)
-    run_mode <= \$77 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:182" *)
-  always @(posedge clk)
-    prog_addr <= \$78 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:175" *)
-  always @(posedge clk)
-    fetch <= \$79 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:269" *)
-  always @(posedge clk)
-    active <= \$80 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:230" *)
-  always @(posedge clk)
-    mem_address <= \$81 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:277" *)
-  always @(posedge clk)
-    memorystage <= \$82 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:229" *)
-  always @(posedge clk)
-    mem_register <= \$83 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:186" *)
-  always @(posedge clk)
-    instruction_cache <= \$84 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\mul.py:12" *)
-  always @(posedge clk)
-    mpu_en <= \$85 ;
-  assign \$1  = debug_cyc & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:190" *) debug_stb;
-  assign \$2  = debug_addr - (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:225" *) 1'h1;
-  assign \$6  = \$4  + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:246" *) \$5 ;
-  assign \$8  = \$6  + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:246" *) \$7 ;
-  assign \$10  = \$8  + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:246" *) \$9 ;
-  assign \$11  = $signed({ 1'h0, prog_addr }) + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:255" *) $signed(\$10 [12:0]);
-  assign \$12  = $signed(\$11 ) - (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:255" *) $signed(4'h4);
-  assign prog_cyc = enable & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:272" *) fetch;
-  assign prog_stb = enable & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:273" *) fetch;
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    (* full_case = 32'd1 *)
-    casez (instruction_cache[24:20])
-      5'h00:
-          \$13  = r00;
-      5'h01:
-          \$13  = r01;
-      5'h02:
-          \$13  = r02;
-      5'h03:
-          \$13  = r03;
-      5'h04:
-          \$13  = r04;
-      5'h05:
-          \$13  = r05;
-      5'h06:
-          \$13  = r06;
-      5'h07:
-          \$13  = r07;
-      5'h08:
-          \$13  = r08;
-      5'h09:
-          \$13  = r09;
-      5'h0a:
-          \$13  = r0A;
-      5'h0b:
-          \$13  = r0B;
-      5'h0c:
-          \$13  = r0C;
-      5'h0d:
-          \$13  = r0D;
-      5'h0e:
-          \$13  = r0E;
-      5'h0f:
-          \$13  = r0F;
-      5'h10:
-          \$13  = r10;
-      5'h11:
-          \$13  = r11;
-      5'h12:
-          \$13  = r12;
-      5'h13:
-          \$13  = r13;
-      5'h14:
-          \$13  = r14;
-      5'h15:
-          \$13  = r15;
-      5'h16:
-          \$13  = r16;
-      5'h17:
-          \$13  = r17;
-      5'h18:
-          \$13  = r18;
-      5'h19:
-          \$13  = r19;
-      5'h1a:
-          \$13  = r1A;
-      5'h1b:
-          \$13  = r1B;
-      5'h1c:
-          \$13  = r1C;
-      5'h1d:
-          \$13  = r1D;
-      5'h1e:
-          \$13  = r1E;
-      5'h1f:
-          \$13  = r1F;
-    endcase
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    (* full_case = 32'd1 *)
-    casez (instruction_cache[19:15])
-      5'h00:
-          \$14  = r00;
-      5'h01:
-          \$14  = r01;
-      5'h02:
-          \$14  = r02;
-      5'h03:
-          \$14  = r03;
-      5'h04:
-          \$14  = r04;
-      5'h05:
-          \$14  = r05;
-      5'h06:
-          \$14  = r06;
-      5'h07:
-          \$14  = r07;
-      5'h08:
-          \$14  = r08;
-      5'h09:
-          \$14  = r09;
-      5'h0a:
-          \$14  = r0A;
-      5'h0b:
-          \$14  = r0B;
-      5'h0c:
-          \$14  = r0C;
-      5'h0d:
-          \$14  = r0D;
-      5'h0e:
-          \$14  = r0E;
-      5'h0f:
-          \$14  = r0F;
-      5'h10:
-          \$14  = r10;
-      5'h11:
-          \$14  = r11;
-      5'h12:
-          \$14  = r12;
-      5'h13:
-          \$14  = r13;
-      5'h14:
-          \$14  = r14;
-      5'h15:
-          \$14  = r15;
-      5'h16:
-          \$14  = r16;
-      5'h17:
-          \$14  = r17;
-      5'h18:
-          \$14  = r18;
-      5'h19:
-          \$14  = r19;
-      5'h1a:
-          \$14  = r1A;
-      5'h1b:
-          \$14  = r1B;
-      5'h1c:
-          \$14  = r1C;
-      5'h1d:
-          \$14  = r1D;
-      5'h1e:
-          \$14  = r1E;
-      5'h1f:
-          \$14  = r1F;
-    endcase
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    (* full_case = 32'd1 *)
-    casez (instruction_cache[19:15])
-      5'h00:
-          \$16  = r00;
-      5'h01:
-          \$16  = r01;
-      5'h02:
-          \$16  = r02;
-      5'h03:
-          \$16  = r03;
-      5'h04:
-          \$16  = r04;
-      5'h05:
-          \$16  = r05;
-      5'h06:
-          \$16  = r06;
-      5'h07:
-          \$16  = r07;
-      5'h08:
-          \$16  = r08;
-      5'h09:
-          \$16  = r09;
-      5'h0a:
-          \$16  = r0A;
-      5'h0b:
-          \$16  = r0B;
-      5'h0c:
-          \$16  = r0C;
-      5'h0d:
-          \$16  = r0D;
-      5'h0e:
-          \$16  = r0E;
-      5'h0f:
-          \$16  = r0F;
-      5'h10:
-          \$16  = r10;
-      5'h11:
-          \$16  = r11;
-      5'h12:
-          \$16  = r12;
-      5'h13:
-          \$16  = r13;
-      5'h14:
-          \$16  = r14;
-      5'h15:
-          \$16  = r15;
-      5'h16:
-          \$16  = r16;
-      5'h17:
-          \$16  = r17;
-      5'h18:
-          \$16  = r18;
-      5'h19:
-          \$16  = r19;
-      5'h1a:
-          \$16  = r1A;
-      5'h1b:
-          \$16  = r1B;
-      5'h1c:
-          \$16  = r1C;
-      5'h1d:
-          \$16  = r1D;
-      5'h1e:
-          \$16  = r1E;
-      5'h1f:
-          \$16  = r1F;
-    endcase
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    (* full_case = 32'd1 *)
-    casez (instruction_cache[24:20])
-      5'h00:
-          \$17  = r00;
-      5'h01:
-          \$17  = r01;
-      5'h02:
-          \$17  = r02;
-      5'h03:
-          \$17  = r03;
-      5'h04:
-          \$17  = r04;
-      5'h05:
-          \$17  = r05;
-      5'h06:
-          \$17  = r06;
-      5'h07:
-          \$17  = r07;
-      5'h08:
-          \$17  = r08;
-      5'h09:
-          \$17  = r09;
-      5'h0a:
-          \$17  = r0A;
-      5'h0b:
-          \$17  = r0B;
-      5'h0c:
-          \$17  = r0C;
-      5'h0d:
-          \$17  = r0D;
-      5'h0e:
-          \$17  = r0E;
-      5'h0f:
-          \$17  = r0F;
-      5'h10:
-          \$17  = r10;
-      5'h11:
-          \$17  = r11;
-      5'h12:
-          \$17  = r12;
-      5'h13:
-          \$17  = r13;
-      5'h14:
-          \$17  = r14;
-      5'h15:
-          \$17  = r15;
-      5'h16:
-          \$17  = r16;
-      5'h17:
-          \$17  = r17;
-      5'h18:
-          \$17  = r18;
-      5'h19:
-          \$17  = r19;
-      5'h1a:
-          \$17  = r1A;
-      5'h1b:
-          \$17  = r1B;
-      5'h1c:
-          \$17  = r1C;
-      5'h1d:
-          \$17  = r1D;
-      5'h1e:
-          \$17  = r1E;
-      5'h1f:
-          \$17  = r1F;
-    endcase
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    (* full_case = 32'd1 *)
-    casez (instruction_cache[19:15])
-      5'h00:
-          \$18  = r00;
-      5'h01:
-          \$18  = r01;
-      5'h02:
-          \$18  = r02;
-      5'h03:
-          \$18  = r03;
-      5'h04:
-          \$18  = r04;
-      5'h05:
-          \$18  = r05;
-      5'h06:
-          \$18  = r06;
-      5'h07:
-          \$18  = r07;
-      5'h08:
-          \$18  = r08;
-      5'h09:
-          \$18  = r09;
-      5'h0a:
-          \$18  = r0A;
-      5'h0b:
-          \$18  = r0B;
-      5'h0c:
-          \$18  = r0C;
-      5'h0d:
-          \$18  = r0D;
-      5'h0e:
-          \$18  = r0E;
-      5'h0f:
-          \$18  = r0F;
-      5'h10:
-          \$18  = r10;
-      5'h11:
-          \$18  = r11;
-      5'h12:
-          \$18  = r12;
-      5'h13:
-          \$18  = r13;
-      5'h14:
-          \$18  = r14;
-      5'h15:
-          \$18  = r15;
-      5'h16:
-          \$18  = r16;
-      5'h17:
-          \$18  = r17;
-      5'h18:
-          \$18  = r18;
-      5'h19:
-          \$18  = r19;
-      5'h1a:
-          \$18  = r1A;
-      5'h1b:
-          \$18  = r1B;
-      5'h1c:
-          \$18  = r1C;
-      5'h1d:
-          \$18  = r1D;
-      5'h1e:
-          \$18  = r1E;
-      5'h1f:
-          \$18  = r1F;
-    endcase
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    (* full_case = 32'd1 *)
-    casez (instruction_cache[19:15])
-      5'h00:
-          \$25  = r00;
-      5'h01:
-          \$25  = r01;
-      5'h02:
-          \$25  = r02;
-      5'h03:
-          \$25  = r03;
-      5'h04:
-          \$25  = r04;
-      5'h05:
-          \$25  = r05;
-      5'h06:
-          \$25  = r06;
-      5'h07:
-          \$25  = r07;
-      5'h08:
-          \$25  = r08;
-      5'h09:
-          \$25  = r09;
-      5'h0a:
-          \$25  = r0A;
-      5'h0b:
-          \$25  = r0B;
-      5'h0c:
-          \$25  = r0C;
-      5'h0d:
-          \$25  = r0D;
-      5'h0e:
-          \$25  = r0E;
-      5'h0f:
-          \$25  = r0F;
-      5'h10:
-          \$25  = r10;
-      5'h11:
-          \$25  = r11;
-      5'h12:
-          \$25  = r12;
-      5'h13:
-          \$25  = r13;
-      5'h14:
-          \$25  = r14;
-      5'h15:
-          \$25  = r15;
-      5'h16:
-          \$25  = r16;
-      5'h17:
-          \$25  = r17;
-      5'h18:
-          \$25  = r18;
-      5'h19:
-          \$25  = r19;
-      5'h1a:
-          \$25  = r1A;
-      5'h1b:
-          \$25  = r1B;
-      5'h1c:
-          \$25  = r1C;
-      5'h1d:
-          \$25  = r1D;
-      5'h1e:
-          \$25  = r1E;
-      5'h1f:
-          \$25  = r1F;
-    endcase
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    (* full_case = 32'd1 *)
-    casez (instruction_cache[19:15])
-      5'h00:
-          \$27  = r00;
-      5'h01:
-          \$27  = r01;
-      5'h02:
-          \$27  = r02;
-      5'h03:
-          \$27  = r03;
-      5'h04:
-          \$27  = r04;
-      5'h05:
-          \$27  = r05;
-      5'h06:
-          \$27  = r06;
-      5'h07:
-          \$27  = r07;
-      5'h08:
-          \$27  = r08;
-      5'h09:
-          \$27  = r09;
-      5'h0a:
-          \$27  = r0A;
-      5'h0b:
-          \$27  = r0B;
-      5'h0c:
-          \$27  = r0C;
-      5'h0d:
-          \$27  = r0D;
-      5'h0e:
-          \$27  = r0E;
-      5'h0f:
-          \$27  = r0F;
-      5'h10:
-          \$27  = r10;
-      5'h11:
-          \$27  = r11;
-      5'h12:
-          \$27  = r12;
-      5'h13:
-          \$27  = r13;
-      5'h14:
-          \$27  = r14;
-      5'h15:
-          \$27  = r15;
-      5'h16:
-          \$27  = r16;
-      5'h17:
-          \$27  = r17;
-      5'h18:
-          \$27  = r18;
-      5'h19:
-          \$27  = r19;
-      5'h1a:
-          \$27  = r1A;
-      5'h1b:
-          \$27  = r1B;
-      5'h1c:
-          \$27  = r1C;
-      5'h1d:
-          \$27  = r1D;
-      5'h1e:
-          \$27  = r1E;
-      5'h1f:
-          \$27  = r1F;
-    endcase
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    (* full_case = 32'd1 *)
-    casez (instruction_cache[24:20])
-      5'h00:
-          \$31  = r00;
-      5'h01:
-          \$31  = r01;
-      5'h02:
-          \$31  = r02;
-      5'h03:
-          \$31  = r03;
-      5'h04:
-          \$31  = r04;
-      5'h05:
-          \$31  = r05;
-      5'h06:
-          \$31  = r06;
-      5'h07:
-          \$31  = r07;
-      5'h08:
-          \$31  = r08;
-      5'h09:
-          \$31  = r09;
-      5'h0a:
-          \$31  = r0A;
-      5'h0b:
-          \$31  = r0B;
-      5'h0c:
-          \$31  = r0C;
-      5'h0d:
-          \$31  = r0D;
-      5'h0e:
-          \$31  = r0E;
-      5'h0f:
-          \$31  = r0F;
-      5'h10:
-          \$31  = r10;
-      5'h11:
-          \$31  = r11;
-      5'h12:
-          \$31  = r12;
-      5'h13:
-          \$31  = r13;
-      5'h14:
-          \$31  = r14;
-      5'h15:
-          \$31  = r15;
-      5'h16:
-          \$31  = r16;
-      5'h17:
-          \$31  = r17;
-      5'h18:
-          \$31  = r18;
-      5'h19:
-          \$31  = r19;
-      5'h1a:
-          \$31  = r1A;
-      5'h1b:
-          \$31  = r1B;
-      5'h1c:
-          \$31  = r1C;
-      5'h1d:
-          \$31  = r1D;
-      5'h1e:
-          \$31  = r1E;
-      5'h1f:
-          \$31  = r1F;
-    endcase
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    (* full_case = 32'd1 *)
-    casez (instruction_cache[19:15])
-      5'h00:
-          \$37  = r00;
-      5'h01:
-          \$37  = r01;
-      5'h02:
-          \$37  = r02;
-      5'h03:
-          \$37  = r03;
-      5'h04:
-          \$37  = r04;
-      5'h05:
-          \$37  = r05;
-      5'h06:
-          \$37  = r06;
-      5'h07:
-          \$37  = r07;
-      5'h08:
-          \$37  = r08;
-      5'h09:
-          \$37  = r09;
-      5'h0a:
-          \$37  = r0A;
-      5'h0b:
-          \$37  = r0B;
-      5'h0c:
-          \$37  = r0C;
-      5'h0d:
-          \$37  = r0D;
-      5'h0e:
-          \$37  = r0E;
-      5'h0f:
-          \$37  = r0F;
-      5'h10:
-          \$37  = r10;
-      5'h11:
-          \$37  = r11;
-      5'h12:
-          \$37  = r12;
-      5'h13:
-          \$37  = r13;
-      5'h14:
-          \$37  = r14;
-      5'h15:
-          \$37  = r15;
-      5'h16:
-          \$37  = r16;
-      5'h17:
-          \$37  = r17;
-      5'h18:
-          \$37  = r18;
-      5'h19:
-          \$37  = r19;
-      5'h1a:
-          \$37  = r1A;
-      5'h1b:
-          \$37  = r1B;
-      5'h1c:
-          \$37  = r1C;
-      5'h1d:
-          \$37  = r1D;
-      5'h1e:
-          \$37  = r1E;
-      5'h1f:
-          \$37  = r1F;
-    endcase
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    debug_ack = 1'h0;
-    if (\$1 ) begin
-      (* full_case = 32'd1 *)
-      if (debug_w_en) begin
-        debug_ack = 1'h1;
-      end else begin
-        debug_ack = 1'h1;
-      end
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    debug_r_data = 32'd0;
-    if (\$1 ) begin
-      (* full_case = 32'd1 *)
-      if (debug_w_en) begin
-      end else begin
-        (* full_case = 32'd1 *)
-        casez (debug_addr)
-          32'd0:
-              debug_r_data = { 30'h00000000, run_mode };
-          32'd33:
-              debug_r_data = prog_addr;
-          32'd34:
-              debug_r_data = instruction_fetch;
-          32'd35:
-              debug_r_data = instruction_cache;
-          32'd36:
-              debug_r_data = { 31'h00000000, fetch };
-          32'd37:
-              debug_r_data = { 31'h00000000, enable };
-          default:
-              debug_r_data = \$3 ;
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$15  = r0B;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              \$15  = rd_w_data;
         endcase
       end
     end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    branch_en = 1'h0;
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            branch_en = \$15 ;
-      endcase
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    bus_cyc = 1'h0;
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            (* full_case = 32'd1 *)
-            casez (memorystage)
-              1'h0:
-                  /* empty */;
-              1'h1:
-                  bus_cyc = 1'h1;
-            endcase
-        7'h23:
-            (* full_case = 32'd1 *)
-            casez (memorystage)
-              1'h0:
-                  /* empty */;
-              1'h1:
-                  bus_cyc = 1'h1;
-            endcase
-      endcase
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    bus_stb = 1'h0;
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            (* full_case = 32'd1 *)
-            casez (memorystage)
-              1'h0:
-                  /* empty */;
-              1'h1:
-                  bus_stb = 1'h1;
-            endcase
-        7'h23:
-            (* full_case = 32'd1 *)
-            casez (memorystage)
-              1'h0:
-                  /* empty */;
-              1'h1:
-                  bus_stb = 1'h1;
-            endcase
-      endcase
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    bus_addr = 32'd0;
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            (* full_case = 32'd1 *)
-            casez (memorystage)
-              1'h0:
-                  /* empty */;
-              1'h1:
-                  bus_addr = mem_address;
-            endcase
-        7'h23:
-            (* full_case = 32'd1 *)
-            casez (memorystage)
-              1'h0:
-                  /* empty */;
-              1'h1:
-                  bus_addr = mem_address;
-            endcase
-      endcase
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    bus_w_en = 1'h0;
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            /* empty */;
-        7'h23:
-            (* full_case = 32'd1 *)
-            casez (memorystage)
-              1'h0:
-                  /* empty */;
-              1'h1:
-                  bus_w_en = 1'h1;
-            endcase
-      endcase
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    bus_w_data = 32'd0;
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            /* empty */;
-        7'h23:
-            (* full_case = 32'd1 *)
-            casez (memorystage)
-              1'h0:
-                  /* empty */;
-              1'h1:
-                  bus_w_data = mem_register;
-            endcase
-      endcase
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    aluin_s1 = 32'd0;
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            /* empty */;
-        7'h23:
-            /* empty */;
-        7'h33:
-            aluin_s1 = \$16 ;
-        7'h13:
-            aluin_s1 = \$18 ;
-      endcase
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    aluin_s2 = 32'd0;
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            /* empty */;
-        7'h23:
-            /* empty */;
-        7'h33:
-            aluin_s2 = \$17 ;
-        7'h13:
-            aluin_s2 = { instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31:20] };
-      endcase
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    aluin_valid = 1'h0;
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            /* empty */;
-        7'h23:
-            /* empty */;
-        7'h33:
-            aluin_valid = 1'h1;
-        7'h13:
-            aluin_valid = 1'h1;
-      endcase
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    aluin_d = 5'h00;
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            /* empty */;
-        7'h23:
-            /* empty */;
-        7'h33:
-            aluin_d = instruction_cache[11:7];
-        7'h13:
-            aluin_d = instruction_cache[11:7];
-      endcase
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$44  = r00;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                \$44  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            \$44  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        \$44  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  \$44  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  \$44  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  \$44  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  \$44  = prog_addr;
-            endcase
-      endcase
-    end
     if (rst) begin
-      \$44  = 32'd0;
+      \$15  = 32'd0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$45  = r01;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                \$45  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            \$45  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        \$45  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  \$45  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  \$45  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  \$45  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  \$45  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$45  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$46  = r02;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                \$46  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            \$46  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        \$46  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  \$46  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  \$46  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  \$46  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  \$46  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$46  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$47  = r03;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                \$47  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            \$47  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        \$47  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  \$47  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  \$47  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  \$47  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  \$47  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$47  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$48  = r04;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                \$48  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            \$48  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        \$48  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  \$48  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  \$48  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  \$48  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  \$48  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$48  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$49  = r05;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                \$49  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            \$49  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        \$49  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  \$49  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  \$49  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  \$49  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  \$49  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$49  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$50  = r06;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                \$50  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            \$50  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        \$50  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  \$50  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  \$50  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  \$50  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  \$50  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$50  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$51  = r07;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                \$51  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            \$51  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        \$51  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  \$51  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  \$51  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  \$51  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  \$51  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$51  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$52  = r08;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                \$52  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            \$52  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        \$52  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  \$52  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  \$52  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  \$52  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  \$52  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$52  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$53  = r09;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                \$53  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            \$53  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        \$53  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  \$53  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  \$53  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  \$53  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  \$53  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$53  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$54  = r0A;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                \$54  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            \$54  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        \$54  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  \$54  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  \$54  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  \$54  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  \$54  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$54  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$55  = r0B;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                \$55  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            \$55  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        \$55  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  \$55  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  \$55  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  \$55  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  \$55  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$55  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$56  = r0C;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                \$56  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            \$56  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        \$56  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  \$56  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  \$56  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  \$56  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  \$56  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$56  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$57  = r0D;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                \$57  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            \$57  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        \$57  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  \$57  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  \$57  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  \$57  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  \$57  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$57  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$58  = r0E;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                \$58  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            \$58  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        \$58  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  \$58  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  \$58  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  \$58  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  \$58  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$58  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$59  = r0F;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                \$59  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            \$59  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        \$59  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  \$59  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  \$59  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  \$59  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  \$59  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$59  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$60  = r10;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                /* empty */;
-            33'h000000010:
-                \$60  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            /* empty */;
-        5'h10:
-            \$60  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        /* empty */;
-                    5'h10:
-                        \$60  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  \$60  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  \$60  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  \$60  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  \$60  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$60  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$61  = r11;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                /* empty */;
-            33'h000000010:
-                /* empty */;
-            33'h000000011:
-                \$61  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            /* empty */;
-        5'h10:
-            /* empty */;
-        5'h11:
-            \$61  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        /* empty */;
-                    5'h10:
-                        /* empty */;
-                    5'h11:
-                        \$61  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  \$61  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  \$61  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  \$61  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  \$61  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$61  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$62  = r12;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                /* empty */;
-            33'h000000010:
-                /* empty */;
-            33'h000000011:
-                /* empty */;
-            33'h000000012:
-                \$62  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            /* empty */;
-        5'h10:
-            /* empty */;
-        5'h11:
-            /* empty */;
-        5'h12:
-            \$62  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        /* empty */;
-                    5'h10:
-                        /* empty */;
-                    5'h11:
-                        /* empty */;
-                    5'h12:
-                        \$62  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  \$62  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  \$62  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  \$62  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  \$62  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$62  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$63  = r13;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                /* empty */;
-            33'h000000010:
-                /* empty */;
-            33'h000000011:
-                /* empty */;
-            33'h000000012:
-                /* empty */;
-            33'h000000013:
-                \$63  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            /* empty */;
-        5'h10:
-            /* empty */;
-        5'h11:
-            /* empty */;
-        5'h12:
-            /* empty */;
-        5'h13:
-            \$63  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        /* empty */;
-                    5'h10:
-                        /* empty */;
-                    5'h11:
-                        /* empty */;
-                    5'h12:
-                        /* empty */;
-                    5'h13:
-                        \$63  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  \$63  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  \$63  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  \$63  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  \$63  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$63  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$64  = r14;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                /* empty */;
-            33'h000000010:
-                /* empty */;
-            33'h000000011:
-                /* empty */;
-            33'h000000012:
-                /* empty */;
-            33'h000000013:
-                /* empty */;
-            33'h000000014:
-                \$64  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            /* empty */;
-        5'h10:
-            /* empty */;
-        5'h11:
-            /* empty */;
-        5'h12:
-            /* empty */;
-        5'h13:
-            /* empty */;
-        5'h14:
-            \$64  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        /* empty */;
-                    5'h10:
-                        /* empty */;
-                    5'h11:
-                        /* empty */;
-                    5'h12:
-                        /* empty */;
-                    5'h13:
-                        /* empty */;
-                    5'h14:
-                        \$64  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  \$64  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  \$64  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  \$64  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  \$64  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$64  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$65  = r15;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                /* empty */;
-            33'h000000010:
-                /* empty */;
-            33'h000000011:
-                /* empty */;
-            33'h000000012:
-                /* empty */;
-            33'h000000013:
-                /* empty */;
-            33'h000000014:
-                /* empty */;
-            33'h000000015:
-                \$65  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            /* empty */;
-        5'h10:
-            /* empty */;
-        5'h11:
-            /* empty */;
-        5'h12:
-            /* empty */;
-        5'h13:
-            /* empty */;
-        5'h14:
-            /* empty */;
-        5'h15:
-            \$65  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        /* empty */;
-                    5'h10:
-                        /* empty */;
-                    5'h11:
-                        /* empty */;
-                    5'h12:
-                        /* empty */;
-                    5'h13:
-                        /* empty */;
-                    5'h14:
-                        /* empty */;
-                    5'h15:
-                        \$65  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  \$65  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  \$65  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  \$65  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  \$65  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$65  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$66  = r16;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                /* empty */;
-            33'h000000010:
-                /* empty */;
-            33'h000000011:
-                /* empty */;
-            33'h000000012:
-                /* empty */;
-            33'h000000013:
-                /* empty */;
-            33'h000000014:
-                /* empty */;
-            33'h000000015:
-                /* empty */;
-            33'h000000016:
-                \$66  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            /* empty */;
-        5'h10:
-            /* empty */;
-        5'h11:
-            /* empty */;
-        5'h12:
-            /* empty */;
-        5'h13:
-            /* empty */;
-        5'h14:
-            /* empty */;
-        5'h15:
-            /* empty */;
-        5'h16:
-            \$66  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        /* empty */;
-                    5'h10:
-                        /* empty */;
-                    5'h11:
-                        /* empty */;
-                    5'h12:
-                        /* empty */;
-                    5'h13:
-                        /* empty */;
-                    5'h14:
-                        /* empty */;
-                    5'h15:
-                        /* empty */;
-                    5'h16:
-                        \$66  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  \$66  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  \$66  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  \$66  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  \$66  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$66  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$67  = r17;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                /* empty */;
-            33'h000000010:
-                /* empty */;
-            33'h000000011:
-                /* empty */;
-            33'h000000012:
-                /* empty */;
-            33'h000000013:
-                /* empty */;
-            33'h000000014:
-                /* empty */;
-            33'h000000015:
-                /* empty */;
-            33'h000000016:
-                /* empty */;
-            33'h000000017:
-                \$67  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            /* empty */;
-        5'h10:
-            /* empty */;
-        5'h11:
-            /* empty */;
-        5'h12:
-            /* empty */;
-        5'h13:
-            /* empty */;
-        5'h14:
-            /* empty */;
-        5'h15:
-            /* empty */;
-        5'h16:
-            /* empty */;
-        5'h17:
-            \$67  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        /* empty */;
-                    5'h10:
-                        /* empty */;
-                    5'h11:
-                        /* empty */;
-                    5'h12:
-                        /* empty */;
-                    5'h13:
-                        /* empty */;
-                    5'h14:
-                        /* empty */;
-                    5'h15:
-                        /* empty */;
-                    5'h16:
-                        /* empty */;
-                    5'h17:
-                        \$67  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  \$67  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  \$67  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  \$67  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  \$67  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$67  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$68  = r18;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                /* empty */;
-            33'h000000010:
-                /* empty */;
-            33'h000000011:
-                /* empty */;
-            33'h000000012:
-                /* empty */;
-            33'h000000013:
-                /* empty */;
-            33'h000000014:
-                /* empty */;
-            33'h000000015:
-                /* empty */;
-            33'h000000016:
-                /* empty */;
-            33'h000000017:
-                /* empty */;
-            33'h000000018:
-                \$68  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            /* empty */;
-        5'h10:
-            /* empty */;
-        5'h11:
-            /* empty */;
-        5'h12:
-            /* empty */;
-        5'h13:
-            /* empty */;
-        5'h14:
-            /* empty */;
-        5'h15:
-            /* empty */;
-        5'h16:
-            /* empty */;
-        5'h17:
-            /* empty */;
-        5'h18:
-            \$68  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        /* empty */;
-                    5'h10:
-                        /* empty */;
-                    5'h11:
-                        /* empty */;
-                    5'h12:
-                        /* empty */;
-                    5'h13:
-                        /* empty */;
-                    5'h14:
-                        /* empty */;
-                    5'h15:
-                        /* empty */;
-                    5'h16:
-                        /* empty */;
-                    5'h17:
-                        /* empty */;
-                    5'h18:
-                        \$68  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  \$68  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  \$68  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  \$68  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  \$68  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$68  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$69  = r19;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                /* empty */;
-            33'h000000010:
-                /* empty */;
-            33'h000000011:
-                /* empty */;
-            33'h000000012:
-                /* empty */;
-            33'h000000013:
-                /* empty */;
-            33'h000000014:
-                /* empty */;
-            33'h000000015:
-                /* empty */;
-            33'h000000016:
-                /* empty */;
-            33'h000000017:
-                /* empty */;
-            33'h000000018:
-                /* empty */;
-            33'h000000019:
-                \$69  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            /* empty */;
-        5'h10:
-            /* empty */;
-        5'h11:
-            /* empty */;
-        5'h12:
-            /* empty */;
-        5'h13:
-            /* empty */;
-        5'h14:
-            /* empty */;
-        5'h15:
-            /* empty */;
-        5'h16:
-            /* empty */;
-        5'h17:
-            /* empty */;
-        5'h18:
-            /* empty */;
-        5'h19:
-            \$69  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        /* empty */;
-                    5'h10:
-                        /* empty */;
-                    5'h11:
-                        /* empty */;
-                    5'h12:
-                        /* empty */;
-                    5'h13:
-                        /* empty */;
-                    5'h14:
-                        /* empty */;
-                    5'h15:
-                        /* empty */;
-                    5'h16:
-                        /* empty */;
-                    5'h17:
-                        /* empty */;
-                    5'h18:
-                        /* empty */;
-                    5'h19:
-                        \$69  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  \$69  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  \$69  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  \$69  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  \$69  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$69  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$70  = r1A;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                /* empty */;
-            33'h000000010:
-                /* empty */;
-            33'h000000011:
-                /* empty */;
-            33'h000000012:
-                /* empty */;
-            33'h000000013:
-                /* empty */;
-            33'h000000014:
-                /* empty */;
-            33'h000000015:
-                /* empty */;
-            33'h000000016:
-                /* empty */;
-            33'h000000017:
-                /* empty */;
-            33'h000000018:
-                /* empty */;
-            33'h000000019:
-                /* empty */;
-            33'h00000001a:
-                \$70  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            /* empty */;
-        5'h10:
-            /* empty */;
-        5'h11:
-            /* empty */;
-        5'h12:
-            /* empty */;
-        5'h13:
-            /* empty */;
-        5'h14:
-            /* empty */;
-        5'h15:
-            /* empty */;
-        5'h16:
-            /* empty */;
-        5'h17:
-            /* empty */;
-        5'h18:
-            /* empty */;
-        5'h19:
-            /* empty */;
-        5'h1a:
-            \$70  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        /* empty */;
-                    5'h10:
-                        /* empty */;
-                    5'h11:
-                        /* empty */;
-                    5'h12:
-                        /* empty */;
-                    5'h13:
-                        /* empty */;
-                    5'h14:
-                        /* empty */;
-                    5'h15:
-                        /* empty */;
-                    5'h16:
-                        /* empty */;
-                    5'h17:
-                        /* empty */;
-                    5'h18:
-                        /* empty */;
-                    5'h19:
-                        /* empty */;
-                    5'h1a:
-                        \$70  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  \$70  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  \$70  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  \$70  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  \$70  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$70  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$71  = r1B;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                /* empty */;
-            33'h000000010:
-                /* empty */;
-            33'h000000011:
-                /* empty */;
-            33'h000000012:
-                /* empty */;
-            33'h000000013:
-                /* empty */;
-            33'h000000014:
-                /* empty */;
-            33'h000000015:
-                /* empty */;
-            33'h000000016:
-                /* empty */;
-            33'h000000017:
-                /* empty */;
-            33'h000000018:
-                /* empty */;
-            33'h000000019:
-                /* empty */;
-            33'h00000001a:
-                /* empty */;
-            33'h00000001b:
-                \$71  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            /* empty */;
-        5'h10:
-            /* empty */;
-        5'h11:
-            /* empty */;
-        5'h12:
-            /* empty */;
-        5'h13:
-            /* empty */;
-        5'h14:
-            /* empty */;
-        5'h15:
-            /* empty */;
-        5'h16:
-            /* empty */;
-        5'h17:
-            /* empty */;
-        5'h18:
-            /* empty */;
-        5'h19:
-            /* empty */;
-        5'h1a:
-            /* empty */;
-        5'h1b:
-            \$71  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        /* empty */;
-                    5'h10:
-                        /* empty */;
-                    5'h11:
-                        /* empty */;
-                    5'h12:
-                        /* empty */;
-                    5'h13:
-                        /* empty */;
-                    5'h14:
-                        /* empty */;
-                    5'h15:
-                        /* empty */;
-                    5'h16:
-                        /* empty */;
-                    5'h17:
-                        /* empty */;
-                    5'h18:
-                        /* empty */;
-                    5'h19:
-                        /* empty */;
-                    5'h1a:
-                        /* empty */;
-                    5'h1b:
-                        \$71  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  \$71  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  \$71  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  \$71  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  \$71  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$71  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$72  = r1C;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                /* empty */;
-            33'h000000010:
-                /* empty */;
-            33'h000000011:
-                /* empty */;
-            33'h000000012:
-                /* empty */;
-            33'h000000013:
-                /* empty */;
-            33'h000000014:
-                /* empty */;
-            33'h000000015:
-                /* empty */;
-            33'h000000016:
-                /* empty */;
-            33'h000000017:
-                /* empty */;
-            33'h000000018:
-                /* empty */;
-            33'h000000019:
-                /* empty */;
-            33'h00000001a:
-                /* empty */;
-            33'h00000001b:
-                /* empty */;
-            33'h00000001c:
-                \$72  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            /* empty */;
-        5'h10:
-            /* empty */;
-        5'h11:
-            /* empty */;
-        5'h12:
-            /* empty */;
-        5'h13:
-            /* empty */;
-        5'h14:
-            /* empty */;
-        5'h15:
-            /* empty */;
-        5'h16:
-            /* empty */;
-        5'h17:
-            /* empty */;
-        5'h18:
-            /* empty */;
-        5'h19:
-            /* empty */;
-        5'h1a:
-            /* empty */;
-        5'h1b:
-            /* empty */;
-        5'h1c:
-            \$72  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        /* empty */;
-                    5'h10:
-                        /* empty */;
-                    5'h11:
-                        /* empty */;
-                    5'h12:
-                        /* empty */;
-                    5'h13:
-                        /* empty */;
-                    5'h14:
-                        /* empty */;
-                    5'h15:
-                        /* empty */;
-                    5'h16:
-                        /* empty */;
-                    5'h17:
-                        /* empty */;
-                    5'h18:
-                        /* empty */;
-                    5'h19:
-                        /* empty */;
-                    5'h1a:
-                        /* empty */;
-                    5'h1b:
-                        /* empty */;
-                    5'h1c:
-                        \$72  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  /* empty */;
-              5'h1c:
-                  \$72  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  /* empty */;
-              5'h1c:
-                  \$72  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  /* empty */;
-              5'h1c:
-                  \$72  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  /* empty */;
-              5'h1c:
-                  \$72  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$72  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$73  = r1D;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                /* empty */;
-            33'h000000010:
-                /* empty */;
-            33'h000000011:
-                /* empty */;
-            33'h000000012:
-                /* empty */;
-            33'h000000013:
-                /* empty */;
-            33'h000000014:
-                /* empty */;
-            33'h000000015:
-                /* empty */;
-            33'h000000016:
-                /* empty */;
-            33'h000000017:
-                /* empty */;
-            33'h000000018:
-                /* empty */;
-            33'h000000019:
-                /* empty */;
-            33'h00000001a:
-                /* empty */;
-            33'h00000001b:
-                /* empty */;
-            33'h00000001c:
-                /* empty */;
-            33'h00000001d:
-                \$73  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            /* empty */;
-        5'h10:
-            /* empty */;
-        5'h11:
-            /* empty */;
-        5'h12:
-            /* empty */;
-        5'h13:
-            /* empty */;
-        5'h14:
-            /* empty */;
-        5'h15:
-            /* empty */;
-        5'h16:
-            /* empty */;
-        5'h17:
-            /* empty */;
-        5'h18:
-            /* empty */;
-        5'h19:
-            /* empty */;
-        5'h1a:
-            /* empty */;
-        5'h1b:
-            /* empty */;
-        5'h1c:
-            /* empty */;
-        5'h1d:
-            \$73  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        /* empty */;
-                    5'h10:
-                        /* empty */;
-                    5'h11:
-                        /* empty */;
-                    5'h12:
-                        /* empty */;
-                    5'h13:
-                        /* empty */;
-                    5'h14:
-                        /* empty */;
-                    5'h15:
-                        /* empty */;
-                    5'h16:
-                        /* empty */;
-                    5'h17:
-                        /* empty */;
-                    5'h18:
-                        /* empty */;
-                    5'h19:
-                        /* empty */;
-                    5'h1a:
-                        /* empty */;
-                    5'h1b:
-                        /* empty */;
-                    5'h1c:
-                        /* empty */;
-                    5'h1d:
-                        \$73  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  /* empty */;
-              5'h1c:
-                  /* empty */;
-              5'h1d:
-                  \$73  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  /* empty */;
-              5'h1c:
-                  /* empty */;
-              5'h1d:
-                  \$73  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  /* empty */;
-              5'h1c:
-                  /* empty */;
-              5'h1d:
-                  \$73  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  /* empty */;
-              5'h1c:
-                  /* empty */;
-              5'h1d:
-                  \$73  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$73  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$74  = r1E;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                /* empty */;
-            33'h000000010:
-                /* empty */;
-            33'h000000011:
-                /* empty */;
-            33'h000000012:
-                /* empty */;
-            33'h000000013:
-                /* empty */;
-            33'h000000014:
-                /* empty */;
-            33'h000000015:
-                /* empty */;
-            33'h000000016:
-                /* empty */;
-            33'h000000017:
-                /* empty */;
-            33'h000000018:
-                /* empty */;
-            33'h000000019:
-                /* empty */;
-            33'h00000001a:
-                /* empty */;
-            33'h00000001b:
-                /* empty */;
-            33'h00000001c:
-                /* empty */;
-            33'h00000001d:
-                /* empty */;
-            33'h00000001e:
-                \$74  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            /* empty */;
-        5'h10:
-            /* empty */;
-        5'h11:
-            /* empty */;
-        5'h12:
-            /* empty */;
-        5'h13:
-            /* empty */;
-        5'h14:
-            /* empty */;
-        5'h15:
-            /* empty */;
-        5'h16:
-            /* empty */;
-        5'h17:
-            /* empty */;
-        5'h18:
-            /* empty */;
-        5'h19:
-            /* empty */;
-        5'h1a:
-            /* empty */;
-        5'h1b:
-            /* empty */;
-        5'h1c:
-            /* empty */;
-        5'h1d:
-            /* empty */;
-        5'h1e:
-            \$74  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        /* empty */;
-                    5'h10:
-                        /* empty */;
-                    5'h11:
-                        /* empty */;
-                    5'h12:
-                        /* empty */;
-                    5'h13:
-                        /* empty */;
-                    5'h14:
-                        /* empty */;
-                    5'h15:
-                        /* empty */;
-                    5'h16:
-                        /* empty */;
-                    5'h17:
-                        /* empty */;
-                    5'h18:
-                        /* empty */;
-                    5'h19:
-                        /* empty */;
-                    5'h1a:
-                        /* empty */;
-                    5'h1b:
-                        /* empty */;
-                    5'h1c:
-                        /* empty */;
-                    5'h1d:
-                        /* empty */;
-                    5'h1e:
-                        \$74  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  /* empty */;
-              5'h1c:
-                  /* empty */;
-              5'h1d:
-                  /* empty */;
-              5'h1e:
-                  \$74  = \$32 [31:0];
-            endcase
-        7'h17:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  /* empty */;
-              5'h1c:
-                  /* empty */;
-              5'h1d:
-                  /* empty */;
-              5'h1e:
-                  \$74  = \$35 [31:0];
-            endcase
-        7'h6f:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  /* empty */;
-              5'h1c:
-                  /* empty */;
-              5'h1d:
-                  /* empty */;
-              5'h1e:
-                  \$74  = prog_addr;
-            endcase
-        7'h67:
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  /* empty */;
-              5'h1c:
-                  /* empty */;
-              5'h1d:
-                  /* empty */;
-              5'h1e:
-                  \$74  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$74  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$75  = r1F;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$22 ) begin
-          casez (\$23 )
-            33'h000000000:
-                /* empty */;
-            33'h000000001:
-                /* empty */;
-            33'h000000002:
-                /* empty */;
-            33'h000000003:
-                /* empty */;
-            33'h000000004:
-                /* empty */;
-            33'h000000005:
-                /* empty */;
-            33'h000000006:
-                /* empty */;
-            33'h000000007:
-                /* empty */;
-            33'h000000008:
-                /* empty */;
-            33'h000000009:
-                /* empty */;
-            33'h00000000a:
-                /* empty */;
-            33'h00000000b:
-                /* empty */;
-            33'h00000000c:
-                /* empty */;
-            33'h00000000d:
-                /* empty */;
-            33'h00000000e:
-                /* empty */;
-            33'h00000000f:
-                /* empty */;
-            33'h000000010:
-                /* empty */;
-            33'h000000011:
-                /* empty */;
-            33'h000000012:
-                /* empty */;
-            33'h000000013:
-                /* empty */;
-            33'h000000014:
-                /* empty */;
-            33'h000000015:
-                /* empty */;
-            33'h000000016:
-                /* empty */;
-            33'h000000017:
-                /* empty */;
-            33'h000000018:
-                /* empty */;
-            33'h000000019:
-                /* empty */;
-            33'h00000001a:
-                /* empty */;
-            33'h00000001b:
-                /* empty */;
-            33'h00000001c:
-                /* empty */;
-            33'h00000001d:
-                /* empty */;
-            33'h00000001e:
-                /* empty */;
-            33'h00000001f:
-                \$75  = debug_w_data;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      (* full_case = 32'd1 *)
-      casez (aluout_d)
-        5'h00:
-            /* empty */;
-        5'h01:
-            /* empty */;
-        5'h02:
-            /* empty */;
-        5'h03:
-            /* empty */;
-        5'h04:
-            /* empty */;
-        5'h05:
-            /* empty */;
-        5'h06:
-            /* empty */;
-        5'h07:
-            /* empty */;
-        5'h08:
-            /* empty */;
-        5'h09:
-            /* empty */;
-        5'h0a:
-            /* empty */;
-        5'h0b:
-            /* empty */;
-        5'h0c:
-            /* empty */;
-        5'h0d:
-            /* empty */;
-        5'h0e:
-            /* empty */;
-        5'h0f:
-            /* empty */;
-        5'h10:
-            /* empty */;
-        5'h11:
-            /* empty */;
-        5'h12:
-            /* empty */;
-        5'h13:
-            /* empty */;
-        5'h14:
-            /* empty */;
-        5'h15:
-            /* empty */;
-        5'h16:
-            /* empty */;
-        5'h17:
-            /* empty */;
-        5'h18:
-            /* empty */;
-        5'h19:
-            /* empty */;
-        5'h1a:
-            /* empty */;
-        5'h1b:
-            /* empty */;
-        5'h1c:
-            /* empty */;
-        5'h1d:
-            /* empty */;
-        5'h1e:
-            /* empty */;
-        5'h1f:
-            \$75  = aluout_value;
-      endcase
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  (* full_case = 32'd1 *)
-                  casez (instruction_cache[11:7])
-                    5'h00:
-                        /* empty */;
-                    5'h01:
-                        /* empty */;
-                    5'h02:
-                        /* empty */;
-                    5'h03:
-                        /* empty */;
-                    5'h04:
-                        /* empty */;
-                    5'h05:
-                        /* empty */;
-                    5'h06:
-                        /* empty */;
-                    5'h07:
-                        /* empty */;
-                    5'h08:
-                        /* empty */;
-                    5'h09:
-                        /* empty */;
-                    5'h0a:
-                        /* empty */;
-                    5'h0b:
-                        /* empty */;
-                    5'h0c:
-                        /* empty */;
-                    5'h0d:
-                        /* empty */;
-                    5'h0e:
-                        /* empty */;
-                    5'h0f:
-                        /* empty */;
-                    5'h10:
-                        /* empty */;
-                    5'h11:
-                        /* empty */;
-                    5'h12:
-                        /* empty */;
-                    5'h13:
-                        /* empty */;
-                    5'h14:
-                        /* empty */;
-                    5'h15:
-                        /* empty */;
-                    5'h16:
-                        /* empty */;
-                    5'h17:
-                        /* empty */;
-                    5'h18:
-                        /* empty */;
-                    5'h19:
-                        /* empty */;
-                    5'h1a:
-                        /* empty */;
-                    5'h1b:
-                        /* empty */;
-                    5'h1c:
-                        /* empty */;
-                    5'h1d:
-                        /* empty */;
-                    5'h1e:
-                        /* empty */;
-                    5'h1f:
-                        \$75  = 32'd0;
-                  endcase
-            endcase
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            (* full_case = 32'd1 *)
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  /* empty */;
-              5'h1c:
-                  /* empty */;
-              5'h1d:
-                  /* empty */;
-              5'h1e:
-                  /* empty */;
-              5'h1f:
-                  \$75  = \$32 [31:0];
-            endcase
-        7'h17:
-            (* full_case = 32'd1 *)
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  /* empty */;
-              5'h1c:
-                  /* empty */;
-              5'h1d:
-                  /* empty */;
-              5'h1e:
-                  /* empty */;
-              5'h1f:
-                  \$75  = \$35 [31:0];
-            endcase
-        7'h6f:
-            (* full_case = 32'd1 *)
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  /* empty */;
-              5'h1c:
-                  /* empty */;
-              5'h1d:
-                  /* empty */;
-              5'h1e:
-                  /* empty */;
-              5'h1f:
-                  \$75  = prog_addr;
-            endcase
-        7'h67:
-            (* full_case = 32'd1 *)
-            casez (instruction_cache[11:7])
-              5'h00:
-                  /* empty */;
-              5'h01:
-                  /* empty */;
-              5'h02:
-                  /* empty */;
-              5'h03:
-                  /* empty */;
-              5'h04:
-                  /* empty */;
-              5'h05:
-                  /* empty */;
-              5'h06:
-                  /* empty */;
-              5'h07:
-                  /* empty */;
-              5'h08:
-                  /* empty */;
-              5'h09:
-                  /* empty */;
-              5'h0a:
-                  /* empty */;
-              5'h0b:
-                  /* empty */;
-              5'h0c:
-                  /* empty */;
-              5'h0d:
-                  /* empty */;
-              5'h0e:
-                  /* empty */;
-              5'h0f:
-                  /* empty */;
-              5'h10:
-                  /* empty */;
-              5'h11:
-                  /* empty */;
-              5'h12:
-                  /* empty */;
-              5'h13:
-                  /* empty */;
-              5'h14:
-                  /* empty */;
-              5'h15:
-                  /* empty */;
-              5'h16:
-                  /* empty */;
-              5'h17:
-                  /* empty */;
-              5'h18:
-                  /* empty */;
-              5'h19:
-                  /* empty */;
-              5'h1a:
-                  /* empty */;
-              5'h1b:
-                  /* empty */;
-              5'h1c:
-                  /* empty */;
-              5'h1d:
-                  /* empty */;
-              5'h1e:
-                  /* empty */;
-              5'h1f:
-                  \$75  = prog_addr;
-            endcase
-      endcase
-    end
-    if (rst) begin
-      \$75  = 32'd0;
-    end
-  end
-  always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$76  = enable;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$24 ) begin
-          casez (debug_w_data)
-            32'd0:
-                \$76  = 1'h0;
-            32'd1:
-                \$76  = 1'h1;
-            32'd2:
-                \$76  = 1'h1;
-          endcase
-        end
-      end
-    end
-    if (aluout_valid) begin
-      if (aluout_error) begin
-        \$76  = 1'h0;
-      end
-    end
-    if (active) begin
-      (* full_case = 32'd1 *)
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            /* empty */;
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            /* empty */;
-        7'h17:
-            /* empty */;
-        7'h6f:
-            /* empty */;
-        7'h67:
-            /* empty */;
-        default:
-            \$76  = 1'h0;
-      endcase
-    end
-    if (\$41 ) begin
-      if (\$42 ) begin
-        \$76  = 1'h0;
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$16  = r0C;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              \$16  = rd_w_data;
+        endcase
       end
     end
     if (rst) begin
-      \$76  = 1'h1;
+      \$16  = 32'd0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$77  = run_mode;
-    if (\$19 ) begin
-      if (debug_w_en) begin
-        if (\$24 ) begin
-          casez (debug_w_data)
-            32'd0:
-                \$77  = 2'h0;
-            32'd1:
-                \$77  = 2'h1;
-            32'd2:
-                \$77  = 2'h2;
-          endcase
-        end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$17  = r0D;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              \$17  = rd_w_data;
+        endcase
       end
     end
-    if (aluout_valid) begin
-      if (aluout_error) begin
-        \$77  = 2'h3;
+    if (rst) begin
+      \$17  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$18  = r0E;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              \$18  = rd_w_data;
+        endcase
       end
     end
-    if (active) begin
-      (* full_case = 32'd1 *)
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            /* empty */;
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            /* empty */;
-        7'h17:
-            /* empty */;
-        7'h6f:
-            /* empty */;
-        7'h67:
-            /* empty */;
-        default:
-            \$77  = 2'h3;
-      endcase
-    end
     if (rst) begin
-      \$77  = 2'h0;
+      \$18  = 32'd0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$78  = prog_addr;
-    if (branch_en) begin
-      \$78  = \$12 [31:0];
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            /* empty */;
-        7'h23:
-            /* empty */;
-        7'h33:
-            /* empty */;
-        7'h13:
-            /* empty */;
-        7'h37:
-            /* empty */;
-        7'h17:
-            /* empty */;
-        7'h6f:
-            \$78  = \$36 [31:0];
-        7'h67:
-            \$78  = \$39 [31:0];
-      endcase
-    end
-    if (\$41 ) begin
-      \$78  = \$43 [31:0];
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$19  = r0F;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              \$19  = rd_w_data;
+        endcase
+      end
     end
     if (rst) begin
-      \$78  = 32'd0;
+      \$19  = 32'd0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$79  = fetch;
-    if (branch_en) begin
-      \$79  = 1'h1;
-    end
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            \$79  = 1'h1;
-        7'h03:
-            /* empty */;
-        7'h23:
-            /* empty */;
-        7'h33:
-            if (aluout_valid) begin
-              \$79  = 1'h1;
-            end
-        7'h13:
-            if (aluout_valid) begin
-              \$79  = 1'h1;
-            end
-        7'h37:
-            /* empty */;
-        7'h17:
-            /* empty */;
-        7'h6f:
-            \$79  = 1'h1;
-        7'h67:
-            \$79  = 1'h1;
-      endcase
-    end
-    if (\$41 ) begin
-      \$79  = 1'h0;
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$20  = r10;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              /* empty */;
+          5'h10:
+              \$20  = rd_w_data;
+        endcase
+      end
     end
     if (rst) begin
-      \$79  = 1'h1;
+      \$20  = 32'd0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$80  = active;
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            \$80  = 1'h0;
-        7'h03:
-            /* empty */;
-        7'h23:
-            /* empty */;
-        7'h33:
-            if (aluout_valid) begin
-              \$80  = 1'h0;
-            end
-        7'h13:
-            if (aluout_valid) begin
-              \$80  = 1'h0;
-            end
-        7'h37:
-            \$80  = 1'h0;
-        7'h17:
-            \$80  = 1'h0;
-        7'h6f:
-            \$80  = 1'h0;
-        7'h67:
-            \$80  = 1'h0;
-      endcase
-    end
-    if (\$41 ) begin
-      \$80  = 1'h1;
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$21  = r11;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              /* empty */;
+          5'h10:
+              /* empty */;
+          5'h11:
+              \$21  = rd_w_data;
+        endcase
+      end
     end
     if (rst) begin
-      \$80  = 1'h0;
+      \$21  = 32'd0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$81  = mem_address;
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  \$81  = \$26 [31:0];
-            endcase
-        7'h23:
-            casez (memorystage)
-              1'h0:
-                  \$81  = \$30 [31:0];
-            endcase
-      endcase
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$22  = r12;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              /* empty */;
+          5'h10:
+              /* empty */;
+          5'h11:
+              /* empty */;
+          5'h12:
+              \$22  = rd_w_data;
+        endcase
+      end
     end
     if (rst) begin
-      \$81  = 32'd0;
+      \$22  = 32'd0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$82  = memorystage;
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            casez (memorystage)
-              1'h0:
-                  \$82  = 1'h1;
-            endcase
-        7'h23:
-            casez (memorystage)
-              1'h0:
-                  \$82  = 1'h1;
-            endcase
-      endcase
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$23  = r13;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              /* empty */;
+          5'h10:
+              /* empty */;
+          5'h11:
+              /* empty */;
+          5'h12:
+              /* empty */;
+          5'h13:
+              \$23  = rd_w_data;
+        endcase
+      end
     end
     if (rst) begin
-      \$82  = 1'h0;
+      \$23  = 32'd0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$83  = mem_register;
-    if (active) begin
-      casez (instruction_cache[6:0])
-        7'h63:
-            /* empty */;
-        7'h03:
-            /* empty */;
-        7'h23:
-            casez (memorystage)
-              1'h0:
-                  casez (instruction_cache[14:12])
-                    3'h2:
-                        \$83  = \$31 ;
-                  endcase
-            endcase
-      endcase
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$24  = r14;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              /* empty */;
+          5'h10:
+              /* empty */;
+          5'h11:
+              /* empty */;
+          5'h12:
+              /* empty */;
+          5'h13:
+              /* empty */;
+          5'h14:
+              \$24  = rd_w_data;
+        endcase
+      end
     end
     if (rst) begin
-      \$83  = 32'd0;
+      \$24  = 32'd0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$84  = instruction_cache;
-    if (\$41 ) begin
-      \$84  = instruction_fetch;
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$25  = r15;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              /* empty */;
+          5'h10:
+              /* empty */;
+          5'h11:
+              /* empty */;
+          5'h12:
+              /* empty */;
+          5'h13:
+              /* empty */;
+          5'h14:
+              /* empty */;
+          5'h15:
+              \$25  = rd_w_data;
+        endcase
+      end
     end
     if (rst) begin
-      \$84  = 32'd0;
+      \$25  = 32'd0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$85  = mpu_en;
-    if (\$41 ) begin
-      \$85  = 1'h0;
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$26  = r16;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              /* empty */;
+          5'h10:
+              /* empty */;
+          5'h11:
+              /* empty */;
+          5'h12:
+              /* empty */;
+          5'h13:
+              /* empty */;
+          5'h14:
+              /* empty */;
+          5'h15:
+              /* empty */;
+          5'h16:
+              \$26  = rd_w_data;
+        endcase
+      end
     end
     if (rst) begin
-      \$85  = 1'h0;
+      \$26  = 32'd0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$5 ) begin end
-    \$3  = 32'd0;
-    casez (\$2 )
-      33'h000000000:
-          \$3  = r00;
-      33'h000000001:
-          \$3  = r01;
-      33'h000000002:
-          \$3  = r02;
-      33'h000000003:
-          \$3  = r03;
-      33'h000000004:
-          \$3  = r04;
-      33'h000000005:
-          \$3  = r05;
-      33'h000000006:
-          \$3  = r06;
-      33'h000000007:
-          \$3  = r07;
-      33'h000000008:
-          \$3  = r08;
-      33'h000000009:
-          \$3  = r09;
-      33'h00000000a:
-          \$3  = r0A;
-      33'h00000000b:
-          \$3  = r0B;
-      33'h00000000c:
-          \$3  = r0C;
-      33'h00000000d:
-          \$3  = r0D;
-      33'h00000000e:
-          \$3  = r0E;
-      33'h00000000f:
-          \$3  = r0F;
-      33'h000000010:
-          \$3  = r10;
-      33'h000000011:
-          \$3  = r11;
-      33'h000000012:
-          \$3  = r12;
-      33'h000000013:
-          \$3  = r13;
-      33'h000000014:
-          \$3  = r14;
-      33'h000000015:
-          \$3  = r15;
-      33'h000000016:
-          \$3  = r16;
-      33'h000000017:
-          \$3  = r17;
-      33'h000000018:
-          \$3  = r18;
-      33'h000000019:
-          \$3  = r19;
-      33'h00000001a:
-          \$3  = r1A;
-      33'h00000001b:
-          \$3  = r1B;
-      33'h00000001c:
-          \$3  = r1C;
-      33'h00000001d:
-          \$3  = r1D;
-      33'h00000001e:
-          \$3  = r1E;
-      33'h00000001f:
-          \$3  = r1F;
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$27  = r17;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              /* empty */;
+          5'h10:
+              /* empty */;
+          5'h11:
+              /* empty */;
+          5'h12:
+              /* empty */;
+          5'h13:
+              /* empty */;
+          5'h14:
+              /* empty */;
+          5'h15:
+              /* empty */;
+          5'h16:
+              /* empty */;
+          5'h17:
+              \$27  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$27  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$28  = r18;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              /* empty */;
+          5'h10:
+              /* empty */;
+          5'h11:
+              /* empty */;
+          5'h12:
+              /* empty */;
+          5'h13:
+              /* empty */;
+          5'h14:
+              /* empty */;
+          5'h15:
+              /* empty */;
+          5'h16:
+              /* empty */;
+          5'h17:
+              /* empty */;
+          5'h18:
+              \$28  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$28  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$29  = r19;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              /* empty */;
+          5'h10:
+              /* empty */;
+          5'h11:
+              /* empty */;
+          5'h12:
+              /* empty */;
+          5'h13:
+              /* empty */;
+          5'h14:
+              /* empty */;
+          5'h15:
+              /* empty */;
+          5'h16:
+              /* empty */;
+          5'h17:
+              /* empty */;
+          5'h18:
+              /* empty */;
+          5'h19:
+              \$29  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$29  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$30  = r1A;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              /* empty */;
+          5'h10:
+              /* empty */;
+          5'h11:
+              /* empty */;
+          5'h12:
+              /* empty */;
+          5'h13:
+              /* empty */;
+          5'h14:
+              /* empty */;
+          5'h15:
+              /* empty */;
+          5'h16:
+              /* empty */;
+          5'h17:
+              /* empty */;
+          5'h18:
+              /* empty */;
+          5'h19:
+              /* empty */;
+          5'h1a:
+              \$30  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$30  = 32'd0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    \$31  = r1B;
+    if (\$3 ) begin
+      if (rd_w_en) begin
+        casez (w_rd)
+          5'h00:
+              /* empty */;
+          5'h01:
+              /* empty */;
+          5'h02:
+              /* empty */;
+          5'h03:
+              /* empty */;
+          5'h04:
+              /* empty */;
+          5'h05:
+              /* empty */;
+          5'h06:
+              /* empty */;
+          5'h07:
+              /* empty */;
+          5'h08:
+              /* empty */;
+          5'h09:
+              /* empty */;
+          5'h0a:
+              /* empty */;
+          5'h0b:
+              /* empty */;
+          5'h0c:
+              /* empty */;
+          5'h0d:
+              /* empty */;
+          5'h0e:
+              /* empty */;
+          5'h0f:
+              /* empty */;
+          5'h10:
+              /* empty */;
+          5'h11:
+              /* empty */;
+          5'h12:
+              /* empty */;
+          5'h13:
+              /* empty */;
+          5'h14:
+              /* empty */;
+          5'h15:
+              /* empty */;
+          5'h16:
+              /* empty */;
+          5'h17:
+              /* empty */;
+          5'h18:
+              /* empty */;
+          5'h19:
+              /* empty */;
+          5'h1a:
+              /* empty */;
+          5'h1b:
+              \$31  = rd_w_data;
+        endcase
+      end
+    end
+    if (rst) begin
+      \$31  = 32'd0;
+    end
+  end
+  assign \r_valid$1  = r_valid;
+  assign \r_rd$3  = r_rd;
+  assign r_rs1 = \port$714$47 [4:0];
+  assign rs1_addr = \port$714$47 [4:0];
+  assign r_rs2 = \port$714$47 [9:5];
+  assign rs2_addr = \port$714$47 [9:5];
+  assign r_ok1 = rs1_ack;
+  assign r_ok2 = rs2_ack;
+  assign rd_addr = w_rd;
+endmodule
+
+(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:28" *)
+(* generator = "Amaranth" *)
+module \risc_project.core.decode.reg.mask (rst, r_valid, w_valid, r1_ok, r2_ok, r_rd, \port$714$47 , w_rd, clk);
+  reg \$auto$verilog_backend.cc:2352:dump_module$8  = 0;
+  wire [31:0] \$1 ;
+  wire [31:0] \$10 ;
+  wire [31:0] \$11 ;
+  reg [31:0] \$12 ;
+  wire [31:0] \$2 ;
+  wire [31:0] \$3 ;
+  wire [31:0] \$4 ;
+  wire [31:0] \$5 ;
+  wire [31:0] \$6 ;
+  wire [31:0] \$7 ;
+  wire [31:0] \$8 ;
+  wire [31:0] \$9 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:43" *)
+  reg [31:0] clear_mask;
+  (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
+  input clk;
+  wire clk;
+  input [9:0] \port$714$47 ;
+  wire [9:0] \port$714$47 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:21" *)
+  output r1_ok;
+  wire r1_ok;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:22" *)
+  output r2_ok;
+  wire r2_ok;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:21" *)
+  wire r_ok1;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:22" *)
+  wire r_ok2;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:17" *)
+  input [4:0] r_rd;
+  wire [4:0] r_rd;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:18" *)
+  wire [4:0] r_rs1;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:19" *)
+  wire [4:0] r_rs2;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:20" *)
+  input r_valid;
+  wire r_valid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:30" *)
+  reg [31:0] reg_mask = 32'd0;
+  (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
+  input rst;
+  wire rst;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:42" *)
+  reg [31:0] set_mask;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:23" *)
+  input [4:0] w_rd;
+  wire [4:0] w_rd;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:24" *)
+  input w_valid;
+  wire w_valid;
+  assign \$1  = 1'h1 << (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:36" *) \port$714$47 [4:0];
+  assign \$2  = \$1  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:36" *) reg_mask;
+  assign \$3  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:36" *) \$2 ;
+  assign \$4  = 1'h1 << (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:37" *) \port$714$47 [9:5];
+  assign \$5  = \$4  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:37" *) reg_mask;
+  assign \$6  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:37" *) \$5 ;
+  assign \$7  = 1'h1 << (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:47" *) r_rd;
+  assign \$8  = 1'h1 << (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:51" *) w_rd;
+  assign \$9  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:51" *) \$8 ;
+  assign \$10  = reg_mask | (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:55" *) set_mask;
+  assign \$11  = \$10  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:55" *) clear_mask;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:30" *)
+  always @(posedge clk)
+    reg_mask <= \$12 ;
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
+    set_mask = 32'd0;
+    if (r_valid) begin
+      set_mask = \$7 ;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
+    (* full_case = 32'd1 *)
+    if (w_valid) begin
+      clear_mask = \$9 ;
+    end else begin
+      clear_mask = 32'd4294967295;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
+    \$12  = \$11 ;
+    if (rst) begin
+      \$12  = 32'd0;
+    end
+  end
+  assign r_rs1 = \port$714$47 [4:0];
+  assign r_rs2 = \port$714$47 [9:5];
+  assign r_ok1 = \$3 [0];
+  assign r_ok2 = \$6 [0];
+  assign r1_ok = \$3 [0];
+  assign r2_ok = \$6 [0];
+endmodule
+
+(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:34" *)
+(* generator = "Amaranth" *)
+module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produce_ready, consume_data, consume_ready, produce_valid, clk);
+  reg \$auto$verilog_backend.cc:2352:dump_module$9  = 0;
+  wire [1:0] \$1 ;
+  reg [1:0] \$10 ;
+  wire \$2 ;
+  wire \$3 ;
+  wire \$4 ;
+  wire [1:0] \$5 ;
+  wire \$6 ;
+  reg [117:0] \$7 ;
+  reg [117:0] \$8 ;
+  reg \$9 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  reg [117:0] c0 = 118'h000000000000000000000000000000;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [78:0] \c0.mode ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [78:0] \c0.mode.arith ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [4:0] \c0.mode.arith.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [2:0] \c0.mode.arith.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [6:0] \c0.mode.arith.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c0.mode.arith.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c0.mode.arith.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [58:0] \c0.mode.imm ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [4:0] \c0.mode.imm.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [2:0] \c0.mode.imm.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [11:0] \c0.mode.imm.i ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [6:0] \c0.mode.imm.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c0.mode.imm.s ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [25:0] \c0.mode.jump ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [4:0] \c0.mode.jump.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [20:0] \c0.mode.jump.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [78:0] \c0.mode.store ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [2:0] \c0.mode.store.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [11:0] \c0.mode.store.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c0.mode.store.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c0.mode.store.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [36:0] \c0.mode.upper ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [4:0] \c0.mode.upper.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c0.mode.upper.i ;
+  (* enum_base_type = "Instruction" *)
+  (* enum_value_0000011 = "MEMORYLOAD" *)
+  (* enum_value_0001111 = "FENCE" *)
+  (* enum_value_0010011 = "ARITHIMM" *)
+  (* enum_value_0010111 = "AUIPC" *)
+  (* enum_value_0100011 = "MEMORYSTORE" *)
+  (* enum_value_0110011 = "ARITH" *)
+  (* enum_value_0110111 = "LUI" *)
+  (* enum_value_1100011 = "BRANCH" *)
+  (* enum_value_1100111 = "JALR" *)
+  (* enum_value_1101111 = "JAL" *)
+  (* enum_value_1110011 = "E" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [6:0] \c0.op ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c0.pc ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  reg [117:0] c1 = 118'h000000000000000000000000000000;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [78:0] \c1.mode ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [78:0] \c1.mode.arith ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [4:0] \c1.mode.arith.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [2:0] \c1.mode.arith.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [6:0] \c1.mode.arith.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c1.mode.arith.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c1.mode.arith.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [58:0] \c1.mode.imm ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [4:0] \c1.mode.imm.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [2:0] \c1.mode.imm.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [11:0] \c1.mode.imm.i ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [6:0] \c1.mode.imm.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c1.mode.imm.s ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [25:0] \c1.mode.jump ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [4:0] \c1.mode.jump.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [20:0] \c1.mode.jump.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [78:0] \c1.mode.store ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [2:0] \c1.mode.store.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [11:0] \c1.mode.store.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c1.mode.store.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c1.mode.store.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [36:0] \c1.mode.upper ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [4:0] \c1.mode.upper.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c1.mode.upper.i ;
+  (* enum_base_type = "Instruction" *)
+  (* enum_value_0000011 = "MEMORYLOAD" *)
+  (* enum_value_0001111 = "FENCE" *)
+  (* enum_value_0010011 = "ARITHIMM" *)
+  (* enum_value_0010111 = "AUIPC" *)
+  (* enum_value_0100011 = "MEMORYSTORE" *)
+  (* enum_value_0110011 = "ARITH" *)
+  (* enum_value_0110111 = "LUI" *)
+  (* enum_value_1100011 = "BRANCH" *)
+  (* enum_value_1100111 = "JALR" *)
+  (* enum_value_1101111 = "JAL" *)
+  (* enum_value_1110011 = "E" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [6:0] \c1.op ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c1.pc ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:37" *)
+  reg [1:0] cache_ready = 2'h3;
+  (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
+  input clk;
+  wire clk;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  input [117:0] consume_data;
+  wire [117:0] consume_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [78:0] \consume_data.mode ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [78:0] \consume_data.mode.arith ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \consume_data.mode.arith.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [2:0] \consume_data.mode.arith.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [6:0] \consume_data.mode.arith.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.mode.arith.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.mode.arith.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [58:0] \consume_data.mode.imm ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \consume_data.mode.imm.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [2:0] \consume_data.mode.imm.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [11:0] \consume_data.mode.imm.i ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [6:0] \consume_data.mode.imm.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.mode.imm.s ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [25:0] \consume_data.mode.jump ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \consume_data.mode.jump.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [20:0] \consume_data.mode.jump.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [78:0] \consume_data.mode.store ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [2:0] \consume_data.mode.store.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [11:0] \consume_data.mode.store.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.mode.store.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.mode.store.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [36:0] \consume_data.mode.upper ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \consume_data.mode.upper.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.mode.upper.i ;
+  (* enum_base_type = "Instruction" *)
+  (* enum_value_0000011 = "MEMORYLOAD" *)
+  (* enum_value_0001111 = "FENCE" *)
+  (* enum_value_0010011 = "ARITHIMM" *)
+  (* enum_value_0010111 = "AUIPC" *)
+  (* enum_value_0100011 = "MEMORYSTORE" *)
+  (* enum_value_0110011 = "ARITH" *)
+  (* enum_value_0110111 = "LUI" *)
+  (* enum_value_1100011 = "BRANCH" *)
+  (* enum_value_1100111 = "JALR" *)
+  (* enum_value_1101111 = "JAL" *)
+  (* enum_value_1110011 = "E" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [6:0] \consume_data.op ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.pc ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  output consume_ready;
+  reg consume_ready;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
+  input consume_valid;
+  wire consume_valid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  output [117:0] produce_data;
+  reg [117:0] produce_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [78:0] \produce_data.mode ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [78:0] \produce_data.mode.arith ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \produce_data.mode.arith.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [2:0] \produce_data.mode.arith.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [6:0] \produce_data.mode.arith.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data.mode.arith.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data.mode.arith.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [58:0] \produce_data.mode.imm ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \produce_data.mode.imm.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [2:0] \produce_data.mode.imm.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [11:0] \produce_data.mode.imm.i ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [6:0] \produce_data.mode.imm.m ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data.mode.imm.s ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [25:0] \produce_data.mode.jump ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \produce_data.mode.jump.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [20:0] \produce_data.mode.jump.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [78:0] \produce_data.mode.store ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [2:0] \produce_data.mode.store.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [11:0] \produce_data.mode.store.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data.mode.store.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data.mode.store.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [36:0] \produce_data.mode.upper ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \produce_data.mode.upper.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data.mode.upper.i ;
+  (* enum_base_type = "Instruction" *)
+  (* enum_value_0000011 = "MEMORYLOAD" *)
+  (* enum_value_0001111 = "FENCE" *)
+  (* enum_value_0010011 = "ARITHIMM" *)
+  (* enum_value_0010111 = "AUIPC" *)
+  (* enum_value_0100011 = "MEMORYSTORE" *)
+  (* enum_value_0110011 = "ARITH" *)
+  (* enum_value_0110111 = "LUI" *)
+  (* enum_value_1100011 = "BRANCH" *)
+  (* enum_value_1100111 = "JALR" *)
+  (* enum_value_1101111 = "JAL" *)
+  (* enum_value_1110011 = "E" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [6:0] \produce_data.op ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data.pc ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  input produce_ready;
+  wire produce_ready;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
+  output produce_valid;
+  reg produce_valid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:39" *)
+  wire produce_select;
+  (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
+  input rst;
+  wire rst;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:38" *)
+  reg select = 1'h0;
+  assign \$1  = select + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:41" *) 1'h1;
+  assign \$2  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:48" *) cache_ready[1];
+  assign \$3  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:51" *) cache_ready[0];
+  assign \$4  = consume_ready & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:53" *) consume_valid;
+  assign \$5  = select + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:55" *) 1'h1;
+  assign \$6  = produce_ready & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:59" *) produce_valid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  always @(posedge clk)
+    c0 <= \$7 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  always @(posedge clk)
+    c1 <= \$8 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:38" *)
+  always @(posedge clk)
+    select <= \$9 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:37" *)
+  always @(posedge clk)
+    cache_ready <= \$10 ;
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    (* full_case = 32'd1 *)
+    casez (\$1 [0])
+      1'h0:
+          produce_data = c0;
+      1'h1:
+          produce_data = c1;
     endcase
   end
-  assign program_counter = prog_addr;
-  assign branch_offset = \$10 [12:0];
-  assign branch_next = \$12 [31:0];
-  assign opcode = instruction_fetch[6:0];
-  assign opcode_cache = instruction_cache[6:0];
-  assign prog_r_data = instruction_fetch;
-  assign bus_ack = 1'h0;
-  assign bus_r_data = 32'd0;
-  assign \instruction_fetch.op  = instruction_fetch[6:0];
-  assign \instruction_fetch.r  = instruction_fetch;
-  assign \instruction_fetch.r.op  = instruction_fetch[6:0];
-  assign \instruction_fetch.r.rd  = instruction_fetch[11:7];
-  assign \instruction_fetch.r.f_lower  = instruction_fetch[14:12];
-  assign \instruction_fetch.r.rs1  = instruction_fetch[19:15];
-  assign \instruction_fetch.r.rs2  = instruction_fetch[24:20];
-  assign \instruction_fetch.r.f_upper  = instruction_fetch[31:25];
-  assign \instruction_fetch.i  = instruction_fetch;
-  assign \instruction_fetch.i.op  = instruction_fetch[6:0];
-  assign \instruction_fetch.i.rd  = instruction_fetch[11:7];
-  assign \instruction_fetch.i.f  = instruction_fetch[14:12];
-  assign \instruction_fetch.i.rs  = instruction_fetch[19:15];
-  assign \instruction_fetch.i.imm  = instruction_fetch[31:20];
-  assign \instruction_fetch.u  = instruction_fetch;
-  assign \instruction_fetch.u.op  = instruction_fetch[6:0];
-  assign \instruction_fetch.u.rd  = instruction_fetch[11:7];
-  assign \instruction_fetch.u.imm  = instruction_fetch[31:12];
-  assign \instruction_fetch.s  = instruction_fetch;
-  assign \instruction_fetch.s.op  = instruction_fetch[6:0];
-  assign \instruction_fetch.s.imm_lower  = instruction_fetch[11:7];
-  assign \instruction_fetch.s.f  = instruction_fetch[14:12];
-  assign \instruction_fetch.s.rs1  = instruction_fetch[19:15];
-  assign \instruction_fetch.s.rs2  = instruction_fetch[24:20];
-  assign \instruction_fetch.s.imm_upper  = instruction_fetch[31:25];
-  assign \instruction_fetch.j  = instruction_fetch;
-  assign \instruction_fetch.j.op  = instruction_fetch[6:0];
-  assign \instruction_fetch.j.rd  = instruction_fetch[11:7];
-  assign \instruction_fetch.j.offset  = instruction_fetch[31:12];
-  assign \instruction_fetch.b  = instruction_fetch;
-  assign \instruction_fetch.b.op  = instruction_fetch[6:0];
-  assign \instruction_fetch.b.offset_lower  = instruction_fetch[11:7];
-  assign \instruction_fetch.b.f  = instruction_fetch[14:12];
-  assign \instruction_fetch.b.rs1  = instruction_fetch[19:15];
-  assign \instruction_fetch.b.rs2  = instruction_fetch[24:20];
-  assign \instruction_fetch.b.offset_upper  = instruction_fetch[31:25];
-  assign \instruction_fetch.m  = instruction_fetch;
-  assign \instruction_fetch.m.op  = instruction_fetch[6:0];
-  assign \instruction_fetch.m.rd  = instruction_fetch[11:7];
-  assign \instruction_fetch.m.f  = instruction_fetch[14:12];
-  assign \instruction_fetch.m.rs1  = instruction_fetch[19:15];
-  assign \instruction_fetch.m.rs2  = instruction_fetch[24:20];
-  assign \instruction_fetch.m.muldiv  = instruction_fetch[31:25];
-  assign \instruction_cache.op  = instruction_cache[6:0];
-  assign \instruction_cache.r  = instruction_cache;
-  assign \instruction_cache.r.op  = instruction_cache[6:0];
-  assign \instruction_cache.r.rd  = instruction_cache[11:7];
-  assign \instruction_cache.r.f_lower  = instruction_cache[14:12];
-  assign \instruction_cache.r.rs1  = instruction_cache[19:15];
-  assign \instruction_cache.r.rs2  = instruction_cache[24:20];
-  assign \instruction_cache.r.f_upper  = instruction_cache[31:25];
-  assign \instruction_cache.i  = instruction_cache;
-  assign \instruction_cache.i.op  = instruction_cache[6:0];
-  assign \instruction_cache.i.rd  = instruction_cache[11:7];
-  assign \instruction_cache.i.f  = instruction_cache[14:12];
-  assign \instruction_cache.i.rs  = instruction_cache[19:15];
-  assign \instruction_cache.i.imm  = instruction_cache[31:20];
-  assign \instruction_cache.u  = instruction_cache;
-  assign \instruction_cache.u.op  = instruction_cache[6:0];
-  assign \instruction_cache.u.rd  = instruction_cache[11:7];
-  assign \instruction_cache.u.imm  = instruction_cache[31:12];
-  assign \instruction_cache.s  = instruction_cache;
-  assign \instruction_cache.s.op  = instruction_cache[6:0];
-  assign \instruction_cache.s.imm_lower  = instruction_cache[11:7];
-  assign \instruction_cache.s.f  = instruction_cache[14:12];
-  assign \instruction_cache.s.rs1  = instruction_cache[19:15];
-  assign \instruction_cache.s.rs2  = instruction_cache[24:20];
-  assign \instruction_cache.s.imm_upper  = instruction_cache[31:25];
-  assign \instruction_cache.j  = instruction_cache;
-  assign \instruction_cache.j.op  = instruction_cache[6:0];
-  assign \instruction_cache.j.rd  = instruction_cache[11:7];
-  assign \instruction_cache.j.offset  = instruction_cache[31:12];
-  assign \instruction_cache.b  = instruction_cache;
-  assign \instruction_cache.b.op  = instruction_cache[6:0];
-  assign \instruction_cache.b.offset_lower  = instruction_cache[11:7];
-  assign \instruction_cache.b.f  = instruction_cache[14:12];
-  assign \instruction_cache.b.rs1  = instruction_cache[19:15];
-  assign \instruction_cache.b.rs2  = instruction_cache[24:20];
-  assign \instruction_cache.b.offset_upper  = instruction_cache[31:25];
-  assign \instruction_cache.m  = instruction_cache;
-  assign \instruction_cache.m.op  = instruction_cache[6:0];
-  assign \instruction_cache.m.rd  = instruction_cache[11:7];
-  assign \instruction_cache.m.f  = instruction_cache[14:12];
-  assign \instruction_cache.m.rs1  = instruction_cache[19:15];
-  assign \instruction_cache.m.rs2  = instruction_cache[24:20];
-  assign \instruction_cache.m.muldiv  = instruction_cache[31:25];
-  assign jal_offset[20] = instruction_cache[31];
-  assign jal_offset[10:1] = instruction_cache[30:21];
-  assign jal_offset[11] = instruction_cache[20];
-  assign jal_offset[19:12] = instruction_cache[19:12];
-  assign jal_offset[0] = 1'h0;
-  assign \$4  = { 4'h0, instruction_cache[7], 11'h000 };
-  assign \$5  = { instruction_cache[11:8], 1'h0 };
-  assign \$7  = { 2'h0, instruction_cache[30:25], 5'h00 };
-  assign \$9  = { 3'h0, instruction_cache[31], 12'h000 };
-  assign \$28  = { 2'h0, instruction_cache[31:25], 5'h00 };
-  assign \$32  = { instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31:12], 12'h000 };
-  assign \$34  = { instruction_cache[31], instruction_cache[31], instruction_cache[31], instruction_cache[31:12], 12'h000 };
-  assign \$39 [0] = 1'h0;
-  assign \$39 [32:1] = \$38 [32:1];
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    (* full_case = 32'd1 *)
+    casez (select)
+      1'h0:
+          consume_ready = cache_ready[0];
+      1'h1:
+          consume_ready = cache_ready[1];
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    (* full_case = 32'd1 *)
+    casez (select)
+      1'h0:
+          produce_valid = \$2 ;
+      1'h1:
+          produce_valid = \$3 ;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    \$7  = c0;
+    if (\$4 ) begin
+      casez (select)
+        1'h0:
+            \$7  = consume_data;
+      endcase
+    end
+    if (rst) begin
+      \$7  = 118'h000000000000000000000000000000;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    \$8  = c1;
+    if (\$4 ) begin
+      (* full_case = 32'd1 *)
+      casez (select)
+        1'h0:
+            /* empty */;
+        1'h1:
+            \$8  = consume_data;
+      endcase
+    end
+    if (rst) begin
+      \$8  = 118'h000000000000000000000000000000;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    \$9  = select;
+    if (\$4 ) begin
+      \$9  = \$5 [0];
+    end
+    if (rst) begin
+      \$9  = 1'h0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    \$10  = cache_ready;
+    if (\$4 ) begin
+      (* full_case = 32'd1 *)
+      casez (select)
+        1'h0:
+            \$10 [0] = 1'h0;
+        1'h1:
+            \$10 [1] = 1'h0;
+      endcase
+    end
+    if (\$6 ) begin
+      (* full_case = 32'd1 *)
+      casez (\$1 [0])
+        1'h0:
+            \$10 [0] = 1'h1;
+        1'h1:
+            \$10 [1] = 1'h1;
+      endcase
+    end
+    if (rst) begin
+      \$10  = 2'h3;
+    end
+  end
+  assign produce_select = \$1 [0];
+  assign \produce_data.pc  = produce_data[31:0];
+  assign \produce_data.op  = produce_data[38:32];
+  assign \produce_data.mode  = produce_data[117:39];
+  assign \produce_data.mode.arith  = produce_data[117:39];
+  assign \produce_data.mode.arith.f  = produce_data[41:39];
+  assign \produce_data.mode.arith.m  = produce_data[48:42];
+  assign \produce_data.mode.arith.s1  = produce_data[80:49];
+  assign \produce_data.mode.arith.s2  = produce_data[112:81];
+  assign \produce_data.mode.arith.d  = produce_data[117:113];
+  assign \produce_data.mode.imm  = produce_data[97:39];
+  assign \produce_data.mode.imm.f  = produce_data[41:39];
+  assign \produce_data.mode.imm.m  = produce_data[48:42];
+  assign \produce_data.mode.imm.s  = produce_data[80:49];
+  assign \produce_data.mode.imm.i  = produce_data[92:81];
+  assign \produce_data.mode.imm.d  = produce_data[97:93];
+  assign \produce_data.mode.store  = produce_data[117:39];
+  assign \produce_data.mode.store.f  = produce_data[41:39];
+  assign \produce_data.mode.store.offset  = produce_data[53:42];
+  assign \produce_data.mode.store.s1  = produce_data[85:54];
+  assign \produce_data.mode.store.s2  = produce_data[117:86];
+  assign \produce_data.mode.upper  = produce_data[75:39];
+  assign \produce_data.mode.upper.d  = produce_data[43:39];
+  assign \produce_data.mode.upper.i  = produce_data[75:44];
+  assign \produce_data.mode.jump  = produce_data[64:39];
+  assign \produce_data.mode.jump.d  = produce_data[43:39];
+  assign \produce_data.mode.jump.offset  = produce_data[64:44];
+  assign \c0.pc  = c0[31:0];
+  assign \c0.op  = c0[38:32];
+  assign \c0.mode  = c0[117:39];
+  assign \c0.mode.arith  = c0[117:39];
+  assign \c0.mode.arith.f  = c0[41:39];
+  assign \c0.mode.arith.m  = c0[48:42];
+  assign \c0.mode.arith.s1  = c0[80:49];
+  assign \c0.mode.arith.s2  = c0[112:81];
+  assign \c0.mode.arith.d  = c0[117:113];
+  assign \c0.mode.imm  = c0[97:39];
+  assign \c0.mode.imm.f  = c0[41:39];
+  assign \c0.mode.imm.m  = c0[48:42];
+  assign \c0.mode.imm.s  = c0[80:49];
+  assign \c0.mode.imm.i  = c0[92:81];
+  assign \c0.mode.imm.d  = c0[97:93];
+  assign \c0.mode.store  = c0[117:39];
+  assign \c0.mode.store.f  = c0[41:39];
+  assign \c0.mode.store.offset  = c0[53:42];
+  assign \c0.mode.store.s1  = c0[85:54];
+  assign \c0.mode.store.s2  = c0[117:86];
+  assign \c0.mode.upper  = c0[75:39];
+  assign \c0.mode.upper.d  = c0[43:39];
+  assign \c0.mode.upper.i  = c0[75:44];
+  assign \c0.mode.jump  = c0[64:39];
+  assign \c0.mode.jump.d  = c0[43:39];
+  assign \c0.mode.jump.offset  = c0[64:44];
+  assign \c1.pc  = c1[31:0];
+  assign \c1.op  = c1[38:32];
+  assign \c1.mode  = c1[117:39];
+  assign \c1.mode.arith  = c1[117:39];
+  assign \c1.mode.arith.f  = c1[41:39];
+  assign \c1.mode.arith.m  = c1[48:42];
+  assign \c1.mode.arith.s1  = c1[80:49];
+  assign \c1.mode.arith.s2  = c1[112:81];
+  assign \c1.mode.arith.d  = c1[117:113];
+  assign \c1.mode.imm  = c1[97:39];
+  assign \c1.mode.imm.f  = c1[41:39];
+  assign \c1.mode.imm.m  = c1[48:42];
+  assign \c1.mode.imm.s  = c1[80:49];
+  assign \c1.mode.imm.i  = c1[92:81];
+  assign \c1.mode.imm.d  = c1[97:93];
+  assign \c1.mode.store  = c1[117:39];
+  assign \c1.mode.store.f  = c1[41:39];
+  assign \c1.mode.store.offset  = c1[53:42];
+  assign \c1.mode.store.s1  = c1[85:54];
+  assign \c1.mode.store.s2  = c1[117:86];
+  assign \c1.mode.upper  = c1[75:39];
+  assign \c1.mode.upper.d  = c1[43:39];
+  assign \c1.mode.upper.i  = c1[75:44];
+  assign \c1.mode.jump  = c1[64:39];
+  assign \c1.mode.jump.d  = c1[43:39];
+  assign \c1.mode.jump.offset  = c1[64:44];
+  assign \consume_data.pc  = consume_data[31:0];
+  assign \consume_data.op  = consume_data[38:32];
+  assign \consume_data.mode  = consume_data[117:39];
+  assign \consume_data.mode.arith  = consume_data[117:39];
+  assign \consume_data.mode.arith.f  = consume_data[41:39];
+  assign \consume_data.mode.arith.m  = consume_data[48:42];
+  assign \consume_data.mode.arith.s1  = consume_data[80:49];
+  assign \consume_data.mode.arith.s2  = consume_data[112:81];
+  assign \consume_data.mode.arith.d  = consume_data[117:113];
+  assign \consume_data.mode.imm  = consume_data[97:39];
+  assign \consume_data.mode.imm.f  = consume_data[41:39];
+  assign \consume_data.mode.imm.m  = consume_data[48:42];
+  assign \consume_data.mode.imm.s  = consume_data[80:49];
+  assign \consume_data.mode.imm.i  = consume_data[92:81];
+  assign \consume_data.mode.imm.d  = consume_data[97:93];
+  assign \consume_data.mode.store  = consume_data[117:39];
+  assign \consume_data.mode.store.f  = consume_data[41:39];
+  assign \consume_data.mode.store.offset  = consume_data[53:42];
+  assign \consume_data.mode.store.s1  = consume_data[85:54];
+  assign \consume_data.mode.store.s2  = consume_data[117:86];
+  assign \consume_data.mode.upper  = consume_data[75:39];
+  assign \consume_data.mode.upper.d  = consume_data[43:39];
+  assign \consume_data.mode.upper.i  = consume_data[75:44];
+  assign \consume_data.mode.jump  = consume_data[64:39];
+  assign \consume_data.mode.jump.d  = consume_data[43:39];
+  assign \consume_data.mode.jump.offset  = consume_data[64:44];
+endmodule
+
+(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:34" *)
+(* generator = "Amaranth" *)
+module \risc_project.core.write_buffer (rst, produce_data, consume_data, consume_valid, produce_ready, consume_ready, produce_valid, clk);
+  reg \$auto$verilog_backend.cc:2352:dump_module$10  = 0;
+  wire [1:0] \$1 ;
+  reg [1:0] \$10 ;
+  wire \$2 ;
+  wire \$3 ;
+  wire \$4 ;
+  wire [1:0] \$5 ;
+  wire \$6 ;
+  reg [36:0] \$7 ;
+  reg [36:0] \$8 ;
+  reg \$9 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  reg [36:0] c0 = 37'h0000000000;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [4:0] \c0.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c0.value ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  reg [36:0] c1 = 37'h0000000000;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [4:0] \c1.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c1.value ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:37" *)
+  reg [1:0] cache_ready = 2'h3;
+  (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
+  input clk;
+  wire clk;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  input [36:0] consume_data;
+  wire [36:0] consume_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \consume_data.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.value ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  output consume_ready;
+  reg consume_ready;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
+  input consume_valid;
+  wire consume_valid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  output [36:0] produce_data;
+  reg [36:0] produce_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [4:0] \produce_data.d ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data.value ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  input produce_ready;
+  wire produce_ready;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
+  output produce_valid;
+  reg produce_valid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:39" *)
+  wire produce_select;
+  (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
+  input rst;
+  wire rst;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:38" *)
+  reg select = 1'h0;
+  assign \$1  = select + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:41" *) 1'h1;
+  assign \$2  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:48" *) cache_ready[1];
+  assign \$3  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:51" *) cache_ready[0];
+  assign \$4  = consume_ready & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:53" *) consume_valid;
+  assign \$5  = select + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:55" *) 1'h1;
+  assign \$6  = produce_ready & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:59" *) produce_valid;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  always @(posedge clk)
+    c0 <= \$7 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  always @(posedge clk)
+    c1 <= \$8 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:38" *)
+  always @(posedge clk)
+    select <= \$9 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:37" *)
+  always @(posedge clk)
+    cache_ready <= \$10 ;
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    (* full_case = 32'd1 *)
+    casez (\$1 [0])
+      1'h0:
+          produce_data = c0;
+      1'h1:
+          produce_data = c1;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    (* full_case = 32'd1 *)
+    casez (select)
+      1'h0:
+          consume_ready = cache_ready[0];
+      1'h1:
+          consume_ready = cache_ready[1];
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    (* full_case = 32'd1 *)
+    casez (select)
+      1'h0:
+          produce_valid = \$2 ;
+      1'h1:
+          produce_valid = \$3 ;
+    endcase
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    \$7  = c0;
+    if (\$4 ) begin
+      casez (select)
+        1'h0:
+            \$7  = consume_data;
+      endcase
+    end
+    if (rst) begin
+      \$7  = 37'h0000000000;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    \$8  = c1;
+    if (\$4 ) begin
+      (* full_case = 32'd1 *)
+      casez (select)
+        1'h0:
+            /* empty */;
+        1'h1:
+            \$8  = consume_data;
+      endcase
+    end
+    if (rst) begin
+      \$8  = 37'h0000000000;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    \$9  = select;
+    if (\$4 ) begin
+      \$9  = \$5 [0];
+    end
+    if (rst) begin
+      \$9  = 1'h0;
+    end
+  end
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    \$10  = cache_ready;
+    if (\$4 ) begin
+      (* full_case = 32'd1 *)
+      casez (select)
+        1'h0:
+            \$10 [0] = 1'h0;
+        1'h1:
+            \$10 [1] = 1'h0;
+      endcase
+    end
+    if (\$6 ) begin
+      (* full_case = 32'd1 *)
+      casez (\$1 [0])
+        1'h0:
+            \$10 [0] = 1'h1;
+        1'h1:
+            \$10 [1] = 1'h1;
+      endcase
+    end
+    if (rst) begin
+      \$10  = 2'h3;
+    end
+  end
+  assign produce_select = \$1 [0];
+  assign \produce_data.d  = produce_data[4:0];
+  assign \produce_data.value  = produce_data[36:5];
+  assign \c0.d  = c0[4:0];
+  assign \c0.value  = c0[36:5];
+  assign \c1.d  = c1[4:0];
+  assign \c1.value  = c1[36:5];
+  assign \consume_data.d  = consume_data[4:0];
+  assign \consume_data.value  = consume_data[36:5];
 endmodule
 
 (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\axi\\wish_to_axi.py:20" *)
 (* generator = "Amaranth" *)
 module \risc_project.prog_to_axi (axi_wready, axi_arready, wish_r_data, axi_rvalid, axi_bvalid, clk, rst, wish_cyc, wish_stb, axi_awvalid, axi_wvalid, axi_arvalid, axi_rready, axi_awaddr, wish_ack, axi_bready, axi_awready);
-  reg \$auto$verilog_backend.cc:2352:dump_module$6  = 0;
+  reg \$auto$verilog_backend.cc:2352:dump_module$11  = 0;
   wire \$1 ;
   wire \$10 ;
   wire \$11 ;
@@ -12928,43 +6195,43 @@ module \risc_project.prog_to_axi (axi_wready, axi_arready, wish_r_data, axi_rval
   wire \$9 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\axi\\wish_to_axi.py:22" *)
   reg address_written = 1'h0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:115" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:117" *)
   wire [31:0] axi_araddr;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:114" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:116" *)
   input axi_arready;
   wire axi_arready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:113" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:115" *)
   output axi_arvalid;
   wire axi_arvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:115" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:117" *)
   input [31:0] axi_awaddr;
   wire [31:0] axi_awaddr;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:108" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:110" *)
   input axi_awready;
   wire axi_awready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:107" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:109" *)
   output axi_awvalid;
   wire axi_awvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:120" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:122" *)
   output axi_bready;
   reg axi_bready = 1'h0;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:121" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:123" *)
   input axi_bvalid;
   wire axi_bvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:116" *)
-  wire [31:0] axi_rdata;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:118" *)
+  wire [31:0] axi_rdata;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:120" *)
   output axi_rready;
   wire axi_rready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:117" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:119" *)
   input axi_rvalid;
   wire axi_rvalid;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:110" *)
-  wire [31:0] axi_wdata;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:112" *)
+  wire [31:0] axi_wdata;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:114" *)
   input axi_wready;
   wire axi_wready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:111" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:113" *)
   output axi_wvalid;
   wire axi_wvalid;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
@@ -12981,7 +6248,7 @@ module \risc_project.prog_to_axi (axi_wready, axi_arready, wish_r_data, axi_rval
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
   input wish_cyc;
   wire wish_cyc;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:116" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:118" *)
   input [31:0] wish_r_data;
   wire [31:0] wish_r_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
@@ -13004,11 +6271,11 @@ module \risc_project.prog_to_axi (axi_wready, axi_arready, wish_r_data, axi_rval
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\axi\\wish_to_axi.py:22" *)
   always @(posedge clk)
     address_written <= \$20 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:120" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:122" *)
   always @(posedge clk)
     axi_bready <= \$21 ;
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$11 ) begin end
     \$20  = address_written;
     if (\$15 ) begin
       \$20  = 1'h1;
@@ -13027,7 +6294,7 @@ module \risc_project.prog_to_axi (axi_wready, axi_arready, wish_r_data, axi_rval
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$11 ) begin end
     \$21  = axi_bready;
     if (\$18 ) begin
       \$21  = 1'h1;
@@ -13063,8 +6330,8 @@ endmodule
 
 (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\uart.py:109" *)
 (* generator = "Amaranth" *)
-module \risc_project.uart_rx (clk, rst, produce_tvalid, produce_tdata, r_en, rx);
-  reg \$auto$verilog_backend.cc:2352:dump_module$7  = 0;
+module \risc_project.uart_rx (clk, rst, produce_valid, produce_data, r_en, rx);
+  reg \$auto$verilog_backend.cc:2352:dump_module$12  = 0;
   wire \$1 ;
   wire \$10 ;
   wire \$11 ;
@@ -13103,16 +6370,16 @@ module \risc_project.uart_rx (clk, rst, produce_tvalid, produce_tdata, r_en, rx)
   (* src = "C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64_qbz5n2kfra8p0\\Lib\\contextlib.py:144" *)
   reg [2:0] fsm_state = 3'h0;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\lib\\fifo.py:92" *)
-  output [7:0] produce_tdata;
-  wire [7:0] produce_tdata;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:86" *)
-  wire produce_tready;
+  output [7:0] produce_data;
+  wire [7:0] produce_data;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
+  wire produce_ready;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\lib\\fifo.py:93" *)
-  output produce_tvalid;
-  wire produce_tvalid;
+  output produce_valid;
+  wire produce_valid;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\lib\\fifo.py:92" *)
   wire [7:0] r_data;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:86" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
   input r_en;
   wire r_en;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\lib\\fifo.py:93" *)
@@ -13161,15 +6428,15 @@ module \risc_project.uart_rx (clk, rst, produce_tvalid, produce_tdata, r_en, rx)
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\uart.py:111" *)
   \risc_project.uart_rx.buffer  buffer (
     .clk(clk),
-    .r_data(produce_tdata),
+    .r_data(produce_data),
     .r_en(r_en),
-    .r_rdy(produce_tvalid),
+    .r_rdy(produce_valid),
     .rst(rst),
     .w_en(w_en),
     .w_port_data(w_data)
   );
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$12 ) begin end
     w_data = 8'h00;
     casez (fsm_state)
       3'h0:
@@ -13189,7 +6456,7 @@ module \risc_project.uart_rx (clk, rst, produce_tvalid, produce_tdata, r_en, rx)
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$12 ) begin end
     w_en = 1'h0;
     casez (fsm_state)
       3'h0:
@@ -13209,7 +6476,7 @@ module \risc_project.uart_rx (clk, rst, produce_tvalid, produce_tdata, r_en, rx)
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$12 ) begin end
     \$23  = counter;
     if (\$8 ) begin
       \$23  = \$9 [9:0];
@@ -13249,7 +6516,7 @@ module \risc_project.uart_rx (clk, rst, produce_tvalid, produce_tdata, r_en, rx)
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$12 ) begin end
     \$24  = fsm_state;
     casez (fsm_state)
       3'h0:
@@ -13287,7 +6554,7 @@ module \risc_project.uart_rx (clk, rst, produce_tvalid, produce_tdata, r_en, rx)
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$12 ) begin end
     \$25  = bit_counter;
     casez (fsm_state)
       3'h0:
@@ -13327,7 +6594,7 @@ module \risc_project.uart_rx (clk, rst, produce_tvalid, produce_tdata, r_en, rx)
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$12 ) begin end
     \$26  = data_register;
     casez (fsm_state)
       3'h0:
@@ -13343,9 +6610,9 @@ module \risc_project.uart_rx (clk, rst, produce_tvalid, produce_tdata, r_en, rx)
       \$26  = 8'h00;
     end
   end
-  assign r_data = produce_tdata;
-  assign r_rdy = produce_tvalid;
-  assign produce_tready = r_en;
+  assign r_data = produce_data;
+  assign r_rdy = produce_valid;
+  assign produce_ready = r_en;
   assign \$12  = rx;
   assign \$14  = { 1'h0, data_register[7:1] };
   assign \$15  = { rx, 7'h00 };
@@ -13354,7 +6621,7 @@ endmodule
 (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\lib\\fifo.py:144" *)
 (* generator = "Amaranth" *)
 module \risc_project.uart_rx.buffer (rst, r_rdy, r_data, w_port_data, w_en, r_en, clk);
-  reg \$auto$verilog_backend.cc:2352:dump_module$8  = 0;
+  reg \$auto$verilog_backend.cc:2352:dump_module$13  = 0;
   wire \$1 ;
   wire \$10 ;
   wire \$11 ;
@@ -13459,7 +6726,7 @@ module \risc_project.uart_rx.buffer (rst, r_rdy, r_data, w_port_data, w_en, r_en
   always @(posedge clk)
     level <= \$17 ;
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$13 ) begin end
     \$15  = w_port_addr;
     if (\$1 ) begin
       \$15  = \$2 [1:0];
@@ -13469,7 +6736,7 @@ module \risc_project.uart_rx.buffer (rst, r_rdy, r_data, w_port_data, w_en, r_en
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$13 ) begin end
     \$16  = r_port_addr;
     if (\$3 ) begin
       \$16  = \$4 [1:0];
@@ -13479,7 +6746,7 @@ module \risc_project.uart_rx.buffer (rst, r_rdy, r_data, w_port_data, w_en, r_en
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$13 ) begin end
     \$17  = level;
     if (\$8 ) begin
       \$17  = \$9 [2:0];
@@ -13501,8 +6768,8 @@ endmodule
 
 (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\uart.py:22" *)
 (* generator = "Amaranth" *)
-module \risc_project.uart_tx (rst, consume_tready, tx, w_en, w_data, clk);
-  reg \$auto$verilog_backend.cc:2352:dump_module$9  = 0;
+module \risc_project.uart_tx (rst, consume_ready, tx, w_en, w_data, clk);
+  reg \$auto$verilog_backend.cc:2352:dump_module$14  = 0;
   wire \$1 ;
   wire [7:0] \$10 ;
   wire \$11 ;
@@ -13532,13 +6799,13 @@ module \risc_project.uart_tx (rst, consume_tready, tx, w_en, w_data, clk);
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input clk;
   wire clk;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:84" *)
-  wire [7:0] consume_tdata;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:87" *)
+  wire [7:0] consume_data;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\lib\\fifo.py:88" *)
-  output consume_tready;
-  wire consume_tready;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:85" *)
-  wire consume_tvalid;
+  output consume_ready;
+  wire consume_ready;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
+  wire consume_valid;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\uart.py:35" *)
   reg [9:0] counter = 10'h000;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\uart.py:32" *)
@@ -13559,10 +6826,10 @@ module \risc_project.uart_tx (rst, consume_tready, tx, w_en, w_data, clk);
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\uart.py:18" *)
   output tx;
   reg tx;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:84" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:87" *)
   input [7:0] w_data;
   wire [7:0] w_data;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:85" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
   input w_en;
   wire w_en;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\lib\\fifo.py:88" *)
@@ -13609,10 +6876,10 @@ module \risc_project.uart_tx (rst, consume_tready, tx, w_en, w_data, clk);
     .rst(rst),
     .w_en(w_en),
     .w_port_data(w_data),
-    .w_rdy(consume_tready)
+    .w_rdy(consume_ready)
   );
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
     tx = 1'h0;
     casez (fsm_state)
       3'h0:
@@ -13628,7 +6895,7 @@ module \risc_project.uart_tx (rst, consume_tready, tx, w_en, w_data, clk);
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
     r_en = 1'h0;
     casez (fsm_state)
       3'h0:
@@ -13638,7 +6905,7 @@ module \risc_project.uart_tx (rst, consume_tready, tx, w_en, w_data, clk);
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
     \$20  = data_register;
     casez (fsm_state)
       3'h0:
@@ -13657,7 +6924,7 @@ module \risc_project.uart_tx (rst, consume_tready, tx, w_en, w_data, clk);
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
     \$21  = counter;
     casez (fsm_state)
       3'h0:
@@ -13702,7 +6969,7 @@ module \risc_project.uart_tx (rst, consume_tready, tx, w_en, w_data, clk);
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
     \$22  = fsm_state;
     casez (fsm_state)
       3'h0:
@@ -13735,7 +7002,7 @@ module \risc_project.uart_tx (rst, consume_tready, tx, w_en, w_data, clk);
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
     \$23  = byte_counter;
     casez (fsm_state)
       3'h0:
@@ -13771,7 +7038,7 @@ module \risc_project.uart_tx (rst, consume_tready, tx, w_en, w_data, clk);
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
     \$24  = parity;
     casez (fsm_state)
       3'h0:
@@ -13791,16 +7058,16 @@ module \risc_project.uart_tx (rst, consume_tready, tx, w_en, w_data, clk);
       \$24  = 1'h0;
     end
   end
-  assign consume_tvalid = w_en;
-  assign consume_tdata = w_data;
-  assign w_rdy = consume_tready;
+  assign consume_valid = w_en;
+  assign consume_data = w_data;
+  assign w_rdy = consume_ready;
   assign \$10  = { 1'h0, data_register[7:1] };
 endmodule
 
 (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\lib\\fifo.py:144" *)
 (* generator = "Amaranth" *)
 module \risc_project.uart_tx.buffer (rst, w_rdy, r_rdy, r_data, r_en, w_en, w_port_data, clk);
-  reg \$auto$verilog_backend.cc:2352:dump_module$10  = 0;
+  reg \$auto$verilog_backend.cc:2352:dump_module$15  = 0;
   wire \$1 ;
   wire \$10 ;
   wire \$11 ;
@@ -13906,7 +7173,7 @@ module \risc_project.uart_tx.buffer (rst, w_rdy, r_rdy, r_data, r_en, w_en, w_po
   always @(posedge clk)
     level <= \$17 ;
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$15 ) begin end
     \$15  = w_port_addr;
     if (\$1 ) begin
       \$15  = \$2 [1:0];
@@ -13916,7 +7183,7 @@ module \risc_project.uart_tx.buffer (rst, w_rdy, r_rdy, r_data, r_en, w_en, w_po
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$15 ) begin end
     \$16  = r_port_addr;
     if (\$3 ) begin
       \$16  = \$4 [1:0];
@@ -13926,7 +7193,7 @@ module \risc_project.uart_tx.buffer (rst, w_rdy, r_rdy, r_data, r_en, w_en, w_po
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$15 ) begin end
     \$17  = level;
     if (\$8 ) begin
       \$17  = \$9 [2:0];

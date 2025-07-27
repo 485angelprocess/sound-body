@@ -45,7 +45,7 @@ instruction_shape = data.StructLayout({
         }),
         "j": data.StructLayout({
             "rd": 5,
-            "offset": signed(20)
+            "offset": 20
         }),
         "b": data.StructLayout({
             "offset_lower": 5,
@@ -92,6 +92,10 @@ decode_shape = data.StructLayout({
         "upper": data.StructLayout({
             "d": 5,
             "i": signed(32)
+        }),
+        "jump": data.StructLayout({
+            "d": 5,
+            "offset": signed(21)
         })
     })
 })

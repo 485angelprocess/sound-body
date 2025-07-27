@@ -25,6 +25,11 @@ def core_with_program(program):
     wiring.connect(dut, cpu.prog, ram.bus)
     
     return dut, cpu.bus
+    
+async def check_addr(ctx, port, addr, data):
+    result = await Bus.write_consume(ctx,port)
+    assert result[0] == addr
+    assert result[1] == data
 
 class TestCpu(unittest.TestCase):
     def test_addi(self):
@@ -92,7 +97,7 @@ class TestCpu(unittest.TestCase):
     def test_jal(self):
         program = [
             "andi r0, r0, 0",
-            "jal  r1, 12(r0)",
+            "jal  r1, 8(r0)",
             "addi r0, r0, 11",
             "addi r0, r0, 13",
             "andi r2, r2, 0",
@@ -105,8 +110,8 @@ class TestCpu(unittest.TestCase):
         
         finished = [False]
         async def expect(ctx):
-            assert await Bus.write_consume(ctx,bus) == 0,13
-            assert await Bus.write_consume(ctx,bus) == 4,4
+            await check_addr(ctx, bus, 0, 13)
+            await check_addr(ctx, bus, 4, 8)
             finished[0] = True
             
         sim = Simulator(dut)

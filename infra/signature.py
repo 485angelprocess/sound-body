@@ -40,6 +40,8 @@ class Bus(wiring.Signature):
                 print("Consumed {}: {}".format(addr, data))
                 if not sync:
                     await ctx.delay(1e-6)
+                else:
+                    await ctx.tick()
                 ctx.set(port.ack, 0)
                 return addr, data
             if sync:

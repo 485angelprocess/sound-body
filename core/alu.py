@@ -46,109 +46,106 @@ class Alu(wiring.Component):
     def elaborate(self, platform):
         m = Module()
         
-        with m.If(self.produce.valid):
-            m.d.sync += self.produce.valid.eq(0)
+        m.d.comb += self.produce.valid.eq(self.consume.valid)
         
-        with m.If(self.consume.valid):
-            m.d.sync += self.produce.valid.eq(1)
-            m.d.sync += self.produce.d.eq(self.consume.d)
-        
-            with m.Switch(self.consume.function):
-                with m.Case(AluFunction.ADDSUB):
-                    # Addition/subtraction
-                    with m.Switch(self.consume.mode):
-                        with m.Case(0b000_0000):
-                            # ADD
-                            m.d.sync += self.produce.value.eq(
-                                self.consume.s1 + self.consume.s2
+        m.d.comb += self.produce.d.eq(self.consume.d)
+    
+        with m.Switch(self.consume.function):
+            with m.Case(AluFunction.ADDSUB):
+                # Addition/subtraction
+                with m.Switch(self.consume.mode):
+                    with m.Case(0b000_0000):
+                        # ADD
+                        m.d.comb += self.produce.value.eq(
+                            self.consume.s1 + self.consume.s2
+                        )
+                    with m.Case(0b010_0000):
+                        # SUB
+                        m.d.comb += self.produce.value.eq(
+                            self.consume.s1 - self.consume.s2
+                        )
+                    with m.Default():
+                        m.d.comb += self.produce.error.eq(1)
+            with m.Case(AluFunction.SHIFTLEFT):
+                with m.Switch(self.consume.mode):
+                    with m.Case(0b000_0000):
+                        # Shift left
+                        with m.If(self.consume.s2 > 5):
+                            # Always 0
+                            m.d.comb += self.produce.value.eq(0)
+                        with m.Else():
+                            # Shift is valid value
+                            m.d.comb += self.produce.value.eq(
+                                self.consume.s1 <<
+                                self.consume.s2.as_unsigned()[0:3]
                             )
-                        with m.Case(0b010_0000):
-                            # SUB
-                            m.d.sync += self.produce.value.eq(
-                                self.consume.s1 - self.consume.s2
-                            )
-                        with m.Default():
-                            m.d.sync += self.produce.error.eq(1)
-                with m.Case(AluFunction.SHIFTLEFT):
-                    with m.Switch(self.consume.mode):
-                        with m.Case(0b000_0000):
-                            # Shift left
-                            with m.If(self.consume.s2 > 5):
-                                # Always 0
-                                m.d.sync += self.produce.value.eq(0)
-                            with m.Else():
-                                # Shift is valid value
-                                m.d.sync += self.produce.value.eq(
-                                    self.consume.s1 <<
-                                    self.consume.s2.as_unsigned()[0:3]
-                                )
-                        with m.Default():
-                            m.d.sync += self.produce.error.eq(1)
-                with m.Case(AluFunction.LESSTHAN):
-                    with m.Switch(self.consume.mode):
-                        with m.Case(0b000_0000):
-                            # Less than signed
-                            m.d.sync += self.produce.value.eq(
-                                self.consume.s1 <
-                                self.consume.s2
-                            )
-                        with m.Default():
-                            m.d.sync += self.produce.error.eq(1)
-                with m.Case(AluFunction.LESSTHANU):
-                    with m.Switch(self.consume.mode):
-                        with m.Case(0b000_0000):
-                             # Less than unsigned
-                            m.d.sync += self.produce.value.eq(
-                                self.consume.s1.as_unsigned() <
-                                self.consume.s2.as_unsigned()
-                            )      
-                        with m.Default():
-                            m.d.sync += self.produce.error.eq(1)
-                with m.Case(AluFunction.XOR):
-                    # Exclusive or
-                    with m.Switch(self.consume.mode):
-                        with m.Case(0b000_0000):
-                            m.d.sync += self.produce.value.eq(
-                                self.consume.s1 ^
-                                self.consume.s2
-                            )
-                        with m.Default():
-                            m.d.sync += self.produce.error.eq(1)
-                with m.Case(AluFunction.SHIFTRIGHT):
-                    with m.Switch(self.consume.mode):
-                        with m.Case(0b000_0000):
-                            # Logical shift right
-                            m.d.sync += self.produce.value.eq(
-                                self.consume.s1 >> self.consume.s2
-                            )
-                        with m.Case(0b010_0000):
-                            # Arithmetic shift right
-                            m.d.sync += self.produce.value[0:31].eq(
-                                self.consume.s1 >>
-                                self.consume.s2.as_unsigned()
-                            )
-                            m.d.sync += self.produce.value[-1].eq(
-                                self.consume.s1[-1]
-                            )
-                        with m.Default():
-                            m.d.sync += self.produce.error.eq(1)
-                with m.Case(AluFunction.OR):
-                    with m.Switch(self.consume.mode):
-                        with m.Case(0b000_0000):
-                            m.d.sync += self.produce.value.eq(
-                                self.consume.s1 |
-                                self.consume.s2
-                            )
-                        with m.Default():
-                            m.d.sync += self.produce.error.eq(1)
-                with m.Case(AluFunction.AND):
-                    with m.Switch(self.consume.mode):
-                        with m.Case(0b000_0000):
-                            m.d.sync += self.produce.value.eq(
-                                self.consume.s1 &
-                                self.consume.s2
-                            )
-                        with m.Default():
-                            m.d.sync += self.produce.error.eq(1)
+                    with m.Default():
+                        m.d.comb += self.produce.error.eq(1)
+            with m.Case(AluFunction.LESSTHAN):
+                with m.Switch(self.consume.mode):
+                    with m.Case(0b000_0000):
+                        # Less than signed
+                        m.d.comb += self.produce.value.eq(
+                            self.consume.s1 <
+                            self.consume.s2
+                        )
+                    with m.Default():
+                        m.d.comb += self.produce.error.eq(1)
+            with m.Case(AluFunction.LESSTHANU):
+                with m.Switch(self.consume.mode):
+                    with m.Case(0b000_0000):
+                            # Less than unsigned
+                        m.d.comb += self.produce.value.eq(
+                            self.consume.s1.as_unsigned() <
+                            self.consume.s2.as_unsigned()
+                        )      
+                    with m.Default():
+                        m.d.comb += self.produce.error.eq(1)
+            with m.Case(AluFunction.XOR):
+                # Exclusive or
+                with m.Switch(self.consume.mode):
+                    with m.Case(0b000_0000):
+                        m.d.comb += self.produce.value.eq(
+                            self.consume.s1 ^
+                            self.consume.s2
+                        )
+                    with m.Default():
+                        m.d.comb += self.produce.error.eq(1)
+            with m.Case(AluFunction.SHIFTRIGHT):
+                with m.Switch(self.consume.mode):
+                    with m.Case(0b000_0000):
+                        # Logical shift right
+                        m.d.comb += self.produce.value.eq(
+                            self.consume.s1 >> self.consume.s2
+                        )
+                    with m.Case(0b010_0000):
+                        # Arithmetic shift right
+                        m.d.comb += self.produce.value[0:31].eq(
+                            self.consume.s1 >>
+                            self.consume.s2.as_unsigned()
+                        )
+                        m.d.comb += self.produce.value[-1].eq(
+                            self.consume.s1[-1]
+                        )
+                    with m.Default():
+                        m.d.comb += self.produce.error.eq(1)
+            with m.Case(AluFunction.OR):
+                with m.Switch(self.consume.mode):
+                    with m.Case(0b000_0000):
+                        m.d.comb += self.produce.value.eq(
+                            self.consume.s1 |
+                            self.consume.s2
+                        )
+                    with m.Default():
+                        m.d.comb += self.produce.error.eq(1)
+            with m.Case(AluFunction.AND):
+                with m.Switch(self.consume.mode):
+                    with m.Case(0b000_0000):
+                        m.d.comb += self.produce.value.eq(
+                            self.consume.s1 &
+                            self.consume.s2
+                        )
+                    with m.Default():
+                        m.d.comb += self.produce.error.eq(1)
                 
         return m

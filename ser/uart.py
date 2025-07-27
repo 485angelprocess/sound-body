@@ -24,9 +24,9 @@ class UartTx(wiring.Component):
         buffer = m.submodules.buffer = fifo.SyncFIFO(width = 8, depth = 4)
         
         m.d.comb += [
-            buffer.w_en.eq(self.consume.tvalid),
-            buffer.w_data.eq(self.consume.tdata),
-            self.consume.tready.eq(buffer.w_rdy)
+            buffer.w_en.eq(self.consume.valid),
+            buffer.w_data.eq(self.consume.data),
+            self.consume.ready.eq(buffer.w_rdy)
         ]
         
         data_register = Signal(8)
@@ -111,9 +111,9 @@ class UartRx(wiring.Component):
         buffer = m.submodules.buffer = fifo.SyncFIFO(width = 8, depth = self.depth)
         
         m.d.comb += [
-            self.produce.tdata.eq(buffer.r_data),
-            self.produce.tvalid.eq(buffer.r_rdy),
-            buffer.r_en.eq(self.produce.tready)
+            self.produce.data.eq(buffer.r_data),
+            self.produce.valid.eq(buffer.r_rdy),
+            buffer.r_en.eq(self.produce.ready)
         ]
         
         counter = Signal(range(self.period))

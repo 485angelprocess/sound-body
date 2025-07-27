@@ -49,13 +49,13 @@ class SerialToWishbone(wiring.Component):
         with m.FSM() as fsm:
             # From external computer
             with m.State("Idle"):
-                m.d.comb += self.command.tready.eq(1)
+                m.d.comb += self.command.ready.eq(1)
                 m.d.sync += self.produce.addr.eq(0)
                 m.d.sync += self.produce.w_data.eq(0)
                 m.d.sync += self.produce.w_en.eq(0)
                 m.d.sync += timer.eq(0)
-                with m.If(self.command.tvalid):
-                    with m.Switch(self.command.tdata):
+                with m.If(self.command.valid):
+                    with m.Switch(self.command.data):
                         with m.Case(ord(SerialCommand.WRITE_SHORT)):
                             m.d.sync += self.produce.w_en.eq(1)
                             m.d.sync += size.eq(0)
@@ -87,16 +87,16 @@ class SerialToWishbone(wiring.Component):
                             m.d.sync += ext_reset.eq(0)
                         with m.Default():
                             m.d.sync += prefix.eq(ord('%'))
-                            m.d.sync += arg.eq(self.command.tdata)
+                            m.d.sync += arg.eq(self.command.data)
                             m.d.sync += counter.eq(0)
                             m.next = "Print"
             ################################
             ### Write/read to bus ##########
             ################################
             with m.State("Address"):
-                m.d.comb += self.command.tready.eq(1)
-                with m.If(self.command.tvalid):
-                    m.d.sync += self.produce.addr.word_select(counter, 8).eq(self.command.tdata)
+                m.d.comb += self.command.ready.eq(1)
+                with m.If(self.command.valid):
+                    m.d.sync += self.produce.addr.word_select(counter, 8).eq(self.command.data)
                     with m.If(counter == 0):
                         m.d.sync += counter.eq(size)
                         with m.If(self.produce.w_en):
@@ -106,9 +106,9 @@ class SerialToWishbone(wiring.Component):
                     with m.Else():
                         m.d.sync += counter.eq(counter - 1)
             with m.State("Data"):
-                m.d.comb += self.command.tready.eq(1)
-                with m.If(self.command.tvalid):
-                    m.d.sync += self.produce.w_data.word_select(counter, 8).eq(self.command.tdata)
+                m.d.comb += self.command.ready.eq(1)
+                with m.If(self.command.valid):
+                    m.d.sync += self.produce.w_data.word_select(counter, 8).eq(self.command.data)
                     with m.If(counter == 0):
                         m.next = "Bus"
                     with m.Else():
@@ -144,15 +144,15 @@ class SerialToWishbone(wiring.Component):
             ## Print reply #################
             ################################
             with m.State("Print"):
-                m.d.comb += self.reply.tvalid.eq(1)
-                m.d.comb += self.reply.tdata.eq(prefix)
-                with m.If(self.reply.tready):
+                m.d.comb += self.reply.valid.eq(1)
+                m.d.comb += self.reply.data.eq(prefix)
+                with m.If(self.reply.ready):
                     m.next = "PrintArg"
             with m.State("PrintArg"):
-                m.d.comb += self.reply.tvalid.eq(1)
-                m.d.comb += self.reply.tdata.eq(arg.word_select(counter, 8)) # Print MSB first
+                m.d.comb += self.reply.valid.eq(1)
+                m.d.comb += self.reply.data.eq(arg.word_select(counter, 8)) # Print MSB first
                 
-                with m.If(self.reply.tready):
+                with m.If(self.reply.ready):
                     with m.If(counter == 0):
                         m.next = "Idle"
                     with m.Else():
@@ -161,25 +161,25 @@ class SerialToWishbone(wiring.Component):
             ### print new line ###################
             ######################################
             with m.State("EOL"):
-                m.d.comb += self.reply.tvalid.eq(1)
-                m.d.comb += self.reply.tdata.eq(ord('\n'))
-                with m.If(self.reply.tready):
+                m.d.comb += self.reply.valid.eq(1)
+                m.d.comb += self.reply.data.eq(ord('\n'))
+                with m.If(self.reply.ready):
                     m.next = "Idle"
                     
             with m.State("Echo"):
                 # Echo one byte
-                m.d.comb += self.reply.tvalid.eq(self.command.tvalid)
-                m.d.comb += self.reply.tdata.eq(self.command.tdata)
-                m.d.comb += self.command.tready.eq(self.reply.tready)
+                m.d.comb += self.reply.valid.eq(self.command.valid)
+                m.d.comb += self.reply.data.eq(self.command.data)
+                m.d.comb += self.command.ready.eq(self.reply.ready)
                 
-                with m.If(self.reply.tvalid & self.reply.tready):
+                with m.If(self.reply.valid & self.reply.ready):
                     m.next = "Idle"
 
-        with m.If(fsm.ongoing("Idle") & (~self.command.tvalid)):
+        with m.If(fsm.ongoing("Idle") & (~self.command.valid)):
             # Control from CPU
             with m.If(self.bus.stb & self.bus.cyc & self.bus.w_en):
-                m.d.comb += self.reply.tvalid.eq(1) # Send reply
-                m.d.comb += self.bus.ack.eq(self.reply.tready)
-                m.d.comb += self.reply.tdata.eq(self.bus.w_data)
+                m.d.comb += self.reply.valid.eq(1) # Send reply
+                m.d.comb += self.bus.ack.eq(self.reply.ready)
+                m.d.comb += self.reply.data.eq(self.bus.w_data)
             
         return m
