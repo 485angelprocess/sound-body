@@ -33,8 +33,8 @@ class RegisterMask(wiring.Component):
         r2_ok = Signal()
         
         # Can we read from a register, or do we have to wait
-        m.d.comb += r1_ok.eq( ~((1 << self.r_rs1) & (reg_mask)) )
-        m.d.comb += r2_ok.eq( ~((1 << self.r_rs2) & (reg_mask)) )
+        m.d.comb += r1_ok.eq( (((1 << self.r_rs1) & (reg_mask))) == 0 )
+        m.d.comb += r2_ok.eq( (((1 << self.r_rs2) & (reg_mask))) == 0 )
         
         m.d.comb += self.r_ok1.eq(r1_ok)
         m.d.comb += self.r_ok2.eq(r2_ok)
@@ -218,7 +218,7 @@ class InstructionDecode(wiring.Component):
                 m.d.comb += [
                     out_register.mode.upper.d.eq(self.consume.data.mode.u.rd),
                     out_register.mode.upper.i.eq(self.consume.data.pc +
-                            self.consume.data.mode.u.imm << 12)
+                            (self.consume.data.mode.u.imm << 12))
                 ]
             with m.Case(Instruction.LUI):
                 # Add upper immediate to register
@@ -252,6 +252,8 @@ class InstructionDecode(wiring.Component):
                     branch_offset[11].eq(branch_data.offset_lower[0]),
                     branch_offset[12].eq(branch_data.offset_upper[6])
                 ]
+            with m.Case(Instruction.FENCE):
+                pass
             with m.Default():
                 # Unknown operation sends error information
                 m.d.comb += error_flag.eq(1)

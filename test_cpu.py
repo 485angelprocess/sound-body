@@ -11,13 +11,46 @@ from infra.signature import Bus
 from amaranth import Module
 from amaranth.lib import wiring
 
+class ExpectedWrite(object):
+    def __init__(self, addr, data, size=2):
+        self.addr = addr
+        self.data = data
+        self.size = size
+
+def test_program(name, program, *expected_value):
+    ep = ExecProgram(program=program)
+    dut, bus = core_with_program(list(ep.assemble()))
+    
+    finished = [False]
+    async def expect(ctx):
+        for ex in expected_value:
+            # TODO add size component
+            result = await Bus.write_consume(ctx,bus)
+            try:
+                assert result[0] == ex.addr
+                assert result[1] == ex.data
+            except AssertionError as e:
+                print("Got address {}, Data: {}".format(result[0], result[1]))
+                print("Expected {}: {}".format(ex.addr, ex.data))
+                raise e
+        finished[0] = True
+        
+    sim = Simulator(dut)
+    sim.add_clock(1e-8)
+    sim.add_testbench(expect)
+    
+    with sim.write_vcd("bench/test_{}.vcd".format(name)) as vcd:
+        sim.run_until(100*1e-8)
+        
+    assert finished[0] == True
+
 
 def core_with_program(program):
     dut = Module()
     
-    print("Loading program: ")
-    for i in range(len(program)):
-        print("\t{:02X}: {:02X}".format(i, program[i]))
+    #print("Loading program: ")
+    #for i in range(len(program)):
+    #    print("\t{:02X}: {:02X}".format(i, program[i]))
     
     dut.submodules.cpu = cpu = RiscCore(has_mul=False, normally_on=True)
     dut.submodules.ram = ram = WishboneMemory(32, 256, init=program, granularity=2)
@@ -97,7 +130,7 @@ class TestCpu(unittest.TestCase):
     def test_jal(self):
         program = [
             "andi r0, r0, 0",
-            "jal  r1, 8(r0)",
+            "jal  r1, 8",
             "addi r0, r0, 11",
             "addi r0, r0, 13",
             "andi r2, r2, 0",
@@ -105,23 +138,7 @@ class TestCpu(unittest.TestCase):
             "sw r1, 4(r2)"
         ]
         
-        ep = ExecProgram(program=program)
-        dut, bus = core_with_program(list(ep.assemble()))
-        
-        finished = [False]
-        async def expect(ctx):
-            await check_addr(ctx, bus, 0, 13)
-            await check_addr(ctx, bus, 4, 8)
-            finished[0] = True
-            
-        sim = Simulator(dut)
-        sim.add_clock(1e-8)
-        sim.add_testbench(expect)
-        
-        with sim.write_vcd("bench/test_jal.vcd") as vcd:
-            sim.run_until(100*1e-8)
-        
-        assert finished[0] == True
+        test_program("jal", program, ExpectedWrite(0, 13), ExpectedWrite(4, 8))
         
     def test_jalr(self):
         program = [
@@ -134,23 +151,144 @@ class TestCpu(unittest.TestCase):
             "sw r1, 4(r2)"
         ]
         
-        ep = ExecProgram(program=program)
-        dut, bus = core_with_program(list(ep.assemble()))
+        test_program("jalr", program, ExpectedWrite(0, 15), ExpectedWrite(4, 8))
         
-        finished = [False]
-        async def expect(ctx):
-            await check_addr(ctx, bus, 0, 15)
-            await check_addr(ctx, bus, 4, 8)
-            finished[0] = True
-            
-        sim = Simulator(dut)
-        sim.add_clock(1e-8)
-        sim.add_testbench(expect)
+    def test_auipc(self):
+        value = 15
+        expected_value = (value << 12) + 4
         
-        with sim.write_vcd("bench/test_jalr.vcd") as vcd:
-            sim.run_until(100*1e-8)
+        program = [
+            "andi x3, x3, 0",
+            "auipc x3, 15",
+            "andi x0, x0, 0",
+            "sw x3, 0(x0)"
+        ]
         
-        assert finished[0] == True
+        test_program("auipc", program, ExpectedWrite(0, expected_value))
+        
+    def test_slti(self):
+        program = [
+            "andi x3, x3, 0",
+            "addi x3, x3, 5",
+            "slti x4, x3, 6",
+            "sw x4, 0(x0)",
+            "slti x4, x3, 4",
+            "sw x4, 0(x0)"
+        ]
+        
+        test_program("slti", program, ExpectedWrite(0, 1), ExpectedWrite(0, 0))
+        
+    def test_xori(self):
+        program = [
+            "andi x3, x3, 0",
+            "addi x3, x3, 15",
+            "xori x4, x3, 11",
+            "sw x4, 0(x0)"
+        ]
+        
+        test_program("xori", program, ExpectedWrite(0, 4))
+        
+    def test_ori(self):
+        program = [
+            "andi x3, x3, 0",
+            "addi x3, x3, 35",
+            "ori x4, x3, 15",
+            "sw x4, 0(x0)"
+        ]
+        
+        test_program("ori", program, ExpectedWrite(0, 47))
+        
+    def test_slli(self):
+        program = [
+            "andi x3, x3, 0",
+            "addi x3, x3, 12",
+            "slli x4, x3, 2",
+            "sw x4, 0(x0)"
+        ]
+        
+        test_program("slli", program, ExpectedWrite(0, 48))
+        
+    def test_srli(self):
+        program = [
+            "andi x3, x3, 0",
+            "addi x3, x3, 15",
+            "srli x4, x3, 1",
+            "sw x4, 0(x0)"
+        ]
+        
+        test_program("srli", program, ExpectedWrite(0, 7))
+        
+    def test_add(self):
+        program = [
+            "addi x3, x0, 15",
+            "addi x4, x0, 17",
+            "add x5, x4, x3",
+            "sw x5, 4(x0)"
+        ]
+        
+        test_program("add", program, ExpectedWrite(4, 32))
+        
+    def test_sub(self):
+        program = [
+            "addi x3, x0, 34",
+            "addi x4, x0, 12",
+            "sub x5, x4, x3",
+            "sw x5, 0(x0)"
+        ]
+        
+        test_program("sub", program, ExpectedWrite(0, -22))
+        
+    def test_sll(self):
+        program = [
+            "addi x3, x0, 10",
+            "addi x4, x0, 2",
+            "sll x5, x3, x4",
+            "sw x5, 0(x0)"
+        ]
+        
+        test_program("sll", program, ExpectedWrite(0, 40))
+        
+    def test_slt(self):
+        program = [
+            "addi x3, x0, 15",
+            "addi x4, x0, 2",
+            "slt x5, x4, x3",
+            "slt x6, x3, x4",
+            "sw x5, 0(x0)",
+            "sw x6, 0(x0)"
+        ]
+        
+        test_program("slt", program,
+                ExpectedWrite(0, 1),
+                ExpectedWrite(0, 0))
+                
+    def test_xor(self):
+        program = [
+            "addi x3, x0, 15",
+            "addi x4, x0, 75",
+            "xor x5, x4, x3",
+            "sw x5, 0(x0)"
+        ]
+        
+        test_program("xor", program, ExpectedWrite(0, 68))
+        
+    def test_fence(self):
+        # This tests that fence is not 
+        # thread breakpoint
+        # store and write orders are unimportant
+        program = [
+            "addi x2, x0, 11",
+            "addi x3, x0, 13",
+            "sw x2, 0(x0)",
+            "sw x3, 4(x0)",
+            "fence",
+            "sw x3, 8(x0)"
+        ]
+        
+        test_program("fence", program, 
+                ExpectedWrite(0, 11),
+                ExpectedWrite(4, 13),
+                ExpectedWrite(8, 13))
         
 if __name__ == "__main__":
     unittest.main()

@@ -49,24 +49,35 @@ class Definition(object):
     @classmethod
     def arith_imm(cls, function):
         return cls(
-            Immediate(arg = 2, stop = 11),
-            Register(arg = 1),
+            Immediate(arg=2, stop=11),
+            Register(arg=1),
             Constant(function, 3),
-            Register(arg = 0),
-            Constant(0b00100, width = 5),
-            Constant(0b11, width = 2)
+            Register(arg=0),
+            Constant(0b00100, width=5),
+            Constant(0b11, width=2)
+        )
+        
+    @classmethod
+    def arith(cls, function, mode=0):
+        return cls(
+            Constant(mode, width=7),
+            Register(arg=2),
+            Register(arg=1),
+            Constant(function, width=3),
+            Register(arg=0),
+            Constant(0b0110011, width=7)
         )
         
     @classmethod
     def mul(cls, function):
         return cls(
             Constant(1, 7), # muldiv
-            Register(arg = 2), # rs2
-            Register(arg = 1), # rs1
+            Register(arg=2), # rs2
+            Register(arg=1), # rs1
             Constant(function, 3), #f
-            Register(arg = 0), # rd
-            Constant(0b01100, width = 5),
-            Constant(0b11, width = 2)
+            Register(arg=0), # rd
+            Constant(0b01100, width=5),
+            Constant(0b11, width=2)
         )
         
     def width(self):
@@ -78,11 +89,26 @@ DefinitionTable = dict()
 # Immediate
 DefinitionTable["andi"] = Definition.arith_imm(0b111)
 DefinitionTable["addi"] = Definition.arith_imm(0b000)
+DefinitionTable["xori"] = Definition.arith_imm(0b100)
+DefinitionTable["ori"] = Definition.arith_imm(0b110)
+DefinitionTable["slli"] = Definition.arith_imm(0b001)
+DefinitionTable["srli"] = Definition.arith_imm(0b101)
 DefinitionTable["lui"] = Definition(
     Immediate(arg=1,start=0,stop=19),
     Register(arg=0),
     Constant(0b01101_11, width=7)
 )
+# Comparison
+DefinitionTable["slti"] = Definition.arith_imm(0b010)
+DefinitionTable["sltiu"] = Definition.arith_imm(0b011)
+
+# Register arithmetic
+DefinitionTable["add"] = Definition.arith(0b000)
+DefinitionTable["sub"] = Definition.arith(0b000, 0b01000_00)
+DefinitionTable["sll"] = Definition.arith(0b001)
+DefinitionTable["slt"] = Definition.arith(0b010)
+DefinitionTable["xor"] = Definition.arith(0b100)
+
         
 #Multiplcation
 DefinitionTable["mul"] =    Definition.mul(0b000)
@@ -119,6 +145,18 @@ DefinitionTable["jalr"] = Definition(
     Constant(0b000, width=3),
     Register(arg=0),
     Constant(0b1100111, width=7)
+)
+
+# AUIPC
+DefinitionTable["auipc"] = Definition(
+    Immediate(arg=1, start=0, stop=19),
+    Register(arg=0),
+    Constant(0b00101_11, width=7)
+)
+
+# Fence
+DefinitionTable["fence"] = Definition(
+    Constant(0b00011_11, width=32)
 )
 
 for d in DefinitionTable:
@@ -162,10 +200,10 @@ class Line(object):
                 
         return argp
                 
-    def parse(self, table = DefinitionTable):
+    def parse(self, table=DefinitionTable):
         data = 0
         
-        print("Parsing {}: {}".format(self._op, self._args))
+        #print("Parsing {}: {}".format(self._op, self._args))
         
         if self._op in table:
             for a in table[self._op].args:
@@ -206,7 +244,7 @@ class ListAssemble(object):
         
         self.insert_loop()
         
-    def insert_loop(self, dest = "r7"):
+    def insert_loop(self, dest="x7"):
         to_line = -4 * (len(self._get) + len(self._next) + 1)
         self._next.append("jal {},{}".format(dest, to_line))
         

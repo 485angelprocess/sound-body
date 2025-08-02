@@ -36,7 +36,7 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         self.normally_on = normally_on
         
         super().__init__({
-            "bus": Out(Bus(32, 32)),
+            "bus": Out(Bus(32, signed(32))),
             "size": Out(2),
             "prog": Out(Bus(32, 32)),
             "int": In(Bus(32, 8)),
@@ -64,14 +64,19 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         m.d.comb += self.prog.cyc.eq(decode.consume.ready & prog_enable & (~latch))
         m.d.comb += self.prog.stb.eq(decode.consume.ready & prog_enable & (~latch))
         
+        latch_fetch = Signal()
+        
         # latch if program counter might change
         with m.If(self.prog.cyc & self.prog.stb & self.prog.ack):
             with m.Switch(decode.consume.data.op):
                 with m.Case(Instruction.BRANCH):
+                    m.d.comb += latch_fetch.eq(1)
                     m.d.sync += latch.eq(1)
                 with m.Case(Instruction.JAL):
+                    m.d.comb += latch_fetch.eq(1)
                     m.d.sync += latch.eq(1)
                 with m.Case(Instruction.JALR):
+                    m.d.comb += latch_fetch.eq(1)
                     m.d.sync += latch.eq(1)
                 with m.Default():
                     # Just go to the next program counter immediately
@@ -140,6 +145,16 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         
         # Route result
         write_buffer = m.submodules.write_buffer = Buffer(write_shape)
+        pc_buffer = m.submodules.pc_buffer = Buffer(signed(32))
+        
+        latch_decode = Signal()
+        latch_write = Signal()
+        
+        with m.If(decode_buffer.consume.valid & decode_buffer.consume.ready):
+            m.d.sync += latch_decode.eq(latch_fetch)
+            
+        with m.If(write_buffer.consume.valid & write_buffer.consume.ready):
+            m.d.sync += latch_write.eq(latch_decode)
         
         write_route = Signal(WriteRoute)
         
@@ -153,21 +168,24 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
             write_buffer.produce.ready.eq(decode.write.ack)
         ]
         
+        m.d.comb += pc_buffer.produce.ready.eq(latch_write)
+        
         # Update program counter if it wasn't a linear step
-        with m.If(write_buffer.produce.valid & write_buffer.produce.ready):
-            with m.If(latch):
-                m.d.sync += latch.eq(0)
-                # Go to next program counter
-                m.d.sync += pc.eq(write_buffer.produce.data.pc)
+        with m.If(pc_buffer.produce.valid & pc_buffer.produce.ready):
+            m.d.sync += latch.eq(0)
+            # Go to next program counter
+            m.d.sync += pc.eq(pc_buffer.produce.data)
+
+        m.d.comb += pc_buffer.consume.valid.eq(decode_buffer.produce.valid)
         
         # Next program counter
         with m.If(branch.branch):
-            m.d.comb += write_buffer.consume.data.pc.eq(
+            m.d.comb += pc_buffer.consume.data.eq(
                 decode_buffer.produce.data.pc +
                 decode_buffer.produce.data.mode.branch.offset
             )
         with m.Else():
-            m.d.comb += write_buffer.consume.data.pc.eq(decode_buffer.produce.data.pc)
+            m.d.comb += pc_buffer.consume.data.eq(decode_buffer.produce.data.pc)
         
         # Write to the destination register
         with m.Switch(write_route):

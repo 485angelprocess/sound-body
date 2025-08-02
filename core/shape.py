@@ -107,7 +107,6 @@ decode_shape = data.StructLayout({
 })
 
 write_shape = data.StructLayout({
-    "pc": 32,
     "d": 5,
     "value": 32
 })
