@@ -112,6 +112,15 @@ DefinitionTable["jal"] = Definition(
     Constant(0b11, width = 2)
 )
 
+# JALR
+DefinitionTable["jalr"] = Definition(
+    Immediate(arg=2, start=0, stop=11),
+    Register(arg=1),
+    Constant(0b000, width=3),
+    Register(arg=0),
+    Constant(0b1100111, width=7)
+)
+
 for d in DefinitionTable:
     if DefinitionTable[d].width() != 32:
         raise Exception("Check definition for {}, total width is {}, ({})".format(

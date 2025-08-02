@@ -1568,7 +1568,7 @@ module \risc_project.bridge_to_axi (axi_wready, axi_arready, wish_r_data, axi_rv
   assign axi_rdata = wish_r_data;
 endmodule
 
-(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:45" *)
+(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:47" *)
 (* generator = "Amaranth" *)
 module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_valid$15 , prog_r_data);
   reg \$auto$verilog_backend.cc:2352:dump_module$4  = 0;
@@ -1582,10 +1582,12 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   wire \$3 ;
   wire \$4 ;
   wire [32:0] \$5 ;
-  wire [32:0] \$6 ;
+  wire \$6 ;
   wire \$7 ;
-  wire \$8 ;
-  wire [32:0] \$9 ;
+  wire [32:0] \$8 ;
+  wire \$9 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:22" *)
+  wire branch;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
   wire bus_ack;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:9" *)
@@ -1601,10 +1603,18 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input clk;
   wire clk;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:19" *)
+  wire [66:0] consume;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:19" *)
+  wire [31:0] \consume.a ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:19" *)
+  wire [31:0] \consume.b ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:19" *)
+  wire [2:0] \consume.f ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:24" *)
   reg [4:0] consume_d;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [117:0] consume_data;
+  wire [118:0] consume_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
   wire [63:0] \consume_data$13 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
@@ -1696,13 +1706,13 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
   wire [31:0] \consume_data$13.pc ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  reg [36:0] \consume_data$43 ;
+  reg [36:0] \consume_data$45 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [4:0] \consume_data$43.d ;
+  wire [4:0] \consume_data$45.d ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [31:0] \consume_data$43.value ;
+  wire [31:0] \consume_data$45.value ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [78:0] \consume_data.mode ;
+  wire [79:0] \consume_data.mode ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [78:0] \consume_data.mode.arith ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
@@ -1716,6 +1726,16 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [31:0] \consume_data.mode.arith.s2 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [79:0] \consume_data.mode.branch ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [2:0] \consume_data.mode.branch.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [12:0] \consume_data.mode.branch.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.mode.branch.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.mode.branch.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [58:0] \consume_data.mode.imm ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [4:0] \consume_data.mode.imm.d ;
@@ -1728,11 +1748,11 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [31:0] \consume_data.mode.imm.s ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [25:0] \consume_data.mode.jump ;
+  wire [36:0] \consume_data.mode.jump ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [4:0] \consume_data.mode.jump.d ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [20:0] \consume_data.mode.jump.offset ;
+  wire [31:0] \consume_data.mode.jump.t ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [78:0] \consume_data.mode.store ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
@@ -1781,7 +1801,7 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
   wire consume_ready;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
-  wire \consume_ready$48 ;
+  wire \consume_ready$50 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
   wire \consume_ready$9 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:22" *)
@@ -1796,20 +1816,22 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:27" *)
   reg \consume_valid$23 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
-  reg \consume_valid$46 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:51" *)
+  reg \consume_valid$48 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:20" *)
+  wire en;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:53" *)
   reg latch = 1'h0;
   (* init = 32'd0 *)
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:47" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:49" *)
   wire [31:0] pc;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:34" *)
   wire [4:0] produce_d;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
-  wire [117:0] produce_data;
+  wire [118:0] produce_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [117:0] \produce_data$17 ;
+  wire [118:0] \produce_data$17 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [78:0] \produce_data$17.mode ;
+  wire [79:0] \produce_data$17.mode ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [78:0] \produce_data$17.mode.arith ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
@@ -1823,6 +1845,16 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [31:0] \produce_data$17.mode.arith.s2 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [79:0] \produce_data$17.mode.branch ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [2:0] \produce_data$17.mode.branch.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [12:0] \produce_data$17.mode.branch.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data$17.mode.branch.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data$17.mode.branch.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [58:0] \produce_data$17.mode.imm ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [4:0] \produce_data$17.mode.imm.d ;
@@ -1835,11 +1867,11 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [31:0] \produce_data$17.mode.imm.s ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [25:0] \produce_data$17.mode.jump ;
+  wire [36:0] \produce_data$17.mode.jump ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [4:0] \produce_data$17.mode.jump.d ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [20:0] \produce_data$17.mode.jump.offset ;
+  wire [31:0] \produce_data$17.mode.jump.t ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [78:0] \produce_data$17.mode.store ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
@@ -1873,13 +1905,13 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [31:0] \produce_data$17.pc ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [36:0] \produce_data$34 ;
+  wire [36:0] \produce_data$36 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [4:0] \produce_data$34.d ;
+  wire [4:0] \produce_data$36.d ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [31:0] \produce_data$34.value ;
+  wire [31:0] \produce_data$36.value ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
-  wire [78:0] \produce_data.mode ;
+  wire [79:0] \produce_data.mode ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
   wire [78:0] \produce_data.mode.arith ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
@@ -1893,6 +1925,16 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
   wire [31:0] \produce_data.mode.arith.s2 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [79:0] \produce_data.mode.branch ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \produce_data.mode.branch.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [12:0] \produce_data.mode.branch.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.mode.branch.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.mode.branch.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
   wire [58:0] \produce_data.mode.imm ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
   wire [4:0] \produce_data.mode.imm.d ;
@@ -1905,11 +1947,11 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
   wire [31:0] \produce_data.mode.imm.s ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
-  wire [25:0] \produce_data.mode.jump ;
+  wire [36:0] \produce_data.mode.jump ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
   wire [4:0] \produce_data.mode.jump.d ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
-  wire [20:0] \produce_data.mode.jump.offset ;
+  wire [31:0] \produce_data.mode.jump.t ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
   wire [78:0] \produce_data.mode.store ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
@@ -1947,20 +1989,20 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
   reg \produce_ready$25 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:89" *)
-  wire \produce_ready$40 ;
+  wire \produce_ready$42 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
   wire produce_valid;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
   wire \produce_valid$24 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:88" *)
-  wire \produce_valid$38 ;
+  wire \produce_valid$40 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:36" *)
-  wire \produce_valid$47 ;
+  wire \produce_valid$49 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\alu.py:33" *)
   wire [31:0] produce_value;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
   wire prog_ack;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:47" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:49" *)
   output [31:0] prog_addr;
   reg [31:0] prog_addr = 32'd0;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:7" *)
@@ -1972,12 +2014,12 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:8" *)
   output prog_stb;
   wire prog_stb;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:48" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:50" *)
   wire prog_enable;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input rst;
   wire rst;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:38" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:40" *)
   reg [1:0] size;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\signature.py:10" *)
   wire write_ack;
@@ -1996,24 +2038,25 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   (* enum_value_01 = "ALU" *)
   (* enum_value_10 = "IMM" *)
   (* enum_value_11 = "PC" *)
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:135" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:143" *)
   reg [1:0] write_route;
-  assign \$2  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:61" *) latch;
-  assign prog_cyc = \$1  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:61" *) \$2 ;
-  assign \$4  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:62" *) latch;
-  assign prog_stb = \$3  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:62" *) \$4 ;
+  assign \$2  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:63" *) latch;
+  assign prog_cyc = \$1  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:63" *) \$2 ;
+  assign \$4  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:64" *) latch;
+  assign prog_stb = \$3  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:64" *) \$4 ;
   assign \$5  = $signed(\produce_data$17 [53:42]) + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:121" *) $signed(\produce_data$17 [85:54]);
-  assign \$6  = prog_addr + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:172" *) 3'h4;
-  assign \$7  = prog_cyc & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:65" *) prog_stb;
-  assign \$8  = \$7  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:65" *) \consume_valid$15 ;
-  assign \$9  = prog_addr + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:76" *) 3'h4;
-  assign \$10  = write_stb & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:147" *) \produce_ready$40 ;
-  assign \$11  = $signed({ 1'h0, \produce_data$17 [31:0] }) + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:152" *) $signed(\produce_data$17 [64:44]);
-  assign \$12  = \produce_data$17 [31:0] + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:156" *) 3'h4;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:51" *)
+  assign en = \produce_data$17 [38:32] == (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\lib\\enum.py:303" *) 7'h63;
+  assign \$6  = prog_cyc & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:67" *) prog_stb;
+  assign \$7  = \$6  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:67" *) \consume_valid$15 ;
+  assign \$8  = prog_addr + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:77" *) 3'h4;
+  assign \$9  = write_stb & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:155" *) \produce_ready$42 ;
+  assign \$10  = \produce_data$17 [38:32] == (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\lib\\enum.py:303" *) 7'h63;
+  assign \$11  = $signed({ 1'h0, prog_addr }) + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:162" *) $signed(\produce_data$17 [54:42]);
+  assign \$12  = \produce_data$17 [31:0] + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:165" *) 3'h4;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:53" *)
   always @(posedge clk)
     latch <= \$13 ;
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:47" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:49" *)
   always @(posedge clk)
     prog_addr <= \$14 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:88" *)
@@ -2026,21 +2069,27 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
     .produce_valid(\consume_valid$23 ),
     .produce_value(produce_value)
   );
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:53" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:133" *)
+  \risc_project.core.branch$57  \branch$57  (
+    .branch(branch),
+    .consume(consume),
+    .en(en)
+  );
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:55" *)
   \risc_project.core.decode  decode (
     .clk(clk),
     .consume_data(\consume_data$13 ),
     .consume_ready(\consume_ready$9 ),
     .consume_valid(\consume_valid$15 ),
-    .\port$573$0 (\produce_data$34 ),
+    .\port$602$0 (\produce_data$36 ),
     .produce_data(consume_data),
     .produce_ready(produce_ready),
     .produce_valid(consume_valid),
     .rst(rst),
-    .write_ack(\produce_ready$40 ),
+    .write_ack(\produce_ready$42 ),
     .write_cyc(write_stb)
   );
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:55" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:57" *)
   \risc_project.core.decode_buffer  decode_buffer (
     .clk(clk),
     .consume_data(consume_data),
@@ -2051,14 +2100,14 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
     .produce_valid(\produce_valid$24 ),
     .rst(rst)
   );
-  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:133" *)
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\cpu.py:141" *)
   \risc_project.core.write_buffer  write_buffer (
     .clk(clk),
-    .consume_data(\consume_data$43 ),
-    .consume_ready(\consume_ready$48 ),
-    .consume_valid(\consume_valid$46 ),
-    .produce_data(\produce_data$34 ),
-    .produce_ready(\produce_ready$40 ),
+    .consume_data(\consume_data$45 ),
+    .consume_ready(\consume_ready$50 ),
+    .consume_valid(\consume_valid$48 ),
+    .produce_data(\produce_data$36 ),
+    .produce_ready(\produce_ready$42 ),
     .produce_valid(write_stb),
     .rst(rst)
   );
@@ -2137,9 +2186,9 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
       2'h1:
           /* empty */;
       2'h2:
-          \produce_ready$25  = \consume_ready$48 ;
+          \produce_ready$25  = \consume_ready$50 ;
       2'h3:
-          \produce_ready$25  = \consume_ready$48 ;
+          \produce_ready$25  = \consume_ready$50 ;
     endcase
   end
   always @* begin
@@ -2216,35 +2265,35 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   end
   always @* begin
     if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
-    \consume_data$43  = 37'h0000000000;
+    \consume_data$45  = 37'h0000000000;
     casez (write_route)
       2'h1:
         begin
-          \consume_data$43 [36:5] = produce_value;
-          \consume_data$43 [4:0] = consume_d;
+          \consume_data$45 [36:5] = produce_value;
+          \consume_data$45 [4:0] = consume_d;
         end
       2'h2:
         begin
-          \consume_data$43 [36:5] = \produce_data$17 [75:44];
-          \consume_data$43 [4:0] = \produce_data$17 [43:39];
+          \consume_data$45 [36:5] = \produce_data$17 [75:44];
+          \consume_data$45 [4:0] = \produce_data$17 [43:39];
         end
       2'h3:
         begin
-          \consume_data$43 [36:5] = \$6 [31:0];
-          \consume_data$43 [4:0] = \produce_data$17 [43:39];
+          \consume_data$45 [36:5] = \produce_data$17 [75:44];
+          \consume_data$45 [4:0] = \produce_data$17 [43:39];
         end
     endcase
   end
   always @* begin
     if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
-    \consume_valid$46  = 1'h0;
+    \consume_valid$48  = 1'h0;
     casez (write_route)
       2'h1:
-          \consume_valid$46  = \consume_valid$23 ;
+          \consume_valid$48  = \consume_valid$23 ;
       2'h2:
-          \consume_valid$46  = \produce_valid$24 ;
+          \consume_valid$48  = \produce_valid$24 ;
       2'h3:
-          \consume_valid$46  = \produce_valid$24 ;
+          \consume_valid$48  = \produce_valid$24 ;
     endcase
   end
   always @* begin
@@ -2261,6 +2310,8 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
           write_route = 2'h2;
       7'h6f:
           write_route = 2'h3;
+      7'h67:
+          write_route = 2'h3;
       default:
           write_route = 2'h0;
     endcase
@@ -2268,7 +2319,7 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   always @* begin
     if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
     \$13  = latch;
-    if (\$8 ) begin
+    if (\$7 ) begin
       casez (\consume_data$13 [38:32])
         7'h63:
             \$13  = 1'h1;
@@ -2278,7 +2329,7 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
             \$13  = 1'h1;
       endcase
     end
-    if (\$10 ) begin
+    if (\$9 ) begin
       if (latch) begin
         \$13  = 1'h0;
       end
@@ -2290,7 +2341,7 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   always @* begin
     if (\$auto$verilog_backend.cc:2352:dump_module$4 ) begin end
     \$14  = prog_addr;
-    if (\$8 ) begin
+    if (\$7 ) begin
       (* full_case = 32'd1 *)
       casez (\consume_data$13 [38:32])
         7'h63:
@@ -2300,18 +2351,22 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
         7'h67:
             /* empty */;
         default:
-            \$14  = \$9 [31:0];
+            \$14  = \$8 [31:0];
       endcase
     end
-    if (\$10 ) begin
+    if (\$9 ) begin
       if (latch) begin
         (* full_case = 32'd1 *)
-        casez (\produce_data$17 [38:32])
-          7'h6f:
-              \$14  = \$11 [31:0];
-          default:
-              \$14  = \$12 [31:0];
-        endcase
+        if (\$10 ) begin
+          (* full_case = 32'd1 *)
+          if (branch) begin
+            \$14  = \$11 [31:0];
+          end else begin
+            \$14  = \$12 [31:0];
+          end
+        end else begin
+          \$14  = \produce_data$17 [31:0];
+        end
       end
     end
     if (rst) begin
@@ -2325,17 +2380,17 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   assign prog_enable = 1'h1;
   assign prog_ack = \consume_valid$15 ;
   assign bus_ack = 1'h0;
-  assign write_addr = \produce_data$34 [4:0];
-  assign write_w_data = \produce_data$34 [36:5];
+  assign write_addr = \produce_data$36 [4:0];
+  assign write_w_data = \produce_data$36 [36:5];
   assign write_w_en = 1'h1;
-  assign \produce_valid$38  = write_stb;
+  assign \produce_valid$40  = write_stb;
   assign write_cyc = write_stb;
-  assign write_ack = \produce_ready$40 ;
+  assign write_ack = \produce_ready$42 ;
   assign produce_d = consume_d;
-  assign \produce_valid$47  = \consume_valid$23 ;
+  assign \produce_valid$49  = \consume_valid$23 ;
   assign \consume_data.pc  = consume_data[31:0];
   assign \consume_data.op  = consume_data[38:32];
-  assign \consume_data.mode  = consume_data[117:39];
+  assign \consume_data.mode  = consume_data[118:39];
   assign \consume_data.mode.arith  = consume_data[117:39];
   assign \consume_data.mode.arith.f  = consume_data[41:39];
   assign \consume_data.mode.arith.m  = consume_data[48:42];
@@ -2356,12 +2411,17 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   assign \consume_data.mode.upper  = consume_data[75:39];
   assign \consume_data.mode.upper.d  = consume_data[43:39];
   assign \consume_data.mode.upper.i  = consume_data[75:44];
-  assign \consume_data.mode.jump  = consume_data[64:39];
+  assign \consume_data.mode.jump  = consume_data[75:39];
   assign \consume_data.mode.jump.d  = consume_data[43:39];
-  assign \consume_data.mode.jump.offset  = consume_data[64:44];
+  assign \consume_data.mode.jump.t  = consume_data[75:44];
+  assign \consume_data.mode.branch  = consume_data[118:39];
+  assign \consume_data.mode.branch.f  = consume_data[41:39];
+  assign \consume_data.mode.branch.offset  = consume_data[54:42];
+  assign \consume_data.mode.branch.s1  = consume_data[86:55];
+  assign \consume_data.mode.branch.s2  = consume_data[118:87];
   assign \produce_data.pc  = consume_data[31:0];
   assign \produce_data.op  = consume_data[38:32];
-  assign \produce_data.mode  = consume_data[117:39];
+  assign \produce_data.mode  = consume_data[118:39];
   assign \produce_data.mode.arith  = consume_data[117:39];
   assign \produce_data.mode.arith.f  = consume_data[41:39];
   assign \produce_data.mode.arith.m  = consume_data[48:42];
@@ -2382,9 +2442,14 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   assign \produce_data.mode.upper  = consume_data[75:39];
   assign \produce_data.mode.upper.d  = consume_data[43:39];
   assign \produce_data.mode.upper.i  = consume_data[75:44];
-  assign \produce_data.mode.jump  = consume_data[64:39];
+  assign \produce_data.mode.jump  = consume_data[75:39];
   assign \produce_data.mode.jump.d  = consume_data[43:39];
-  assign \produce_data.mode.jump.offset  = consume_data[64:44];
+  assign \produce_data.mode.jump.t  = consume_data[75:44];
+  assign \produce_data.mode.branch  = consume_data[118:39];
+  assign \produce_data.mode.branch.f  = consume_data[41:39];
+  assign \produce_data.mode.branch.offset  = consume_data[54:42];
+  assign \produce_data.mode.branch.s1  = consume_data[86:55];
+  assign \produce_data.mode.branch.s2  = consume_data[118:87];
   assign \consume_data$13.pc  = \consume_data$13 [31:0];
   assign \consume_data$13.op  = \consume_data$13 [38:32];
   assign \consume_data$13.mode  = \consume_data$13 [63:39];
@@ -2425,7 +2490,7 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   assign \consume_data$13.mode.m.muldiv  = \consume_data$13 [63:57];
   assign \produce_data$17.pc  = \produce_data$17 [31:0];
   assign \produce_data$17.op  = \produce_data$17 [38:32];
-  assign \produce_data$17.mode  = \produce_data$17 [117:39];
+  assign \produce_data$17.mode  = \produce_data$17 [118:39];
   assign \produce_data$17.mode.arith  = \produce_data$17 [117:39];
   assign \produce_data$17.mode.arith.f  = \produce_data$17 [41:39];
   assign \produce_data$17.mode.arith.m  = \produce_data$17 [48:42];
@@ -2446,13 +2511,24 @@ module \risc_project.core (clk, rst, prog_cyc, prog_stb, prog_addr, \consume_val
   assign \produce_data$17.mode.upper  = \produce_data$17 [75:39];
   assign \produce_data$17.mode.upper.d  = \produce_data$17 [43:39];
   assign \produce_data$17.mode.upper.i  = \produce_data$17 [75:44];
-  assign \produce_data$17.mode.jump  = \produce_data$17 [64:39];
+  assign \produce_data$17.mode.jump  = \produce_data$17 [75:39];
   assign \produce_data$17.mode.jump.d  = \produce_data$17 [43:39];
-  assign \produce_data$17.mode.jump.offset  = \produce_data$17 [64:44];
-  assign \produce_data$34.d  = \produce_data$34 [4:0];
-  assign \produce_data$34.value  = \produce_data$34 [36:5];
-  assign \consume_data$43.d  = \consume_data$43 [4:0];
-  assign \consume_data$43.value  = \consume_data$43 [36:5];
+  assign \produce_data$17.mode.jump.t  = \produce_data$17 [75:44];
+  assign \produce_data$17.mode.branch  = \produce_data$17 [118:39];
+  assign \produce_data$17.mode.branch.f  = \produce_data$17 [41:39];
+  assign \produce_data$17.mode.branch.offset  = \produce_data$17 [54:42];
+  assign \produce_data$17.mode.branch.s1  = \produce_data$17 [86:55];
+  assign \produce_data$17.mode.branch.s2  = \produce_data$17 [118:87];
+  assign \consume.f  = consume[2:0];
+  assign \consume.a  = consume[34:3];
+  assign \consume.b  = consume[66:35];
+  assign \produce_data$36.d  = \produce_data$36 [4:0];
+  assign \produce_data$36.value  = \produce_data$36 [36:5];
+  assign \consume_data$45.d  = \consume_data$45 [4:0];
+  assign \consume_data$45.value  = \consume_data$45 [36:5];
+  assign consume[66:35] = \produce_data$17 [118:87];
+  assign consume[34:3] = \produce_data$17 [86:55];
+  assign consume[2:0] = \produce_data$17 [41:39];
   assign \consume_data$13 [63:32] = prog_r_data;
   assign \consume_data$13 [31:0] = prog_addr;
   assign \$1  = \consume_ready$9 ;
@@ -2659,20 +2735,80 @@ module \risc_project.core.alu (consume_s2, consume_function, consume_mode, produ
   assign consume_d = produce_d;
 endmodule
 
-(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:128" *)
+(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:26" *)
 (* generator = "Amaranth" *)
-module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0 , consume_data, produce_data, write_ack, produce_ready, write_cyc, consume_valid, clk);
+module \risc_project.core.branch$57 (consume, branch, en);
   reg \$auto$verilog_backend.cc:2352:dump_module$6  = 0;
   wire \$1 ;
-  wire \$10 ;
+  wire \$2 ;
+  wire \$3 ;
+  wire \$4 ;
+  wire \$5 ;
+  wire \$6 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:22" *)
+  output branch;
+  reg branch;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:19" *)
+  input [66:0] consume;
+  wire [66:0] consume;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:19" *)
+  wire [31:0] \consume.a ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:19" *)
+  wire [31:0] \consume.b ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:19" *)
+  wire [2:0] \consume.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:20" *)
+  input en;
+  wire en;
+  assign \$4  = $signed(consume[34:3]) >= (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:52" *) $signed(consume[66:35]);
+  assign \$5  = consume[34:3] < (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:57" *) consume[66:35];
+  assign \$6  = consume[34:3] >= (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:62" *) consume[66:35];
+  assign \$1  = consume[34:3] == (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:37" *) consume[66:35];
+  assign \$2  = consume[34:3] != (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:42" *) consume[66:35];
+  assign \$3  = $signed(consume[34:3]) < (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\branch.py:47" *) $signed(consume[66:35]);
+  always @* begin
+    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    branch = 1'h0;
+    if (en) begin
+      casez (consume[2:0])
+        3'h0:
+            branch = \$1 ;
+        3'h1:
+            branch = \$2 ;
+        3'h4:
+            branch = \$3 ;
+        3'h5:
+            branch = \$4 ;
+        3'h6:
+            branch = \$5 ;
+        3'h7:
+            branch = \$6 ;
+      endcase
+    end
+  end
+  assign \consume.f  = consume[2:0];
+  assign \consume.a  = consume[34:3];
+  assign \consume.b  = consume[66:35];
+endmodule
+
+(* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:128" *)
+(* generator = "Amaranth" *)
+module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$602$0 , consume_data, produce_data, write_ack, produce_ready, write_cyc, consume_valid, clk);
+  reg \$auto$verilog_backend.cc:2352:dump_module$7  = 0;
+  wire \$1 ;
+  wire [34:0] \$10 ;
+  wire [32:0] \$11 ;
+  wire [32:0] \$12 ;
+  wire \$13 ;
+  wire \$14 ;
   wire \$2 ;
   wire \$3 ;
   wire \$4 ;
   wire \$5 ;
   wire [33:0] \$6 ;
-  wire [48:0] \$7 ;
-  wire [34:0] \$8 ;
-  wire \$9 ;
+  wire [33:0] \$7 ;
+  wire [33:0] \$8 ;
+  wire [48:0] \$9 ;
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input clk;
   wire clk;
@@ -2797,15 +2933,19 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
   reg error_w_en;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:134" *)
   reg error_flag;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:151" *)
+  wire [20:0] jal_offset;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:162" *)
+  wire [11:0] jalr_offset;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:137" *)
   reg [1:0] num_regs;
-  input [36:0] \port$573$0 ;
-  wire [36:0] \port$573$0 ;
+  input [36:0] \port$602$0 ;
+  wire [36:0] \port$602$0 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
-  output [117:0] produce_data;
-  reg [117:0] produce_data;
+  output [118:0] produce_data;
+  reg [118:0] produce_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
-  wire [78:0] \produce_data.mode ;
+  wire [79:0] \produce_data.mode ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
   wire [78:0] \produce_data.mode.arith ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
@@ -2819,6 +2959,16 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
   wire [31:0] \produce_data.mode.arith.s2 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [79:0] \produce_data.mode.branch ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [2:0] \produce_data.mode.branch.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [12:0] \produce_data.mode.branch.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.mode.branch.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
+  wire [31:0] \produce_data.mode.branch.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
   wire [58:0] \produce_data.mode.imm ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
   wire [4:0] \produce_data.mode.imm.d ;
@@ -2831,11 +2981,11 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
   wire [31:0] \produce_data.mode.imm.s ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
-  wire [25:0] \produce_data.mode.jump ;
+  wire [36:0] \produce_data.mode.jump ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
   wire [4:0] \produce_data.mode.jump.d ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
-  wire [20:0] \produce_data.mode.jump.offset ;
+  wire [31:0] \produce_data.mode.jump.t ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
   wire [78:0] \produce_data.mode.store ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:119" *)
@@ -2941,13 +3091,16 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
   assign \$4  = consume_valid & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:146" *) register_ready;
   assign \$5  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:146" *) error_flag;
   assign produce_valid = \$4  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:146" *) \$5 ;
-  assign \$6  = $signed({ 1'h0, consume_data[31:0] }) + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:198" *) $signed(consume_data[63:44]);
-  assign \$9  = rs1_ack & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:247" *) rs2_ack;
-  assign \$10  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:273" *) error_cyc;
+  assign \$6  = $signed({ 1'h0, consume_data[31:0] }) + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:170" *) $signed(jal_offset);
+  assign \$7  = $signed({ 1'h0, rs1_r_data }) + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:173" *) $signed(consume_data[63:52]);
+  assign \$8  = $signed({ 1'h0, consume_data[31:0] }) + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:220" *) $signed(consume_data[63:44]);
+  assign \$11  = consume_data[31:0] + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:234" *) 3'h4;
+  assign \$12  = consume_data[31:0] + (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:239" *) 3'h4;
+  assign \$13  = rs1_ack & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:280" *) rs2_ack;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:131" *)
   \risc_project.core.decode.reg  \reg  (
     .clk(clk),
-    .\port$714$47 (consume_data[56:47]),
+    .\port$743$47 (consume_data[56:47]),
     .r_rd(consume_data[43:39]),
     .r_valid(r_valid),
     .rd_ack(rd_ack),
@@ -2964,8 +3117,17 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
     .w_rd(rd_addr)
   );
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
-    produce_data[117:39] = 79'h00000000000000000000;
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    produce_data[118:39] = 80'h00000000000000000000;
+    (* full_case = 32'd1 *)
+    casez (consume_data[38:32])
+      7'h6f:
+          produce_data[31:0] = \$6 [31:0];
+      7'h67:
+          produce_data[31:0] = \$7 [31:0];
+      default:
+          produce_data[31:0] = consume_data[31:0];
+    endcase
     casez (consume_data[38:32])
       7'h33:
         begin
@@ -2999,26 +3161,38 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
       7'h17:
         begin
           produce_data[43:39] = consume_data[43:39];
-          produce_data[75:44] = \$7 [31:0];
+          produce_data[75:44] = \$9 [31:0];
         end
       7'h37:
         begin
           produce_data[43:39] = consume_data[43:39];
-          produce_data[75:44] = \$8 [31:0];
+          produce_data[75:44] = \$10 [31:0];
         end
       7'h6f:
         begin
           produce_data[43:39] = consume_data[43:39];
-          produce_data[44] = 1'h0;
-          produce_data[54:45] = consume_data[62:53];
-          produce_data[55] = consume_data[52];
-          produce_data[63:56] = consume_data[51:44];
-          produce_data[64] = consume_data[63];
+          produce_data[75:44] = \$11 [31:0];
+        end
+      7'h67:
+        begin
+          produce_data[43:39] = consume_data[43:39];
+          produce_data[75:44] = \$12 [31:0];
+        end
+      7'h63:
+        begin
+          produce_data[41:39] = consume_data[46:44];
+          produce_data[86:55] = rs1_r_data;
+          produce_data[118:87] = rs2_r_data;
+          produce_data[42] = 1'h0;
+          produce_data[46:43] = consume_data[43:40];
+          produce_data[52:47] = consume_data[62:57];
+          produce_data[53] = consume_data[39];
+          produce_data[54] = consume_data[63];
         end
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     error_flag = 1'h0;
     (* full_case = 32'd1 *)
     casez (consume_data[38:32])
@@ -3036,12 +3210,16 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
           /* empty */;
       7'h6f:
           /* empty */;
+      7'h67:
+          /* empty */;
+      7'h63:
+          /* empty */;
       default:
           error_flag = 1'h1;
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     error_cyc = 1'h0;
     (* full_case = 32'd1 *)
     casez (consume_data[38:32])
@@ -3059,12 +3237,16 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
           /* empty */;
       7'h6f:
           /* empty */;
+      7'h67:
+          /* empty */;
+      7'h63:
+          /* empty */;
       default:
           error_cyc = 1'h1;
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     error_stb = 1'h0;
     (* full_case = 32'd1 *)
     casez (consume_data[38:32])
@@ -3082,12 +3264,16 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
           /* empty */;
       7'h6f:
           /* empty */;
+      7'h67:
+          /* empty */;
+      7'h63:
+          /* empty */;
       default:
           error_stb = 1'h1;
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     error_w_en = 1'h0;
     (* full_case = 32'd1 *)
     casez (consume_data[38:32])
@@ -3105,12 +3291,16 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
           /* empty */;
       7'h6f:
           /* empty */;
+      7'h67:
+          /* empty */;
+      7'h63:
+          /* empty */;
       default:
           error_w_en = 1'h1;
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     error_w_data = 32'd0;
     (* full_case = 32'd1 *)
     casez (consume_data[38:32])
@@ -3128,12 +3318,16 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
           /* empty */;
       7'h6f:
           /* empty */;
+      7'h67:
+          /* empty */;
+      7'h63:
+          /* empty */;
       default:
           error_w_data = { 25'h0000000, consume_data[38:32] };
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     rs1_cyc = 1'h0;
     casez (num_regs)
       2'h1:
@@ -3143,7 +3337,7 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     rs1_stb = 1'h0;
     casez (num_regs)
       2'h1:
@@ -3153,19 +3347,19 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     (* full_case = 32'd1 *)
     casez (num_regs)
       2'h1:
           register_ready = rs1_ack;
       2'h2:
-          register_ready = \$9 ;
+          register_ready = \$13 ;
       default:
           register_ready = 1'h1;
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     rs2_cyc = 1'h0;
     casez (num_regs)
       2'h1:
@@ -3175,7 +3369,7 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     rs2_stb = 1'h0;
     casez (num_regs)
       2'h1:
@@ -3185,7 +3379,7 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     num_regs = 2'h0;
     casez (consume_data[38:32])
       7'h33:
@@ -3198,10 +3392,12 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
           num_regs = 2'h2;
       7'h6f:
           num_regs = 2'h0;
+      7'h67:
+          num_regs = 2'h1;
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     reg_write = 1'h0;
     casez (consume_data[38:32])
       7'h33:
@@ -3214,87 +3410,90 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
           reg_write = 1'h0;
       7'h6f:
           reg_write = 1'h1;
+      7'h67:
+          reg_write = 1'h1;
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     (* full_case = 32'd1 *)
-    if (\$10 ) begin
-      rd_addr = \port$573$0 [4:0];
+    if (\$14 ) begin
+      rd_addr = \port$602$0 [4:0];
     end else begin
       rd_addr = 5'h00;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     (* full_case = 32'd1 *)
-    if (\$10 ) begin
+    if (\$14 ) begin
       rd_cyc = write_cyc;
     end else begin
       rd_cyc = 1'h0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     (* full_case = 32'd1 *)
-    if (\$10 ) begin
+    if (\$14 ) begin
       rd_stb = write_cyc;
     end else begin
       rd_stb = 1'h0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     (* full_case = 32'd1 *)
-    if (\$10 ) begin
-      rd_w_data = \port$573$0 [36:5];
+    if (\$14 ) begin
+      rd_w_data = \port$602$0 [36:5];
     end else begin
       rd_w_data = 32'd0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     (* full_case = 32'd1 *)
-    if (\$10 ) begin
+    if (\$14 ) begin
       rd_w_en = 1'h1;
     end else begin
       rd_w_en = 1'h0;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     (* full_case = 32'd1 *)
-    if (\$10 ) begin
+    if (\$14 ) begin
       debug_r_data = rd_r_data;
     end else begin
       debug_r_data = rd_r_data;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     write_ack = 1'h0;
-    if (\$10 ) begin
+    if (\$14 ) begin
       write_ack = rd_ack;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$6 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
     debug_ack = 1'h0;
     (* full_case = 32'd1 *)
-    if (\$10 ) begin
+    if (\$14 ) begin
     end else begin
       debug_ack = rd_ack;
     end
   end
   assign r_rd = consume_data[43:39];
+  assign jalr_offset = consume_data[63:52];
   assign rs1_addr = consume_data[51:47];
   assign rs2_addr = consume_data[56:52];
-  assign write_addr = \port$573$0 [4:0];
+  assign debug_cyc = 1'h0;
+  assign write_addr = \port$602$0 [4:0];
   assign write_stb = write_cyc;
-  assign write_w_data = \port$573$0 [36:5];
+  assign write_w_data = \port$602$0 [36:5];
   assign write_w_en = 1'h1;
   assign debug_addr = 5'h00;
-  assign debug_cyc = 1'h0;
   assign debug_stb = 1'h0;
   assign debug_w_data = 32'd0;
   assign debug_w_en = 1'h0;
@@ -3338,7 +3537,7 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
   assign \consume_data.mode.m.muldiv  = consume_data[63:57];
   assign \produce_data.pc  = produce_data[31:0];
   assign \produce_data.op  = produce_data[38:32];
-  assign \produce_data.mode  = produce_data[117:39];
+  assign \produce_data.mode  = produce_data[118:39];
   assign \produce_data.mode.arith  = produce_data[117:39];
   assign \produce_data.mode.arith.f  = produce_data[41:39];
   assign \produce_data.mode.arith.m  = produce_data[48:42];
@@ -3359,21 +3558,30 @@ module \risc_project.core.decode (rst, consume_ready, produce_valid, \port$573$0
   assign \produce_data.mode.upper  = produce_data[75:39];
   assign \produce_data.mode.upper.d  = produce_data[43:39];
   assign \produce_data.mode.upper.i  = produce_data[75:44];
-  assign \produce_data.mode.jump  = produce_data[64:39];
+  assign \produce_data.mode.jump  = produce_data[75:39];
   assign \produce_data.mode.jump.d  = produce_data[43:39];
-  assign \produce_data.mode.jump.offset  = produce_data[64:44];
-  always @*
-    produce_data[31:0] = consume_data[31:0];
+  assign \produce_data.mode.jump.t  = produce_data[75:44];
+  assign \produce_data.mode.branch  = produce_data[118:39];
+  assign \produce_data.mode.branch.f  = produce_data[41:39];
+  assign \produce_data.mode.branch.offset  = produce_data[54:42];
+  assign \produce_data.mode.branch.s1  = produce_data[86:55];
+  assign \produce_data.mode.branch.s2  = produce_data[118:87];
   always @*
     produce_data[38:32] = consume_data[38:32];
-  assign \$7  = { \$6 [33], \$6 [33], \$6 [33], \$6 , 12'h000 };
-  assign \$8  = { consume_data[63], consume_data[63], consume_data[63], consume_data[63:44], 12'h000 };
+  assign jal_offset[20] = consume_data[63];
+  assign jal_offset[19:12] = consume_data[51:44];
+  assign jal_offset[11] = consume_data[52];
+  assign jal_offset[10:1] = consume_data[62:53];
+  assign jal_offset[0] = 1'h0;
+  assign \$9  = { \$8 [33], \$8 [33], \$8 [33], \$8 , 12'h000 };
+  assign \$10  = { consume_data[63], consume_data[63], consume_data[63], consume_data[63:44], 12'h000 };
+  assign \$14  = 1'h1;
 endmodule
 
 (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:73" *)
 (* generator = "Amaranth" *)
-module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_ack, rs1_ack, rs2_ack, r_rd, \port$714$47 , w_rd, rd_cyc, rd_stb, rd_w_data, rd_w_en, rd_r_data, clk);
-  reg \$auto$verilog_backend.cc:2352:dump_module$7  = 0;
+module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_ack, rs1_ack, rs2_ack, r_rd, \port$743$47 , w_rd, rd_cyc, rd_stb, rd_w_data, rd_w_en, rd_r_data, clk);
+  reg \$auto$verilog_backend.cc:2352:dump_module$8  = 0;
   wire \$1 ;
   reg [31:0] \$10 ;
   reg [31:0] \$11 ;
@@ -3412,8 +3620,8 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input clk;
   wire clk;
-  input [9:0] \port$714$47 ;
-  wire [9:0] \port$714$47 ;
+  input [9:0] \port$743$47 ;
+  wire [9:0] \port$743$47 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
   reg [31:0] r00 = 32'd0;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:75" *)
@@ -3643,7 +3851,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:77" *)
   \risc_project.core.decode.reg.mask  mask (
     .clk(clk),
-    .\port$714$47 (\port$714$47 ),
+    .\port$743$47 (\port$743$47 ),
     .r1_ok(rs1_ack),
     .r2_ok(rs2_ack),
     .r_rd(r_rd),
@@ -3653,7 +3861,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     .w_valid(w_valid)
   );
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$32  = r1C;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -3724,7 +3932,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$33  = r1D;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -3797,7 +4005,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$34  = r1E;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -3872,7 +4080,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$35  = r1F;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -3950,9 +4158,9 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     (* full_case = 32'd1 *)
-    casez (\port$714$47 [4:0])
+    casez (\port$743$47 [4:0])
       5'h00:
           rs1_r_data = r00;
       5'h01:
@@ -4020,9 +4228,9 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     (* full_case = 32'd1 *)
-    casez (\port$714$47 [9:5])
+    casez (\port$743$47 [9:5])
       5'h00:
           rs2_r_data = r00;
       5'h01:
@@ -4090,7 +4298,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     (* full_case = 32'd1 *)
     casez (w_rd)
       5'h00:
@@ -4160,7 +4368,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     rd_r_data = 32'd0;
     if (\$1 ) begin
       (* full_case = 32'd1 *)
@@ -4171,7 +4379,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$4  = r00;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4186,7 +4394,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$5  = r01;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4203,7 +4411,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$6  = r02;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4222,7 +4430,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$7  = r03;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4243,7 +4451,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$8  = r04;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4266,7 +4474,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$9  = r05;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4291,7 +4499,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$10  = r06;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4318,7 +4526,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$11  = r07;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4347,7 +4555,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$12  = r08;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4378,7 +4586,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$13  = r09;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4411,7 +4619,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$14  = r0A;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4446,7 +4654,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$15  = r0B;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4483,7 +4691,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$16  = r0C;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4522,7 +4730,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$17  = r0D;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4563,7 +4771,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$18  = r0E;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4606,7 +4814,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$19  = r0F;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4651,7 +4859,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$20  = r10;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4698,7 +4906,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$21  = r11;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4747,7 +4955,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$22  = r12;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4798,7 +5006,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$23  = r13;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4851,7 +5059,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$24  = r14;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4906,7 +5114,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$25  = r15;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -4963,7 +5171,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$26  = r16;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -5022,7 +5230,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$27  = r17;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -5083,7 +5291,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$28  = r18;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -5146,7 +5354,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$29  = r19;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -5211,7 +5419,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$30  = r1A;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -5278,7 +5486,7 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$7 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
     \$31  = r1B;
     if (\$3 ) begin
       if (rd_w_en) begin
@@ -5348,10 +5556,10 @@ module \risc_project.core.decode.reg (rst, r_valid, rs1_r_data, rs2_r_data, rd_a
   end
   assign \r_valid$1  = r_valid;
   assign \r_rd$3  = r_rd;
-  assign r_rs1 = \port$714$47 [4:0];
-  assign rs1_addr = \port$714$47 [4:0];
-  assign r_rs2 = \port$714$47 [9:5];
-  assign rs2_addr = \port$714$47 [9:5];
+  assign r_rs1 = \port$743$47 [4:0];
+  assign rs1_addr = \port$743$47 [4:0];
+  assign r_rs2 = \port$743$47 [9:5];
+  assign rs2_addr = \port$743$47 [9:5];
   assign r_ok1 = rs1_ack;
   assign r_ok2 = rs2_ack;
   assign rd_addr = w_rd;
@@ -5359,8 +5567,8 @@ endmodule
 
 (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:28" *)
 (* generator = "Amaranth" *)
-module \risc_project.core.decode.reg.mask (rst, r_valid, w_valid, r1_ok, r2_ok, r_rd, \port$714$47 , w_rd, clk);
-  reg \$auto$verilog_backend.cc:2352:dump_module$8  = 0;
+module \risc_project.core.decode.reg.mask (rst, r_valid, w_valid, r1_ok, r2_ok, r_rd, \port$743$47 , w_rd, clk);
+  reg \$auto$verilog_backend.cc:2352:dump_module$9  = 0;
   wire [31:0] \$1 ;
   wire [31:0] \$10 ;
   wire [31:0] \$11 ;
@@ -5378,8 +5586,8 @@ module \risc_project.core.decode.reg.mask (rst, r_valid, w_valid, r1_ok, r2_ok, 
   (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\hdl\\_ir.py:283" *)
   input clk;
   wire clk;
-  input [9:0] \port$714$47 ;
-  wire [9:0] \port$714$47 ;
+  input [9:0] \port$743$47 ;
+  wire [9:0] \port$743$47 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:21" *)
   output r1_ok;
   wire r1_ok;
@@ -5413,10 +5621,10 @@ module \risc_project.core.decode.reg.mask (rst, r_valid, w_valid, r1_ok, r2_ok, 
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:24" *)
   input w_valid;
   wire w_valid;
-  assign \$1  = 1'h1 << (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:36" *) \port$714$47 [4:0];
+  assign \$1  = 1'h1 << (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:36" *) \port$743$47 [4:0];
   assign \$2  = \$1  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:36" *) reg_mask;
   assign \$3  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:36" *) \$2 ;
-  assign \$4  = 1'h1 << (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:37" *) \port$714$47 [9:5];
+  assign \$4  = 1'h1 << (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:37" *) \port$743$47 [9:5];
   assign \$5  = \$4  & (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:37" *) reg_mask;
   assign \$6  = ~ (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:37" *) \$5 ;
   assign \$7  = 1'h1 << (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\core\\decode.py:47" *) r_rd;
@@ -5428,14 +5636,14 @@ module \risc_project.core.decode.reg.mask (rst, r_valid, w_valid, r1_ok, r2_ok, 
   always @(posedge clk)
     reg_mask <= \$12 ;
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
     set_mask = 32'd0;
     if (r_valid) begin
       set_mask = \$7 ;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
     (* full_case = 32'd1 *)
     if (w_valid) begin
       clear_mask = \$9 ;
@@ -5444,14 +5652,14 @@ module \risc_project.core.decode.reg.mask (rst, r_valid, w_valid, r1_ok, r2_ok, 
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$8 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
     \$12  = \$11 ;
     if (rst) begin
       \$12  = 32'd0;
     end
   end
-  assign r_rs1 = \port$714$47 [4:0];
-  assign r_rs2 = \port$714$47 [9:5];
+  assign r_rs1 = \port$743$47 [4:0];
+  assign r_rs2 = \port$743$47 [9:5];
   assign r_ok1 = \$3 [0];
   assign r_ok2 = \$6 [0];
   assign r1_ok = \$3 [0];
@@ -5461,7 +5669,7 @@ endmodule
 (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:34" *)
 (* generator = "Amaranth" *)
 module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produce_ready, consume_data, consume_ready, produce_valid, clk);
-  reg \$auto$verilog_backend.cc:2352:dump_module$9  = 0;
+  reg \$auto$verilog_backend.cc:2352:dump_module$10  = 0;
   wire [1:0] \$1 ;
   reg [1:0] \$10 ;
   wire \$2 ;
@@ -5469,13 +5677,13 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   wire \$4 ;
   wire [1:0] \$5 ;
   wire \$6 ;
-  reg [117:0] \$7 ;
-  reg [117:0] \$8 ;
+  reg [118:0] \$7 ;
+  reg [118:0] \$8 ;
   reg \$9 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
-  reg [117:0] c0 = 118'h000000000000000000000000000000;
+  reg [118:0] c0 = 119'h000000000000000000000000000000;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
-  wire [78:0] \c0.mode ;
+  wire [79:0] \c0.mode ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
   wire [78:0] \c0.mode.arith ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
@@ -5489,6 +5697,16 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
   wire [31:0] \c0.mode.arith.s2 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [79:0] \c0.mode.branch ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [2:0] \c0.mode.branch.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [12:0] \c0.mode.branch.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c0.mode.branch.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c0.mode.branch.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
   wire [58:0] \c0.mode.imm ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
   wire [4:0] \c0.mode.imm.d ;
@@ -5501,11 +5719,11 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
   wire [31:0] \c0.mode.imm.s ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
-  wire [25:0] \c0.mode.jump ;
+  wire [36:0] \c0.mode.jump ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
   wire [4:0] \c0.mode.jump.d ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
-  wire [20:0] \c0.mode.jump.offset ;
+  wire [31:0] \c0.mode.jump.t ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
   wire [78:0] \c0.mode.store ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
@@ -5539,9 +5757,9 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
   wire [31:0] \c0.pc ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
-  reg [117:0] c1 = 118'h000000000000000000000000000000;
+  reg [118:0] c1 = 119'h000000000000000000000000000000;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
-  wire [78:0] \c1.mode ;
+  wire [79:0] \c1.mode ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
   wire [78:0] \c1.mode.arith ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
@@ -5555,6 +5773,16 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
   wire [31:0] \c1.mode.arith.s2 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [79:0] \c1.mode.branch ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [2:0] \c1.mode.branch.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [12:0] \c1.mode.branch.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c1.mode.branch.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
+  wire [31:0] \c1.mode.branch.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
   wire [58:0] \c1.mode.imm ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
   wire [4:0] \c1.mode.imm.d ;
@@ -5567,11 +5795,11 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
   wire [31:0] \c1.mode.imm.s ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
-  wire [25:0] \c1.mode.jump ;
+  wire [36:0] \c1.mode.jump ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
   wire [4:0] \c1.mode.jump.d ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
-  wire [20:0] \c1.mode.jump.offset ;
+  wire [31:0] \c1.mode.jump.t ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
   wire [78:0] \c1.mode.store ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:36" *)
@@ -5610,10 +5838,10 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   input clk;
   wire clk;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  input [117:0] consume_data;
-  wire [117:0] consume_data;
+  input [118:0] consume_data;
+  wire [118:0] consume_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [78:0] \consume_data.mode ;
+  wire [79:0] \consume_data.mode ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [78:0] \consume_data.mode.arith ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
@@ -5627,6 +5855,16 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [31:0] \consume_data.mode.arith.s2 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [79:0] \consume_data.mode.branch ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [2:0] \consume_data.mode.branch.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [12:0] \consume_data.mode.branch.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.mode.branch.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \consume_data.mode.branch.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [58:0] \consume_data.mode.imm ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [4:0] \consume_data.mode.imm.d ;
@@ -5639,11 +5877,11 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [31:0] \consume_data.mode.imm.s ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [25:0] \consume_data.mode.jump ;
+  wire [36:0] \consume_data.mode.jump ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [4:0] \consume_data.mode.jump.d ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [20:0] \consume_data.mode.jump.offset ;
+  wire [31:0] \consume_data.mode.jump.t ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [78:0] \consume_data.mode.store ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
@@ -5683,10 +5921,10 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   input consume_valid;
   wire consume_valid;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  output [117:0] produce_data;
-  reg [117:0] produce_data;
+  output [118:0] produce_data;
+  reg [118:0] produce_data;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [78:0] \produce_data.mode ;
+  wire [79:0] \produce_data.mode ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [78:0] \produce_data.mode.arith ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
@@ -5700,6 +5938,16 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [31:0] \produce_data.mode.arith.s2 ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [79:0] \produce_data.mode.branch ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [2:0] \produce_data.mode.branch.f ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [12:0] \produce_data.mode.branch.offset ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data.mode.branch.s1 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
+  wire [31:0] \produce_data.mode.branch.s2 ;
+  (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [58:0] \produce_data.mode.imm ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [4:0] \produce_data.mode.imm.d ;
@@ -5712,11 +5960,11 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [31:0] \produce_data.mode.imm.s ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [25:0] \produce_data.mode.jump ;
+  wire [36:0] \produce_data.mode.jump ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [4:0] \produce_data.mode.jump.d ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
-  wire [20:0] \produce_data.mode.jump.offset ;
+  wire [31:0] \produce_data.mode.jump.t ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
   wire [78:0] \produce_data.mode.store ;
   (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:12" *)
@@ -5781,7 +6029,7 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   always @(posedge clk)
     cache_ready <= \$10 ;
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
     (* full_case = 32'd1 *)
     casez (\$1 [0])
       1'h0:
@@ -5791,7 +6039,7 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
     (* full_case = 32'd1 *)
     casez (select)
       1'h0:
@@ -5801,7 +6049,7 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
     (* full_case = 32'd1 *)
     casez (select)
       1'h0:
@@ -5811,7 +6059,7 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
     \$7  = c0;
     if (\$4 ) begin
       casez (select)
@@ -5820,11 +6068,11 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
       endcase
     end
     if (rst) begin
-      \$7  = 118'h000000000000000000000000000000;
+      \$7  = 119'h000000000000000000000000000000;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
     \$8  = c1;
     if (\$4 ) begin
       (* full_case = 32'd1 *)
@@ -5836,11 +6084,11 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
       endcase
     end
     if (rst) begin
-      \$8  = 118'h000000000000000000000000000000;
+      \$8  = 119'h000000000000000000000000000000;
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
     \$9  = select;
     if (\$4 ) begin
       \$9  = \$5 [0];
@@ -5850,7 +6098,7 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$9 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
     \$10  = cache_ready;
     if (\$4 ) begin
       (* full_case = 32'd1 *)
@@ -5877,7 +6125,7 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   assign produce_select = \$1 [0];
   assign \produce_data.pc  = produce_data[31:0];
   assign \produce_data.op  = produce_data[38:32];
-  assign \produce_data.mode  = produce_data[117:39];
+  assign \produce_data.mode  = produce_data[118:39];
   assign \produce_data.mode.arith  = produce_data[117:39];
   assign \produce_data.mode.arith.f  = produce_data[41:39];
   assign \produce_data.mode.arith.m  = produce_data[48:42];
@@ -5898,12 +6146,17 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   assign \produce_data.mode.upper  = produce_data[75:39];
   assign \produce_data.mode.upper.d  = produce_data[43:39];
   assign \produce_data.mode.upper.i  = produce_data[75:44];
-  assign \produce_data.mode.jump  = produce_data[64:39];
+  assign \produce_data.mode.jump  = produce_data[75:39];
   assign \produce_data.mode.jump.d  = produce_data[43:39];
-  assign \produce_data.mode.jump.offset  = produce_data[64:44];
+  assign \produce_data.mode.jump.t  = produce_data[75:44];
+  assign \produce_data.mode.branch  = produce_data[118:39];
+  assign \produce_data.mode.branch.f  = produce_data[41:39];
+  assign \produce_data.mode.branch.offset  = produce_data[54:42];
+  assign \produce_data.mode.branch.s1  = produce_data[86:55];
+  assign \produce_data.mode.branch.s2  = produce_data[118:87];
   assign \c0.pc  = c0[31:0];
   assign \c0.op  = c0[38:32];
-  assign \c0.mode  = c0[117:39];
+  assign \c0.mode  = c0[118:39];
   assign \c0.mode.arith  = c0[117:39];
   assign \c0.mode.arith.f  = c0[41:39];
   assign \c0.mode.arith.m  = c0[48:42];
@@ -5924,12 +6177,17 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   assign \c0.mode.upper  = c0[75:39];
   assign \c0.mode.upper.d  = c0[43:39];
   assign \c0.mode.upper.i  = c0[75:44];
-  assign \c0.mode.jump  = c0[64:39];
+  assign \c0.mode.jump  = c0[75:39];
   assign \c0.mode.jump.d  = c0[43:39];
-  assign \c0.mode.jump.offset  = c0[64:44];
+  assign \c0.mode.jump.t  = c0[75:44];
+  assign \c0.mode.branch  = c0[118:39];
+  assign \c0.mode.branch.f  = c0[41:39];
+  assign \c0.mode.branch.offset  = c0[54:42];
+  assign \c0.mode.branch.s1  = c0[86:55];
+  assign \c0.mode.branch.s2  = c0[118:87];
   assign \c1.pc  = c1[31:0];
   assign \c1.op  = c1[38:32];
-  assign \c1.mode  = c1[117:39];
+  assign \c1.mode  = c1[118:39];
   assign \c1.mode.arith  = c1[117:39];
   assign \c1.mode.arith.f  = c1[41:39];
   assign \c1.mode.arith.m  = c1[48:42];
@@ -5950,12 +6208,17 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   assign \c1.mode.upper  = c1[75:39];
   assign \c1.mode.upper.d  = c1[43:39];
   assign \c1.mode.upper.i  = c1[75:44];
-  assign \c1.mode.jump  = c1[64:39];
+  assign \c1.mode.jump  = c1[75:39];
   assign \c1.mode.jump.d  = c1[43:39];
-  assign \c1.mode.jump.offset  = c1[64:44];
+  assign \c1.mode.jump.t  = c1[75:44];
+  assign \c1.mode.branch  = c1[118:39];
+  assign \c1.mode.branch.f  = c1[41:39];
+  assign \c1.mode.branch.offset  = c1[54:42];
+  assign \c1.mode.branch.s1  = c1[86:55];
+  assign \c1.mode.branch.s2  = c1[118:87];
   assign \consume_data.pc  = consume_data[31:0];
   assign \consume_data.op  = consume_data[38:32];
-  assign \consume_data.mode  = consume_data[117:39];
+  assign \consume_data.mode  = consume_data[118:39];
   assign \consume_data.mode.arith  = consume_data[117:39];
   assign \consume_data.mode.arith.f  = consume_data[41:39];
   assign \consume_data.mode.arith.m  = consume_data[48:42];
@@ -5976,15 +6239,20 @@ module \risc_project.core.decode_buffer (rst, consume_valid, produce_data, produ
   assign \consume_data.mode.upper  = consume_data[75:39];
   assign \consume_data.mode.upper.d  = consume_data[43:39];
   assign \consume_data.mode.upper.i  = consume_data[75:44];
-  assign \consume_data.mode.jump  = consume_data[64:39];
+  assign \consume_data.mode.jump  = consume_data[75:39];
   assign \consume_data.mode.jump.d  = consume_data[43:39];
-  assign \consume_data.mode.jump.offset  = consume_data[64:44];
+  assign \consume_data.mode.jump.t  = consume_data[75:44];
+  assign \consume_data.mode.branch  = consume_data[118:39];
+  assign \consume_data.mode.branch.f  = consume_data[41:39];
+  assign \consume_data.mode.branch.offset  = consume_data[54:42];
+  assign \consume_data.mode.branch.s1  = consume_data[86:55];
+  assign \consume_data.mode.branch.s2  = consume_data[118:87];
 endmodule
 
 (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\infra\\buffer.py:34" *)
 (* generator = "Amaranth" *)
 module \risc_project.core.write_buffer (rst, produce_data, consume_data, consume_valid, produce_ready, consume_ready, produce_valid, clk);
-  reg \$auto$verilog_backend.cc:2352:dump_module$10  = 0;
+  reg \$auto$verilog_backend.cc:2352:dump_module$11  = 0;
   wire [1:0] \$1 ;
   reg [1:0] \$10 ;
   wire \$2 ;
@@ -6064,7 +6332,7 @@ module \risc_project.core.write_buffer (rst, produce_data, consume_data, consume
   always @(posedge clk)
     cache_ready <= \$10 ;
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$11 ) begin end
     (* full_case = 32'd1 *)
     casez (\$1 [0])
       1'h0:
@@ -6074,7 +6342,7 @@ module \risc_project.core.write_buffer (rst, produce_data, consume_data, consume
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$11 ) begin end
     (* full_case = 32'd1 *)
     casez (select)
       1'h0:
@@ -6084,7 +6352,7 @@ module \risc_project.core.write_buffer (rst, produce_data, consume_data, consume
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$11 ) begin end
     (* full_case = 32'd1 *)
     casez (select)
       1'h0:
@@ -6094,7 +6362,7 @@ module \risc_project.core.write_buffer (rst, produce_data, consume_data, consume
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$11 ) begin end
     \$7  = c0;
     if (\$4 ) begin
       casez (select)
@@ -6107,7 +6375,7 @@ module \risc_project.core.write_buffer (rst, produce_data, consume_data, consume
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$11 ) begin end
     \$8  = c1;
     if (\$4 ) begin
       (* full_case = 32'd1 *)
@@ -6123,7 +6391,7 @@ module \risc_project.core.write_buffer (rst, produce_data, consume_data, consume
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$11 ) begin end
     \$9  = select;
     if (\$4 ) begin
       \$9  = \$5 [0];
@@ -6133,7 +6401,7 @@ module \risc_project.core.write_buffer (rst, produce_data, consume_data, consume
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$10 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$11 ) begin end
     \$10  = cache_ready;
     if (\$4 ) begin
       (* full_case = 32'd1 *)
@@ -6171,7 +6439,7 @@ endmodule
 (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\axi\\wish_to_axi.py:20" *)
 (* generator = "Amaranth" *)
 module \risc_project.prog_to_axi (axi_wready, axi_arready, wish_r_data, axi_rvalid, axi_bvalid, clk, rst, wish_cyc, wish_stb, axi_awvalid, axi_wvalid, axi_arvalid, axi_rready, axi_awaddr, wish_ack, axi_bready, axi_awready);
-  reg \$auto$verilog_backend.cc:2352:dump_module$11  = 0;
+  reg \$auto$verilog_backend.cc:2352:dump_module$12  = 0;
   wire \$1 ;
   wire \$10 ;
   wire \$11 ;
@@ -6275,7 +6543,7 @@ module \risc_project.prog_to_axi (axi_wready, axi_arready, wish_r_data, axi_rval
   always @(posedge clk)
     axi_bready <= \$21 ;
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$11 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$12 ) begin end
     \$20  = address_written;
     if (\$15 ) begin
       \$20  = 1'h1;
@@ -6294,7 +6562,7 @@ module \risc_project.prog_to_axi (axi_wready, axi_arready, wish_r_data, axi_rval
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$11 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$12 ) begin end
     \$21  = axi_bready;
     if (\$18 ) begin
       \$21  = 1'h1;
@@ -6331,7 +6599,7 @@ endmodule
 (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\uart.py:109" *)
 (* generator = "Amaranth" *)
 module \risc_project.uart_rx (clk, rst, produce_valid, produce_data, r_en, rx);
-  reg \$auto$verilog_backend.cc:2352:dump_module$12  = 0;
+  reg \$auto$verilog_backend.cc:2352:dump_module$13  = 0;
   wire \$1 ;
   wire \$10 ;
   wire \$11 ;
@@ -6436,7 +6704,7 @@ module \risc_project.uart_rx (clk, rst, produce_valid, produce_data, r_en, rx);
     .w_port_data(w_data)
   );
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$12 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$13 ) begin end
     w_data = 8'h00;
     casez (fsm_state)
       3'h0:
@@ -6456,7 +6724,7 @@ module \risc_project.uart_rx (clk, rst, produce_valid, produce_data, r_en, rx);
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$12 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$13 ) begin end
     w_en = 1'h0;
     casez (fsm_state)
       3'h0:
@@ -6476,7 +6744,7 @@ module \risc_project.uart_rx (clk, rst, produce_valid, produce_data, r_en, rx);
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$12 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$13 ) begin end
     \$23  = counter;
     if (\$8 ) begin
       \$23  = \$9 [9:0];
@@ -6516,7 +6784,7 @@ module \risc_project.uart_rx (clk, rst, produce_valid, produce_data, r_en, rx);
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$12 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$13 ) begin end
     \$24  = fsm_state;
     casez (fsm_state)
       3'h0:
@@ -6554,7 +6822,7 @@ module \risc_project.uart_rx (clk, rst, produce_valid, produce_data, r_en, rx);
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$12 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$13 ) begin end
     \$25  = bit_counter;
     casez (fsm_state)
       3'h0:
@@ -6594,7 +6862,7 @@ module \risc_project.uart_rx (clk, rst, produce_valid, produce_data, r_en, rx);
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$12 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$13 ) begin end
     \$26  = data_register;
     casez (fsm_state)
       3'h0:
@@ -6621,7 +6889,7 @@ endmodule
 (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\lib\\fifo.py:144" *)
 (* generator = "Amaranth" *)
 module \risc_project.uart_rx.buffer (rst, r_rdy, r_data, w_port_data, w_en, r_en, clk);
-  reg \$auto$verilog_backend.cc:2352:dump_module$13  = 0;
+  reg \$auto$verilog_backend.cc:2352:dump_module$14  = 0;
   wire \$1 ;
   wire \$10 ;
   wire \$11 ;
@@ -6726,7 +6994,7 @@ module \risc_project.uart_rx.buffer (rst, r_rdy, r_data, w_port_data, w_en, r_en
   always @(posedge clk)
     level <= \$17 ;
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$13 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
     \$15  = w_port_addr;
     if (\$1 ) begin
       \$15  = \$2 [1:0];
@@ -6736,7 +7004,7 @@ module \risc_project.uart_rx.buffer (rst, r_rdy, r_data, w_port_data, w_en, r_en
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$13 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
     \$16  = r_port_addr;
     if (\$3 ) begin
       \$16  = \$4 [1:0];
@@ -6746,7 +7014,7 @@ module \risc_project.uart_rx.buffer (rst, r_rdy, r_data, w_port_data, w_en, r_en
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$13 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
     \$17  = level;
     if (\$8 ) begin
       \$17  = \$9 [2:0];
@@ -6769,7 +7037,7 @@ endmodule
 (* src = "C:\\Users\\magen\\Documents\\Programs\\audio_fpga\\sapf\\ser\\uart.py:22" *)
 (* generator = "Amaranth" *)
 module \risc_project.uart_tx (rst, consume_ready, tx, w_en, w_data, clk);
-  reg \$auto$verilog_backend.cc:2352:dump_module$14  = 0;
+  reg \$auto$verilog_backend.cc:2352:dump_module$15  = 0;
   wire \$1 ;
   wire [7:0] \$10 ;
   wire \$11 ;
@@ -6879,7 +7147,7 @@ module \risc_project.uart_tx (rst, consume_ready, tx, w_en, w_data, clk);
     .w_rdy(consume_ready)
   );
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$15 ) begin end
     tx = 1'h0;
     casez (fsm_state)
       3'h0:
@@ -6895,7 +7163,7 @@ module \risc_project.uart_tx (rst, consume_ready, tx, w_en, w_data, clk);
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$15 ) begin end
     r_en = 1'h0;
     casez (fsm_state)
       3'h0:
@@ -6905,7 +7173,7 @@ module \risc_project.uart_tx (rst, consume_ready, tx, w_en, w_data, clk);
     endcase
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$15 ) begin end
     \$20  = data_register;
     casez (fsm_state)
       3'h0:
@@ -6924,7 +7192,7 @@ module \risc_project.uart_tx (rst, consume_ready, tx, w_en, w_data, clk);
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$15 ) begin end
     \$21  = counter;
     casez (fsm_state)
       3'h0:
@@ -6969,7 +7237,7 @@ module \risc_project.uart_tx (rst, consume_ready, tx, w_en, w_data, clk);
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$15 ) begin end
     \$22  = fsm_state;
     casez (fsm_state)
       3'h0:
@@ -7002,7 +7270,7 @@ module \risc_project.uart_tx (rst, consume_ready, tx, w_en, w_data, clk);
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$15 ) begin end
     \$23  = byte_counter;
     casez (fsm_state)
       3'h0:
@@ -7038,7 +7306,7 @@ module \risc_project.uart_tx (rst, consume_ready, tx, w_en, w_data, clk);
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$14 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$15 ) begin end
     \$24  = parity;
     casez (fsm_state)
       3'h0:
@@ -7067,7 +7335,7 @@ endmodule
 (* src = "C:\\Users\\magen\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\amaranth\\lib\\fifo.py:144" *)
 (* generator = "Amaranth" *)
 module \risc_project.uart_tx.buffer (rst, w_rdy, r_rdy, r_data, r_en, w_en, w_port_data, clk);
-  reg \$auto$verilog_backend.cc:2352:dump_module$15  = 0;
+  reg \$auto$verilog_backend.cc:2352:dump_module$16  = 0;
   wire \$1 ;
   wire \$10 ;
   wire \$11 ;
@@ -7173,7 +7441,7 @@ module \risc_project.uart_tx.buffer (rst, w_rdy, r_rdy, r_data, r_en, w_en, w_po
   always @(posedge clk)
     level <= \$17 ;
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$15 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$16 ) begin end
     \$15  = w_port_addr;
     if (\$1 ) begin
       \$15  = \$2 [1:0];
@@ -7183,7 +7451,7 @@ module \risc_project.uart_tx.buffer (rst, w_rdy, r_rdy, r_data, r_en, w_en, w_po
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$15 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$16 ) begin end
     \$16  = r_port_addr;
     if (\$3 ) begin
       \$16  = \$4 [1:0];
@@ -7193,7 +7461,7 @@ module \risc_project.uart_tx.buffer (rst, w_rdy, r_rdy, r_data, r_en, w_en, w_po
     end
   end
   always @* begin
-    if (\$auto$verilog_backend.cc:2352:dump_module$15 ) begin end
+    if (\$auto$verilog_backend.cc:2352:dump_module$16 ) begin end
     \$17  = level;
     if (\$8 ) begin
       \$17  = \$9 [2:0];

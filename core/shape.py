@@ -95,12 +95,19 @@ decode_shape = data.StructLayout({
         }),
         "jump": data.StructLayout({
             "d": 5,
-            "offset": signed(21)
+            "t": signed(32)
+        }),
+        "branch": data.StructLayout({
+            "f": 3,
+            "offset": signed(13),
+            "s1": signed(32),
+            "s2": signed(32)
         })
     })
 })
 
 write_shape = data.StructLayout({
+    "pc": 32,
     "d": 5,
     "value": 32
 })

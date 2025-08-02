@@ -120,7 +120,7 @@ class InstructionDecode(wiring.Component):
             "consume": In(Stream(instruction_shape)),
             "produce": Out(Stream(decode_shape)),
             "write": In(Bus(5, 32)), # Write to registers
-            "debug": In(Bus(5, 32)), # TODO debug write directly to registers
+            "debug": In(Bus(5, 32)),
             "error": Out(Bus(1, 32))
         })
         
@@ -147,11 +147,33 @@ class InstructionDecode(wiring.Component):
         
         out_register = self.produce.data
         
-        # Transfer op code and program counter
+        # Bit mapping for offset
+        jal_offset = Signal(signed(21))
+        source = self.consume.data.mode.j.offset
         m.d.comb += [
-            out_register.op.eq(self.consume.data.op),
-            out_register.pc.eq(self.consume.data.pc)
-        ]
+                    jal_offset[0].eq(0),
+                    jal_offset[1:11].eq(source[9:19]),
+                    jal_offset[11].eq(source[8]),
+                    jal_offset[12:20].eq(source[0:8]),
+                    jal_offset[20].eq(source[19])
+                ]
+        
+        # Bit mapping for jalr
+        jalr_offset = Signal(signed(12))
+        m.d.comb += jalr_offset.eq(self.consume.data.mode.i.imm)
+        
+        m.d.comb += out_register.op.eq(self.consume.data.op)
+        
+        with m.Switch(self.consume.data.op):
+            with m.Case(Instruction.JAL):
+                # J and link to offset of program counter
+                m.d.comb += out_register.pc.eq(self.consume.data.pc+jal_offset)
+            with m.Case(Instruction.JALR):
+                # Jump and link to offset of register
+                m.d.comb += out_register.pc.eq(reg.rs1.r_data+jalr_offset)
+            with m.Default():
+                # Transfer op code and program counter
+                m.d.comb += out_register.pc.eq(self.consume.data.pc)
         
         # Mapping out data
         with m.Switch(self.consume.data.op):
@@ -206,19 +228,29 @@ class InstructionDecode(wiring.Component):
                             self.consume.data.mode.u.imm << 12)
                 ]
             with m.Case(Instruction.JAL):
+                # Jump and link
                 m.d.comb += [
                     out_register.mode.jump.d.eq(self.consume.data.mode.j.rd),
+                    out_register.mode.jump.t.eq(self.consume.data.pc+4)
                 ]
-                
-                # Bit mapping for offset
-                offset = out_register.mode.jump.offset
-                source = self.consume.data.mode.j.offset
+            with m.Case(Instruction.JALR):
+                # Carry forward the write register
+                m.d.comb += out_register.mode.jump.d.eq(self.consume.data.mode.i.rd)
+                m.d.comb += out_register.mode.jump.t.eq(self.consume.data.pc+4)
+            with m.Case(Instruction.BRANCH):
+                # Branch information
+                branch_data = self.consume.data.mode.b
+                m.d.comb += out_register.mode.branch.f.eq(branch_data.f)
+                m.d.comb += out_register.mode.branch.s1.eq(reg.rs1.r_data)
+                m.d.comb += out_register.mode.branch.s2.eq(reg.rs2.r_data)
+                branch_offset = out_register.mode.branch.offset
+                # Offset map
                 m.d.comb += [
-                    offset[0].eq(0),
-                    offset[1:11].eq(source[9:19]),
-                    offset[11].eq(source[8]),
-                    offset[12:20].eq(source[0:8]),
-                    offset[20].eq(source[19])
+                    branch_offset[0].eq(0),
+                    branch_offset[1:5].eq(branch_data.offset_lower[1:5]),
+                    branch_offset[5:11].eq(branch_data.offset_upper[0:6]),
+                    branch_offset[11].eq(branch_data.offset_lower[0]),
+                    branch_offset[12].eq(branch_data.offset_upper[6])
                 ]
             with m.Default():
                 # Unknown operation sends error information
@@ -270,6 +302,9 @@ class InstructionDecode(wiring.Component):
             with m.Case(Instruction.JAL):
                 # Jump and Link writes to a register
                 m.d.comb += num_regs.eq(0)
+                m.d.comb += reg_write.eq(1)
+            with m.Case(Instruction.JALR):
+                m.d.comb += num_regs.eq(1)
                 m.d.comb += reg_write.eq(1)
             with m.Default():
                 pass

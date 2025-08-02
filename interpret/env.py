@@ -4,6 +4,8 @@ DEFINE_IDLE = 0
 DEFINE_NAME = 1
 DEFINE_BODY = 2
 
+UART_ADDRESS = 0x0000_0000
+
 def setup_env(interpret):
     """
     Initialize basic words
@@ -12,24 +14,29 @@ def setup_env(interpret):
     interpret.insert_word(".PUSH", Translation(
         Line("addi", R.value(), R.zero(), Arg(0)),
         Line("addi", R.tag(), R.zero(), Arg(1, default = 0)),
-        Line("jal", R.ret(), C("PUSH")),
+        Line.routine("PUSH"),
         desc = "Push constant int onto stack"
     ))
     
     interpret.insert_word(".POP", Translation(
-        Line("jal", R.ret(), C("POP"+)),
+        Line.routine("POP"),
         desc = "POP"
     ))
     
     interpret.insert_word("DUP", Translation(
+        # Load value from stack
         Line("lw", R.value(), R.sp(8)),
+        # Load type from stack
         Line("lw", R.tag(), R.sp(4)),
+        # Push peeked value to stack
         Line("jal", R.ret(), C("PUSH")),
         desc = "duplicate top of stack"
     ))
     
     interpret.insert_word(".", Translation(
-        desc = "PRINT (TODO)"
+        Line("jal", R.ret(), C("POP")),
+        Line("sw", R.value(), R.zero(UART_ADDRESS)),
+        desc = "Print top of stack"
     ))
     
     # Arithmetic

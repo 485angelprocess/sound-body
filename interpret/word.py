@@ -114,6 +114,10 @@ class Line(object):
         self.program = program
         self.label = label
         
+    @classmethod
+    def routine(cls, label="POP"):
+        cls("jal", R.ret(), C(label))
+        
     def assign(self, args):
         # TODO pre-process smaller list of assignable things
         [p.assign(args) for p in self.program if hasattr(p, "assign")]

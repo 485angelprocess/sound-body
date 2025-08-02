@@ -123,5 +123,34 @@ class TestCpu(unittest.TestCase):
         
         assert finished[0] == True
         
+    def test_jalr(self):
+        program = [
+            "andi r0, r0, 0",
+            "jalr r1, r0, 12",
+            "addi r0, r0, 11",
+            "addi r0, r0, 15",
+            "andi r2, r2, 0",
+            "sw r0, 0(r2)",
+            "sw r1, 4(r2)"
+        ]
+        
+        ep = ExecProgram(program=program)
+        dut, bus = core_with_program(list(ep.assemble()))
+        
+        finished = [False]
+        async def expect(ctx):
+            await check_addr(ctx, bus, 0, 15)
+            await check_addr(ctx, bus, 4, 8)
+            finished[0] = True
+            
+        sim = Simulator(dut)
+        sim.add_clock(1e-8)
+        sim.add_testbench(expect)
+        
+        with sim.write_vcd("bench/test_jalr.vcd") as vcd:
+            sim.run_until(100*1e-8)
+        
+        assert finished[0] == True
+        
 if __name__ == "__main__":
     unittest.main()

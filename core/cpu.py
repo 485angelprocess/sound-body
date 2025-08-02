@@ -14,6 +14,8 @@ from core.alu import Alu, AluInputSignature, AluOutputSignature
 from core.decode import InstructionDecode
 from core.shape import Instruction, write_shape, decode_shape
 
+from core.branch import BranchDevice
+
 class WriteRoute(enum.Enum):
     NONE= 0
     ALU = 1
@@ -50,6 +52,7 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         # Signal prevents program read when pc might change
         latch = Signal()
         
+        # Decoder takes in instructions and reads from registers
         m.submodules.decode = decode = InstructionDecode()
         
         m.submodules.decode_buffer = decode_buffer = Buffer(decode_shape)
@@ -78,8 +81,8 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         # This may give slightly different jump behavior
         m.d.comb += decode.consume.data.pc.eq(pc)
         
+        # Next line of program
         m.d.comb += decode.consume.data.as_value()[32:].eq(self.prog.r_data)
-        
         m.d.comb += decode.consume.valid.eq(self.prog.ack)
         
         # ALU
@@ -127,6 +130,14 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
             with m.Default():
                 pass
         
+        # Branch
+        m.submodules.branch = branch = BranchDevice()
+        
+        m.d.comb += branch.en.eq(decode_buffer.produce.data.op == Instruction.BRANCH)
+        m.d.comb += branch.consume.f.eq(decode_buffer.produce.data.mode.branch.f)
+        m.d.comb += branch.consume.a.eq(decode_buffer.produce.data.mode.branch.s1)
+        m.d.comb += branch.consume.b.eq(decode_buffer.produce.data.mode.branch.s2)
+        
         # Route result
         write_buffer = m.submodules.write_buffer = Buffer(write_shape)
         
@@ -142,17 +153,23 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
             write_buffer.produce.ready.eq(decode.write.ack)
         ]
         
+        # Update program counter if it wasn't a linear step
         with m.If(write_buffer.produce.valid & write_buffer.produce.ready):
             with m.If(latch):
                 m.d.sync += latch.eq(0)
-                with m.Switch(decode_buffer.produce.data.op):
-                    with m.Case(Instruction.JAL):
-                        m.d.sync += pc.eq(decode_buffer.produce.data.pc+
-                                        decode_buffer.produce.data.mode.jump.offset)
-                    with m.Default():
-                        # TODO check for branch
-                        m.d.sync += pc.eq(decode_buffer.produce.data.pc+4)
+                # Go to next program counter
+                m.d.sync += pc.eq(write_buffer.produce.data.pc)
         
+        # Next program counter
+        with m.If(branch.branch):
+            m.d.comb += write_buffer.consume.data.pc.eq(
+                decode_buffer.produce.data.pc +
+                decode_buffer.produce.data.mode.branch.offset
+            )
+        with m.Else():
+            m.d.comb += write_buffer.consume.data.pc.eq(decode_buffer.produce.data.pc)
+        
+        # Write to the destination register
         with m.Switch(write_route):
             with m.Case(WriteRoute.ALU):
                 # Write register from ALU
@@ -167,7 +184,7 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                 m.d.comb += decode_buffer.produce.ready.eq(write_buffer.consume.ready)
             with m.Case(WriteRoute.PC):
                 # Write program counter to register
-                m.d.comb += write_buffer.consume.data.value.eq(pc+4)
+                m.d.comb += write_buffer.consume.data.value.eq(decode_buffer.produce.data.mode.jump.t)
                 m.d.comb += write_buffer.consume.data.d.eq(decode_buffer.produce.data.mode.jump.d)
                 m.d.comb += write_buffer.consume.valid.eq(decode_buffer.produce.valid)
                 m.d.comb += decode_buffer.produce.ready.eq(write_buffer.consume.ready)
@@ -185,6 +202,8 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
             with m.Case(Instruction.LUI):
                 m.d.comb += write_route.eq(WriteRoute.IMM)
             with m.Case(Instruction.JAL):
+                m.d.comb += write_route.eq(WriteRoute.PC)
+            with m.Case(Instruction.JALR):
                 m.d.comb += write_route.eq(WriteRoute.PC)
             with m.Default():
                 m.d.comb += write_route.eq(WriteRoute.NONE)
