@@ -63,7 +63,7 @@ class RiscProject(wiring.Component):
         ]
         
         # RISC-V Core
-        m.submodules.core = core = RiscCore(has_mul=False)
+        m.submodules.core = core = RiscCore(has_mul=False, normally_on=True)
         
         # Control from uart
         wiring.connect(m, bridge_sw.a, core.debug)

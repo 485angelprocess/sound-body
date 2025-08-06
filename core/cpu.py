@@ -55,6 +55,23 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         # Decoder takes in instructions and reads from registers
         m.submodules.decode = decode = InstructionDecode()
         
+        with m.If(self.debug.addr < 32):
+            m.d.comb += [
+                decode.debug.addr.eq(self.debug.addr),
+                decode.debug.cyc.eq(self.debug.cyc),
+                decode.debug.stb.eq(self.debug.stb),
+                decode.debug.w_en.eq(self.debug.w_en),
+                decode.debug.w_data.eq(self.debug.w_data),
+                self.debug.ack.eq(decode.debug.ack),
+                self.debug.r_data.eq(decode.debug.r_data)
+            ]
+        with m.Else():
+            with m.If(self.debug.cyc & self.debug.stb):
+                m.d.comb += self.debug.ack.eq(1)
+                with m.If(decode.debug.w_en):
+                    m.d.sync += prog_enable.eq(self.debug.w_data)
+                m.d.comb += self.debug.r_data.eq(prog_enable)
+        
         m.submodules.decode_buffer = decode_buffer = Buffer(decode_shape)
         
         wiring.connect(m, decode_buffer.consume, decode.produce)

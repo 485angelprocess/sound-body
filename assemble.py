@@ -156,7 +156,8 @@ DefinitionTable["auipc"] = Definition(
 
 # Fence
 DefinitionTable["fence"] = Definition(
-    Constant(0b00011_11, width=32)
+    Constant(0b00011_11, width=32
+        )
 )
 
 for d in DefinitionTable:
