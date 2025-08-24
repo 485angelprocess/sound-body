@@ -42,7 +42,7 @@ class ExecProgram(object):
         a = Assemble(self.program)
         
         for w in a.get_words(lsb):
-            print("0b{:032b}".format(w))
+            #print("0b{:032b}".format(w))
             yield w
             
     def upload_program(self, ser):

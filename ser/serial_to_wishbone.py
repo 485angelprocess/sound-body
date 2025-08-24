@@ -15,6 +15,8 @@ class SerialCommand(object):
     ECHO = 'e'
     ID = 'I'
     RESET = 'x'
+    REPLY_FLAG_SET = 'V'
+    REPLY_FLAG_RST = 'v'
     
 class UartRegister(object):
     TX = 0
@@ -25,8 +27,9 @@ class SerialToWishbone(wiring.Component):
             "command": In(Stream(8)), # Serial stream
             "reply": Out(Stream(8)),
             "produce": Out(Bus(32, 32)),
-            "bus": In(Bus(32, 8)),
-            "soft_reset": Out(1)
+            "bus": In(Bus(32, 32)),
+            "soft_reset": Out(1),
+            "error": In(Stream(8))
         })
         
     def elaborate(self, platform):
@@ -45,6 +48,8 @@ class SerialToWishbone(wiring.Component):
         timer = Signal(32)
         
         timeout = 100_000_000
+        
+        reply_flag = Signal()
         
         with m.FSM() as fsm:
             # From external computer
@@ -85,6 +90,10 @@ class SerialToWishbone(wiring.Component):
                             m.next = "EOL"
                         with m.Case(ord(SerialCommand.RESET)):
                             m.d.sync += ext_reset.eq(0)
+                        with m.Case(ord(SerialCommand.REPLY_FLAG_SET)):
+                            m.d.sync += reply_flag.eq(1)
+                        with m.Case(ord(SerialCommand.REPLY_FLAG_RST)):
+                            m.d.sync += reply_flag.eq(0)
                         with m.Default():
                             m.d.sync += prefix.eq(ord('%'))
                             m.d.sync += arg.eq(self.command.data)
@@ -127,18 +136,24 @@ class SerialToWishbone(wiring.Component):
                 m.d.comb += self.produce.stb.eq(1)
                 m.d.comb += self.produce.cyc.eq(1)
                 with m.If(self.produce.ack):
+                    
                     with m.If(self.produce.w_en):
-                        m.d.sync += self.produce.w_en.eq(0)
-                        m.d.sync += counter.eq(7)
-                        m.d.sync += prefix.eq(ord('W'))
-                        m.d.sync += arg[0:32].eq(self.produce.w_data)
-                        m.d.sync += arg[32:64].eq(self.produce.addr)
+                        with m.If(reply_flag):
+                            m.d.sync += self.produce.w_en.eq(0)
+                            m.d.sync += counter.eq(7)
+                            m.d.sync += prefix.eq(ord('W'))
+                            m.d.sync += arg[0:32].eq(self.produce.w_data)
+                            m.d.sync += arg[32:64].eq(self.produce.addr)
+                            m.next = "Print"
+                        with m.Else():
+                            m.next = "Idle"
                     with m.Else():
                         m.d.sync += prefix.eq(ord('R'))
                         m.d.sync += counter.eq(7)
                         m.d.sync += arg[0:32].eq(self.produce.r_data)
                         m.d.sync += arg[32:64].eq(self.produce.addr)
-                    m.next = "Print"
+                        m.next = "Print"
+                    
             
             ################################
             ## Print reply #################
@@ -176,10 +191,18 @@ class SerialToWishbone(wiring.Component):
                     m.next = "Idle"
 
         with m.If(fsm.ongoing("Idle") & (~self.command.valid)):
+            with m.If(self.error.valid):
+                m.d.comb += self.error.ready.eq(1)
+                m.d.comb += self.reply.data.eq(ord("#") + self.error.data)
+                m.d.comb += self.reply.valid.eq(1)
             # Control from CPU
-            with m.If(self.bus.stb & self.bus.cyc & self.bus.w_en):
-                m.d.comb += self.reply.valid.eq(1) # Send reply
-                m.d.comb += self.bus.ack.eq(self.reply.ready)
-                m.d.comb += self.reply.data.eq(self.bus.w_data)
+            with m.Elif(self.bus.stb & self.bus.cyc):
+                with m.If(self.bus.w_en):
+                    m.d.comb += self.reply.valid.eq(1) # Send reply
+                    m.d.comb += self.bus.ack.eq(self.reply.ready)
+                    m.d.comb += self.reply.data.eq(self.bus.w_data)
+                with m.Else():
+                    m.d.comb += self.bus.ack.eq(1)
+            
             
         return m

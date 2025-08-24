@@ -3,7 +3,7 @@ Wishbone to AXI-4
 """
 from infra import signature
 from amaranth import *
-from amaranth.lib import wiring
+from amaranth.lib import wiring, fifo
 from amaranth.lib.wiring import In, Out
 
 class WishboneToAxi(wiring.Component):
@@ -13,7 +13,8 @@ class WishboneToAxi(wiring.Component):
     def __init__(self, ain = 32, din = 32, aout = 32, dout = 32):
         super().__init__({
             "wish": In(signature.Bus(ain, din)),
-            "axi": Out(signature.AxiLite(aout, dout))
+            "axi": Out(signature.AxiLite(aout, dout)),
+            "error": Out(signature.Stream())
         })
         
     def elaborate(self, platform):
@@ -58,6 +59,17 @@ class WishboneToAxi(wiring.Component):
         # Finished write and get response
         with m.If(self.axi.wvalid & self.axi.wready):
             m.d.sync += self.axi.bready.eq(1)
+            
+        error_fifo = m.submodules.error_fifo = fifo.SyncFIFO(width=8, depth=4)
+            
+        m.d.comb += error_fifo.w_en.eq((self.axi.bvalid > 0) & (self.axi.bresp > 0))
+        m.d.comb += error_fifo.w_data.eq(self.axi.bresp)
+            
+        m.d.comb += [
+            self.error.data.eq(error_fifo.r_data),
+            self.error.valid.eq(error_fifo.r_rdy),
+            error_fifo.r_en.eq(self.error.ready)
+        ]
             
         with m.If(self.axi.bready & self.axi.bvalid):
             m.d.sync += self.axi.bready.eq(0)

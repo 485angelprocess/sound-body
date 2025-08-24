@@ -4,11 +4,6 @@ from amaranth.lib.wiring import In, Out
 
 from infra.signature import Bus
 
-class SwitchPortDef(object):
-    def __init__(self, addr, data):
-        self.addr = addr
-        self.data = data
-
 class RangeToDest(wiring.Component):
     def __init__(self, data_shape = 8, major = (16,32), minor = (0,16), dest_shape = 1):
         self.major = major
@@ -78,12 +73,17 @@ class BusDebug(object):
         self.w_en = [None for _ in range(size)]
         self.select = None
 
+class SwitchPortDef(object):
+    def __init__(self, addr=32, data=32):
+        self.addr = addr
+        self.data = data
+
 class BusSwitch(wiring.Component):
     """
     Switch based on dest
     """
 
-    def __init__(self, ports, dest_shape, addr=16, data=32, num_inputs=2):
+    def __init__(self, ports, addr=32, data=32, num_inputs=2):
         self.n = len(ports)
         
         self.num_inputs = num_inputs
@@ -94,7 +94,7 @@ class BusSwitch(wiring.Component):
         
         c = dict()
         for i in range(num_inputs):
-            c["c_{:02X}".format(i)] = In(Bus(addr, data, dest_shape))
+            c["c_{:02X}".format(i)] = In(Bus(addr, data))
         
         super().__init__(c | p)
         
@@ -124,20 +124,16 @@ class BusSwitch(wiring.Component):
                         m.d.sync += select.eq(0)
                     with m.Else():
                         m.d.sync += select.eq(select + 1)
-                with m.Switch(c.dest):
-                    # Connect
-                    for i in range(self.n):
-                        with m.Case(i):
-                            p = getattr(self, "p_{:02X}".format(i))
-                            m.d.comb += [
-                                p.stb.eq(c.stb),
-                                p.cyc.eq(c.cyc),
-                                c.ack.eq(p.ack),
-                                p.addr.eq(c.addr),
-                                p.w_en.eq(c.w_en),
-                                p.w_data.eq(c.w_data),
-                                c.r_data.eq(p.r_data)
-                            ]
+                p = getattr(self, "p_{:02X}".format(0))
+                m.d.comb += [
+                    p.stb.eq(c.stb),
+                    p.cyc.eq(c.cyc),
+                    c.ack.eq(p.ack),
+                    p.addr.eq(c.addr),
+                    p.w_en.eq(c.w_en),
+                    p.w_data.eq(c.w_data),
+                    c.r_data.eq(p.r_data)
+                ]
         
         return m
         
@@ -145,7 +141,6 @@ class AddressSwitch(wiring.Component):
     """
     Splits incoming bus based on address
     """
-
     def __init__(self, split=256):
         """
         :arg split: address to split at

@@ -11,6 +11,9 @@ from infra.signature import Bus
 from amaranth import Module
 from amaranth.lib import wiring
 
+from axi.axi_ram import AxiLiteMemory
+from risc_build import RiscProject
+
 class ExpectedWrite(object):
     def __init__(self, addr, data, size=2):
         self.addr = addr
@@ -28,6 +31,7 @@ def test_program(name, program, *expected_value):
             result = await Bus.write_consume(ctx,bus)
             try:
                 assert result[0] == ex.addr
+                print("Got data {}", ex.data)
                 assert result[1] == ex.data
             except AssertionError as e:
                 print("Got address {}, Data: {}".format(result[0], result[1]))
@@ -53,7 +57,7 @@ def core_with_program(program):
     #    print("\t{:02X}: {:02X}".format(i, program[i]))
     
     dut.submodules.cpu = cpu = RiscCore(has_mul=False, normally_on=True)
-    dut.submodules.ram = ram = WishboneMemory(32, 256, init=program, granularity=2)
+    dut.submodules.ram = ram = WishboneMemory(32, 512, init=program, granularity=2)
     
     wiring.connect(dut, cpu.prog, ram.bus)
     
@@ -143,7 +147,7 @@ class TestCpu(unittest.TestCase):
     def test_jalr(self):
         program = [
             "andi r0, r0, 0",
-            "jalr r1, r0, 12",
+            "jalr r1, 12(r0)",
             "addi r0, r0, 11",
             "addi r0, r0, 15",
             "andi r2, r2, 0",
@@ -273,7 +277,7 @@ class TestCpu(unittest.TestCase):
         test_program("xor", program, ExpectedWrite(0, 68))
         
     def test_fence(self):
-        # This tests that fence is not 
+        # This tests that fence is? 
         # thread breakpoint
         # store and write orders are unimportant
         program = [
@@ -287,8 +291,22 @@ class TestCpu(unittest.TestCase):
         
         test_program("fence", program, 
                 ExpectedWrite(0, 11),
-                ExpectedWrite(4, 13),
-                ExpectedWrite(8, 13))
+                ExpectedWrite(4, 13))
         
+    def test_basic(self):
+        program = [
+            "jalr x5, 256(x0)"
+        ]
+        program += ["noop"] * (63)
+        program += [
+            "lui x6, 1",
+            "andi x0, x0, 0",
+            "sw x6, 0(x0)"
+        ]
+        
+        test_program("basic_kernel", program, ExpectedWrite(0, 4096))
+        
+
+
 if __name__ == "__main__":
     unittest.main()

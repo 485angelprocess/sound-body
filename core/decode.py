@@ -256,7 +256,7 @@ class InstructionDecode(wiring.Component):
                 pass
             with m.Default():
                 # Unknown operation sends error information
-                m.d.comb += error_flag.eq(1)
+                # m.d.comb += error_flag.eq(1)
                 m.d.comb += self.error.cyc.eq(1)
                 m.d.comb += self.error.stb.eq(1)
                 m.d.comb += self.error.w_en.eq(1)

@@ -127,6 +127,15 @@ DefinitionTable["sw"] = Definition(
     Constant(0b11, width = 2)
 )
 
+# Load word
+DefinitionTable["lw"] = Definition(
+    Immediate(arg=1, start=0, stop=11),
+    Register(arg=2),
+    Constant(0b010, width=3),
+    Register(arg=0),
+    Constant(0b000_0011, width=7)
+)
+
 # Jal
 DefinitionTable["jal"] = Definition(
     Immediate(arg = 1, start = 20, stop = 20), # Offset bit mapping
@@ -140,8 +149,8 @@ DefinitionTable["jal"] = Definition(
 
 # JALR
 DefinitionTable["jalr"] = Definition(
-    Immediate(arg=2, start=0, stop=11),
-    Register(arg=1),
+    Immediate(arg=1, start=0, stop=11),
+    Register(arg=2),
     Constant(0b000, width=3),
     Register(arg=0),
     Constant(0b1100111, width=7)
@@ -156,9 +165,10 @@ DefinitionTable["auipc"] = Definition(
 
 # Fence
 DefinitionTable["fence"] = Definition(
-    Constant(0b00011_11, width=32
-        )
+    Constant(0b00011_11, width=32)
 )
+
+DefinitionTable["noop"] = Definition(Constant(0, width=32))
 
 for d in DefinitionTable:
     if DefinitionTable[d].width() != 32:
@@ -255,7 +265,7 @@ class ListAssemble(object):
         for p in program:
             for k in self.keys:
                 p = p.replace(k, self.keys[k])
-            print(p)
+            #print(p)
             data = Line(p).parse()
             yield data
         

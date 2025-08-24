@@ -21,6 +21,7 @@ class WriteRoute(enum.Enum):
     ALU = 1
     IMM = 2
     PC = 3
+    MEM = 4
 
 class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
     """
@@ -30,17 +31,20 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
     
     Internal connections to modules
     """
-    def __init__(self, n_regs= 32, has_mul=True, normally_on=True):
+    def __init__(self, n_regs= 32, has_mul=True, normally_on=True, prog_offset=0x0):
         self.n_regs = 32
         self.has_mul = has_mul # Multiplication unit
         self.normally_on = normally_on
+        
+        self.prog_offset = prog_offset
         
         super().__init__({
             "bus": Out(Bus(32, signed(32))),
             "size": Out(2),
             "prog": Out(Bus(32, 32)),
             "int": In(Bus(32, 8)),
-            "debug": In(Bus(32, 32)) # Debugger access
+            "debug": In(Bus(32, 32)), # Debugger access
+            "debug_reset": Out(1)
         })
         
     def elaborate(self, platform):
@@ -49,6 +53,10 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         pc = Signal(32)
         prog_enable = Signal(init=self.normally_on)
         
+        mreset = Signal()
+        
+        m.d.comb += self.debug_reset.eq(mreset)
+        
         # Signal prevents program read when pc might change
         latch = Signal()
         
@@ -56,6 +64,7 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         m.submodules.decode = decode = InstructionDecode()
         
         with m.If(self.debug.addr < 32):
+            # Read register
             m.d.comb += [
                 decode.debug.addr.eq(self.debug.addr),
                 decode.debug.cyc.eq(self.debug.cyc),
@@ -68,16 +77,37 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
         with m.Else():
             with m.If(self.debug.cyc & self.debug.stb):
                 m.d.comb += self.debug.ack.eq(1)
-                with m.If(decode.debug.w_en):
-                    m.d.sync += prog_enable.eq(self.debug.w_data)
-                m.d.comb += self.debug.r_data.eq(prog_enable)
+                with m.If(self.debug.w_en):
+                    with m.Switch(self.debug.addr):
+                        with m.Case(32):
+                            m.d.sync += prog_enable.eq(self.debug.w_data)
+                        with m.Case(33):
+                            m.d.sync += pc.eq(self.debug.w_data)
+                        with m.Case(34):
+                            # Write causes core reset
+                            m.d.sync += mreset.eq(1)
+                        with m.Default():
+                            pass
+                with m.Switch(self.debug.addr):
+                    with m.Case(32):
+                        m.d.comb += self.debug.r_data.eq(prog_enable)
+                    with m.Case(33):
+                        m.d.comb += self.debug.r_data.eq(pc)
+                    with m.Case(34):
+                        m.d.comb += self.debug.r_data.eq(decode.consume.ready)
+                    with m.Case(35):
+                        m.d.comb += self.debug.r_data.eq(latch)
+                    with m.Case(36):
+                        m.d.comb += self.debug.r_data.eq(self.prog.r_data)
+                    with m.Default():
+                        m.d.comb += self.debug.r_data.eq(0xCA_BD_EF_AA)
         
         m.submodules.decode_buffer = decode_buffer = Buffer(decode_shape)
         
         wiring.connect(m, decode_buffer.consume, decode.produce)
         
         # Get instruction
-        m.d.comb += self.prog.addr.eq(pc)
+        m.d.comb += self.prog.addr.eq(pc + self.prog_offset)
         m.d.comb += self.prog.cyc.eq(decode.consume.ready & prog_enable & (~latch))
         m.d.comb += self.prog.stb.eq(decode.consume.ready & prog_enable & (~latch))
         
@@ -149,6 +179,12 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                     decode_buffer.produce.ready.eq(self.bus.ack)
                 ]
                 m.d.comb += self.size.eq(data.offset)
+            with m.Case(Instruction.MEMORYLOAD):
+                data = decode_buffer.produce.data.mode.imm
+                m.d.comb += [
+                    self.bus.addr.eq(data.i + data.s),
+                    self.bus.w_en.eq(0),
+                ]
             with m.Default():
                 pass
         
@@ -223,6 +259,14 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                 m.d.comb += write_buffer.consume.data.d.eq(decode_buffer.produce.data.mode.jump.d)
                 m.d.comb += write_buffer.consume.valid.eq(decode_buffer.produce.valid)
                 m.d.comb += decode_buffer.produce.ready.eq(write_buffer.consume.ready)
+            with m.Case(WriteRoute.MEM):
+                # Write memory result to write buffer
+                m.d.comb += write_buffer.consume.data.value.eq(self.bus.r_data)
+                m.d.comb += write_buffer.consume.data.d.eq(decode_buffer.produce.data.mode.imm.d)
+                m.d.comb += self.bus.stb.eq(decode_buffer.produce.valid & write_buffer.consume.ready)
+                m.d.comb += self.bus.cyc.eq(decode_buffer.produce.valid & write_buffer.consume.ready)
+                m.d.comb += decode_buffer.produce.ready.eq(self.bus.ack)
+                m.d.comb += write_buffer.consume.valid.eq(self.bus.ack)
             with m.Default():
                 pass
         
@@ -240,6 +284,8 @@ class RiscCore(wiring.Component): # RISCV 32I implementation (32E has 16 regs)
                 m.d.comb += write_route.eq(WriteRoute.PC)
             with m.Case(Instruction.JALR):
                 m.d.comb += write_route.eq(WriteRoute.PC)
+            with m.Case(Instruction.MEMORYLOAD):
+                m.d.comb += write_route.eq(WriteRoute.MEM)
             with m.Default():
                 m.d.comb += write_route.eq(WriteRoute.NONE)
         
